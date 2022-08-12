@@ -68,7 +68,12 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          { to: '/blog', label: 'Blog', position: 'left' },
+          {
+            type: 'docsVersionDropdown',
+            dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+            position: 'right'
+          },
           {
             href: 'https://github.com/platformatic/oss',
             label: 'GitHub',
