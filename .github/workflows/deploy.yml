@@ -22,16 +22,32 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "16"
-      # Install and build Docusaurus website
-      - name: Build Docusaurus website
+      - name: Check main repo version
+        id: check_main_repo_version
         run: |
-          npm install 
-          npm run build
-      - name: Deploy to GitHub Pages
-        if: success()
-        uses: crazy-max/ghaction-github-pages@v3
-        with:
-          target_branch: gh-pages
-          build_dir: build
+          echo "::set-output name=remote-version::$(node ./scripts/check-version.js --type remote)"
+      - name: Check current docs version
+        id: check_current_docs_version
+        run: |
+          echo "::set-output name=docs-version::$(node ./scripts/check-version.js --type docs)"
+      - name: Print versions
+        run: |
+          echo "Remote version: ${{ env.REMOTE_VERSION }} - Docs version: ${{ env.DOCS_VERSION }}"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REMOTE_VERSION: ${{join(steps.check_main_repo_version.outputs.*, '\n')}}
+          DOCS_VERSION: ${{join(steps.check_current_docs_version.outputs.*, '\n')}}
+      # - name: Upgrade docs
+      #   run: |
+      #     ls -la
+      # - name: Build Docusaurus website
+      #   run: |
+      #     npm install 
+      #     npm run build
+      # - name: Deploy to GitHub Pages
+      #   if: success()
+      #   uses: crazy-max/ghaction-github-pages@v3
+      #   with:
+      #     target_branch: gh-pages
+      #     build_dir: build
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
