@@ -13,7 +13,7 @@ if (!argv.to) {
 }
 
 if (semverGt(argv.to, argv.from)) {
-  console.log(true)
+  console.log('true')
 } else {
-  console.log(false)
+  console.log('false')
 }

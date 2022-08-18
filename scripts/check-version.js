@@ -1,5 +1,5 @@
 'use srtict';
-
+require('dotenv').config()
 const argv = require('minimist')(process.argv.slice(2));
 const { join, resolve } = require('path')
 const { readFile } = require('fs/promises')
