@@ -31,8 +31,17 @@ function getSemver(str) {
   return false
 }
 async function getLatestVersion() {
-  const versions = await getAvailableVersions()
-  return versions[0]
+  try {
+    const versions = await getAvailableVersions()
+    return versions[0]
+  } catch(err) {
+    if (err.code === 'ENOENT') {
+      // versions file not found
+      return '0.0.0'
+    }
+    throw err
+  }
+  
 }
 async function getAvailableVersions() {
   const filePath = resolve(__dirname, '..', 'versions.json')
