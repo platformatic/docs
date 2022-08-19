@@ -73,14 +73,19 @@ jobs:
         run: |
           rm -rf ./docs
           cp -r main-repo/docs .
-          ls -la ./docs
       
       - name: Build Docusaurus website
         if: steps.evaluate_versions.outputs.versions-compare == 'true'
         run: |
-          echo "result was ${{ steps.evaluate_versions.outputs.versions-compare }}"
           npm install 
+          npx docusaurus docs:version $DOCS_VERSION
           npm run build
+          git add .
+          git commit -m 'Bump docs to version ${DOCS_VERSION}'
+          git push origin main
+        env:
+          DOCS_VERSION: ${{ steps.check_current_docs_version.outputs.docs-version }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy to GitHub Pages
         if: steps.evaluate_versions.outputs.versions-compare == 'true'
         uses: crazy-max/ghaction-github-pages@v3
