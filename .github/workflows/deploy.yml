@@ -55,7 +55,7 @@ jobs:
         if: steps.evaluate_versions.outputs.versions-compare == 'true'
         uses: actions/checkout@v3
         with:
-          name: ${{ secrets.TARGET_REPO }}
+          repository: ${{ secrets.TARGET_REPO }}
       - name: Print directory list
         run: |
           ls -la
