@@ -57,16 +57,24 @@ jobs:
         with:
           repository: ${{ secrets.TARGET_REPO }}
           token: ${{ secrets.GH_API_TOKEN }}
+          path: main-repo
       - name: Print directory list
         run: |
           ls -la
+      # - name: Copy docs directory
+      #   if: steps.evaluate_versions.outputs.versions-compare == 'true'
+      #   run: |
+      #     rm -rf ./docs
+      #     export REPO=$(echo "${{ secrets.TARGET_REPO }}" | sed -e 's/\/.*\///g')
+      #     cp -r $REPO/docs .
+      #     ls -la ./docs
       - name: Copy docs directory
         if: steps.evaluate_versions.outputs.versions-compare == 'true'
         run: |
           rm -rf ./docs
-          export REPO=$(echo "${{ secrets.TARGET_REPO }}" | sed -e 's/\/.*\///g')
-          cp -r $REPO/docs .
+          cp -r main-repo/docs .
           ls -la ./docs
+      
       - name: Build Docusaurus website
         if: steps.evaluate_versions.outputs.versions-compare == 'true'
         run: |
