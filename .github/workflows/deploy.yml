@@ -63,7 +63,7 @@ jobs:
         if: steps.evaluate_versions.outputs.versions-compare == 'true'
         run: |
           rm -rf ./docs
-          export REPO=$(echo "${{ TARGET_REPO }}" | sed -e 's/\/.*\///g')
+          export REPO=$(echo "${{ secrets.TARGET_REPO }}" | sed -e 's/\/.*\///g')
           cp -r $REPO/docs .
           ls -la ./docs
       - name: Build Docusaurus website
