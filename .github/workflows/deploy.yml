@@ -60,16 +60,6 @@ jobs:
           repository: ${{ secrets.TARGET_REPO }}
           token: ${{ secrets.GH_API_TOKEN }}
           path: main-repo
-      - name: Print directory list
-        run: |
-          ls -la
-      # - name: Copy docs directory
-      #   if: steps.evaluate_versions.outputs.versions-compare == 'true'
-      #   run: |
-      #     rm -rf ./docs
-      #     export REPO=$(echo "${{ secrets.TARGET_REPO }}" | sed -e 's/\/.*\///g')
-      #     cp -r $REPO/docs .
-      #     ls -la ./docs
       - name: Copy docs directory
         if: steps.evaluate_versions.outputs.versions-compare == 'true'
         run: |
@@ -80,18 +70,18 @@ jobs:
         if: steps.evaluate_versions.outputs.versions-compare == 'true'
         run: |
           npm install 
-          npx docusaurus docs:version $DOCS_VERSION
+          npx docusaurus docs:version ${{ env.REMOTE_VERSION }}
           npm run build
         env:
-          DOCS_VERSION: ${{ steps.check_current_docs_version.outputs.docs-version }}
+          REMOTE_VERSION: ${{ steps.check_main_repo_version.outputs.remote-version }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Push commit
         if: steps.evaluate_versions.outputs.versions-compare == 'true'
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: '[automated commit] Bump docs to version ${DOCS_VERSION}'
+          commit_message: '[automated commit] Bump docs to version ${{ env.REMOTE_VERSION }}'
         env: 
-          DOCS_VERSION: ${{ steps.check_current_docs_version.outputs.docs-version }}
+          REMOTE_VERSION: ${{ steps.check_main_repo_version.outputs.remote-version }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy to GitHub Pages
         if: steps.evaluate_versions.outputs.versions-compare == 'true'
