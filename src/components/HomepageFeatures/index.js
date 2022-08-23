@@ -53,10 +53,11 @@ export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
+        <div className="rowas">
+          {/* {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
-          ))}
+          ))} */}
+          <h1>Coming soon...stay tuned!</h1>
         </div>
       </div>
     </section>

@@ -21,3 +21,6 @@ yarn-debug.log*
 yarn-error.log*
 
 .vscode
+
+# docs directory should not be versioned, it is imported from main repo on build time
+docs/*

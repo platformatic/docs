@@ -66,7 +66,7 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Docs',
           },
           { to: '/blog', label: 'Blog', position: 'left' },
           {
@@ -74,7 +74,7 @@ const config = {
             position: 'right'
           },
           {
-            href: 'https://github.com/platformatic/oss',
+            href: 'https://github.com/platformatic',
             label: 'GitHub',
             position: 'right',
           }
@@ -87,7 +87,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Docs homepage',
                 to: '/docs/intro',
               },
             ],
@@ -96,12 +96,8 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: 'https://discord.com/channels/1011258196905689118/1011258204371554307',
               },
               {
                 label: 'Twitter',
@@ -118,7 +114,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/platformatic/oss',
+                href: 'https://github.com/platformatic',
               },
             ],
           },
