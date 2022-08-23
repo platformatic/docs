@@ -15,9 +15,19 @@ async function main() {
       console.log(latestVersion)
       break
     case 'remote':
-      const latestRelease = await getLatestRelease()
-      console.log(getSemver(latestRelease.tag_name))
+      try {
+        const latestRelease = await getLatestRelease()
+        console.log(getSemver(latestRelease.tag_name))
+      } catch(err) {
+        if (err.code === 'ENORELEASES') {
+          // fallback when no releases
+          console.log('0.0.0')
+          return
+        }
+        throw err
+      }
       break
+      
     default:
       exit(`Invalid type argument: ${argv.type}`)
   }
