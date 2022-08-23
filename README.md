@@ -10,7 +10,7 @@ The `scripts/doc-watcher.js` file helps you "import" those docs into `./docs` di
 
 There are two ways to do this
   - run `./scripts/doc-watcher.js --source ../relative/path/to/plt/docs/directory` in one terminal and run `npx docusaurus start` on another
-  - run `npm run start` and, when prompted, input the main `docs` directory.
+  - run `DOCS=path/to/platformatic/docs npm run start`.
 
 The script will keep directories in sync. You should work on `platformatic-private/docs` directory and commit changes in that repo. On this repo `./docs` directory is git-ignored.
 

@@ -8,8 +8,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Platformatic',
   // tagline: 'Dinosaurs are cool',
-  url: 'https://platformatic.github.io',
-  baseUrl: '/oss/',
+  url: 'https://oss.platformatic.dev',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
