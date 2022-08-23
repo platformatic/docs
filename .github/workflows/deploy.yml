@@ -8,6 +8,11 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      force:
+        type: boolean
+        description: Force build even if no new release is present
+        default: false
   repository_dispatch:
     types: [update_docs]
 
@@ -56,20 +61,20 @@ jobs:
         if: steps.evaluate_versions.outputs.versions-compare == 'false'
         run: echo "No need to update."
       - name: Checkout main repo
-        if: steps.evaluate_versions.outputs.versions-compare == 'true'
+        if: github.event.inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
         uses: actions/checkout@v3
         with:
           repository: ${{ secrets.TARGET_REPO }}
           token: ${{ secrets.GH_API_TOKEN }}
           path: main-repo
       - name: Copy docs directory
-        if: steps.evaluate_versions.outputs.versions-compare == 'true'
+        if: github.event.inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
         run: |
           rm -rf ./docs
           cp -r main-repo/docs .
           rm -rf main-repo
       - name: Build Docusaurus website
-        if: steps.evaluate_versions.outputs.versions-compare == 'true'
+        if: github.event.inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
         run: |
           npm install 
           npx docusaurus docs:version ${{ env.REMOTE_VERSION }}
@@ -78,7 +83,7 @@ jobs:
           REMOTE_VERSION: ${{ steps.check_main_repo_version.outputs.remote-version }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Push commit
-        if: steps.evaluate_versions.outputs.versions-compare == 'true'
+        if: github.event.inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: '[automated commit] Bump docs to version ${{ env.REMOTE_VERSION }}'
@@ -86,7 +91,7 @@ jobs:
           REMOTE_VERSION: ${{ steps.check_main_repo_version.outputs.remote-version }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy to GitHub Pages
-        if: steps.evaluate_versions.outputs.versions-compare == 'true'
+        if: github.event.inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
         uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: gh-pages
