@@ -60,6 +60,7 @@ const config = {
         logo: {
           alt: 'Platformatic Logo',
           src: 'img/plt-logo.svg',
+          srcDark: 'img/plt-logo-inverted.svg'
         },
         items: [
           {
