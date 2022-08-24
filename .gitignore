@@ -25,5 +25,3 @@ yarn-error.log*
 # Ignore docusaurus local files
 # docs directory should not be versioned, it is imported from main repo on build time
 docs/*
-versions.json
-versioned_*

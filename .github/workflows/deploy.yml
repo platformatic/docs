@@ -77,7 +77,6 @@ jobs:
           rm -rf ./docs
           cp -r main-repo/docs .
           rm -rf main-repo
-          ls -la ./docs
       - name: Build Docusaurus website
         if: github.event.inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
         run: |
