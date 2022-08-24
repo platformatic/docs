@@ -82,7 +82,7 @@ jobs:
         run: |
           npm install 
       - name: Create docusaurus version
-        if: !github.event.inputs.force && steps.evaluate_versions.outputs.versions-compare == 'true'
+        if: (!github.event.inputs.force && steps.evaluate_versions.outputs.versions-compare == 'true')
         run: |
           npx docusaurus docs:version ${{ env.REMOTE_VERSION }}
         env:
