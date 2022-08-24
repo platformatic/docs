@@ -70,7 +70,7 @@ jobs:
           repository: ${{ secrets.TARGET_REPO }}
           token: ${{ secrets.GH_API_TOKEN }}
           path: main-repo
-          ref: github.event.inputs.git_ref || main
+          ref: ${{ github.event.inputs.git_ref }} || main
       - name: Copy docs directory
         if: github.event.inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
         run: |
