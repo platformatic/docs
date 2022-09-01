@@ -4,45 +4,53 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #6abf4b;
-  --ifm-color-primary-dark: #00AB6B;
-  --ifm-color-primary-darker: #00947F;
-  --ifm-color-primary-darkest: #007B82;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #00283d;
+  --ifm-color-primary-dark: #002437;
+  --ifm-color-primary-darker: #002234;
+  --ifm-color-primary-darkest: #001c2b;
+  --ifm-color-primary-light: #002c43;
+  --ifm-color-primary-lighter: #002e46;
+  --ifm-color-primary-lightest: #00344f;
   --ifm-code-font-size: 95%;
+  --ifm-background-color: transparent;
+
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #6abf4b;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary: #21f190;
+  --ifm-color-primary-dark: #0fe883;
+  --ifm-color-primary-darker: #0edb7b;
+  --ifm-color-primary-darkest: #0bb466;
+  --ifm-color-primary-light: #3bf39d;
+  --ifm-color-primary-lighter: #48f3a3;
+  --ifm-color-primary-lightest: #6ef6b7;
+  --ifm-background-color: #00283D !important;
+  --ifm-background-surface-color: #00283D !important;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
 [data-theme='dark'] footer {
-  background-color: #021c3c ;
+  background-color: #00283D;
 }
 
 [data-theme='light'] {
-  --ifm-color-primary: #6abf4b;
+  --ifm-color-primary: #00283D;
   --ifm-color-primary-dark: #00AB6B;
   --ifm-color-primary-darker: #00947F;
   --ifm-color-primary-darkest: #007B82;
   --ifm-color-primary-light: #29d5b0;
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
+  --ifm-background-color: transparent;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
 [data-theme='light'] footer {
-  background-color: #021c3c ;
+  background-color: #00283D;
+}
+
+[data-theme='light'] .hero__title {
+  color: #21f190;
 }
