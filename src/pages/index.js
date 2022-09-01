@@ -30,8 +30,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`Platformatic Open Source Software`}
+      description="The documentation of all Open Source libraries that are part of Platformatic.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

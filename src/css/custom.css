@@ -50,3 +50,7 @@
 [data-theme='light'] footer {
   background-color: #00283D;
 }
+
+[data-theme='light'] .hero__title {
+  color: #21f190;
+}
