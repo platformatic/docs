@@ -47,7 +47,7 @@ function VideoEmbed() {
 const quotesData = [{
   name: "James Snell",
   title: "Node.js Technical Steering Committee",
-  quote: "Quote from James",
+  quote: "Platformatic is a great example of how to build a great developer experience on top of a database.",
   avatar: "https://avatars.githubusercontent.com/u/439929?s=460&v=4"
 }, {
   name: "Feross Aboukhadijeh",
