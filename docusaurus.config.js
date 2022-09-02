@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Platformatic',
+  title: 'Platformatic OSS',
   // tagline: 'Dinosaurs are cool',
   url: 'https://oss.platformatic.dev',
   baseUrl: '/',
@@ -62,6 +62,7 @@ const config = {
             label: 'Docs',
           },
           { to: '/blog', label: 'Blog', position: 'left' },
+          { href: 'https://www.platformatic.dev', label: 'About', position: 'left' },
           {
             type: 'docsVersionDropdown',
             position: 'right'
@@ -104,6 +105,10 @@ const config = {
               {
                 label: 'Blog',
                 to: '/blog',
+              },
+              {
+                label: 'Main website',
+                href: 'https://www.platformatic.dev',
               },
               {
                 label: 'GitHub',
