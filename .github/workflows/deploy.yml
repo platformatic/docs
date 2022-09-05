@@ -64,7 +64,7 @@ jobs:
         if: steps.evaluate_versions.outputs.versions-compare == 'false'
         run: echo "No need to update."
       - name: Checkout main repo
-        if: github.event.inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
+        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event.inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
         uses: actions/checkout@v3
         with:
           repository: ${{ secrets.TARGET_REPO }}
@@ -72,13 +72,13 @@ jobs:
           path: main-repo
           ref: ${{ github.event.inputs.git_ref || 'main' }}
       - name: Copy docs directory
-        if: github.event.inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
+        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event.inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
         run: |
           rm -rf ./docs
           cp -r main-repo/docs .
           rm -rf main-repo
       - name: Install deps
-        if: github.event.inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
+        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event.inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
         run: |
           npm install 
       - name: Create docusaurus version
@@ -88,13 +88,13 @@ jobs:
         env:
           REMOTE_VERSION: ${{ steps.check_main_repo_version.outputs.remote-version }}
       - name: Build Docusaurus website  
-        if: github.event.inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
+        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event.inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
         run: |
           npm run build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Push commit
-        if: github.event.inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
+        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event.inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: '[automated commit] Bump docs to version ${{ env.REMOTE_VERSION }}'
@@ -102,7 +102,7 @@ jobs:
           REMOTE_VERSION: ${{ steps.check_main_repo_version.outputs.remote-version }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy to GitHub Pages
-        if: github.event.inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
+        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event.inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
         uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: gh-pages
