@@ -56,6 +56,7 @@ export default function Home() {
       <main>
         <VideoEmbed />
         <Quotes />  
+        <script defer data-domain="oss.platformatic.dev" src="https://plausible.io/js/plausible.js"></script>
       </main>
     </Layout>
   );
