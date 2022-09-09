@@ -61,7 +61,7 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
-          { to: '/blog', label: 'Blog', position: 'left' },
+          { href: 'https://blog.platformatic.dev', label: 'Blog', position: 'left' },
           { href: 'https://www.platformatic.dev', label: 'About', position: 'left' },
           {
             type: 'docsVersionDropdown',
@@ -104,7 +104,7 @@ const config = {
             items: [
               {
                 label: 'Blog',
-                to: '/blog',
+                href: 'https://blog.platformatic.dev',
               },
               {
                 label: 'Main website',
