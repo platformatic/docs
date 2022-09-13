@@ -14,7 +14,7 @@
   --ifm-color-primary-lightest: #00344f;
   --ifm-code-font-size: 95%;
   --ifm-background-color: transparent;
-
+  --ifm-link-color: #00AB6B;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
@@ -53,4 +53,8 @@
 
 [data-theme='light'] .hero__title {
   color: #21f190;
+}
+
+main a {
+  font-weight: bold;
 }
