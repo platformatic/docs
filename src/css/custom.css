@@ -58,3 +58,9 @@
 main a {
   font-weight: bold;
 }
+
+.youtube-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
