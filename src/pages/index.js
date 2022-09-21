@@ -54,8 +54,8 @@ export default function Home() {
       description="The documentation of all Open Source libraries that are part of Platformatic.">
       <HomepageHeader />
       <main>
-        <VideoEmbed />
         <HomepageFeatures />
+        <VideoEmbed />
         <Quotes />  
         <script defer data-domain="oss.platformatic.dev" src="https://plausible.io/js/plausible.js"></script>
       </main>
