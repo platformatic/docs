@@ -1,0 +1,33 @@
+
+.video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.video h1 {
+  text-align: center;
+}
+
+.video iframe {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20em;
+}
+
+.why iframe {
+  position: relative;
+  top: 0;
+  left: 0;
+  /* TODO: make this responsive and add screen size breakpoints*/
+  width: 100%;
+  height: 25em;
+}
+
+.features h2 {
+  text-align: center;
+}

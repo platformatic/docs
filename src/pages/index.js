@@ -5,7 +5,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Quotes from '@site/src/components/Quotes';
-
+import WhyPlatformatic from '../components/WhyPlatformatic';
 import styles from './index.module.css';
 
 function HomepageHeader() {
@@ -27,25 +27,6 @@ function HomepageHeader() {
   );
 }
 
-function VideoEmbed() {
-  return (
-    <section className={styles.video}>
-      <div className="container">
-        <div class="rows">
-          <div class="col col--12">
-            <h1>Check out Platformatic DB's basic features</h1>
-          </div>
-          <div class="col col--6 col--offset-3">
-            <iframe src="https://www.loom.com/embed/3a2052674be249ae95bb2b407cf0efac" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
-            </iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
@@ -54,9 +35,9 @@ export default function Home() {
       description="The documentation of all Open Source libraries that are part of Platformatic.">
       <HomepageHeader />
       <main>
+        <WhyPlatformatic />
         <HomepageFeatures />
-        <VideoEmbed />
-        <Quotes />
+        <Quotes />  
         <script defer data-domain="oss.platformatic.dev" src="https://plausible.io/js/plausible.js"></script>
       </main>
     </Layout>
