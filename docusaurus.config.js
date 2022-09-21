@@ -10,7 +10,7 @@ const config = {
   // tagline: 'Dinosaurs are cool',
   url: 'https://oss.platformatic.dev',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   // GitHub pages deployment config.
