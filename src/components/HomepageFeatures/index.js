@@ -18,7 +18,7 @@ const FeatureList = [
     description: (
       <>
         Platformatic DB creates a REST API from your database schema.
-        It generates OpenAPI 3.0 specification, too.
+        It generates an OpenAPI 3.0 specification, too.
       </>
     ),
   },
@@ -26,7 +26,7 @@ const FeatureList = [
     Svg: require('@site/static/img/fastify-square.svg').default,
     description: (
       <>
-        The roots of Platformatic DB are on the Fastify community.
+        The roots of Platformatic DB are in the Fastify community.
         You can customize it with Fastify plugins.
       </>
     ),

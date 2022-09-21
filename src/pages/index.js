@@ -18,8 +18,8 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/intro">
-            Go to docs ➡️
+            to="docs/getting-started/quick-start-guide">
+            Get started 🚀
           </Link>
         </div>
       </div>
@@ -33,7 +33,7 @@ function VideoEmbed() {
       <div className="container">
         <div class="rows">
           <div class="col col--12">
-            <h1>Checkout the Platformatic DB basic features</h1>
+            <h1>Check out Platformatic DB's basic features</h1>
           </div>
           <div class="col col--6 col--offset-3">
             <iframe src="https://www.loom.com/embed/3a2052674be249ae95bb2b407cf0efac" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
@@ -56,7 +56,7 @@ export default function Home() {
       <main>
         <HomepageFeatures />
         <VideoEmbed />
-        <Quotes />  
+        <Quotes />
         <script defer data-domain="oss.platformatic.dev" src="https://plausible.io/js/plausible.js"></script>
       </main>
     </Layout>
