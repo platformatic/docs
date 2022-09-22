@@ -135,18 +135,18 @@ const sidebars = {
         'reference/plugin',
       ],
     },
-    {
-      type: 'category',
-      label: 'Contributing',
-      link: {
-        type: 'doc',
-        id: 'contributing/contributing'
-      },
-      collapsed: true,
-      items: [
-        'contributing/documentation-style-guide',
-      ],
-    },
+    // {
+    //   type: 'category',
+    //   label: 'Contributing',
+    //   link: {
+    //     type: 'doc',
+    //     id: 'contributing/contributing'
+    //   },
+    //   collapsed: true,
+    //   items: [
+    //     'contributing/documentation-style-guide',
+    //   ],
+    // },
   ],
 };
 
