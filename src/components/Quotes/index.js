@@ -33,35 +33,37 @@ const quotesData = [{
 
 function Quotes() {
   return (
-    <section className={styles.quotes}>
-      <div class="container">
+    <section className={styles.section__quotes}>
+      <div class="container container__quotes">
         <div class="row">
           <div class="col col--12">
             <h1>Quotes</h1>
           </div>
-
-          {quotesData.map((quote, index) => ( 
-          <div class="col col--3">
-            <div class="card">
-              <div class="card__header">
-                <div class="avatar">
-                  <img
-                    class="avatar__photo"
-                    src={quote.avatar} />
-                  <div class="avatar__intro">
-                    <div class="avatar__name">{quote.name}</div>
-                    <small class="avatar__subtitle">
-                      {quote.title}
-                    </small>
+          <div className={styles.quotes}>
+            {quotesData.map((quote, index) => ( 
+            <div className={styles.quote}>
+              <div class="card">
+                <div class="card__header">
+                  <div class="avatar">
+                    <img
+                      class="avatar__photo"
+                      src={quote.avatar} />
+                    <div class="avatar__intro">
+                      <div class="avatar__name">{quote.name}</div>
+                      <small class="avatar__subtitle">
+                        {quote.title}
+                      </small>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="card__body">
-                <p> {quote.quote} </p>
+                <div class="card__body">
+                  <p> {quote.quote} </p>
+                </div>
               </div>
             </div>
+            ))}
           </div>
-          ))}
+          
         </div>
         <div class="row padding--lg">
           <div class="col col--12 padding--lg">

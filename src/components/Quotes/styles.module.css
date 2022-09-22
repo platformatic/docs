@@ -1,3 +1,17 @@
-.quotes h1 {
+.section__quotes h1 {
   text-align: center;
+}
+
+.quotes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.quote {
+  flex-basis: auto;
+  width: 33%;
+}
+
+.quote .card {
+  height: 260px;
 }

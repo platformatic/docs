@@ -15,7 +15,7 @@ export default function WhyPlatformatic() {
       <div class="container">
         <div className="row">
           <div className="col col--6 {styles.why}">
-            <h2>Why Platformatic?</h2>
+            <h1>Why Platformatic?</h1>
             <p>
               Platformatic enables developers to efficiently develop and run APIs at scale.
               Historically, API developers have had to repetitively build infrastructure to satisfy
@@ -42,7 +42,7 @@ export default function WhyPlatformatic() {
             <img src="/img/platformatic-db-architecture.png" alt="Platformatic DB Architecture" />
           </div>
           <div className="col col--6">  
-            <h2>Our first tool: Plaformatic DB</h2>
+            <h1>Our first tool: Plaformatic DB</h1>
             <p>
               The first friction we are solving is the tiresome mapping of databases table to APIs that
               burden any developer. Platformatic DB is a tool that will allow you to create both OpenAPI
@@ -55,7 +55,7 @@ export default function WhyPlatformatic() {
         </div>
         <div className="row margin-top--lg">
           <div className={styles.features} class="col col--6">
-            <h2>Platformatic DB basic features</h2>
+            <h1>Platformatic DB basic features</h1>
             <ul>
               <li>Automatic OpenAPI/REST API generation</li>
               <li>Automatic GraphQL API generation</li>

@@ -64,3 +64,16 @@ main a {
   align-items: center;
   justify-content: center;
 }
+
+/* Quotes section */
+.container__quotes .card {
+  height: 260px;
+}
+
+.container__quotes .card__header {
+  height: 100px;
+}
+
+.container__quotes .card__header .avatar__subtitle {
+  color: grey;
+}
