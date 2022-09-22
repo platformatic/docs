@@ -71,9 +71,18 @@ main a {
 }
 
 .container__quotes .card__header {
-  height: 100px;
+  height: 120px;
 }
 
 .container__quotes .card__header .avatar__subtitle {
   color: grey;
+}
+
+@media screen and (max-width: 996px) {
+  .container__quotes .card {
+    height: auto;
+  }
+  .container__quotes .card__header {
+    height: auto;
+  }
 }
