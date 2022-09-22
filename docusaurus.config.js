@@ -109,7 +109,7 @@ const config = {
             items: [
               {
                 label: 'Discord',
-                href: 'https://discord.com/channels/1011258196905689118/1011258204371554307',
+                href: 'https://discord.gg/platformatic',
               },
               {
                 label: 'Twitter',
