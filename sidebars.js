@@ -50,7 +50,7 @@ const sidebars = {
             'guides/add-custom-functionality/extend-rest',
           ]
         },
-        'guides/deployment',
+        // 'guides/deployment',
         'guides/jwt-auth0',
       ],
     },
