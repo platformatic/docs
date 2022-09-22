@@ -67,7 +67,7 @@ export default function WhyPlatformatic() {
         <div className="row margin-top--lg">
           <div class="col col--6 col--offset-3">
             <div className={styles.video}>
-              <iframe src="https://www.loom.com/embed/3a2052674be249ae95bb2b407cf0efac" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+              <iframe src="https://www.loom.com/embed/cb292b03ae684ac3ade99a7717f5b7e7" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
               </iframe>
             </div>
           </div>
