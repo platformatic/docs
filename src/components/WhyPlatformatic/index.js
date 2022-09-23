@@ -42,7 +42,7 @@ export default function WhyPlatformatic() {
             <img src="/img/platformatic-db-architecture.png" alt="Platformatic DB Architecture" />
           </div>
           <div className="col col--6 col--offset-1">  
-            <h1>Our first tool: Plaformatic DB</h1>
+            <h1>Our first tool: Platformatic DB</h1>
             <p>
               The first friction we are solving is the tiresome mapping of databases table to APIs that
               burden any developer. Platformatic DB is a tool that will allow you to create both OpenAPI
