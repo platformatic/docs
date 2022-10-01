@@ -35,6 +35,7 @@ const sidebars = {
       },
       collapsed: true,
       items: [
+        'guides/deployment/deployment',
         'guides/seed-a-database',
         {
           type: 'category',
@@ -50,7 +51,6 @@ const sidebars = {
             'guides/add-custom-functionality/extend-rest',
           ]
         },
-        // 'guides/deployment',
         'guides/jwt-auth0',
       ],
     },
