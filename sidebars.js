@@ -18,20 +18,20 @@ const sidebars = {
       type: 'category',
       label: 'Getting Started',
       link: {
-        type: 'generated-index',
+        type: 'generated-index'
       },
       collapsed: false,
       items: [
         'getting-started/quick-start-guide',
         'getting-started/movie-quotes-app-tutorial',
-        'getting-started/architecture',
-      ],
+        'getting-started/architecture'
+      ]
     },
     {
       type: 'category',
       label: 'Guides',
       link: {
-        type: 'generated-index',
+        type: 'generated-index'
       },
       collapsed: true,
       items: [
@@ -48,18 +48,19 @@ const sidebars = {
           items: [
             'guides/add-custom-functionality/prerequisites',
             'guides/add-custom-functionality/extend-graphql',
-            'guides/add-custom-functionality/extend-rest',
+            'guides/add-custom-functionality/extend-rest'
           ]
         },
         'guides/jwt-auth0',
-      ],
+        'guides/monitoring'
+      ]
     },
 
     {
       type: 'category',
       label: 'Reference',
       link: {
-        type: 'generated-index',
+        type: 'generated-index'
       },
       collapsed: false,
       items: [
@@ -75,7 +76,7 @@ const sidebars = {
           },
           collapsed: true,
           items: [
-            'reference/sql-rest/api',
+            'reference/sql-rest/api'
           ]
         },
         {
@@ -88,7 +89,7 @@ const sidebars = {
           collapsed: true,
           items: [
             'reference/sql-graphql/queries',
-            'reference/sql-graphql/mutations',
+            'reference/sql-graphql/mutations'
           ]
         },
 
@@ -115,9 +116,9 @@ const sidebars = {
                 'reference/sql-mapper/entities/api',
                 'reference/sql-mapper/entities/example',
                 'reference/sql-mapper/entities/hooks',
-                'reference/sql-mapper/entities/relations',
+                'reference/sql-mapper/entities/relations'
               ]
-            },
+            }
           ]
         },
         {
@@ -129,12 +130,12 @@ const sidebars = {
           },
           collapsed: true,
           items: [
-            'reference/db-authorization/programmatic-rules',
+            'reference/db-authorization/programmatic-rules'
           ]
         },
-        'reference/plugin',
-      ],
-    },
+        'reference/plugin'
+      ]
+    }
     // {
     //   type: 'category',
     //   label: 'Contributing',
@@ -147,7 +148,7 @@ const sidebars = {
     //     'contributing/documentation-style-guide',
     //   ],
     // },
-  ],
-};
+  ]
+}
 
-module.exports = sidebars;
+module.exports = sidebars
