@@ -133,7 +133,8 @@ const sidebars = {
             'reference/db-authorization/programmatic-rules'
           ]
         },
-        'reference/plugin'
+        'reference/plugin',
+        'reference/logging'
       ]
     }
     // {
