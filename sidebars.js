@@ -65,76 +65,99 @@ const sidebars = {
       collapsed: false,
       items: [
         'reference/cli',
-        'reference/configuration',
-        'reference/migrations',
         {
           type: 'category',
-          label: 'SQL-to-REST',
+          label: 'Platformatic DB',
           link: {
             type: 'doc',
-            id: 'reference/sql-rest/introduction'
+            id: 'reference/db/introduction'
           },
-          collapsed: true,
+          collapsed: false,
           items: [
-            'reference/sql-rest/api'
-          ]
-        },
-        {
-          type: 'category',
-          label: 'SQL-to-GraphQL',
-          link: {
-            type: 'doc',
-            id: 'reference/sql-graphql/introduction'
-          },
-          collapsed: true,
-          items: [
-            'reference/sql-graphql/queries',
-            'reference/sql-graphql/mutations'
+            'reference/db/configuration',
+            'reference/db/migrations',
+            {
+              type: 'category',
+              label: 'Authorization & Authentication',
+              link: {
+                type: 'doc',
+                id: 'reference/db-authorization/introduction'
+              },
+              collapsed: true,
+              items: [
+                // TODO: Move db-authorization to db/authorization
+                'reference/db-authorization/programmatic-rules'
+              ]
+            },
+            'reference/db/plugin',
+            'reference/db/logging',
           ]
         },
 
         {
           type: 'category',
-          label: 'SQL-Mapper',
+          label: 'Packages',
           link: {
-            type: 'doc',
-            id: 'reference/sql-mapper/introduction'
+            type: 'generated-index'
+            // TODO: Add a description
           },
-          collapsed: true,
+          collapsed: false,
           items: [
-            'reference/sql-mapper/fastify-plugin',
             {
               type: 'category',
-              label: 'Entities',
+              label: 'SQL-to-REST',
               link: {
                 type: 'doc',
-                id: 'reference/sql-mapper/entities/introduction'
+                id: 'reference/sql-rest/introduction'
               },
               collapsed: true,
               items: [
-                'reference/sql-mapper/entities/fields',
-                'reference/sql-mapper/entities/api',
-                'reference/sql-mapper/entities/example',
-                'reference/sql-mapper/entities/hooks',
-                'reference/sql-mapper/entities/relations'
+                'reference/sql-rest/api'
               ]
-            }
+            },
+            {
+              type: 'category',
+              label: 'SQL-to-GraphQL',
+              link: {
+                type: 'doc',
+                id: 'reference/sql-graphql/introduction'
+              },
+              collapsed: true,
+              items: [
+                'reference/sql-graphql/queries',
+                'reference/sql-graphql/mutations'
+              ]
+            },
+            {
+              type: 'category',
+              label: 'SQL-Mapper',
+              link: {
+                type: 'doc',
+                id: 'reference/sql-mapper/introduction'
+              },
+              collapsed: true,
+              items: [
+                'reference/sql-mapper/fastify-plugin',
+                {
+                  type: 'category',
+                  label: 'Entities',
+                  link: {
+                    type: 'doc',
+                    id: 'reference/sql-mapper/entities/introduction'
+                  },
+                  collapsed: true,
+                  items: [
+                    'reference/sql-mapper/entities/fields',
+                    'reference/sql-mapper/entities/api',
+                    'reference/sql-mapper/entities/example',
+                    'reference/sql-mapper/entities/hooks',
+                    'reference/sql-mapper/entities/relations'
+                  ]
+                }
+              ]
+            },
           ]
         },
-        {
-          type: 'category',
-          label: 'Authorization & Authentication',
-          link: {
-            type: 'doc',
-            id: 'reference/db-authorization/introduction'
-          },
-          collapsed: true,
-          items: [
-            'reference/db-authorization/programmatic-rules'
-          ]
-        },
-        'reference/plugin',
-        'reference/logging'
       ]
     }
     // {
