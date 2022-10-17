@@ -81,12 +81,11 @@ const sidebars = {
               label: 'Authorization & Authentication',
               link: {
                 type: 'doc',
-                id: 'reference/db-authorization/introduction'
+                id: 'reference/db/authorization/introduction'
               },
               collapsed: true,
               items: [
-                // TODO: Move db-authorization to db/authorization
-                'reference/db-authorization/programmatic-rules'
+                'reference/db/authorization/programmatic-rules'
               ]
             },
             'reference/db/plugin',
