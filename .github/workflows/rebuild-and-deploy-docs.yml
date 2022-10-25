@@ -1,9 +1,16 @@
 name: "Deploy Documentation"
 
 on:
-  repository_dispatch:
-    types: [update_docs]
-
+  workflow_call:
+    inputs:
+      force:
+        type: boolean
+        default: false
+      git_ref:
+        type: string
+        default: main
+      original_event:
+        type: string
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
@@ -46,37 +53,37 @@ jobs:
         if: steps.evaluate_versions.outputs.versions-compare == 'false'
         run: echo "No need to update."
       - name: Checkout main repo
-        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event.client_payload.force || steps.evaluate_versions.outputs.versions-compare == 'true'
+        if: inputs.original_event == 'push_on_main' || inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
         uses: actions/checkout@v3
         with:
           repository: ${{ secrets.TARGET_REPO }}
           token: ${{ secrets.GH_API_TOKEN }}
           path: main-repo
-          ref: ${{ github.event.client_payload.git_ref || 'main' }}
+          ref: ${{ inputs.git_ref || 'main' }}
       - name: Copy docs directory
-        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event.client_payload.force || steps.evaluate_versions.outputs.versions-compare == 'true'
+        if: inputs.original_event == 'push_on_main' || inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
         run: |
           rm -rf ./docs
           cp -r main-repo/docs .
           rm -rf main-repo
       - name: Install deps
-        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event.client_payload.force || steps.evaluate_versions.outputs.versions-compare == 'true'
+        if: inputs.original_event == 'push_on_main' || inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
         run: |
           npm install 
       - name: Create docusaurus version
-        if: (!github.event.client_payload.force && steps.evaluate_versions.outputs.versions-compare == 'true')
+        if: (!inputs.force && steps.evaluate_versions.outputs.versions-compare == 'true')
         run: |
           npx docusaurus docs:version ${{ env.REMOTE_VERSION }}
         env:
           REMOTE_VERSION: ${{ steps.check_main_repo_version.outputs.remote-version }}
       - name: Build Docusaurus website  
-        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event.client_payload.force || steps.evaluate_versions.outputs.versions-compare == 'true'
+        if: inputs.original_event == 'push_on_main' || inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
         run: |
           npm run build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Push commit
-        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event.client_payload.force || steps.evaluate_versions.outputs.versions-compare == 'true'
+        if: inputs.original_event == 'push_on_main' || inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: '[automated commit] Bump docs to version ${{ env.REMOTE_VERSION }}'
@@ -84,7 +91,7 @@ jobs:
           REMOTE_VERSION: ${{ steps.check_main_repo_version.outputs.remote-version }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy to GitHub Pages
-        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event.client_payload.force || steps.evaluate_versions.outputs.versions-compare == 'true'
+        if: inputs.original_event == 'push_on_main' || inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
         uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: gh-pages

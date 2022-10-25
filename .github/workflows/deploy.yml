@@ -16,95 +16,38 @@ on:
       git_ref:
         type: string
         default: main
-
+  repository_dispatch:
+    types: [update_docs]
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Check out repo
-        uses: actions/checkout@v3
+      - name: Call deploy workflow [push_on_main]
+        if: (github.event_name == 'push' && github.ref == 'refs/heads/main')
+        uses: platformatic/oss/.github/workflows/rebuild-and-deploy-docs.yml@main
         with:
-          token: ${{ secrets.GH_API_TOKEN }}
-      # Node is required for npm
-      - name: Set up Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: "16"
-      - name: Install dependencies
-        run: npm install  
-      - name: Check main repo version
-        id: check_main_repo_version
-        run: |
-          echo "::set-output name=remote-version::$(node ./scripts/check-version.js --type remote)"
-        env:
+          original_event: push_on_main
+        secrets:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TARGET_REPO: ${{ secrets.TARGET_REPO }}
-          GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
-      - name: Check current docs version
-        id: check_current_docs_version
-        run: |
-          echo "::set-output name=docs-version::$(node ./scripts/check-version.js --type docs)"
-      - name: Print versions
-        run: |
-          echo "Remote version: ${{ env.REMOTE_VERSION }} - Docs version: ${{ env.DOCS_VERSION }}"
-        env:
-          REMOTE_VERSION: ${{ steps.check_main_repo_version.outputs.remote-version }}
-          DOCS_VERSION: ${{ steps.check_current_docs_version.outputs.docs-version }}
-      - name: Evaluate versions
-        id: evaluate_versions
-        run: |
-          echo "::set-output name=versions-compare::$(node ./scripts/compare-versions.js --from ${{ env.DOCS_VERSION }} --to ${{ env.REMOTE_VERSION }})"
-        env:
-          REMOTE_VERSION: ${{ steps.check_main_repo_version.outputs.remote-version }}
-          DOCS_VERSION: ${{ steps.check_current_docs_version.outputs.docs-version }}
-      - name: Nothing to do
-        if: steps.evaluate_versions.outputs.versions-compare == 'false'
-        run: echo "No need to update."
-      - name: Checkout main repo
-        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event.inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
-        uses: actions/checkout@v3
+      - name: Call deploy workflow [repository_dispatch]
+        if: (github.event_name == 'repository_dispatch' && github.event.action == 'update_docs')
+        uses: platformatic/oss/.github/workflows/rebuild-and-deploy-docs.yml@main
         with:
-          repository: ${{ secrets.TARGET_REPO }}
-          token: ${{ secrets.GH_API_TOKEN }}
-          path: main-repo
-          ref: ${{ github.event.inputs.git_ref || 'main' }}
-      - name: Copy docs directory
-        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event.inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
-        run: |
-          rm -rf ./docs
-          cp -r main-repo/docs .
-          rm -rf main-repo
-      - name: Install deps
-        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event.inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
-        run: |
-          npm install 
-      - name: Create docusaurus version
-        if: (!github.event.inputs.force && steps.evaluate_versions.outputs.versions-compare == 'true')
-        run: |
-          npx docusaurus docs:version ${{ env.REMOTE_VERSION }}
-        env:
-          REMOTE_VERSION: ${{ steps.check_main_repo_version.outputs.remote-version }}
-      - name: Build Docusaurus website  
-        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event.inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
-        run: |
-          npm run build
-        env:
+          force: github.event.client_payload.force
+          git_ref: github.event.client_payload.git_ref
+          original_event: repository_dispatch
+        secrets:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Push commit
-        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event.inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
-        uses: stefanzweifel/git-auto-commit-action@v4
+          TARGET_REPO: ${{ secrets.TARGET_REPO }}
+      - name: Call deploy workflow [workflow_dispatch]
+        if: (github.event_name == 'workflow_dispatch')
+        uses: platformatic/oss/.github/workflows/rebuild-and-deploy-docs.yml@main
         with:
-          commit_message: '[automated commit] Bump docs to version ${{ env.REMOTE_VERSION }}'
-        env: 
-          REMOTE_VERSION: ${{ steps.check_main_repo_version.outputs.remote-version }}
+          force: github.event.inputs.force
+          git_ref: github.event.inputs.git_ref
+          original_event: workflow_dispatch
+        secrets:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Deploy to GitHub Pages
-        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event.inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
-        uses: crazy-max/ghaction-github-pages@v3
-        with:
-          target_branch: gh-pages
-          build_dir: build
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
+          TARGET_REPO: ${{ secrets.TARGET_REPO }}
