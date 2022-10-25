@@ -14,8 +14,6 @@ on:
     secrets:
       GH_API_TOKEN:
         description: 'GitHub API Token'
-      GITHUB_TOKEN:
-        description: 'GitHub Token'
       TARGET_REPO:
         description: 'The repo wheere Docusaurus is'
 jobs:
