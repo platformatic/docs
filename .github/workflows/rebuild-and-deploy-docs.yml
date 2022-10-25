@@ -1,0 +1,101 @@
+name: "Deploy Documentation"
+
+on:
+  workflow_call:
+    inputs:
+      force:
+        type: boolean
+        default: false
+      git_ref:
+        type: string
+        default: main
+      original_event:
+        type: string
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GH_API_TOKEN }}
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+      - name: Install dependencies
+        run: npm install  
+      - name: Check main repo version
+        id: check_main_repo_version
+        run: |
+          echo "::set-output name=remote-version::$(node ./scripts/check-version.js --type remote)"
+        env:
+          TARGET_REPO: ${{ secrets.TARGET_REPO }}
+          GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
+      - name: Check current docs version
+        id: check_current_docs_version
+        run: |
+          echo "::set-output name=docs-version::$(node ./scripts/check-version.js --type docs)"
+      - name: Print versions
+        run: |
+          echo "Remote version: ${{ env.REMOTE_VERSION }} - Docs version: ${{ env.DOCS_VERSION }}"
+        env:
+          REMOTE_VERSION: ${{ steps.check_main_repo_version.outputs.remote-version }}
+          DOCS_VERSION: ${{ steps.check_current_docs_version.outputs.docs-version }}
+      - name: Evaluate versions
+        id: evaluate_versions
+        run: |
+          echo "::set-output name=versions-compare::$(node ./scripts/compare-versions.js --from ${{ env.DOCS_VERSION }} --to ${{ env.REMOTE_VERSION }})"
+        env:
+          REMOTE_VERSION: ${{ steps.check_main_repo_version.outputs.remote-version }}
+          DOCS_VERSION: ${{ steps.check_current_docs_version.outputs.docs-version }}
+      - name: Nothing to do
+        if: steps.evaluate_versions.outputs.versions-compare == 'false'
+        run: echo "No need to update."
+      - name: Checkout main repo
+        if: inputs.original_event == 'push_on_main' || inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
+        uses: actions/checkout@v3
+        with:
+          repository: ${{ secrets.TARGET_REPO }}
+          token: ${{ secrets.GH_API_TOKEN }}
+          path: main-repo
+          ref: ${{ inputs.git_ref || 'main' }}
+      - name: Copy docs directory
+        if: inputs.original_event == 'push_on_main' || inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
+        run: |
+          rm -rf ./docs
+          cp -r main-repo/docs .
+          rm -rf main-repo
+      - name: Install deps
+        if: inputs.original_event == 'push_on_main' || inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
+        run: |
+          npm install 
+      - name: Create docusaurus version
+        if: (!inputs.force && steps.evaluate_versions.outputs.versions-compare == 'true')
+        run: |
+          npx docusaurus docs:version ${{ env.REMOTE_VERSION }}
+        env:
+          REMOTE_VERSION: ${{ steps.check_main_repo_version.outputs.remote-version }}
+      - name: Build Docusaurus website  
+        if: inputs.original_event == 'push_on_main' || inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
+        run: |
+          npm run build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push commit
+        if: inputs.original_event == 'push_on_main' || inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: '[automated commit] Bump docs to version ${{ env.REMOTE_VERSION }}'
+        env: 
+          REMOTE_VERSION: ${{ steps.check_main_repo_version.outputs.remote-version }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy to GitHub Pages
+        if: inputs.original_event == 'push_on_main' || inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
+        uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: gh-pages
+          build_dir: build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
