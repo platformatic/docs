@@ -101,7 +101,7 @@ const sidebars = {
               ]
             },
             'reference/db/plugin',
-            'reference/db/logging',
+            'reference/db/logging'
           ]
         },
 
@@ -162,13 +162,14 @@ const sidebars = {
                     'reference/sql-mapper/entities/api',
                     'reference/sql-mapper/entities/example',
                     'reference/sql-mapper/entities/hooks',
-                    'reference/sql-mapper/entities/relations'
+                    'reference/sql-mapper/entities/relations',
+                    'reference/sql-mapper/entities/transactions'
                   ]
                 }
               ]
-            },
+            }
           ]
-        },
+        }
       ]
     }
     // {
