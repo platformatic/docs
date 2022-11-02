@@ -35,7 +35,19 @@ const sidebars = {
       },
       collapsed: true,
       items: [
-        'guides/deployment/deployment',
+        {
+          type: 'category',
+          label: 'Deployment',
+          link: {
+            type: 'doc',
+            id: 'guides/deployment/deployment'
+          },
+          collapsed: true,
+          items: [
+            'guides/deployment/deploy-to-fly-io-with-sqlite',
+            'guides/deployment/advanced-fly-io-deployment'
+          ]
+        },
         'guides/seed-a-database',
         {
           type: 'category',
