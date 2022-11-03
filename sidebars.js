@@ -101,7 +101,8 @@ const sidebars = {
               ]
             },
             'reference/db/plugin',
-            'reference/db/logging'
+            'reference/db/logging',
+            'reference/db/dashboard'
           ]
         },
 
