@@ -33,14 +33,14 @@ jobs:
       - name: Check main repo version
         id: check_main_repo_version
         run: |
-          echo "::set-output name=remote-version::$(node ./scripts/check-version.js --type remote)"
+          echo "remote-version=$(node ./scripts/check-version.js --type remote)" >> $GITHUB_OUTPUT
         env:
           TARGET_REPO: ${{ secrets.TARGET_REPO }}
           GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
       - name: Check current docs version
         id: check_current_docs_version
         run: |
-          echo "::set-output name=docs-version::$(node ./scripts/check-version.js --type docs)"
+          echo "docs-version=$(node ./scripts/check-version.js --type docs)" >> $GITHUB_OUTPUT
       - name: Print versions
         run: |
           echo "Remote version: ${{ env.REMOTE_VERSION }} - Docs version: ${{ env.DOCS_VERSION }}"
@@ -50,7 +50,7 @@ jobs:
       - name: Evaluate versions
         id: evaluate_versions
         run: |
-          echo "::set-output name=versions-compare::$(node ./scripts/compare-versions.js --from ${{ env.DOCS_VERSION }} --to ${{ env.REMOTE_VERSION }})"
+          echo "versions-compare=$(node ./scripts/compare-versions.js --from ${{ env.DOCS_VERSION }} --to ${{ env.REMOTE_VERSION }})" >> $GITHUB_OUTPUT
         env:
           REMOTE_VERSION: ${{ steps.check_main_repo_version.outputs.remote-version }}
           DOCS_VERSION: ${{ steps.check_current_docs_version.outputs.docs-version }}
