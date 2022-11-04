@@ -33,7 +33,7 @@ jobs:
     uses: platformatic/oss/.github/workflows/rebuild-and-deploy-docs.yml@main
     with:
       force: ${{ github.event.client_payload.force || false }}
-      git_ref: github.event.client_payload.git_ref
+      git_ref: ${{ github.event.client_payload.git_ref }}
       original_event: repository_dispatch
     secrets:
       GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
@@ -43,7 +43,7 @@ jobs:
     uses: platformatic/oss/.github/workflows/rebuild-and-deploy-docs.yml@main
     with:
       force: ${{ github.event.client_payload.force || false }}
-      git_ref: github.event.inputs.git_ref
+      git_ref: ${{ github.event.inputs.git_ref }}
       original_event: workflow_dispatch
     secrets:
       GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
