@@ -105,7 +105,19 @@ const sidebars = {
             'reference/db/dashboard'
           ]
         },
-
+        {
+          type: 'category',
+          label: 'Platformatic Service',
+          link: {
+            type: 'doc',
+            id: 'reference/service/introduction'
+          },
+          collapsed: false,
+          items: [
+            'reference/service/configuration',
+            'reference/service/plugin',
+          ]
+        },
         {
           type: 'category',
           label: 'Packages',
