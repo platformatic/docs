@@ -168,7 +168,19 @@ const sidebars = {
                   ]
                 }
               ]
-            }
+            },
+            {
+              type: 'category',
+              label: 'SQL-Events',
+              link: {
+                type: 'doc',
+                id: 'reference/sql-events/introduction'
+              },
+              collapsed: true,
+              items: [
+                'reference/sql-events/fastify-plugin'
+              ]
+            },
           ]
         }
       ]
