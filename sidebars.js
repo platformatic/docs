@@ -129,14 +129,14 @@ const sidebars = {
           items: [
             {
               type: 'category',
-              label: 'SQL-to-REST',
+              label: 'SQL-to-OpenAPI',
               link: {
                 type: 'doc',
-                id: 'reference/sql-rest/introduction'
+                id: 'reference/sql-openapi/introduction'
               },
               collapsed: true,
               items: [
-                'reference/sql-rest/api'
+                'reference/sql-openapi/api'
               ]
             },
             {
