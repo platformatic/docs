@@ -102,7 +102,8 @@ const sidebars = {
             },
             'reference/db/plugin',
             'reference/db/logging',
-            'reference/db/dashboard'
+            'reference/db/dashboard',
+            'reference/db/schema-support'
           ]
         },
         {
@@ -115,7 +116,7 @@ const sidebars = {
           collapsed: false,
           items: [
             'reference/service/configuration',
-            'reference/service/plugin',
+            'reference/service/plugin'
           ]
         },
         {
@@ -192,7 +193,7 @@ const sidebars = {
               items: [
                 'reference/sql-events/fastify-plugin'
               ]
-            },
+            }
           ]
         }
       ]
