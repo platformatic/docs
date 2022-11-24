@@ -48,8 +48,7 @@ export default function WhyPlatformatic() {
               burden any developer. Platformatic DB is a tool that will allow you to create both OpenAPI
               and GraphQL schemas from your database, without having to write a single line of code.
               The key difference with other tools is that Platformatic DB will allow you to customize
-              it via <a href="https://nodejs.org">Node.js</a> and
-              <a href="https://www.fastify.io">Fastify</a> plugins.
+              it via <a href="https://nodejs.org">Node.js</a> and <a href="https://www.fastify.io">Fastify</a> plugins.
             </p>
             <p>
               Checkout Platformatic DB basic features:
