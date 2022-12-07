@@ -90,14 +90,16 @@ const sidebars = {
             'reference/db/migrations',
             {
               type: 'category',
-              label: 'Authorization & Authentication',
+              label: 'Authorization',
               link: {
                 type: 'doc',
                 id: 'reference/db/authorization/introduction'
               },
               collapsed: true,
               items: [
-                'reference/db/authorization/programmatic-rules'
+                'reference/db/authorization/strategies',
+                'reference/db/authorization/user-roles-metadata',
+                'reference/db/authorization/rules',
               ]
             },
             'reference/db/plugin',
