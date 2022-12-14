@@ -137,7 +137,8 @@ const sidebars = {
               },
               collapsed: true,
               items: [
-                'reference/sql-openapi/api'
+                'reference/sql-openapi/api',
+                'reference/sql-openapi/ignore'
               ]
             },
             {
@@ -150,7 +151,9 @@ const sidebars = {
               collapsed: true,
               items: [
                 'reference/sql-graphql/queries',
-                'reference/sql-graphql/mutations'
+                'reference/sql-graphql/mutations',
+                'reference/sql-graphql/many-to-many',
+                'reference/sql-graphql/ignore'
               ]
             },
             {
