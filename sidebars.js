@@ -64,7 +64,8 @@ const sidebars = {
           ]
         },
         'guides/jwt-auth0',
-        'guides/monitoring'
+        'guides/monitoring',
+        'guides/debug-platformatic-db'
       ]
     },
 
