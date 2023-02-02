@@ -18,6 +18,17 @@ The script will keep directories in sync. You should work on `platformatic/docs`
 
 `npm run start`
 
+## Setting up the development environment
+
+On a unix system:
+
+1. `mkdir /workdir` (chose your own directory)
+1. `cd /workdir`
+1. `git clone https://github.com/platformatic/platformatic.git` or use your own [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
+1. `git clone https://github.com/platformatic/oss.git` or use your own [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
+1. `cd /workdir/oss`
+1. run `DOCS=/workdir/platformatic/docs npm run start` to start the development server
+
 ## Deploy
 
 Deploy happens in Github Actions. Take a look at the workflow in `.github` folder.
