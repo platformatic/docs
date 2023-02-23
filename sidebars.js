@@ -63,6 +63,7 @@ const sidebars = {
             'guides/add-custom-functionality/extend-rest'
           ]
         },
+        'guides/securing-platformatic-db',
         'guides/jwt-auth0',
         'guides/monitoring',
         'guides/debug-platformatic-db'
@@ -105,6 +106,7 @@ const sidebars = {
             },
             'reference/db/plugin',
             'reference/db/logging',
+            'reference/db/programmatic',
             'reference/db/dashboard',
             'reference/db/schema-support'
           ]
@@ -119,7 +121,8 @@ const sidebars = {
           collapsed: false,
           items: [
             'reference/service/configuration',
-            'reference/service/plugin'
+            'reference/service/plugin',
+            'reference/service/programmatic'
           ]
         },
         {
