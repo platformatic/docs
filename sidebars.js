@@ -66,7 +66,8 @@ const sidebars = {
         'guides/securing-platformatic-db',
         'guides/jwt-auth0',
         'guides/monitoring',
-        'guides/debug-platformatic-db'
+        'guides/debug-platformatic-db',
+        'guides/prisma',
       ]
     },
 
