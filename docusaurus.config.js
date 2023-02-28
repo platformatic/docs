@@ -33,6 +33,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          editUrl: 'https://github.com/platformatic/platformatic/edit/main/',
         },
         blog: {
           showReadingTime: true,
