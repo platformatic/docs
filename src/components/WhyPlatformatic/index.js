@@ -43,7 +43,7 @@ export default function WhyPlatformatic() {
             <p>
               Setting up new projects and APIs is boring. We want to make it easy for you to get started and to
               have a production ready setup in no time.
-              Platformatic Service is your starting point for creating <a href="https://nodejs.org">Node.js</a> API on top of the
+              Platformatic Service is your starting point for creating <a href="https://nodejs.org">Node.js</a> API on top of the&nbsp;
               <a href="https://www.fastify.io">Fastify</a> framework, providing a set of batteries-included
               defaults for all your needs.
             </p>
