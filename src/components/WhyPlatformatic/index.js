@@ -73,7 +73,7 @@ export default function WhyPlatformatic() {
           <div className="col col--6 col--offset-1">  
             <h1>Platformatic DB</h1>
             <p>
-              Where you ever tired of generating Create-Read-Update-Delete (CRUD) APIs?
+              Were you ever tired of generating Create-Read-Update-Delete (CRUD) APIs?
               Platformatic DB is a tool that will allow you to create both OpenAPI
               and GraphQL schemas from your database, without having to write a single line of code.
               The key difference similar tools is that Platformatic DB will allow you to customize
