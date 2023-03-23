@@ -29,6 +29,11 @@ const quotesData = [{
   title: "Dave at Holepunch. Tech lead/primary author of OpenJS Foundation JSNAD & JSNSD Certifications. (Original) Author of Node Cookbook.",
   quote: "A platform that simplifies and streamlines developer collaboration within an organization can revolutionise the organization itself. This is digital transformation distilled to its purest and easiest form.",
   avatar: "https://avatars.githubusercontent.com/u/1190716?s=460&v=4"
+}, {
+  name: "Manuel Spigolon",
+  title: "Senior Software Engineer at NearForm. Fastify Collaborator. Author of \"Accelerating Server-Side Development with Fastify\".",
+  quote: "After building this small project, I think Platformatic DB is not just an ORM as it may seem but an enhanced version of Fastify. It implements a lot of good practices and boring stuff that enable us to spin up a Fastify instance!",
+  avatar: "https://avatars.githubusercontent.com/u/11404065?v=4"
 }]
 
 function Quotes() {
