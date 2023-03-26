@@ -38,28 +38,59 @@ export default function WhyPlatformatic() {
           </div>
         </div>
         <div className="row margin-top--lg">
+          <div className="col col--4">  
+            <h1>Platformatic Service</h1>
+            <p>
+              Setting up new projects and APIs is boring. We want to make it easy for you to get started and to
+              have a production ready setup in no time.
+              Platformatic Service is your starting point for creating a <a href="https://nodejs.org">Node.js</a> API on top of the&nbsp;
+              <a href="https://www.fastify.io">Fastify</a> framework, providing a set of batteries included
+              defaults for all your needs.
+            </p>
+            <p>
+              Check out the basic Platformatic Service features:
+            </p>
+            <ul>
+              <li>Customizable via Node.js and <a href="https://www.fastify.io/">Fastify</a> plugins, with automatic types</li>
+              <li>Automatic TypeScript compilation</li>
+              <li><a href="https://prometheus.io">Prometheus</a> metrics</li>
+              <li>Blazing fast live reloads during development</li>
+              <li>OpenAPI schema generation</li>
+              <li>GraphQL integration</li>
+              <li>Third-party API client generation</li>
+              <li>Batteries included project generator</li>
+              <li>File-system based routing</li>
+            </ul>
+          </div>
+          <div className="col col--7">
+            <img src="/img/platformatic-service-architecture.png" alt="Platformatic Service Architecture" />
+          </div>
+        </div>
+        <div className="row margin-top--lg">
           <div className="col col--5">
             <img src="/img/platformatic-db-architecture.png" alt="Platformatic DB Architecture" />
           </div>
           <div className="col col--6 col--offset-1">  
-            <h1>Our first tool: Platformatic DB</h1>
+            <h1>Platformatic DB</h1>
             <p>
-              The first friction we are solving is the tiresome mapping of databases table to APIs that
-              burden any developer. Platformatic DB is a tool that will allow you to create both OpenAPI
+              Are you tired of creating Create-Read-Update-Delete (CRUD) APIs?
+              Platformatic DB is a tool that allows you to create both OpenAPI
               and GraphQL schemas from your database, without having to write a single line of code.
-              The key difference with other tools is that Platformatic DB will allow you to customize
-              it via <a href="https://nodejs.org">Node.js</a> and <a href="https://www.fastify.io">Fastify</a> plugins.
+              The key difference to similar tools is that Platformatic DB allows you to customize
+              it via <a href="https://nodejs.org">Node.js</a> and <a href="https://www.fastify.io">Fastify</a> plugins,
+              because it's based on Platformatic Service.
             </p>
             <p>
-              Checkout Platformatic DB basic features:
+              Check out the basic Platformatic DB features:
             </p>
             <ul>
-              <li>Automatic OpenAPI/REST API generation</li>
-              <li>Automatic GraphQL API generation</li>
+              <li>Automatic OpenAPI/REST API generation from the SQL schema</li>
+              <li>Automatic GraphQL API generation from the SQL schema</li>
               <li>Multiple databases: SQLite, MySQL, MariaDB, PostgreSQL</li>
               <li>Multiple authentication methods: JWT, WebHook, HTTP Headers</li>
-              <li>Authorization via role based access control</li>
-              <li>Customizable via Node.js and Fastify plugins</li>
+              <li>Authorization via role based access control (RBAC)</li>
+              <li>Type-safety via generated types for improved database interactions</li>
+              <li>...and all the features of Platformatic Service</li>
             </ul>
           </div>
         </div>

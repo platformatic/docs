@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Platformatic OSS',
+  title: 'Platformatic Open Source Software',
   // tagline: '',
   url: 'https://oss.platformatic.dev',
   baseUrl: '/',
