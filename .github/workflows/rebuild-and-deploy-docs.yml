@@ -29,7 +29,7 @@ jobs:
         with:
           node-version: "16"
       - name: Install EnhanceDocs CLI
-        uses: enhancedocs/enhancedocs-github-action@0.1.0
+        uses: enhancedocs/setup-enhancedocs@v0.1.3
         with:
           api-key: ${{ secrets.ENHANCEDOCS_API_KEY }}
       - name: Install dependencies
@@ -114,4 +114,5 @@ jobs:
 
       - name: Push Docs
         if: inputs.original_event == 'push_on_main' || inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
-        run: enhancedocs push <project_id>
+        run: enhancedocs push --project 645220e69c384af58cd1ad15
+

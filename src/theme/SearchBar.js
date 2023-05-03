@@ -8,8 +8,8 @@ export default function SearchBarWrapper(props) {
     <EnhancedSearch
       config={{
         enhancedSearch: {
-          projectId: "<replace_with_project_id>",
-          accessToken: "<replace_with_access_token>"
+          projectId: "645220e69c384af58cd1ad15",
+          accessToken: "pk_e30d35239d99dc3b3784c7aa66b80fa1793d154df2030477"
         }
       }}
       theme={{
