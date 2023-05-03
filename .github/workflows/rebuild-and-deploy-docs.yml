@@ -28,12 +28,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "16"
-      - name: Install EnhanceDocs CLI
-        uses: enhancedocs/setup-enhancedocs@v0.1.3
-        with:
-          api-key: ${{ secrets.ENHANCEDOCS_API_KEY }}
       - name: Install dependencies
-        run: npm install
+        run: npm install  
       - name: Check main repo version
         id: check_main_repo_version
         run: |
@@ -78,14 +74,14 @@ jobs:
       - name: Install deps
         if: inputs.original_event == 'push_on_main' || inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
         run: |
-          npm install
+          npm install 
       - name: Create docusaurus version
         if: (!inputs.force && steps.evaluate_versions.outputs.versions-compare == 'true')
         run: |
           npx docusaurus docs:version ${{ env.REMOTE_VERSION }}
         env:
           REMOTE_VERSION: ${{ steps.check_main_repo_version.outputs.remote-version }}
-      - name: Build Docusaurus website
+      - name: Build Docusaurus website  
         if: inputs.original_event == 'push_on_main' || inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
         run: |
           npm run build
@@ -96,7 +92,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: '[automated commit] Bump docs to version ${{ env.REMOTE_VERSION }}'
-        env:
+        env: 
           REMOTE_VERSION: ${{ steps.check_main_repo_version.outputs.remote-version }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy to GitHub Pages
@@ -107,12 +103,4 @@ jobs:
           build_dir: build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Build Docs
-        if: inputs.original_event == 'push_on_main' || inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
-        run: enhancedocs build docs
-
-      - name: Push Docs
-        if: inputs.original_event == 'push_on_main' || inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
-        run: enhancedocs push --project 645220e69c384af58cd1ad15
-
+      
