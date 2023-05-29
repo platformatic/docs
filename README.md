@@ -1,10 +1,10 @@
-# Platformatic DB Docs
+# Platformatic Docs
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
 ## Where is the documentation?
 
-Documentation lives in [Platformatic DB](https://github.com/platformatic/platformatic/tree/main/docs) repo.
+Documentation lives in [Platformatic](https://github.com/platformatic/platformatic/tree/main/docs) repo.
 
 The `scripts/doc-watcher.js` file helps you "import" those docs into `./docs` directory.
 
