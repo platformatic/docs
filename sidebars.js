@@ -68,6 +68,7 @@ const sidebars = {
         'guides/monitoring',
         'guides/debug-platformatic-db',
         'guides/prisma',
+        'guides/generate-frontend-code-to-consume-platformatic-rest-api'
       ]
     },
 
