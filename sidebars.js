@@ -137,6 +137,19 @@ const sidebars = {
           items: [
             {
               type: 'category',
+              label: 'Client',
+              link: {
+                type: 'doc',
+                id: 'reference/client/introduction'
+              },
+              collapsed: true,
+              items: [
+                'reference/client/introduction',
+                'reference/client/programmatic'
+              ]
+            },
+            {
+              type: 'category',
               label: 'SQL-to-OpenAPI',
               link: {
                 type: 'doc',
@@ -202,6 +215,18 @@ const sidebars = {
               collapsed: true,
               items: [
                 'reference/sql-events/fastify-plugin'
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Start',
+              link: {
+                type: 'doc',
+                id: 'reference/start/programmatic'
+              },
+              collapsed: true,
+              items: [
+                'reference/start/programmatic'
               ]
             }
           ]
