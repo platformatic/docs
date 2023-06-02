@@ -150,6 +150,19 @@ const sidebars = {
             },
             {
               type: 'category',
+              label: 'Runtime',
+              link: {
+                type: 'doc',
+                id: 'reference/runtime/introduction'
+              },
+              collapsed: true,
+              items: [
+                'reference/runtime/introduction',
+                'reference/runtime/programmatic'
+              ]
+            },
+            {
+              type: 'category',
               label: 'SQL-to-OpenAPI',
               link: {
                 type: 'doc',
