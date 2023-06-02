@@ -102,6 +102,52 @@ export default function WhyPlatformatic() {
             </div>
           </div>
         </div>
+        <div className="row margin-top--lg">
+          <div className="col col--5">  
+            <h1>Platformatic Composer</h1>
+            <p>
+              Want to automatically compose microservices into one ecosystem with a single public API?
+              Platformatic Composer is a new way to develop aggregated APIs, starting with OpenAPI composition
+              across multiple API sources.
+            </p>
+            <p>
+              Check out the Platformatic Composer features:
+            </p>
+            <ul>
+              <li>OpenAPI composition</li>
+              <li>Resolve conflicts between different endpoints</li>
+              <li>Automatic schema refresh</li>
+              <li>Customizable via Node.js and <a href="https://www.fastify.io/">Fastify</a> plugins</li>
+              <li>Automatic TypeScript compilation</li>
+              <li>...and all the features of Platformatic Service</li>
+            </ul>
+          </div>
+          <div className="col col--6 col--offset-1">
+            <img src="/img/platformatic-composer-architecture.png" alt="Platformatic Composer Architecture" />
+          </div>
+        </div>
+        <div className="row margin-top--lg">
+          <div className="col col--5">
+            <img src="/img/platformatic-runtime-architecture.png" alt="Platformatic Runtime Architecture" />
+          </div>
+          <div className="col col--5 col--offset-1">  
+            <h1>Platformatic Runtime</h1>
+            <p>
+              The Platformatic Runtime environment enables developers to leverage the perks
+              of microservices with the deployment simplicity of a monolith.
+              It consolidates all your Node.js applications into a single Node.js process,
+              simplifying the development & execution of microservices.
+            </p>
+            <p>
+              Check out the Platformatic Runtime features:
+            </p>
+            <ul>
+              <li>Hot Module Reloading</li>
+              <li>In-process routing using <code>fetch()</code> or <a href="">Platformatic Client</a></li>
+              <li>Monorepo support</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   );
