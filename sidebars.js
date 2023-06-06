@@ -68,6 +68,7 @@ const sidebars = {
         'guides/monitoring',
         'guides/debug-platformatic-db',
         'guides/prisma',
+        'guides/migrating-fastify-app-to-platformatic-service'
       ]
     },
 
