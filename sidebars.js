@@ -83,6 +83,19 @@ const sidebars = {
         'reference/cli',
         {
           type: 'category',
+          label: 'Platformatic Composer',
+          link: {
+            type: 'doc',
+            id: 'reference/composer/introduction'
+          },
+          collapsed: false,
+          items: [
+            'reference/composer/introduction',
+            'reference/composer/programmatic'
+          ]
+        },
+        {
+          type: 'category',
           label: 'Platformatic DB',
           link: {
             type: 'doc',
@@ -111,6 +124,19 @@ const sidebars = {
             'reference/db/programmatic',
             'reference/db/dashboard',
             'reference/db/schema-support'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Platformatic Runtime',
+          link: {
+            type: 'doc',
+            id: 'reference/runtime/introduction'
+          },
+          collapsed: false,
+          items: [
+            'reference/runtime/introduction',
+            'reference/runtime/programmatic'
           ]
         },
         {
@@ -147,19 +173,6 @@ const sidebars = {
               items: [
                 'reference/client/introduction',
                 'reference/client/programmatic'
-              ]
-            },
-            {
-              type: 'category',
-              label: 'Runtime',
-              link: {
-                type: 'doc',
-                id: 'reference/runtime/introduction'
-              },
-              collapsed: true,
-              items: [
-                'reference/runtime/introduction',
-                'reference/runtime/programmatic'
               ]
             },
             {
@@ -247,18 +260,6 @@ const sidebars = {
         }
       ]
     }
-    // {
-    //   type: 'category',
-    //   label: 'Contributing',
-    //   link: {
-    //     type: 'doc',
-    //     id: 'contributing/contributing'
-    //   },
-    //   collapsed: true,
-    //   items: [
-    //     'contributing/documentation-style-guide',
-    //   ],
-    // },
   ]
 }
 
