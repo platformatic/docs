@@ -127,6 +127,13 @@ export default function WhyPlatformatic() {
           </div>
         </div>
         <div className="row margin-top--lg">
+          <div class="col col--6 col--offset-3">
+            <div className={styles.video}>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/0DeNIeSnH0E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+        <div className="row margin-top--lg">
           <div className="col col--5">
             <img src="/img/platformatic-runtime-architecture.png" alt="Platformatic Runtime Architecture" />
           </div>
@@ -146,6 +153,13 @@ export default function WhyPlatformatic() {
               <li>In-process routing using <code>fetch()</code> or <a href="">Platformatic Client</a></li>
               <li>Monorepo support</li>
             </ul>
+          </div>
+        </div>
+        <div className="row margin-top--lg">
+          <div class="col col--6 col--offset-3">
+            <div className={styles.video}>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/KGzAURD8mcc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
           </div>
         </div>
       </div>
