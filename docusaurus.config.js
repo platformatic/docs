@@ -44,7 +44,9 @@ const config = {
       }),
     ],
   ],
-
+  plugins: [
+    '@orama/plugin-docusaurus'
+  ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
