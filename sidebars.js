@@ -91,6 +91,7 @@ const sidebars = {
           collapsed: false,
           items: [
             'reference/composer/introduction',
+            'reference/composer/configuration',
             'reference/composer/programmatic'
           ]
         },
