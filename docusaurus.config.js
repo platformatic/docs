@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Platformatic Open Source Software',
   // tagline: '',
-  url: 'https://oss.platformatic.dev',
+  url: 'https://docs.platformatic.dev',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
