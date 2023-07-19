@@ -75,6 +75,11 @@ const config = {
             position: 'left',
             label: 'Reference',
           },
+          {
+            to: 'docs/category/platformatic-cloud',
+            position: 'left',
+            label: 'Platformatic Cloud',
+          },
           { href: 'https://blog.platformatic.dev', label: 'Blog', position: 'left' },
           { href: 'https://www.platformatic.dev', label: 'About', position: 'left' },
           {
