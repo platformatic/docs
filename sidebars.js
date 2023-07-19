@@ -262,7 +262,19 @@ const sidebars = {
           ]
         }
       ]
-    }
+    },
+    {
+      type: 'category',
+      label: 'Platformatic Cloud',
+      link: {
+        type: 'generated-index'
+      },
+      collapsed: false,
+      items: [
+        'platformatic-cloud/quick-start-guide',
+        'platformatic-cloud/deploy-database-neon'
+      ]
+    },
   ]
 }
 
