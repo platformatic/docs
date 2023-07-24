@@ -33,7 +33,12 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/platformatic/platformatic/edit/main/',
+          editUrl: ({ docPath, version, versionDocsDirPath }) => {
+            if (version === 'current') {
+              return `https://github.com/platformatic/platformatic/edit/main/docs/${docPath}`;
+            }
+            return `https://github.com/platformatic/oss/edit/main/${versionDocsDirPath}/${docPath}`;
+          }
         },
         blog: {
           showReadingTime: true,
