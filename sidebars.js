@@ -70,7 +70,8 @@ const sidebars = {
         'guides/prisma',
         'guides/generate-frontend-code-to-consume-platformatic-rest-api',
         'guides/migrating-fastify-app-to-platformatic-service',
-        'guides/migrating-express-app-to-platformatic-service'
+        'guides/migrating-express-app-to-platformatic-service',
+        'guides/telemetry'
       ]
     },
 
@@ -119,7 +120,7 @@ const sidebars = {
               items: [
                 'reference/db/authorization/strategies',
                 'reference/db/authorization/user-roles-metadata',
-                'reference/db/authorization/rules',
+                'reference/db/authorization/rules'
               ]
             },
             'reference/db/plugin',
@@ -274,7 +275,7 @@ const sidebars = {
         'platformatic-cloud/quick-start-guide',
         'platformatic-cloud/deploy-database-neon'
       ]
-    },
+    }
   ]
 }
 
