@@ -51,7 +51,7 @@ const config = {
   ],
   // the Orama plugin leaks memory if watch is enabled, let's just enable it in production
   plugins: [
-    process.NODE_ENV !== 'development' ? '@orama/plugin-docusaurus' : null
+    process.env.NODE_ENV !== 'development' ? '@orama/plugin-docusaurus' : null
   ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
