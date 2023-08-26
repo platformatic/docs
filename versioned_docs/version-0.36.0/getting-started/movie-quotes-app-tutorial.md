@@ -1,10 +1,11 @@
-import NewApiProjectInstructions from '../getting-started/new-api-project-instructions.md';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Movie Quotes App Tutorial
 
 This tutorial will help you learn how to build a full stack application on top
 of Platformatic DB. We're going to build an application that allows us to
-save our favourite movie quotes. We'll also be building in custom API functionality
+save our favourite movie quotes. We'll also be building a custom API functionality
 that allows for some neat user interaction on our frontend.
 
 You can find the complete code for the application that we're going to build
@@ -53,7 +54,58 @@ mkdir -p tutorial-movie-quotes-app/apps/movie-quotes-api/
 cd tutorial-movie-quotes-app/apps/movie-quotes-api/
 ```
 
-<NewApiProjectInstructions/>
+Run this command in your terminal to start the Platformatic creator wizard:
+
+<Tabs groupId="package-manager-create">
+<TabItem value="npm" label="npm">
+
+```bash
+npm create platformatic@latest
+```
+
+</TabItem>
+<TabItem value="yarn" label="yarn">
+
+```bash
+yarn create platformatic
+```
+
+</TabItem>
+<TabItem value="pnpm" label="pnpm">
+
+```bash
+pnpm create platformatic@latest
+```
+
+</TabItem>
+</Tabs>
+
+This interactive command-line tool will ask you some questions about how you'd
+like to set up your new Platformatic project. For this guide, select these options:
+
+```
+- Which kind of project do you want to create?  => DB
+- Where would you like to create your project?  => .
+- What database do you want to use?             => SQLite (This tutorial uses SQLite)
+- Do you want to create default migrations?     => No
+- Do you want to create a plugin?               => No
+- Do you want to use TypeScript?                => No
+- Do you want to install dependencies?          => Yes (this can take a while)
+- Do you want to apply the migrations?          => Yes
+- Do you want to generate types?                => Yes
+- Do you want to create the github action to deploy this application to Platformatic Cloud dynamic workspace? => No
+- Do you want to create the github action to deploy this application to Platformatic Cloud static workspace?  => No
+```
+
+Once the wizard is complete, you'll have a Platformatic app project in the
+folder `movie-quotes-api`.
+
+:::info
+
+Make sure you run the npm/yarn/pnpm command `install` command manually if you
+didn't ask the wizard to do it for you.
+
+:::
 
 ### Define the database schema
 
@@ -124,9 +176,10 @@ npm run start
 Our Platformatic DB server should start, and we'll see messages like these:
 
 ```
-[11:26:48.772] INFO (15235): running 001.do.sql
-[11:26:48.864] INFO (15235): server listening
-    url: "http://127.0.0.1:3042"
+[07:04:50.762] INFO (movies-quotes-api/85170): running 001.do.sql
+[07:04:50.782] INFO (movies-quotes-api/85170): Generated type for Quote entity.
+[07:04:50.783] INFO (movies-quotes-api/85170): Regenerating global.d.ts
+[07:04:51.025] INFO (movies-quotes-api/85170): Server listening at http://127.0.0.1:3042
 ```
 
 Let's open a new terminal and make a request to our server's REST API that
@@ -414,7 +467,7 @@ export default defineConfig({
 })
 ```
 
-And we'll also edit our **`tsconfig.json`** file and add in this configuration:
+And we'll also edit our **`tsconfig.json`** file and add this configuration:
 
 ```json
 {
@@ -624,7 +677,7 @@ Then we'll update the component template to display the quotes:
           — {quote.saidBy}, {quote.movie?.name}
         </p>
         <div>
-          <span>Added {new Date(Number(quote.createdAt)).toUTCString()}</span>
+          <span>Added {new Date(quote.createdAt).toUTCString()}</span>
         </div>
       </div>
     )) : (
@@ -743,7 +796,7 @@ Then let's add CSS classes to the component template in **`src/pages/index.astro
 // highlight-next-line
         <div class="flex flex-col mb-6 text-gray-400">
 // highlight-next-line
-          <span class="text-gray-400 italic">Added {new Date(Number(quote.createdAt)).toUTCString()}</span>
+          <span class="text-gray-400 italic">Added {new Date(quote.createdAt).toUTCString()}</span>
         </div>
       </div>
     )) : (
@@ -1082,7 +1135,7 @@ page uses. Now we're going to wire up our edit page so that it can load an
 existing quote from our API and save changes back to the API when the form is
 submitted.
 
-In the **`[id.astro]`** component script, let's add some code to take care of
+In the **`[id].astro`** component script, let's add some code to take care of
 these tasks:
 
 ```astro
@@ -1206,7 +1259,7 @@ import { quotesApi, gql } from '../lib/quotes-api';
           <span class="flex items-center">
             <QuoteActionEdit id={quote.id} />
           </span>
-          <span class="mt-4 text-gray-400 italic">Added {new Date(Number(quote.createdAt)).toUTCString()}</span>
+          <span class="mt-4 text-gray-400 italic">Added {new Date(quote.createdAt).toUTCString()}</span>
 // highlight-end
         </div>
       </div>
@@ -1266,7 +1319,7 @@ import { quotesApi, gql } from '../lib/quotes-api';
 // highlight-next-line
             <QuoteActionDelete id={quote.id} />
           </span>
-          <span class="mt-4 text-gray-400 italic">Added {new Date(Number(quote.createdAt)).toUTCString()}</span>
+          <span class="mt-4 text-gray-400 italic">Added {new Date(quote.createdAt).toUTCString()}</span>
         </div>
       </div>
 ...
@@ -1422,17 +1475,16 @@ Now let's register our plugin in our API configuration file, **`platformatic.db.
 And then we'll start up our Platformatic API:
 
 ```bash
-npm run dev
+npm run start
 ```
 
 We should see log messages that tell us that our new migration has been
 applied and our plugin has been loaded:
 
 ```
-[10:09:20.052] INFO (146270): running 003.do.sql
-[10:09:20.129] INFO (146270): plugin loaded
-[10:09:20.209] INFO (146270): server listening
-    url: "http://127.0.0.1:3042"
+[09:02:11.189] INFO (movies-quotes-api/91749): Regenerating global.d.ts
+[09:02:11.368] INFO (movies-quotes-api/91749): plugin Loaded
+[09:02:11.498] INFO (movies-quotes-api/91749): Server listening at http://127.0.0.1:3042
 ```
 
 Now it's time to start adding some custom functionality inside our plugin.
@@ -1462,7 +1514,7 @@ use this schema to validate the request path parameters for our route (`id`).
 You can use [fastify-type-provider-typebox](https://github.com/fastify/fastify-type-provider-typebox) or [typebox](https://github.com/sinclairzx81/typebox) if you want to convert your JSON Schema into a Typescript type. See [this GitHub thread](https://github.com/fastify/fluent-json-schema/issues/78#issuecomment-669059113) to have a better overview about it. Look at the example below to have a better overview.
 :::
 
-Here you can see in practice of to leverage `typebox` combined with `fastify-type-provider-typebox`:
+Here you can see in practice, how to leverage `typebox` combined with `fastify-type-provider-typebox`:
 ```typescript
 import { FastifyInstance } from "fastify";
 import { Static, Type } from "@sinclair/typebox";
@@ -1741,7 +1793,7 @@ import { quotesApi, gql } from '../lib/quotes-api';
             <QuoteActionEdit id={quote.id} />
             <QuoteActionDelete id={quote.id} />
           </span>
-          <span class="mt-4 text-gray-400 italic">Added {new Date(Number(quote.createdAt)).toUTCString()}</span>
+          <span class="mt-4 text-gray-400 italic">Added {new Date(quote.createdAt).toUTCString()}</span>
         </div>
       </div>
 ...
