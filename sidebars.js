@@ -72,7 +72,8 @@ const sidebars = {
         'guides/migrating-fastify-app-to-platformatic-service',
         'guides/migrating-express-app-to-platformatic-service',
         'guides/packaging-an-application-as-a-module',
-        'guides/telemetry'
+        'guides/telemetry',
+        'guides/dockerize-platformatic-app'
       ]
     },
 
@@ -177,7 +178,8 @@ const sidebars = {
               collapsed: true,
               items: [
                 'reference/client/introduction',
-                'reference/client/programmatic'
+                'reference/client/programmatic',
+                'reference/client/frontend'
               ]
             },
             {
