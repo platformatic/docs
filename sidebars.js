@@ -128,7 +128,6 @@ const sidebars = {
             'reference/db/plugin',
             'reference/db/logging',
             'reference/db/programmatic',
-            'reference/db/dashboard',
             'reference/db/schema-support'
           ]
         },
