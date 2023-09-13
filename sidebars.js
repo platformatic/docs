@@ -249,18 +249,6 @@ const sidebars = {
               items: [
                 'reference/sql-events/fastify-plugin'
               ]
-            },
-            {
-              type: 'category',
-              label: 'Start',
-              link: {
-                type: 'doc',
-                id: 'reference/start/programmatic'
-              },
-              collapsed: true,
-              items: [
-                'reference/start/programmatic'
-              ]
             }
           ]
         }
