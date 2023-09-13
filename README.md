@@ -33,6 +33,13 @@ On a unix system:
 
 Deploy happens in Github Actions. Take a look at the workflow in `.github` folder.
 
+## Generate docs for an old Platformatic version
+
+We keep online only the last 5 versions of Platformatic backwards.
+Every time a new version is realeased, this repository is tagged with `vX.Y.Z`
+
+To generate the documentation for a specific version, checkout the related tag and run the development server.
+
 ## Known issues
 
 ### Deleting directories
