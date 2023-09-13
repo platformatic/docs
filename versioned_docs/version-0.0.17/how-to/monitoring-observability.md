@@ -1,3 +1,0 @@
-# Monitoring & Observability
-
-TODO

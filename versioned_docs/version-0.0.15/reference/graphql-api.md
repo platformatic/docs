@@ -1,3 +1,0 @@
-# GraphQL API
-
-TODO

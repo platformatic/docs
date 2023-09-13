@@ -1,3 +1,0 @@
-# Adding custom functionality
-
-TODO
