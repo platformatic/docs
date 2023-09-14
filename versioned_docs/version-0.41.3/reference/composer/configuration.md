@@ -1,6 +1,6 @@
 # Configuration
 
-Platformatic Service configured with a configuration file. It supports the use
+Platformatic Composer configured with a configuration file. It supports the use
 of environment variables as setting values with [configuration placeholders](#configuration-placeholders).
 
 ## Configuration file
@@ -8,13 +8,13 @@ of environment variables as setting values with [configuration placeholders](#co
 If the Platformatic CLI finds a file in the current working directory matching
 one of these filenames, it will automatically load it:
 
-- `platformatic.service.json`
-- `platformatic.service.json5`
-- `platformatic.service.yml` or `platformatic.service.yaml`
-- `platformatic.service.tml` or `platformatic.service.toml`
+- `platformatic.composer.json`
+- `platformatic.composer.json5`
+- `platformatic.composer.yml` or `platformatic.composer.yaml`
+- `platformatic.composer.tml` or `platformatic.composer.toml`
 
-Alternatively, a [`--config` option](/reference/cli.md#service) with a configuration
-filepath can be passed to most `platformatic service` CLI commands.
+Alternatively, a [`--config` option](/reference/cli.md#composer) with a configuration
+filepath can be passed to most `platformatic composer` CLI commands.
 
 The configuration examples in this reference use JSON.
 
@@ -34,20 +34,19 @@ Comments are supported by the JSON5, YAML and TOML file formats.
 Configuration settings are organised into the following groups:
 
 - [`server`](#server) **(required)**
-- [`service`](#service)
+- [`composer`](#composer)
 - [`metrics`](#metrics)
 - [`plugins`](#plugins)
 - [`telemetry`](#telemetry)
 
-Sensitive configuration settings, such as a database connection URL that contains
-a password, should be set using [configuration placeholders](#configuration-placeholders).
+Sensitive configuration settings containing sensitive data should be set using [configuration placeholders](#configuration-placeholders).
 
 ### `server`
 
 A **required** object with the following settings:
 
-- **`hostname`** (**required**, `string`) — Hostname where Platformatic Service server will listen for connections.
-- **`port`** (**required**, `number`) — Port where Platformatic Service server will listen for connections.
+- **`hostname`** (**required**, `string`) — Hostname where Platformatic Composer server will listen for connections.
+- **`port`** (**required**, `number`) — Port where Platformatic Composer server will listen for connections.
 - **`healthCheck`** (`boolean` or `object`) — Enables the health check endpoint.
   - Powered by [`@fastify/under-pressure`](https://github.com/fastify/under-pressure).
   - The value can be an object, used to specify the interval between checks in milliseconds (default: `5000`)
@@ -90,61 +89,29 @@ Supported object properties:
 
 ### `plugins`
 
-An optional object that defines the plugins loaded by Platformatic Service.
+An optional object that defines the plugins loaded by Platformatic Composer.
 - **`paths`** (**required**, `array`): an array of paths (`string`)
   or an array of objects composed as follows,
   - `path` (`string`): Relative path to plugin's entry point.
   - `options` (`object`): Optional plugin options.
   - `encapsulate` (`boolean`): if the path is a folder, it instruct Platformatic to not encapsulate those plugins.
   - `maxDepth` (`integer`): if the path is a folder, it limits the depth to load the content from.
-- **`typescript`** (`boolean` or `object`): enable TypeScript compilation. A `tsconfig.json` file is required in the same folder.
+- **`typescript`** (`boolean`): enable typescript compilation. A `tsconfig.json` file is required in the same folder.
 
+  _Example_
 
-_Example_
-
-```json
-{
-  "plugins": {
-    "paths": [{
-      "path": "./my-plugin.js",
-      "options": {
-        "foo": "bar"
-      }
-    }]
-  }
-}
-```
-
-#### `typescript` compilation options
-
-The `typescript` can also be an object to customize the compilation. Here are the supported options:
-
-* `enabled` (`boolean`): enables compilation
-* `tsConfig` (`string`): path to the `tsconfig.json` file relative to the configuration
-* `outDir` (`string`): the output directory of `tsconfig.json`, in case `tsconfig.json` is not available
-and and `enabled` is set to `false` (procution build)
-* `flags` (array of `string`): flags to be passed to `tsc`. Overrides `tsConfig`.
-    
-
-Example:
-
-```json
-{
-  "plugins": {
-    "paths": [{
-      "path": "./my-plugin.js",
-      "options": {
-        "foo": "bar"
-      }
-    }],
-    "typescript": {
-      "enabled": false,
-      "tsConfig": "./path/to/tsconfig.json",
-      "outDir": "dist"
+  ```json
+  {
+    "plugins": {
+      "paths": [{
+        "path": "./my-plugin.js",
+        "options": {
+          "foo": "bar"
+        }
+      }]
     }
   }
-}
-```
+  ```
 
 ### `watch`
 
@@ -164,76 +131,140 @@ Disable watching for file changes if set to `false`. It can also be customized w
   }
   ```
 
-### `service`
+### `composer`
 
-Configure `@platformatic/service` specific settings such as `graphql` or `openapi`:
+Configure `@platformatic/composer` specific settings such as `services` or `refreshTimeout`:
 
-- **`graphql`** (`boolean` or `object`, default: `false`) — Controls the GraphQL API interface, with optional GraphiQL UI.
+- **`services`** (`array`, default: `[]`) — is an array of objects that defines
+the services managed by the composer. Each service object supports the following settings:
 
-  _Examples_
+  - **`id`** (**required**, `string`) - A unique identifier for the service.
+  - **`origin`** (`string`) - A service origin. Skip this option if the service is executing inside of Platformatic Runtime. In this case, service id will be used instead of origin.
+  - **`openapi`** (**required**, `object`) - The configuration file used to compose OpenAPI specification. See the [openapi](#openapi) for details.
+  - **`proxy`** (`object` or `false`) - Service proxy configuration. If `false`, the service proxy is disabled.
+    - `prefix` (**required**, `string`) - Service proxy prefix. All service routes will be prefixed with this value.
+  - **`refreshTimeout`** (`number`) - The number of milliseconds to wait for check for changes in the service OpenAPI specification. If not specified, the default value is `1000`.
 
-  Enables GraphQL support
+#### `openapi`
+
+- **`url`** (`string`) - A path of the route that exposes the OpenAPI specification. If a service is a Platformatic Service or Platformatic DB, use `/documentation/json` as a value. Use this or `file` option to specify the OpenAPI specification.
+- **`file`** (`string`) - A path to the OpenAPI specification file. Use this or `url` option to specify the OpenAPI specification.
+- **`prefix`** (`string`) - A prefix for the OpenAPI specification. All service routes will be prefixed with this value.
+- **`config`** (`string`) - A path to the OpenAPI configuration file. This file is used to customize the OpenAPI specification. See the [openapi-configuration](#openapi-configuration) for details.
+
+##### `openapi-configuration`
+
+The OpenAPI configuration file is a JSON file that is used to customize the OpenAPI specification. It supports the following options:
+
+- **`ignore`** (`boolean`) - If `true`, the route will be ignored by the composer.
+If you want to ignore a specific method, use the `ignore` option in the nested method object.
+
+  _Example_
 
   ```json
   {
-    "service": {
-      "graphql": true
-    }
-  }
-  ```
-
-  Enables GraphQL support with GraphiQL
-
-  ```json
-  {
-    "service": {
-      "graphql": {
-        "graphiql": true
+    "paths": {
+      "/users": {
+        "ignore": true
+      },
+      "/users/{id}": {
+        "get": { "ignore": true },
+        "put": { "ignore": true }
       }
     }
   }
   ```
 
-- **`openapi`** (`boolean` or `object`, default: `false`) — Enables OpenAPI REST support.
-  - If value is an object, all [OpenAPI v3](https://swagger.io/specification/) allowed properties can be passed. Also a `prefix` property can be passed to set the OpenAPI prefix.
-  - Platformatic Service uses [`@fastify/swagger`](https://github.com/fastify/fastify-swagger) under the hood to manage this configuration.
+- **alias** (`string`) - Use it create an alias for the route path. Original route path will be ignored.
 
-  _Examples_
-
-  Enables OpenAPI
+  _Example_
 
   ```json
   {
-    "service": {
-      ...
-      "openapi": true
-    }
-  }
-  ```
-
-  Enables OpenAPI with prefix
-
-  ```json
-  {
-    "service": {
-      "openapi": {
-        "prefix": "/api"
+    "paths": {
+      "/users": {
+        "alias": "/customers"
       }
     }
   }
   ```
 
-  Enables OpenAPI with options
+- **`rename`** (`string`) - Use it to rename composed route response fields.
+Use json schema format to describe the response structure. For now it works only for `200` response.
+
+  _Example_
 
   ```json
   {
-    "service": {
-      "openapi": {
-        "info": {
-          "title": "Platformatic Service",
-          "description": "Exposing a SQL database as REST"
+    "paths": {
+      "/users": {
+        "responses": {
+            "200": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": { "rename": "user_id" },
+                  "name": { "rename": "first_name" }
+                }
+              }
+            }
+          }
+      }
+    }
+  }
+  ```
+
+_Examples_
+
+  Composition of two remote services:
+
+  ```json
+  {
+    "composer": {
+      "services": [
+        {
+          "id": "auth-service",
+          "origin": "https://auth-service.com",
+          "openapi": {
+            "url": "/documentation/json",
+            "prefix": "auth"
+          }
+        },
+        {
+          "id": "payment-service",
+          "origin": "https://payment-service.com",
+          "openapi": {
+            "file": "./schemas/payment-service.json"
+          }
         }
-      }
+      ],
+      "refreshTimeout": 1000
+    }
+  }
+  ```
+
+  Composition of two local services inside of Platformatic Runtime:
+
+  ```json
+  {
+    "composer": {
+      "services": [
+        {
+          "id": "auth-service",
+          "openapi": {
+            "url": "/documentation/json",
+            "prefix": "auth"
+          }
+        },
+        {
+          "id": "payment-service",
+          "openapi": {
+            "file": "./schemas/payment-service.json"
+          }
+        }
+      ],
+      "refreshTimeout": 1000
     }
   }
   ```
@@ -242,8 +273,10 @@ Configure `@platformatic/service` specific settings such as `graphql` or `openap
 
 - **`serviceName`** (**required**, `string`) — Name of the service as will be reported in open telemetry.
 - **`version`** (`string`) — Optional version (free form)
-- **`exporter`** (`object`) — Exporter configuration object. If not defined, the exporter defaults to `console`. This object has the following properties:
-- **`skip`** (`array`). Optional list of operations to skip when exporting telemetry in the form of `${method}/${path}`. e.g.: `GET/documentation/json` 
+- **`skip`** (`array`). Optional list of operations to skip when exporting telemetry defined `object` with properties: 
+    - `method`: GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS, TRACE
+    - `path`. e.g.: `/documentation/json` 
+- **`exporter`** (`object` or `array`) — Exporter configuration. If not defined, the exporter defaults to `console`. If an array of objects is configured, every object must be a valid exporter object. The exporter object has the following properties:
     - **`type`** (`string`) — Exporter type. Supported values are `console`, `otlp`, `zipkin` and `memory` (default: `console`). `memory` is only supported for testing purposes. 
     - **`options`** (`object`) — These options are supported:
         - **`url`** (`string`) — The URL to send the telemetry to. Required for `otlp` exporter. This has no effect on `console` and `memory` exporters.
@@ -304,7 +337,7 @@ file or in the current working directory.
 Environment variables can also be set directly on the commmand line, for example:
 
 ```bash
-PLT_SERVER_LOGGER_LEVEL=debug npx platformatic service
+PLT_SERVER_LOGGER_LEVEL=debug npx platformatic composer
 ```
 
 ### Allowed placeholder names
@@ -313,7 +346,6 @@ Only placeholder names prefixed with `PLT_`, or that are in this allow list, wil
 dynamically replaced in the configuration file:
 
 - `PORT`
-- `DATABASE_URL`
 
 This restriction is to avoid accidentally exposing system environment variables.
 An error will be raised by Platformatic if it finds a configuration placeholder
@@ -323,7 +355,7 @@ The default allow list can be extended by passing a `--allow-env` CLI option wit
 comma separated list of strings, for example:
 
 ```bash
-npx platformatic service --allow-env=HOST,SERVER_LOGGER_LEVEL
+npx platformatic composer --allow-env=HOST,SERVER_LOGGER_LEVEL
 ```
 
 If `--allow-env` is passed as an option to the CLI, it will be merged with the

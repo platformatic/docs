@@ -273,7 +273,11 @@ Options:
 * `-n, --name <name>` - Name of the client.
 * `-f, --folder <name>` - Name of the plugin folder, defaults to --name value.
 * `-t, --typescript` - Generate the client plugin in TypeScript.
-* `-r, --full-response` - Client will return full response object rather than just the body.
+* `--full-response` - Client will return full response object rather than just the body.
+* `--full-request` - Client will be called with all parameters wrapped in `body`, `headers` and `query` properties.
+* `--full` - Enables both `--full-request` and `--full-response` overriding them.
+* `--optional-headers <headers>` - Comma separated string of headers that will be marked as optional in the type file
+
 
 
 ### composer
@@ -757,6 +761,15 @@ npx platformatic frontend http://127.0.0.1:3042 ts
 >
 > * `api.d.ts` - A TypeScript module that includes all the OpenAPI-related types.
 > * `api.ts` or `api.js` - A module that includes a function for every single REST endpoint.
+
+If you use the `--name` option it will create custom file names.
+
+```bash
+npx platformatic frontend http://127.0.0.1:3042 ts --name foobar
+```
+
+Will create `foobar.ts` and `foobar-types.d.ts`
+
 
 Refer to the [dedicated guide](https://docs.platformatic.dev/docs/guides/generate-frontend-code-to-consume-platformatic-rest-api) where the full process of generating and consuming the frontend code is described.
 
