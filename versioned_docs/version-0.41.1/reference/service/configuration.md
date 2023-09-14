@@ -48,7 +48,7 @@ A **required** object with the following settings:
 
 - **`hostname`** (**required**, `string`) — Hostname where Platformatic Service server will listen for connections.
 - **`port`** (**required**, `number`) — Port where Platformatic Service server will listen for connections.
-- **`healthCheck`** (`boolean` or `object`) — Enables the health check endpoint.
+- **`healthCheck`** (`boolean` or `object`) — Enables the health check endpoint, located at `/status`.
   - Powered by [`@fastify/under-pressure`](https://github.com/fastify/under-pressure).
   - The value can be an object, used to specify the interval between checks in milliseconds (default: `5000`)
 
