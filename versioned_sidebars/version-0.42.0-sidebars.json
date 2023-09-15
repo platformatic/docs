@@ -58,7 +58,8 @@
         "guides/migrating-fastify-app-to-platformatic-service",
         "guides/migrating-express-app-to-platformatic-service",
         "guides/packaging-an-application-as-a-module",
-        "guides/telemetry"
+        "guides/telemetry",
+        "guides/dockerize-platformatic-app"
       ]
     },
     {
@@ -112,7 +113,6 @@
             "reference/db/plugin",
             "reference/db/logging",
             "reference/db/programmatic",
-            "reference/db/dashboard",
             "reference/db/schema-support"
           ]
         },
@@ -161,7 +161,8 @@
               "collapsed": true,
               "items": [
                 "reference/client/introduction",
-                "reference/client/programmatic"
+                "reference/client/programmatic",
+                "reference/client/frontend"
               ]
             },
             {
@@ -231,18 +232,6 @@
               "collapsed": true,
               "items": [
                 "reference/sql-events/fastify-plugin"
-              ]
-            },
-            {
-              "type": "category",
-              "label": "Start",
-              "link": {
-                "type": "doc",
-                "id": "reference/start/programmatic"
-              },
-              "collapsed": true,
-              "items": [
-                "reference/start/programmatic"
               ]
             }
           ]
