@@ -71,7 +71,7 @@ const sidebars = {
         'guides/generate-frontend-code-to-consume-platformatic-rest-api',
         'guides/migrating-fastify-app-to-platformatic-service',
         'guides/migrating-express-app-to-platformatic-service',
-        'guides/packaging-an-application-as-a-module',
+        'guides/applications-with-stackables',
         'guides/telemetry',
         'guides/dockerize-platformatic-app'
       ]
