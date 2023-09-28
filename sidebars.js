@@ -141,6 +141,7 @@ const sidebars = {
           collapsed: false,
           items: [
             'reference/runtime/introduction',
+            'reference/runtime/configuration',
             'reference/runtime/programmatic'
           ]
         },
