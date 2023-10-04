@@ -73,7 +73,8 @@ const sidebars = {
         'guides/migrating-express-app-to-platformatic-service',
         'guides/applications-with-stackables',
         'guides/telemetry',
-        'guides/dockerize-platformatic-app'
+        'guides/dockerize-platformatic-app',
+        'guides/build-modular-monolith'
       ]
     },
 
