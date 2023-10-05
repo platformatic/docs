@@ -98,7 +98,8 @@ const sidebars = {
           items: [
             'reference/composer/introduction',
             'reference/composer/configuration',
-            'reference/composer/programmatic'
+            'reference/composer/programmatic',
+            'reference/composer/api-modification'
           ]
         },
         {
