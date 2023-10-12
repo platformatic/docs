@@ -59,7 +59,8 @@
         "guides/migrating-express-app-to-platformatic-service",
         "guides/applications-with-stackables",
         "guides/telemetry",
-        "guides/dockerize-platformatic-app"
+        "guides/dockerize-platformatic-app",
+        "guides/build-modular-monolith"
       ]
     },
     {
@@ -82,7 +83,8 @@
           "items": [
             "reference/composer/introduction",
             "reference/composer/configuration",
-            "reference/composer/programmatic"
+            "reference/composer/programmatic",
+            "reference/composer/api-modification"
           ]
         },
         {
