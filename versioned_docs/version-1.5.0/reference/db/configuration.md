@@ -89,6 +89,20 @@ A **required** object with the following settings:
   }
   ```
 
+  Enables GraphQL support with the `enabled` option
+
+  ```json
+  {
+    "db": {
+      ...
+      "graphql": {
+        ...
+        "enabled": true
+      }
+    }
+  }
+  ```
+
   Enables GraphQL support with GraphiQL
 
   ```json
@@ -161,6 +175,20 @@ A **required** object with the following settings:
     "db": {
       ...
       "openapi": true
+    }
+  }
+  ```
+
+  Enables OpenAPI using the `enabled` option
+
+  ```json
+  {
+    "db": {
+      ...
+      "openapi": {
+        ...
+        "enabled": true
+      }
     }
   }
   ```
@@ -252,6 +280,12 @@ A **required** object with the following settings:
 
 - **`poolSize`** (`number`, default: `10`) — Maximum number of connections in the connection pool.
 
+- **`idleTimeoutMilliseconds`** (`number`, default: `30000`) - Max milliseconds a client can go unused before it is removed from the pool and destroyed.
+
+- **`queueTimeoutMilliseconds`** (`number`, default: `60000`) - Number of milliseconds to wait for a connection from the connection pool before throwing a timeout error.
+
+- **`acquireLockTimeoutMilliseconds`** (`number`, default: `60000`) - Number of milliseconds to wait for a lock on a connection/transaction.
+
 - **`limit`** (`object`) - Set the default and max limit for pagination. Default is 10, max is 1000.
 
   _Examples_
@@ -288,6 +322,20 @@ A **required** object with the following settings:
   It's possible to configure it to use Redis instead.
 
   _Examples_
+
+  Enable events using the `enabled` option.
+
+  ```json
+  {
+    "db": {
+      ...
+      "events": {
+        ...
+        "enabled": true
+      }
+    }
+  }
+  ```
 
   ```json
   {
