@@ -850,7 +850,7 @@ We'll see that this has generated a new directory, `clients/people/`, which cont
 }
 ```
 
-This configuration will make the People service client available as `app.people` inside any plugins that we create for our Media service.
+This configuration will make the People service client available as `request.people` inside any plugins that we create for our Media service.
 
 To create the skeleton structure for our plugin, let's create a new file, `services/media-service/plugin.js`, and add the following code:
 
@@ -904,7 +904,7 @@ function buildOnComposerResponseCallback (peopleProps) {
       }
     }
 
-    const people = await app.people.getPeople({ "where.id.in": peopleIds.join(',') })
+    const people = await request.people.getPeople({ "where.id.in": peopleIds.join(',') })
 
     const getPersonNameById = (id) => {
       const person = people.find(person => person.id === id)
