@@ -74,7 +74,8 @@ const sidebars = {
         'guides/applications-with-stackables',
         'guides/telemetry',
         'guides/dockerize-platformatic-app',
-        'guides/build-modular-monolith'
+        'guides/build-modular-monolith',
+        'guides/logging-to-elasticsearch'
       ]
     },
 
