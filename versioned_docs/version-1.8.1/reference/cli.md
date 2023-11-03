@@ -93,6 +93,7 @@ Welcome to Platformatic. Available commands are:
 * `deploy` - deploy a Platformatic application to the cloud.
 * `runtime` - start Platformatic Runtime; type `platformatic runtime help` to know more.
 * `start` - start a Platformatic application.
+* `login` - generate a Platformatic login api key.
 
 
 #### compile
@@ -131,6 +132,47 @@ Options:
 > :information_source:
 >
 > When deploying an application to a ***dynamic workspace***, specify the deploy `--label` option. You can find it on your cloud dashboard or you can specify a new one.
+>
+> If you do not specify an environment file to use with the `-e` flag, **ensure that a default environment file named `.env` exists**.
+
+Deploy a **static** Platformatic Cloud application.
+
+```bash
+platformatic deploy \
+    -t static \
+    -c platformatic.db.json \
+    -e .env.prototype \
+    --workspace-id=00000000-0000-0000-0000-000000000000 \
+    --workspace-key=11111111111111111111111111111111
+```
+
+Deploy a **static** Platformatic Cloud application with a workspace keys file. The keys file can be downloaded from the Platformatic Console when generating a new API key.
+
+```bash
+platformatic deploy \
+    -t static \
+    -c platformatic.db.json \
+    -k foo.plt.txt
+```
+
+The `foo.plt.txt` must contain two variables for the workspace id and workspace API key.
+
+```
+# Contents of foo.plt.txt
+PLATFORMATIC_STATIC_WORKSPACE_ID=00000000-0000-0000-0000-000000000000
+PLATFORMATIC_STATIC_WORKSPACE_API_KEY=11111111111111111111111111111111
+```
+
+Deploy a **dynamic** Platformatic Cloud application.
+
+```bash
+platformatic deploy \
+    -t dynamic \
+    -c platformatic.db.json \
+    -l dev \
+    --workspace-id=00000000-0000-0000-0000-000000000000 \
+    --workspace-key=11111111111111111111111111111111
+```
 
 
 #### gh
@@ -161,6 +203,20 @@ You can find more details about the configuration format here:
 * [Platformatic DB Configuration](https://docs.platformatic.dev/docs/reference/db/configuration)
 * [Platformatic Service Configuration](https://docs.platformatic.dev/docs/reference/service/configuration)
 
+
+
+#### login
+
+Generate a Platformatic login api key.
+
+``` bash
+ $ platformatic deploy
+```
+
+Options:
+
+* `-c, --config FILE` - Specify a path to a global platformatic config file. Defaults to `~/.platformatic/config.json`.
+* `--browser` - Automatically open default browser. If process stdout is a TTY, the default is `true`. Otherwise, the default is `false`.
 
 
 #### start
