@@ -19,7 +19,7 @@ module.exports = async(app, opts) => {
     Query: {
       yearlySales: async(_, { title }) => {
         const { db, sql } = app.platformatic;
-        const res = await db.query(sql(`
+        const res = await db.query(sql`
           SELECT
             YEAR(created_at) AS year,
             SUM(amount) AS sales
@@ -27,7 +27,7 @@ module.exports = async(app, opts) => {
             orders
           GROUP BY
             YEAR(created_at)
-        `))
+        `)
         return res
       }
     }
