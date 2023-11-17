@@ -27,6 +27,7 @@ const config = {
   },
 
   scripts: [
+    'https://app.posthog.com/static/array.js',
     {
       src: '/scripts/posthog.js',
       async: true,
