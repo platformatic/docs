@@ -26,6 +26,13 @@ const config = {
     locales: ['en'],
   },
 
+  scripts: [
+    {
+      src: '/scripts/posthog.js',
+      async: true,
+    },
+  ],
+
   presets: [
     [
       'classic',
