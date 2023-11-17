@@ -37,8 +37,7 @@ export default function Home() {
       <main>
         <WhyPlatformatic />
         <HomepageFeatures />
-        <Quotes />  
-        <script defer data-domain="docs.platformatic.dev" src="https://plausible.io/js/plausible.js"></script>
+        <Quotes />
       </main>
     </Layout>
   );
