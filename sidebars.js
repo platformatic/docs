@@ -67,6 +67,7 @@ const sidebars = {
         'guides/jwt-auth0',
         'guides/monitoring',
         'guides/debug-platformatic-db',
+        'guides/environment-variables',
         'guides/prisma',
         'guides/generate-frontend-code-to-consume-platformatic-rest-api',
         'guides/migrating-fastify-app-to-platformatic-service',
