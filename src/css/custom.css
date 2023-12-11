@@ -67,6 +67,8 @@ main a {
 
 /* Quotes section */
 .container__quotes .card {
+  min-height: 260px;
+  max-height: 260px;
   height: 260px;
 }
 
@@ -74,16 +76,51 @@ main a {
   height: 120px;
 }
 
-.container__quotes .card__header .avatar__subtitle {
+.container__quotes .card__header .container__avatar-subtitle .avatar__subtitle {
   color: grey;
 }
+
+.container__quotes .card__body,
+.container__quotes .card__header .container__avatar-subtitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.container__quotes .card__header .container__avatar-subtitle {
+  -webkit-line-clamp: 3;
+}
+
+.container__quotes .card__body {
+  -webkit-line-clamp: 4;
+  max-height: 120px;
+}
+
+
+
 
 @media screen and (max-width: 996px) {
   .container__quotes .card {
     height: auto;
+    min-height: unset;
+    max-height: unset;
   }
   .container__quotes .card__header {
+    min-height: unset;
+    max-height: unset;
     height: auto;
+  }
+
+  .container__quotes .card__body,
+  .container__quotes .card__header .container__avatar-subtitle {
+    overflow: auto;
+    text-overflow: unset;
+    display: block;
+    -webkit-box-orient: unset;
+  }
+  
+  .container__quotes .card__body {
+    max-height: unset;
   }
 }
 
