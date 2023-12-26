@@ -1,8 +1,9 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const {themes} = require('prism-react-renderer');
+const lightCodeTheme = themes.github;
+const darkCodeTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -59,7 +60,7 @@ const config = {
   ],
   // the Orama plugin leaks memory if watch is enabled, let's just enable it in production
   plugins: [
-    process.env.NODE_ENV !== 'development' ? '@orama/plugin-docusaurus' : null
+    process.env.NODE_ENV !== 'development' ? '@orama/plugin-docusaurus-v3' : null
   ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -162,7 +163,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['groovy'],
+        additionalLanguages: ['groovy', 'bash', 'diff', 'json'],
       },
     }),
 };
