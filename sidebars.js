@@ -196,7 +196,8 @@ const sidebars = {
               collapsed: true,
               items: [
                 'reference/sql-openapi/api',
-                'reference/sql-openapi/ignore'
+                'reference/sql-openapi/ignore',
+                'reference/sql-openapi/explicit-include'
               ]
             },
             {
