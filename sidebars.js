@@ -98,7 +98,6 @@ const sidebars = {
           },
           collapsed: false,
           items: [
-            'reference/composer/introduction',
             'reference/composer/configuration',
             'reference/composer/programmatic',
             'reference/composer/api-modification'
@@ -144,7 +143,6 @@ const sidebars = {
           },
           collapsed: false,
           items: [
-            'reference/runtime/introduction',
             'reference/runtime/configuration',
             'reference/runtime/programmatic'
           ]
