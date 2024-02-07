@@ -79,7 +79,6 @@ A object with the following settings:
 - **`maxParamLength`** (`integer`) -- the maximum length of a request parameter
 - **`caseSensitive`** (`boolean`) -- if `true`, the router will be case sensitive
 - **`ignoreTrailingSlash`** (`boolean`) -- if `true`, the router will ignore the trailing slash
-- **`ignoreTrailingSlash`** (`boolean`) -- if `true`, the router will ignore the trailing slash
 - **`connectionTimeout`** (`integer`) -- the milliseconds to wait for a new HTTP request
 - **`keepAliveTimeout`** (`integer`) -- the milliseconds to wait for a keep-alive HTTP request
 - **`maxRequestsPerSocket`** (`integer`) -- the maximum number of requests per socket
@@ -200,7 +199,6 @@ Enables watching for file changes if set to `true`  or `"true"`. It can also be 
 * **`enabled`** (`boolean` or `string`): enables watching.
 - **`ignore`** (`string[]`, default: `null`): List of glob patterns to ignore when watching for changes. If `null` or not specified, ignore rule is not applied. Ignore option doesn't work for typescript files.
 - **`allow`** (`string[]`, default: `['*.js', '**/*.js']`): List of glob patterns to allow when watching for changes. If `null` or not specified, allow rule is not applied. Allow option doesn't work for typescript files.
--
 
   _Example_
 
