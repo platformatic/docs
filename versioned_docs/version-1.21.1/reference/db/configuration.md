@@ -1,7 +1,7 @@
 # Configuration
 
 Platformatic DB is configured with a configuration file. It supports the use
-of environment variables as setting values with [configuration placeholders](#configuration-placeholders).
+of environment variables as setting values with [environment variable placeholders](#environment-variable-placeholders).
 
 ## Configuration file
 
@@ -44,7 +44,7 @@ Configuration settings are organised into the following groups:
 - [`clients`](#clients)
 
 Sensitive configuration settings, such as a database connection URL that contains
-a password, should be set using [configuration placeholders](#configuration-placeholders).
+a password, should be set using [environment variable placeholders](#environment-variable-placeholders).
 
 ### `server`
 
@@ -294,6 +294,8 @@ A **required** object with the following settings:
   ```
 - **`autoTimestamp`** (`boolean` or `object`) - Generate timestamp automatically when inserting/updating records.
 
+- **`allowPrimaryKeysInInput`** (`boolean`) - Allow the user to set the primary keys when creating new entities.
+
 - **`poolSize`** (`number`, default: `10`) — Maximum number of connections in the connection pool.
 
 - **`idleTimeoutMilliseconds`** (`number`, default: `30000`) - Max milliseconds a client can go unused before it is removed from the pool and destroyed.
@@ -413,7 +415,7 @@ An optional object with the following settings:
 - **`migrationsTable`** (`string`, default: `versions`): Table created to track schema version
 - **`validateChecksums`** (`boolean`): Validates checksum of existing SQL migration files already run prior to executing migrations. Unused for JS migrations.
 - **`newline`** (`string`): Force line ending on file when generating checksum. Value should be either CRLF (windows) or LF (unix/mac).
-- **`currentSchema`** (`string`): For Postgres and MS SQL Server(will ignore for another DBs). Specifies schema to look to when validating `versions` table columns. For Postgres, run's `SET search_path = currentSchema` prior to running queries against db. 
+- **`currentSchema`** (`string`): For Postgres and MS SQL Server(will ignore for another DBs). Specifies schema to look to when validating `versions` table columns. For Postgres, run `SET search_path = currentSchema` prior to running queries against db. 
 
 ### `plugins`
 

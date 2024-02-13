@@ -83,7 +83,6 @@
           },
           "collapsed": false,
           "items": [
-            "reference/composer/introduction",
             "reference/composer/configuration",
             "reference/composer/programmatic",
             "reference/composer/api-modification"
@@ -129,7 +128,6 @@
           },
           "collapsed": false,
           "items": [
-            "reference/runtime/introduction",
             "reference/runtime/configuration",
             "reference/runtime/programmatic"
           ]
