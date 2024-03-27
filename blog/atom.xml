@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://docs.platformatic.dev/blog</id>
+    <title>Platformatic Open Source Software Blog</title>
+    <updated>2022-08-22T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://docs.platformatic.dev/blog"/>
+    <subtitle>Platformatic Open Source Software Blog</subtitle>
+    <icon>https://docs.platformatic.dev/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Coming Soon]]></title>
+        <id>https://docs.platformatic.dev/blog/coming-soon</id>
+        <link href="https://docs.platformatic.dev/blog/coming-soon"/>
+        <updated>2022-08-22T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Welcome to platformatic!]]></summary>
+        <content type="html"><![CDATA[<p>Welcome to platformatic!</p>
+<p>We are working hard to launch platformatic, stay tuned!</p>]]></content>
+        <author>
+            <name>Matteo Collina</name>
+            <uri>https://github.com/mcollina</uri>
+        </author>
+    </entry>
+</feed>
