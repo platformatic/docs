@@ -1,5 +1,3 @@
-io-# Architecture
-
 Platformatic is a collection of Open Source tools designed to eliminate friction
 in backend development. 
 The base services are: 
