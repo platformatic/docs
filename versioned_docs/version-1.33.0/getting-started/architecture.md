@@ -1,8 +1,8 @@
 Platformatic is a collection of Open Source tools designed to eliminate friction
 in backend development. 
 The base services are: 
-- [Platformatic DB](#platformatic-db)
 - [Platformatic Service](#platformatic-service)
+- [Platformatic DB](#platformatic-db)
 
 
 These micro-services can be developed and deployed independently or aggregated into a single API using [Platformatic Composer](#platformatic-composer) or deployed as a single unit using [Platformatic Runtime](#platformatic-runtime).
@@ -72,8 +72,8 @@ This is useful to publish the application on the public npm registry (or a priva
 ## Platformatic Cloud 
 [Platformatic Cloud](https://platformatic.cloud) allows to deploy Platformatic Applications on our cloud for both static deployments and PR reviews. 
 The deployment on the cloud can be done:
-- Automatically using the GitHub actions created with `create-platformatic` 
-- Using the [Platformatic CLI](https://docs.platformatic.dev/docs/reference/cli#deploy)
+- Automatically using the GitHub actions created with `create-platformatic`.
+- Using the [Platformatic CLI](https://docs.platformatic.dev/docs/reference/cli#deploy).
 
 If you configure the GitHub actions, you can deploy your application on the cloud by simply pushing to the main branch or creating a PR. For a guide about how to do a deploy on Platformatic Cloud, please check the [Platformatic Cloud Quick Start Guide](https://docs.platformatic.dev/docs/platformatic-cloud/quick-start-guide).
 
