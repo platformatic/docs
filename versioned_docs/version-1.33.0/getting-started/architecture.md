@@ -37,11 +37,10 @@ Platformatic DB is composed of a few key libraries:
    Internally it uses [`@fastify/swagger`](https://github.com/fastify/fastify-swagger).
 1. `@platformatic/sql-graphql` - uses `sql-mapper` to create a GraphQL endpoint and schema. `sql-graphql` also support Federation.
    Internally it uses [`mercurius`](https://github.com/mercurius-js/mercurius).
+1. SQL database migrations - uses `sql-mapper` to perform schema migrations. Internally it uses [`postgrator`](https://www.npmjs.com/package/postgrator) library.
 
 Platformatic DB allows you to load a [Fastify plugin](https://www.fastify.io/docs/latest/Reference/Plugins/) during server startup that contains your own application-specific code.
 The plugin can add more routes or resolvers — these will automatically be shown in the OpenAPI and GraphQL schemas.
-
-SQL database migrations are also supported. They're implemented internally with the [`postgrator`](https://www.npmjs.com/package/postgrator) library.
 
 
 ## Platformatic Composer
