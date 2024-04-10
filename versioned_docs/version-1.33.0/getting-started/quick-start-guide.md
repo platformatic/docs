@@ -22,13 +22,13 @@ Platformatic supports macOS, Linux and Windows ([WSL](https://docs.microsoft.com
 
 To follow along with this guide you'll need to have these things installed:
 
-- [Node.js](https://nodejs.org/) >= v18.8.0 or >= v20.6.0
-- [npm](https://docs.npmjs.com/cli/) v7 or later
+- [Node.js](https://nodejs.org/) >= v18.8.0 or >= v20.12.1
+- [npm](https://docs.npmjs.com/cli/) v8 or later
 - A code editor, for example [Visual Studio Code](https://code.visualstudio.com/)
 
 ## Create a new API project
 
-### Automatic CLI
+### Platformatic CLI
 
 <NewApiProjectInstructions/>
 
@@ -163,11 +163,11 @@ You can check syntax for SQL queries on the [Database.Guide SQL Reference](https
 #### Configure your API
 
 In your project directory, create a new Platformatic configuration file named
-**`platformatic.db.json`**.
+**`platformatic.json`**.
 
 Copy and paste in this configuration:
 
-```json title="platformatic.db.json"
+```json title="platformatic.json"
 {
   "server": {
     "hostname": "127.0.0.1",
