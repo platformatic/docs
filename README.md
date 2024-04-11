@@ -1,42 +1,80 @@
-# Platformatic Docs
+# Platformatic Documentation 
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+This website is built using [Docusaurus 3](https://docusaurus.io/), a modern static website generator.
 
 ## Where is the documentation?
 
-Documentation lives in [Platformatic](https://github.com/platformatic/platformatic/tree/main/docs) repo.
-
-The `scripts/doc-watcher.js` file helps you "import" those docs into `./docs` directory.
-
-There are two ways to do this
-  - run `./scripts/doc-watcher.js --source ../relative/path/to/plt/docs/directory` in one terminal and run `npx docusaurus start` on another
-  - run `DOCS=path/to/platformatic/docs npm run start`.
-
-The script will keep directories in sync. You should work on `platformatic/docs` directory and commit changes in that repo. On this repo `./docs` directory is git-ignored.
-
-## Run development server
-
-`npm run start`
+The documentation is hosted in the [Platformatic](https://github.com/platformatic/platformatic/tree/main/docs) repository.
 
 ## Setting up the development environment
 
-On a unix system:
+1. #### Create a working directory and navigate into it
 
-1. `mkdir /workdir` (chose your own directory)
-1. `cd /workdir`
-1. `git clone https://github.com/platformatic/platformatic.git` or use your own [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
-1. `git clone https://github.com/platformatic/oss.git` or use your own [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
-1. `cd /workdir/oss`
-1. run `DOCS=/workdir/platformatic/docs npm run start` to start the development server
+```bash
+mkdir /workdir
+cd /workdir
+```
+
+2. #### Clone the Platformatic repositories
+
+```bash
+# Clone the main Platformatic repository
+git clone https://github.com/platformatic/platformatic.git
+
+# Clone the OSS repository
+git clone https://github.com/platformatic/oss.git
+```
+
+After cloning, your working directory (`/workdir`) should contain:
+
+- `platformatic/`
+- `oss/`
+
+3. #### Install dependencies in both repositories
+
+Navigate to each directory and run npm install:
+
+```bash
+# Install dependencies in the platformatic repository
+cd platformatic
+npm install
+cd ..
+
+# Install dependencies in the oss repository
+cd oss
+npm install
+cd ..
+```
+
+4. #### Navigate to the OSS directory
+
+```bash
+cd oss
+```
+
+## Running the Development Server
+
+Step 1: Setup the docs environment variable 
+
+```bash
+# This sets the DOCS variable to the docs directory within the cloned Platformatic repository
+export DOCS=$PWD/../platformatic/docs
+```
+
+Step 2: Start the development server
+
+```bash
+npm run start
+```
 
 ## Deploy
 
-Deploy happens in Github Actions. Take a look at the workflow in `.github` folder.
+Deployment is managed automatically through GitHub Actions. Check the workflow configurations in the `.github` folder within the OSS directory for details.
 
 ## Generate docs for an old Platformatic version
 
 We keep online only the last 5 versions of Platformatic backwards.
-Every time a new version is realeased, this repository is tagged with `vX.Y.Z`
+Every time a new version is realeased, this repository is tagged with `vX.Y.Z`.
 
 To generate the documentation for a specific version, checkout the related tag and run the development server.
 
@@ -44,4 +82,4 @@ To generate the documentation for a specific version, checkout the related tag a
 
 ### Deleting directories
 
-Sometimes when you delete a directory in `./docs`, docusaurus will crash. Just stop it and restart.
+Deleting directories within `./docs` may cause Docusaurus to crash. If this happens, stop the server (Ctrl+C) and restart it.
