@@ -21,16 +21,17 @@ The entity operation methods accept a `where` option to allow limiting of the da
 The `where` object's key is the field you want to check, the value is a key/value map where the key is an operator (see the table below) and the value is the value you want to run the operator against.
 
 | Platformatic operator | SQL operator |
-|--- | ---|
-| eq | `'='` |
-| in | `'IN'` |
-| nin | `'NOT IN'` |
-| neq | `'<>'` |
-| gt | `'>'` |
-| gte | `'>='` |
-| lt | `'<'` |
-| lte | `'<='` |
-| like | `'LIKE'` |
+|-----------------------|--------------|
+| eq                    | `\'=\'`      |
+| in                    | `\'IN\'`     |
+| nin                   | `\'NOT IN\'` |
+| neq                   | `\'<>\'`     |
+| gt                    | `\'>\'`      |
+| gte                   | `'\>='`      |
+| lt                    | `\'<\'`      |
+| lte                   | `\'<=\'`     |
+| like                  | `\'LIKE\'`   |
+
 
 ### Examples
 
@@ -379,3 +380,4 @@ async function main() {
 main()
 
 ```
+
