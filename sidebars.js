@@ -267,6 +267,8 @@ const sidebars = {
         'guides/logging-to-elasticsearch'
       ]
     },
+
+    
     // {
     //   type: 'category',
     //   label: 'Platformatic Cloud',
