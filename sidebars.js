@@ -76,7 +76,8 @@ const sidebars = {
         'guides/telemetry',
         'guides/dockerize-platformatic-app',
         'guides/build-modular-monolith',
-        'guides/logging-to-elasticsearch'
+        'guides/logging-to-elasticsearch',
+        'guides/jwt-keycloak',
       ]
     },
 
