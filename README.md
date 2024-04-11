@@ -27,8 +27,8 @@ git clone https://github.com/platformatic/oss.git
 
 After cloning, your working directory (`/workdir`) should contain:
 
-- `platformatic/`
-- `oss/`
+- `/platformatic`
+- `/oss`
 
 3. #### Install dependencies in both repositories
 
