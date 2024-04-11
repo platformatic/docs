@@ -14,79 +14,36 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   docs: [
+    'Overview',
     {
       type: 'category',
       label: 'Getting Started',
       link: {
         type: 'generated-index'
       },
-      collapsed: false,
-      items: [
-        'getting-started/quick-start-guide',
-        'getting-started/movie-quotes-app-tutorial',
-        'getting-started/architecture'
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Guides',
-      link: {
-        type: 'generated-index'
-      },
       collapsed: true,
       items: [
+        'getting-started/quick-start-guide',
         {
           type: 'category',
-          label: 'Deployment',
+          label: 'Movie App',
           link: {
-            type: 'doc',
-            id: 'guides/deployment/deployment'
+            type: 'generated-index'
           },
           collapsed: true,
           items: [
-            'guides/deployment/deploy-to-fly-io-with-sqlite',
-            'guides/deployment/advanced-fly-io-deployment'
+            'getting-started/movie-app/movie-quotes-app-tutorial'
           ]
-        },
-        'guides/seed-a-database',
-        {
-          type: 'category',
-          label: 'Add Custom Functionality',
-          link: {
-            type: 'doc',
-            id: 'guides/add-custom-functionality/introduction'
-          },
-          collapsed: true,
-          items: [
-            'guides/add-custom-functionality/prerequisites',
-            'guides/add-custom-functionality/extend-graphql',
-            'guides/add-custom-functionality/extend-rest'
-          ]
-        },
-        'guides/securing-platformatic-db',
-        'guides/jwt-auth0',
-        'guides/monitoring',
-        'guides/debug-platformatic-db',
-        'guides/environment-variables',
-        'guides/prisma',
-        'guides/generate-frontend-code-to-consume-platformatic-rest-api',
-        'guides/migrating-fastify-app-to-platformatic-service',
-        'guides/migrating-express-app-to-platformatic-service',
-        'guides/applications-with-stackables',
-        'guides/telemetry',
-        'guides/dockerize-platformatic-app',
-        'guides/build-modular-monolith',
-        'guides/logging-to-elasticsearch'
+        }
       ]
     },
-
     {
       type: 'category',
       label: 'Reference',
       link: {
         type: 'generated-index'
       },
-      collapsed: false,
+      collapsed: true,
       items: [
         'reference/cli',
         {
@@ -96,7 +53,7 @@ const sidebars = {
             type: 'doc',
             id: 'reference/composer/introduction'
           },
-          collapsed: false,
+          collapsed: true,
           items: [
             'reference/composer/configuration',
             'reference/composer/programmatic',
@@ -110,7 +67,7 @@ const sidebars = {
             type: 'doc',
             id: 'reference/db/introduction'
           },
-          collapsed: false,
+          collapsed: true,
           items: [
             'reference/db/configuration',
             'reference/db/migrations',
@@ -141,7 +98,7 @@ const sidebars = {
             type: 'doc',
             id: 'reference/runtime/introduction'
           },
-          collapsed: false,
+          collapsed: true,
           items: [
             'reference/runtime/configuration',
             'reference/runtime/programmatic'
@@ -154,7 +111,7 @@ const sidebars = {
             type: 'doc',
             id: 'reference/service/introduction'
           },
-          collapsed: false,
+          collapsed: true,
           items: [
             'reference/service/configuration',
             'reference/service/plugin',
@@ -168,7 +125,7 @@ const sidebars = {
             type: 'generated-index'
             // TODO: Add a description
           },
-          collapsed: false,
+          collapsed: true,
           items: [
             {
               type: 'category',
@@ -260,17 +217,69 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Platformatic Cloud',
+      label: 'Guides',
       link: {
         type: 'generated-index'
       },
-      collapsed: false,
+      collapsed: true,
       items: [
-        'platformatic-cloud/quick-start-guide',
-        'platformatic-cloud/deploy-database-neon',
-        'platformatic-cloud/risk-engine'
+        {
+          type: 'category',
+          label: 'Deployment',
+          link: {
+            type: 'doc',
+            id: 'guides/deployment/deployment'
+          },
+          collapsed: true,
+          items: [
+            'guides/deployment/deploy-to-fly-io-with-sqlite',
+            'guides/deployment/advanced-fly-io-deployment'
+          ]
+        },
+        'guides/seed-a-database',
+        {
+          type: 'category',
+          label: 'Add Custom Functionality',
+          link: {
+            type: 'doc',
+            id: 'guides/add-custom-functionality/introduction'
+          },
+          collapsed: true,
+          items: [
+            'guides/add-custom-functionality/prerequisites',
+            'guides/add-custom-functionality/extend-graphql',
+            'guides/add-custom-functionality/extend-rest'
+          ]
+        },
+        'guides/securing-platformatic-db',
+        'guides/jwt-auth0',
+        'guides/monitoring',
+        'guides/debug-platformatic-db',
+        'guides/environment-variables',
+        'guides/prisma',
+        'guides/generate-frontend-code-to-consume-platformatic-rest-api',
+        'guides/migrating-fastify-app-to-platformatic-service',
+        'guides/migrating-express-app-to-platformatic-service',
+        'guides/applications-with-stackables',
+        'guides/telemetry',
+        'guides/dockerize-platformatic-app',
+        'guides/build-modular-monolith',
+        'guides/logging-to-elasticsearch'
       ]
-    }
+    },
+    // {
+    //   type: 'category',
+    //   label: 'Platformatic Cloud',
+    //   link: {
+    //     type: 'generated-index'
+    //   },
+    //   collapsed: false,
+    //   items: [
+    //     'platformatic-cloud/quick-start-guide',
+    //     'platformatic-cloud/deploy-database-neon',
+    //     'platformatic-cloud/risk-engine'
+    //   ]
+    // }
   ]
 }
 
