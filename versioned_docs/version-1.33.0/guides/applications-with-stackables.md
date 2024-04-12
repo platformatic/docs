@@ -1,3 +1,5 @@
+import NewApiProjectInstructions from '../getting-started/new-api-project-instructions.md';
+
 # Use Stackables to build Platformatic applications
 
 [Platformatic Service](/docs/reference/db/introduction.md) and [Platformatic DB](/docs/reference/db/introduction.md)
@@ -14,20 +16,7 @@ This process is the same one we use to maintain Platformatic DB and Platformatic
 
 To create a custom Platformatic Stackable you can use the `create-platformatic` CLI command:
 
-```bash
-npx create-platformatic@latest
-```
-
-- **What kind of project do you want to create?**
-  - `Stackable`
-- **Where would you like to create your project?**
-  - `.`
-- **What is the name of the stackable?**
-  - `my-stackable`
-- **Do you want to use TypeScript?**
-  - `no`
-- **Do you want to init the git repository?**
-  - `no`
+<NewApiProjectInstructions/>
 
 After installing the dependencies, let's take a look at the project structure:
 
