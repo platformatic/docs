@@ -34,6 +34,7 @@ Then create a Platformatic `db` in the folder using `npx create-platformatic@lat
 
 <NewApiProjectInstructions/>
 
+
 To make it simple, use `sqlite` and create/apply the default migrations. This DB Service is exposed on port `5042`:
 
 Open the `platformatic.json` file and add the telementry configuration:
