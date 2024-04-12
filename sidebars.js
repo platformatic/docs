@@ -267,6 +267,7 @@ const sidebars = {
         'guides/logging-to-elasticsearch'
       ]
     },
+    'FAQs'
 
     
     // {
