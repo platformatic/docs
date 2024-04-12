@@ -67,8 +67,6 @@ cd test-service
 
 Then create a `service` on the `5043` port in the folder using `npx create-platformatic@latest`:
 
-<NewApiProjectInstructions/>
-
 Open the `platformatic.json` file in the service folder and add the following telemetry configuration (it's exactly the same as `DB`, but with a different `serviceName`)
 
 ```json
@@ -126,8 +124,6 @@ mkdir test-composer
 cd test-composer
 ```
 Then create a `composer` on the `5044` port in the folder using `npx create-platformatic@latest`:
-
-<NewApiProjectInstructions/>
 
 Open `platformatic.json` in the composer application and change it to the following:
 
