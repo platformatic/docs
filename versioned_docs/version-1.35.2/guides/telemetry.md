@@ -1,3 +1,5 @@
+import NewApiProjectInstructions from '../getting-started/new-api-project-instructions.md';
+
 # Telemetry with Jaeger
 
 ## Introduction
@@ -35,38 +37,9 @@ npx create-platformatic@latest
 ```
 To make it simple, use `sqlite` and create/apply the default migrations. This DB Service is exposed on port `5042`:
 
-```bash 
+<NewApiProjectInstructions/>
 
-➜ npx create-platformatic@latest
-
- Hello user, welcome to Platformatic 0.32.0!
- Let's start by creating a new project.
-? Which kind of project do you want to create? DB
-? Where would you like to create your project? .
-? What database do you want to use? SQLite
-? Do you want to use the connection string "sqlite://./db.sqlite"? Confirm
-? Do you want to create default migrations? yes
-? Do you want to create a plugin? no
-? Do you want to use TypeScript? no
-? What port do you want to use? 5042
-[15:40:46] INFO: Configuration file platformatic.db.json successfully created.
-[15:40:46] INFO: Environment file .env successfully created.
-[15:40:46] INFO: Migrations folder migrations successfully created.
-[15:40:46] INFO: Migration file 001.do.sql successfully created.
-[15:40:46] INFO: Migration file 001.undo.sql successfully created.
-[15:40:46] INFO: Plugin file created at plugin.js
-? Do you want to run npm install? no
-? Do you want to apply migrations? yes
-✔ ...done!
-? Do you want to generate types? no
-? Do you want to create the github action to deploy this application to Platformatic Cloud dynamic workspace? no
-? Do you want to create the github action to deploy this application to Platformatic Cloud static workspace? no
- 
-All done! Please open the project directory and check the README.
-Will test this in one example with a Platformatic Composer that proxy requests to a Platformatic Service, which in turn invokes a Platformatic DB.
-
-```
-Open the `platformatic.db.json` file and add the telementry configuration:
+Open the `platformatic.json` file and add the telementry configuration:
 
 ```json
   "telemetry": {
@@ -85,7 +58,7 @@ Finally, start the DB service:
 npx platformatic db start
 ```
 ### Platformatic Service
-Create at the same level of `test-db` another folder for Service and cd into it:
+Create at the same level of `test` folder in the `db` application another folder for Service and cd into it:
 
 ```bash
 mkdir test-service
@@ -94,25 +67,7 @@ cd test-service
 
 Then create a `service` on the `5043` port in the folder using `npx create-platformatic@latest`:
 
-```bash
-➜ npx create-platformatic@latest
-
- Hello user, welcome to Platformatic 0.32.0!
- Let's start by creating a new project.
-? Which kind of project do you want to create? Service
-? Where would you like to create your project? .
-? Do you want to run npm install? no
-? Do you want to use TypeScript? no
-? What port do you want to use? 5043
-[15:55:35] INFO: Configuration file platformatic.service.json successfully created.
-[15:55:35] INFO: Environment file .env successfully created.
-[15:55:35] INFO: Plugins folder "plugins" successfully created.
-[15:55:35] INFO: Routes folder "routes" successfully created.
-? Do you want to create the github action to deploy this application to Platformatic Cloud dynamic workspace? no
-? Do you want to create the github action to deploy this application to Platformatic Cloud static workspace? no
-
-```
-Open the `platformatic.service.json` file and add the following telemetry configuration (it's exactly the same as `DB`, but with a different `serviceName`)
+Open the `platformatic.json` file in the service folder and add the following telemetry configuration (it's exactly the same as `DB`, but with a different `serviceName`)
 
 ```json
   "telemetry": {
@@ -131,7 +86,7 @@ We want this service to invoke the DB service, so we need to add a client for `t
 npx platformatic client http://127.0.0.1:5042 js --name movies
 ```
 
-Check `platformatic.service.json` to see that the client has been added (`PLT_MOVIES_URL` is defined in `.env`):
+Check `platformatic.json` in the services folder to see that the client has been added (`PLT_MOVIES_URL` is defined in `.env`):
 
 ```json
     "clients": [
@@ -170,24 +125,7 @@ cd test-composer
 ```
 Then create a `composer` on the `5044` port in the folder using `npx create-platformatic@latest`:
 
-```bash
-➜ npx create-platformatic@latest
-
- Hello marcopiraccini, welcome to Platformatic 0.32.0!
- Let's start by creating a new project.
-? Which kind of project do you want to create? Composer
-? Where would you like to create your project? .
-? What port do you want to use? 5044
-? Do you want to run npm install? no
-[16:05:28] INFO: Configuration file platformatic.composer.json successfully created.
-[16:05:28] INFO: Environment file .env successfully created.
-? Do you want to create the github action to deploy this application to Platformatic Cloud dynamic workspace? no
-? Do you want to create the github action to deploy this application to Platformatic Cloud static workspace? no
- 
-All done! Please open the project directory and check the README.
-```
-
-Open `platformatic.composer.js` and change it to the following:
+Open `platformatic.json` in the composer application and change it to the following:
 
 ```json
 {

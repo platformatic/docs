@@ -1,3 +1,5 @@
+import NewApiProjectInstructions from '../getting-started/new-api-project-instructions.md';
+
 # Build and deploy a modular monolith
 
 ## Introduction
@@ -35,47 +37,7 @@ We're going to start by creating our Library app. This will be a Platformatic Ru
 
 First, let's run the Platformatic creator wizard in our terminal:
 
-```bash
-npm create platformatic@latest
-```
-
-And then let's enter the following settings:
-
-- **Which kind of project do you want to create?**
-  - `Runtime`
-- **Where would you like to create your project?**
-  - `library-app`
-- **Where would you like to load your services from?**
-  - `services`
-- **Do you want to run npm install?**
-  - `yes`
-
-After the dependencies have been installed, the creator will prompt us to create a service:
-
-```
-Let's create a first service!
-```
-
-We're now going to create a Platformatic DB service named `people-service`.
-
-Let's enter the following settings for our new service:
-
-- **What is the name of the service?**
-  - `people-service`
-- **Which kind of project do you want to create?**
-  - `DB`
-- **What database do you want to use?**
-  - `SQLite`
-- **Do you want to use the connection string "sqlite://./db.sqlite"?**
-  - `y`
-- **Do you want to create default migrations?**
-  - `yes`
-- **Do you want to create a plugin?**
-  - `no`
-- **Do you want to use TypeScript?**
-  - `no`
-- **What port do you want to use?**
-  - `3042`
+<NewApiProjectInstructions/>
 
 After answering these questions, the creator will create all of the files for the `people-service`. 
 
@@ -87,7 +49,7 @@ Once the creator has finished, our `library-app` directory should look like this
 library-app/
 ├── README.md
 ├── package.json
-├── platformatic.runtime.json
+├── platformatic.json
 └── services
     └── people-service
         ├── README.md
@@ -95,7 +57,7 @@ library-app/
         │   ├── 001.do.sql
         │   └── 001.undo.sql
         ├── package.json
-        └── platformatic.db.json
+        └── platformatic.json
 ```
 
 ## Start the Library app
@@ -256,32 +218,7 @@ We're now going to create a Books service. We'll follow a similar process to the
 
 In the root directory of our Runtime project (`library-app`), let's run this command to create the new service:
 
-```bash
-npx create-platformatic
-```
-
-Then let's enter the following settings:
-
-- **What is the name of the service?**
-  - `books-service`
-- **Which kind of project do you want to create?**
-  - `DB`
-- **What database do you want to use?**
-  - `SQLite`
-- **Do you want to use the connection string "sqlite://./db.sqlite"?**
-  - `y`
-- **Do you want to create default migrations?**
-  - `yes`
-- **Do you want to create a plugin?**
-  - `no`
-- **Do you want to use TypeScript?**
-  - `no`
-- **What port do you want to use?**
-  - `3043`
-- **Do you want to apply migrations?**
-  - `no`
-- **Do you want to generate types?**
-  - `yes`
+<NewApiProjectInstructions/>
 
 Once the command has finished running, we should see that a Platformatic DB service has been created for us in the `services/books-service/` directory.
 
@@ -392,10 +329,10 @@ Created book: {
 
 ### Test the Books service API
 
-To publicly expose the Books service so that we can test it, we need to change the `entrypoint` in `platformatic.runtime.json` to `books-service`:
+To publicly expose the Books service so that we can test it, we need to change the `entrypoint` in `platformatic.json` to `books-service`:
 
 ```json
-// platformatic.runtime.json
+// platformatic.json
 
 {
   "$schema": "https://platformatic.dev/schemas/v0.27.0/runtime",
@@ -433,32 +370,7 @@ We're now going to create our third and final Platformatic DB service: the Movie
 
 In the root directory of our Runtime project (`library-app`), let's create the new service:
 
-```bash
-npx create-platformatic
-```
-
-Then let's enter the following settings:
-
-- **What is the name of the service?**
-  - `movies-service`
-- **Which kind of project do you want to create?**
-  - `DB`
-- **What database do you want to use?**
-  - `SQLite`
-- **Do you want to use the connection string "sqlite://./db.sqlite"?**
-  - `y`
-- **Do you want to create default migrations?**
-  - `yes`
-- **Do you want to create a plugin?**
-  - `no`
-- **Do you want to use TypeScript?**
-  - `no`
-- **What port do you want to use?**
-  - `3044`
-- **Do you want to apply migrations?**
-  - `no`
-- **Do you want to generate types?**
-  - `yes`
+<NewApiProjectInstructions/>
 
 Similarly to before, once the command has finished running, we should see that a Platformatic DB service has been created for us in the `services/movies-service/` directory.
 
@@ -615,18 +527,7 @@ We're now going to use Platformatic Composer to create a Media service. This ser
 
 In the root directory of our Runtime project (`library-app`), let's create the Media service by running:
 
-```bash
-npx create-platformatic
-```
-
-Then let's enter the following settings:
-
-- **What is the name of the service?**
-  - `media-service`
-- **Which kind of project do you want to create?**
-  - `Composer`
-- **What port do you want to use?**
-  - `3045`
+<NewApiProjectInstructions/>
 
 Once the command has finished, we'll see that our Platformatic Composer service has been created in the `services/media-service` directory.
 
@@ -634,7 +535,7 @@ Once the command has finished, we'll see that our Platformatic Composer service 
 
 We're now going to replace the example `services` configuration for our Media service, and configure it to compose the APIs for our Books and Movies services.
 
-Let's open up `services/media-service/platformatic.composer.json` and replace the `services` array so that it looks like this:
+Let's open up `services/media-service/platformatic.json` and replace the `services` array so that it looks like this:
 
 ```json
 // services/media-service/platformatic.composer.json
@@ -671,10 +572,10 @@ Let's take a look at the settings we've added here:
 
 ### Test the composed Media service API
 
-To expose our Media service, let's change the `entrypoint` in `platformatic.runtime.json` to `media-service`:
+To expose our Media service, let's change the `entrypoint` in `platformatic.json` to `media-service`:
 
 ```json
-// platformatic.runtime.json
+// platformatic.json
 
 {
   "$schema": "https://platformatic.dev/schemas/v0.27.0/runtime",
@@ -768,10 +669,10 @@ Then let's create another file, `services/media-service/movies-service-openapi.c
 }
 ```
 
-Now let's open up `services/media-service/platformatic.composer.json` and configure the Media service to apply these service configurations to our composed API:
+Now let's open up `services/media-service/platformatic.json` and configure the Media service to apply these service configurations to our composed API:
 
 ```diff
-// services/media-service/platformatic.composer.json
+// services/media-service/platformatic.json
 
   {
     "$schema": "https://platformatic.dev/schemas/v0.27.0/composer",
@@ -833,7 +734,7 @@ npx platformatic client --name people --runtime people-service --folder clients/
 We'll see that this has generated a new directory, `clients/people/`, which contains a snapshot of the People service's OpenAPI schema and types that we can use when we integrate the client with our Media service. If we open up `platformatic.composer.json`, we'll also see that a `clients` block like this has been added:
 
 ```json
-// services/media-service/platformatic.composer.json
+// services/media-service/platformatic.json
 
 {
   "$schema": "https://platformatic.dev/schemas/v0.28.1/composer",
