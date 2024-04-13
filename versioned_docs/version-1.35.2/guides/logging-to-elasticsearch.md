@@ -1,3 +1,5 @@
+import NewApiProjectInstructions from '../getting-started/new-api-project-instructions.md';
+
 # Logging to ElasticSearch (or any other destination)
 
 This guide shows how to configure a Platformatic application to
@@ -8,6 +10,8 @@ The logs will then be visualized via [Kibana](https://www.elastic.co/kibana).
 ## Create a platformatic application
 
 Create a platformatic application using `npx create-platformatic@latest`.
+
+<NewApiProjectInstructions/>
 
 ## Setup ElasticSearch and Kibana
 
