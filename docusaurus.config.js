@@ -80,20 +80,20 @@ const config = {
             label: 'Get Started',
           },
           {
-            to: 'docs/category/guides',
-            position: 'left',
-            label: 'Guides',
-          },
-          {
             to: 'docs/category/reference',
             position: 'left',
             label: 'Reference',
           },
           {
-            to: 'docs/category/platformatic-cloud',
+            to: 'docs/category/guides',
             position: 'left',
-            label: 'Platformatic Cloud',
+            label: 'Guides',
           },
+          // {
+          //   to: 'docs/category/platformatic-cloud',
+          //   position: 'left',
+          //   label: 'Platformatic Cloud',
+          // },
           { href: 'https://blog.platformatic.dev', label: 'Blog', position: 'left' },
           { href: 'https://www.platformatic.dev', label: 'About', position: 'left' },
           {
