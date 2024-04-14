@@ -151,12 +151,12 @@ const sidebars = {
       label: 'Guides',
       collapsed: true,
       items: [
+        'guides/movie-quotes-app-tutorial',
         {
           type: 'category',
           label: 'Deployment',
           collapsed: true,
           items: [
-            'guides/movie-quotes-app-tutorial',
             'guides/deployment/deploy-to-fly-io-with-sqlite',
             'guides/deployment/advanced-fly-io-deployment',
           ],
@@ -181,11 +181,13 @@ const sidebars = {
         'guides/prisma',
         'guides/generate-frontend-code-to-consume-platformatic-rest-api',
         'guides/migrating-fastify-app-to-platformatic-service',
+        "guides/migrating-express-app-to-platformatic-service",
         'guides/applications-with-stackables',
         'guides/telemetry',
         'guides/dockerize-platformatic-app',
         'guides/build-modular-monolith',
         'guides/logging-to-elasticsearch',
+        "guides/jwt-keycloak"
       ],
     },
     'FAQs'
