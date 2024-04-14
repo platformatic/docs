@@ -15,241 +15,163 @@
 const sidebars = {
   docs: [
     'Overview',
+    'getting-started/quick-start-guide',
+    'cli',
     {
       type: 'category',
-      label: 'Getting Started',
-      link: {
-        type: 'generated-index'
-      },
+      label: 'Platformatic Composer',
       collapsed: true,
       items: [
-        'getting-started/quick-start-guide',
-        {
-          type: 'category',
-          label: 'Movie App',
-          link: {
-            type: 'generated-index'
-          },
-          collapsed: true,
-          items: [
-            'getting-started/movie-app/movie-quotes-app-tutorial'
-          ]
-        }
-      ]
+        'composer/overview',
+        'composer/configuration',
+        'composer/programmatic',
+        'composer/api-modification',
+      ],
     },
     {
       type: 'category',
-      label: 'Reference',
-      link: {
-        type: 'generated-index'
-      },
+      label: 'Platformatic DB',
       collapsed: true,
       items: [
-        'reference/cli',
+        'db/overview',
+        'db/configuration',
+        'db/migrations',
         {
           type: 'category',
-          label: 'Platformatic Composer',
-          link: {
-            type: 'doc',
-            id: 'reference/composer/introduction'
-          },
+          label: 'Authorization',
           collapsed: true,
           items: [
-            'reference/composer/configuration',
-            'reference/composer/programmatic',
-            'reference/composer/api-modification'
-          ]
+            'db/authorization/overview',
+            'db/authorization/strategies',
+            'db/authorization/user-roles-metadata',
+            'db/authorization/rules',
+          ],
+        },
+        'db/plugin',
+        'db/logging',
+        'db/programmatic',
+        'db/schema-support',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Platformatic Runtime',
+      collapsed: true,
+      items: [
+        'runtime/overview',
+        'runtime/configuration',
+        'runtime/programmatic',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Platformatic Service',
+      collapsed: true,
+      items: [
+        'service/overview',
+        'service/configuration',
+        'service/plugin',
+        'service/programmatic',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Client',
+      collapsed: true,
+      items: [
+        'client/overview',
+        'client/programmatic',
+        'client/frontend',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Packages',
+      collapsed: false,
+      items: [
+        {
+          type: 'category',
+          label: 'SQL-to-OpenAPI',
+          collapsed: true,
+          items: [
+            'packages/sql-openapi/overview',
+            'packages/sql-openapi/api',
+            'packages/sql-openapi/ignore',
+            'packages/sql-openapi/explicit-include',
+          ],
         },
         {
           type: 'category',
-          label: 'Platformatic DB',
-          link: {
-            type: 'doc',
-            id: 'reference/db/introduction'
-          },
+          label: 'SQL-to-GraphQL',
           collapsed: true,
           items: [
-            'reference/db/configuration',
-            'reference/db/migrations',
-            {
-              type: 'category',
-              label: 'Authorization',
-              link: {
-                type: 'doc',
-                id: 'reference/db/authorization/introduction'
-              },
-              collapsed: true,
-              items: [
-                'reference/db/authorization/strategies',
-                'reference/db/authorization/user-roles-metadata',
-                'reference/db/authorization/rules'
-              ]
-            },
-            'reference/db/plugin',
-            'reference/db/logging',
-            'reference/db/programmatic',
-            'reference/db/schema-support'
-          ]
+            'packages/sql-graphql/overview',
+            'packages/sql-graphql/queries',
+            'packages/sql-graphql/mutations',
+            'packages/sql-graphql/many-to-many',
+            'packages/sql-graphql/ignore',
+          ],
         },
         {
           type: 'category',
-          label: 'Platformatic Runtime',
-          link: {
-            type: 'doc',
-            id: 'reference/runtime/introduction'
-          },
+          label: 'SQL-Mapper',
           collapsed: true,
           items: [
-            'reference/runtime/configuration',
-            'reference/runtime/programmatic'
-          ]
+            'packages/sql-mapper/overview',
+            'packages/sql-mapper/fastify-plugin',
+            {
+              type: 'category',
+              label: 'Entities',
+              collapsed: true,
+              items: [
+                'packages/sql-mapper/entities/overview',
+                'packages/sql-mapper/entities/fields',
+                'packages/sql-mapper/entities/api',
+                'packages/sql-mapper/entities/example',
+                'packages/sql-mapper/entities/hooks',
+                'packages/sql-mapper/entities/relations',
+                'packages/sql-mapper/entities/transactions',
+              ],
+            },
+          ],
         },
         {
           type: 'category',
-          label: 'Platformatic Service',
-          link: {
-            type: 'doc',
-            id: 'reference/service/introduction'
-          },
+          label: 'SQL-Events',
           collapsed: true,
           items: [
-            'reference/service/configuration',
-            'reference/service/plugin',
-            'reference/service/programmatic'
-          ]
+            'packages/sql-events/overview',
+            'packages/sql-events/fastify-plugin',
+          ],
         },
-        {
-          type: 'category',
-          label: 'Packages',
-          link: {
-            type: 'generated-index'
-            // TODO: Add a description
-          },
-          collapsed: true,
-          items: [
-            {
-              type: 'category',
-              label: 'Client',
-              link: {
-                type: 'doc',
-                id: 'reference/client/introduction'
-              },
-              collapsed: true,
-              items: [
-                'reference/client/introduction',
-                'reference/client/programmatic',
-                'reference/client/frontend'
-              ]
-            },
-            {
-              type: 'category',
-              label: 'SQL-to-OpenAPI',
-              link: {
-                type: 'doc',
-                id: 'reference/sql-openapi/introduction'
-              },
-              collapsed: true,
-              items: [
-                'reference/sql-openapi/api',
-                'reference/sql-openapi/ignore',
-                'reference/sql-openapi/explicit-include'
-              ]
-            },
-            {
-              type: 'category',
-              label: 'SQL-to-GraphQL',
-              link: {
-                type: 'doc',
-                id: 'reference/sql-graphql/introduction'
-              },
-              collapsed: true,
-              items: [
-                'reference/sql-graphql/queries',
-                'reference/sql-graphql/mutations',
-                'reference/sql-graphql/many-to-many',
-                'reference/sql-graphql/ignore'
-              ]
-            },
-            {
-              type: 'category',
-              label: 'SQL-Mapper',
-              link: {
-                type: 'doc',
-                id: 'reference/sql-mapper/introduction'
-              },
-              collapsed: true,
-              items: [
-                'reference/sql-mapper/fastify-plugin',
-                {
-                  type: 'category',
-                  label: 'Entities',
-                  link: {
-                    type: 'doc',
-                    id: 'reference/sql-mapper/entities/introduction'
-                  },
-                  collapsed: true,
-                  items: [
-                    'reference/sql-mapper/entities/fields',
-                    'reference/sql-mapper/entities/api',
-                    'reference/sql-mapper/entities/example',
-                    'reference/sql-mapper/entities/hooks',
-                    'reference/sql-mapper/entities/relations',
-                    'reference/sql-mapper/entities/transactions'
-                  ]
-                }
-              ]
-            },
-            {
-              type: 'category',
-              label: 'SQL-Events',
-              link: {
-                type: 'doc',
-                id: 'reference/sql-events/introduction'
-              },
-              collapsed: true,
-              items: [
-                'reference/sql-events/fastify-plugin'
-              ]
-            }
-          ]
-        }
-      ]
+      ],
     },
     {
       type: 'category',
       label: 'Guides',
-      link: {
-        type: 'generated-index'
-      },
       collapsed: true,
       items: [
         {
           type: 'category',
           label: 'Deployment',
-          link: {
-            type: 'doc',
-            id: 'guides/deployment/deployment'
-          },
           collapsed: true,
           items: [
+            'guides/movie-quotes-app-tutorial',
             'guides/deployment/deploy-to-fly-io-with-sqlite',
-            'guides/deployment/advanced-fly-io-deployment'
-          ]
+            'guides/deployment/advanced-fly-io-deployment',
+          ],
         },
         'guides/seed-a-database',
         {
           type: 'category',
           label: 'Add Custom Functionality',
-          link: {
-            type: 'doc',
-            id: 'guides/add-custom-functionality/introduction'
-          },
           collapsed: true,
           items: [
+            'guides/add-custom-functionality/overview',
             'guides/add-custom-functionality/prerequisites',
             'guides/add-custom-functionality/extend-graphql',
-            'guides/add-custom-functionality/extend-rest'
-          ]
+            'guides/add-custom-functionality/extend-rest',
+          ],
         },
         'guides/securing-platformatic-db',
         'guides/jwt-auth0',
@@ -259,19 +181,15 @@ const sidebars = {
         'guides/prisma',
         'guides/generate-frontend-code-to-consume-platformatic-rest-api',
         'guides/migrating-fastify-app-to-platformatic-service',
-        'guides/migrating-express-app-to-platformatic-service',
         'guides/applications-with-stackables',
         'guides/telemetry',
         'guides/dockerize-platformatic-app',
         'guides/build-modular-monolith',
-        'guides/logging-to-elasticsearch'
-      ]
+        'guides/logging-to-elasticsearch',
+      ],
     },
     'FAQs'
-
-    
-  
   ]
-}
+};
 
-module.exports = sidebars
+module.exports = sidebars;
