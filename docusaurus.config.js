@@ -80,20 +80,10 @@ const config = {
             label: 'Get Started',
           },
           {
-            to: 'docs/category/reference',
-            position: 'left',
-            label: 'Reference',
-          },
-          {
-            to: 'docs/category/guides',
+            to: 'docs/guides/movie-quotes-app-tutorial',
             position: 'left',
             label: 'Guides',
           },
-          // {
-          //   to: 'docs/category/platformatic-cloud',
-          //   position: 'left',
-          //   label: 'Platformatic Cloud',
-          // },
           { href: 'https://blog.platformatic.dev', label: 'Blog', position: 'left' },
           { href: 'https://www.platformatic.dev', label: 'About', position: 'left' },
           {
@@ -119,12 +109,9 @@ const config = {
               },
               {
                 label: 'Guides',
-                to: 'docs/category/guides',
+                to: 'docs/guides/movie-quotes-app-tutorial',
               },
-              {
-                label: 'Reference',
-                to: 'docs/category/reference',
-              },
+              
             ],
           },
           {
