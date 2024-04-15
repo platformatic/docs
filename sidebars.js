@@ -87,7 +87,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Packages',
-      collapsed: false,
+      collapsed: true,
       items: [
         {
           type: 'category',
