@@ -1,4 +1,7 @@
 import NewApiProjectInstructions from '../getting-started/new-api-project-instructions.md';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 
 # Movie Quotes App Tutorial
 
@@ -76,7 +79,7 @@ CREATE TABLE quotes (
 ```
 
 Now let's setup `migrations` in our Platformatic configuration
-file, **`platformatic.json`**:
+file, **`platformatic.db.json`**:
 
 ```json
 {
@@ -171,6 +174,8 @@ npm run start
 The new migration should be automatically applied and we'll see the log message
 `running 002.do.sql`.
 
+<Tabs>
+<TabItem value="graphql" label="GraphQL">
 Our Platformatic DB server also provides a GraphQL API. Let's open up the GraphiQL
 application in our web browser:
 
@@ -263,6 +268,12 @@ npx platformatic db schema graphql
 
 The GraphQL schema shows all of the queries and mutations that we can run
 against our GraphQL API, as well as the types of data that it expects as input.
+</TabItem>
+<TabItem value="rest" label="Rest API">
+This is for Open APi Platformatic Rest API with Open API. 
+</TabItem>
+</Tabs>
+
 
 ### Populate the database
 
@@ -1403,7 +1414,7 @@ module.exports = async function plugin (app) {
 }
 ```
 
-Now let's register our plugin in our API configuration file, **`platformatic.json`**:
+Now let's register our plugin in our API configuration file, **`platformatic.db.json`**:
 
 ```json
 {
@@ -1654,7 +1665,7 @@ PLT_SERVER_CORS_ORIGIN=http://localhost:3000
 The value of `PLT_SERVER_CORS_ORIGIN` is our frontend application's origin.
 
 Now we can add a `cors` configuration object in our API's configuration file,
-**`platformatic.json`**:
+**`platformatic.db.json`**:
 
 ```json
 {
