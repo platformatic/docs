@@ -76,7 +76,7 @@ CREATE TABLE quotes (
 ```
 
 Now let's setup `migrations` in our Platformatic configuration
-file, **`platformatic.db.json`**:
+file, **`platformatic.json`**:
 
 ```json
 {
@@ -1403,7 +1403,7 @@ module.exports = async function plugin (app) {
 }
 ```
 
-Now let's register our plugin in our API configuration file, **`platformatic.db.json`**:
+Now let's register our plugin in our API configuration file, **`platformatic.json`**:
 
 ```json
 {
@@ -1654,7 +1654,7 @@ PLT_SERVER_CORS_ORIGIN=http://localhost:3000
 The value of `PLT_SERVER_CORS_ORIGIN` is our frontend application's origin.
 
 Now we can add a `cors` configuration object in our API's configuration file,
-**`platformatic.db.json`**:
+**`platformatic.json`**:
 
 ```json
 {
