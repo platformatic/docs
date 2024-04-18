@@ -70,6 +70,7 @@ jobs:
         run: |
           rm -rf ./docs
           cp -r main-repo/docs .
+          cp -r main-repo/docs/sidebars.js .
           rm -rf main-repo
       - name: Install deps
         if: inputs.original_event == 'push_on_main' || inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
