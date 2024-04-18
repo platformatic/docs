@@ -422,7 +422,7 @@ All Platformatic Service features are fully configurable via `platformatic.servi
 - Write your plugins in JavaScript or TypeScript — TypeScript support is provided out-of-the-box and supports hot reloading.
 - Pretty printed logs — Making it easier to understand and debug your application during development.
 
-> See the [Platformatic Service Configuration](/docs/reference/service/configuration/) documentation for all of the features which can be configured.
+> See the [Platformatic Service Configuration](../) documentation for all of the features which can be configured.
 
 ## Next steps
 
