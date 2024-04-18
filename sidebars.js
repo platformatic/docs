@@ -11,7 +11,7 @@
 
 // @ts-check
 
-/** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
+// /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   docs: [
     'Overview',
@@ -26,6 +26,7 @@ const sidebars = {
         'composer/configuration',
         'composer/programmatic',
         'composer/api-modification',
+        'composer/plugin.md', 
       ],
     },
     {
