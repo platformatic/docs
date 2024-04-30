@@ -53,7 +53,11 @@ const config = {
           showReadingTime: true,
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: [
+            require.resolve('./src/css/custom.css'),
+            require.resolve('./src/css/custom-dark.css'),
+            require.resolve('./src/css/custom-light.css')
+          ]
         },
       }),
     ],
