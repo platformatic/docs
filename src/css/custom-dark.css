@@ -5,20 +5,20 @@
  */
 
 [data-theme='dark'] {
-  --ifm-color-primary: #21f190;
+  --ifm-color-primary: #FFFFFF;
   --ifm-color-primary-dark: #0fe883;
   --ifm-color-primary-darker: #0edb7b;
   --ifm-color-primary-darkest: #0bb466;
   --ifm-color-primary-light: #3bf39d;
   --ifm-color-primary-lighter: #48f3a3;
   --ifm-color-primary-lightest: #6ef6b7;
-  --ifm-background-color: #00283D !important;
+  --ifm-background-color: #040607 !important;
   --ifm-background-surface-color: #00283D !important;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
 [data-theme='dark'] #__docusaurus > footer {
-  background-color: #00283D;
+  background-color: #040607;
 }
 
 [data-theme='dark'] #__docusaurus > nav,
