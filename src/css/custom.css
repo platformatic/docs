@@ -4,6 +4,7 @@
  * work well for content-centric websites.
  */
 
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 :root {
   --ifm-color-primary: #00283d;
@@ -17,6 +18,11 @@
   --ifm-background-color: transparent;
   --ifm-link-color: #00AB6B;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  font-family: 'Inter';
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Inter';
 }
 
 main a {
