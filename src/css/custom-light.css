@@ -4,7 +4,7 @@
  * work well for content-centric websites.
  */
 
-[data-theme='light'] {
+ [data-theme='light'] {
   --ifm-color-primary: #00283D;
   --ifm-color-primary-dark: #00AB6B;
   --ifm-color-primary-darker: #00947F;
@@ -12,15 +12,22 @@
   --ifm-color-primary-light: #29d5b0;
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
-  --ifm-background-color: transparent;
+  --ifm-background-color: #FAFAFA; 
+  --ifm-background-surface-color: #FFFFFF; 
+  --ifm-link-color: #00050B !important; 
+  --ifm-font-color-base: #00050B !important; 
+  --ifm-code-font-color: #00050B; 
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-footer-background-color: #00283D; 
+  --ifm-navbar-background-color: #FFFFFF; 
+  --ifm-navbar-link-color: #00050B; 
+  --ifm-heading-color: #0050B2; 
 }
 
 [data-theme='light'] #__docusaurus > footer {
-  background-color: #00283D;
+  background-color: #FFFFFF; 
 }
 
 [data-theme='light'] .hero__title {
-  color: #21f190;
+  color: #21f190; 
 }
-
