@@ -39,9 +39,14 @@
 
 a {
   color: #2588E4;
+  text-decoration: none !important;
 }
 
 [data-theme='dark'] .button.button--secondary {
   color: #00050B;
   background-color: #FFFFFF;
+}
+
+[data-theme='dark'] .alert {
+ border: rgb(0, 139, 0);
 }
