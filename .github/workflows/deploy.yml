@@ -22,7 +22,7 @@ on:
 jobs:
   push-on-main:
     if: (github.event_name == 'push' && github.ref == 'refs/heads/main')
-    uses: platformatic/oss/.github/workflows/rebuild-and-deploy-docs.yml@main
+    uses: platformatic/docs/.github/workflows/rebuild-and-deploy-docs.yml@main
     with:
       original_event: push_on_main
     secrets:
@@ -30,7 +30,7 @@ jobs:
       TARGET_REPO: ${{ secrets.TARGET_REPO }}
   repository-dispatch:
     if: (github.event_name == 'repository_dispatch' && github.event.action == 'update_docs')
-    uses: platformatic/oss/.github/workflows/rebuild-and-deploy-docs.yml@main
+    uses: platformatic/docs/.github/workflows/rebuild-and-deploy-docs.yml@main
     with:
       force: ${{ github.event.client_payload.force || false }}
       git_ref: ${{ github.event.client_payload.git_ref }}
@@ -40,7 +40,7 @@ jobs:
       TARGET_REPO: ${{ secrets.TARGET_REPO }}
   workflow-dispatch:
     if: (github.event_name == 'workflow_dispatch')
-    uses: platformatic/oss/.github/workflows/rebuild-and-deploy-docs.yml@main
+    uses: platformatic/docs/.github/workflows/rebuild-and-deploy-docs.yml@main
     with:
       force: ${{ inputs.force || false }}
       git_ref: ${{ inputs.git_ref }}
