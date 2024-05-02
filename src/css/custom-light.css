@@ -6,22 +6,16 @@
 
  [data-theme='light'] {
   --ifm-color-primary: #00283D;
-  --ifm-color-primary-dark: #00AB6B;
-  --ifm-color-primary-darker: #00947F;
-  --ifm-color-primary-darkest: #007B82;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
   --ifm-background-color: #FAFAFA; 
   --ifm-background-surface-color: #FFFFFF; 
-  --ifm-link-color: #00050B !important; 
+  --ifm-link-color: #2588E4 !important; 
   --ifm-font-color-base: #00050B !important; 
   --ifm-code-font-color: #00050B; 
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-footer-background-color: #00283D; 
   --ifm-navbar-background-color: #FFFFFF; 
   --ifm-navbar-link-color: #00050B; 
-  --ifm-heading-color: #0050B2; 
+  --ifm-heading-color: #00050B; 
 }
 
 [data-theme='light'] #__docusaurus > footer {
@@ -29,5 +23,14 @@
 }
 
 [data-theme='light'] .hero__title {
-  color: #21f190; 
+  color: #00050B !important; 
+}
+
+[data-theme='light'] .hero--primary {
+  --ifm-hero-background-color: #FAFAFA !important;
+}
+
+.button.button--secondary {
+  color: #FFFFFF;
+  background-color: #00050B;
 }
