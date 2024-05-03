@@ -36,3 +36,21 @@
 }
 
 
+[data-theme='light'] .footer__item {
+  --ifm-footer-background-color: #303846 !important;
+  --ifm-footer-color: #000 !important;
+  --ifm-footer-link-color: #000;
+  --ifm-footer-title-color: #000;
+}
+
+[data-theme='light'] .footer__copyright {
+  color: #00050B !important; 
+}
+
+[data-theme='light'] .navbar__link {
+  color: #00050B !important; 
+}
+
+[data-theme='light'] .alert {
+  border: rgb(0, 139, 0);
+ }

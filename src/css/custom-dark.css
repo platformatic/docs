@@ -50,3 +50,7 @@ a {
 [data-theme='dark'] .alert {
  border: rgb(0, 139, 0);
 }
+
+[data-theme='dark'] .col--3 {
+  color: #CFCFCF !important;
+ }

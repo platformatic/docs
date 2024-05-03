@@ -63,14 +63,14 @@ export default function WhyPlatformatic() {
             </ul>
           </div>
           <div className="col col--7">
-            <img src="/img/platformatic-service-architecture.png" alt="Platformatic Service Architecture" />
+            <img src="/img/images/Platformatic_Service_Diagram_(Light_Mode).png" alt="Platformatic Service Architecture" />
           </div>
         </div>
         <div className="row margin-top--lg">
-          <div className="col col--5">
-            <img src="/img/platformatic-db-architecture.png" alt="Platformatic DB Architecture" />
+          <div className="col col--7">
+            <img src="/img/images/Platformatic_DB_Diagram_(Light_Mode).png" alt="Platformatic DB Architecture" />
           </div>
-          <div className="col col--6 col--offset-1">  
+          <div className="col col--4">  
             <h1>Platformatic DB</h1>
             <p>
               Are you tired of creating Create-Read-Update-Delete (CRUD) APIs?
@@ -90,20 +90,11 @@ export default function WhyPlatformatic() {
               <li>Multiple authentication methods: JWT, WebHook, HTTP Headers</li>
               <li>Authorization via role based access control (RBAC)</li>
               <li>Type-safety via generated types for improved database interactions</li>
-              <li>...and all the features of Platformatic Service</li>
             </ul>
           </div>
         </div>
         <div className="row margin-top--lg">
-          <div class="col col--6 col--offset-3">
-            <div className={styles.video}>
-              <iframe src="https://www.loom.com/embed/cb292b03ae684ac3ade99a7717f5b7e7" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
-              </iframe>
-            </div>
-          </div>
-        </div>
-        <div className="row margin-top--lg">
-          <div className="col col--5">  
+          <div className="col col--4">  
             <h1>Platformatic Composer</h1>
             <p>
               Want to automatically compose microservices into one ecosystem with a single public API?
@@ -122,22 +113,15 @@ export default function WhyPlatformatic() {
               <li>...and all the features of Platformatic Service</li>
             </ul>
           </div>
-          <div className="col col--6 col--offset-1">
-            <img src="/img/platformatic-composer-architecture.png" alt="Platformatic Composer Architecture" />
+          <div className="col col--7">
+            <img src="/img/images/Platformatic_Composer_Diagram_(Light_Mode).png" alt="Platformatic Composer Architecture" />
           </div>
         </div>
         <div className="row margin-top--lg">
-          <div class="col col--6 col--offset-3">
-            <div className={styles.video}>
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/0DeNIeSnH0E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
+          <div className="col col--7">
+            <img src="/img/images/Platformatic_Runtime_Diagram_(Light_Mode).png" alt="Platformatic Runtime Architecture" />
           </div>
-        </div>
-        <div className="row margin-top--lg">
-          <div className="col col--5">
-            <img src="/img/platformatic-runtime-architecture.png" alt="Platformatic Runtime Architecture" />
-          </div>
-          <div className="col col--5 col--offset-1">  
+          <div className="col col--4 col--offset-1">  
             <h1>Platformatic Runtime</h1>
             <p>
               The Platformatic Runtime environment enables developers to leverage the perks
@@ -153,13 +137,6 @@ export default function WhyPlatformatic() {
               <li>In-process routing using <code>fetch()</code> or <a href="">Platformatic Client</a></li>
               <li>Monorepo support</li>
             </ul>
-          </div>
-        </div>
-        <div className="row margin-top--lg">
-          <div class="col col--6 col--offset-3">
-            <div className={styles.video}>
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/KGzAURD8mcc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
           </div>
         </div>
       </div>
