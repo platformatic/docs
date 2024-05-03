@@ -110,7 +110,6 @@ export default function WhyPlatformatic() {
               <li>Automatic schema refresh</li>
               <li>Customizable via Node.js and <a href="https://www.fastify.io/">Fastify</a> plugins</li>
               <li>Automatic TypeScript compilation</li>
-              <li>...and all the features of Platformatic Service</li>
             </ul>
           </div>
           <div className="col col--7">
