@@ -13,7 +13,7 @@
   --ifm-code-font-color: #00050B; 
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-footer-background-color: #00283D; 
-  --ifm-navbar-background-color: #FFFFFF; 
+  --ifm-navbar-background-color: #FAFAFA; 
   --ifm-navbar-link-color: #00050B; 
   --ifm-heading-color: #00050B; 
 }
@@ -41,6 +41,10 @@
   --ifm-footer-color: #000 !important;
   --ifm-footer-link-color: #000;
   --ifm-footer-title-color: #000;
+}
+
+[data-theme='light'] .footer--dark {
+  background-color: #FAFAFA !important;
 }
 
 [data-theme='light'] .footer__copyright {
