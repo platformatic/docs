@@ -53,4 +53,9 @@ a {
 
 [data-theme='dark'] .col--3 {
   color: #CFCFCF !important;
- }
+}
+
+[data-theme='dark'] .footer__title {
+  color: #FFFFFF !important; 
+}
+

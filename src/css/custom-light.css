@@ -43,10 +43,6 @@
   --ifm-footer-title-color: #000;
 }
 
-/* [data-theme='light'] .footer--dark {
-  background-color: #FAFAFA !important;
-} */
-
 [data-theme='light'] .footer__copyright {
   color: #00050B !important; 
 }
@@ -59,6 +55,6 @@
   border: rgb(0, 139, 0);
  }
 
- [data-theme='dark'] .footer__link {
+ [data-theme='light'] .footer__link, .footer__title {
   color: #00050B !important; 
 }
