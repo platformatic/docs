@@ -14,7 +14,7 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-footer-background-color: #00283D; 
   --ifm-navbar-background-color: #FFFFFF; 
-  --ifm-navbar-link-color: #00050B; 
+  --ifm-navbar-link-color: #00050B !important; 
   --ifm-heading-color: #00050B; 
 }
 
@@ -28,6 +28,10 @@
 
 [data-theme='light'] .hero--primary {
   --ifm-hero-background-color: #FAFAFA !important;
+}
+
+[data-theme='light'] .navbar__link {
+  color: #00050B !important; 
 }
 
 .button.button--secondary {
