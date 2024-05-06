@@ -13,7 +13,7 @@
   --ifm-code-font-color: #00050B; 
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-footer-background-color: #00283D; 
-  --ifm-navbar-background-color: #FFFFFF; 
+  --ifm-navbar-background-color: #FAFAFA; 
   --ifm-navbar-link-color: #00050B; 
   --ifm-heading-color: #00050B; 
 }
@@ -36,3 +36,25 @@
 }
 
 
+[data-theme='light'] .footer__item {
+  --ifm-footer-background-color: #303846 !important;
+  --ifm-footer-color: #000 !important;
+  --ifm-footer-link-color: #000;
+  --ifm-footer-title-color: #000;
+}
+
+[data-theme='light'] .footer__copyright {
+  color: #00050B !important; 
+}
+
+[data-theme='light'] .navbar__link {
+  color: #00050B !important; 
+}
+
+[data-theme='light'] .alert {
+  border: rgb(0, 139, 0);
+ }
+
+ [data-theme='light'] .footer__link, .footer__title {
+  color: #00050B !important; 
+}
