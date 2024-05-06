@@ -30,10 +30,6 @@
   --ifm-hero-background-color: #FAFAFA !important;
 }
 
-[data-theme='light'] .navbar__link {
-  color: #00050B !important; 
-}
-
 .button.button--secondary {
   color: #FFFFFF;
   background-color: #00050B;
