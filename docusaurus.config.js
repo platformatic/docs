@@ -69,7 +69,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: 'img/plt-logo.svg',
+      image: 'img/plt-logo-docs.png',
       navbar: {
         title: 'Platformatic',
         logo: {
