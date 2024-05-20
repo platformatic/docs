@@ -193,7 +193,12 @@ const sidebars = {
       ],
     },
     'FAQs'
-  ]
+  ],
+  // learn: [
+  //   'Overview',
+  //   'getting-started/quick-start-guide',
+  //   'cli',
+  // ],
 };
 
 module.exports = sidebars;
