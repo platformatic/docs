@@ -89,12 +89,6 @@ const config = {
             position: 'left',
             label: 'Guides',
           },
-          // {
-          //   type: "docSidebar",
-          //   position: "left",
-          //   sidebarId: "learn",
-          //   label: "Learn",
-          // },
           { href: 'https://blog.platformatic.dev', label: 'Blog', position: 'left' },
           { href: 'https://www.platformatic.dev', label: 'About', position: 'left' },
           {
