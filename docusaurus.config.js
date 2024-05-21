@@ -86,10 +86,6 @@ const config = {
             to: '/docs/packages/sql-mapper/overview'
           },
           {
-            from: '/docs/1.38.0/client/programmatic/',
-            to: '/docs/client/programmatic'
-          },
-          {
             from: '/docs/reference/service/programmatic/',
             to: '/docs/service/overview'
           },
