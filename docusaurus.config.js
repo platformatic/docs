@@ -70,10 +70,6 @@ const config = {
       {
         redirects: [
           {
-            from: '/docs/next/reference/cli/',
-            to: '/docs/next/cli'
-          },
-          {
             from: '/docs/reference/cli',
             to: '/docs/cli'
           },
@@ -84,10 +80,6 @@ const config = {
           {
             from: '/docs/reference/sql-mapper/introduction/',
             to: '/docs/packages/sql-mapper/overview'
-          },
-          {
-            from: '/docs/1.38.0/client/programmatic/',
-            to: '/docs/client/programmatic'
           },
           {
             from: '/docs/reference/service/programmatic/',
