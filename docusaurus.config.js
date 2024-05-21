@@ -70,10 +70,6 @@ const config = {
       {
         redirects: [
           {
-            from: '/docs/next/reference/cli/',
-            to: '/docs/next/cli'
-          },
-          {
             from: '/docs/reference/cli',
             to: '/docs/cli'
           },
