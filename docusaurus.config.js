@@ -64,7 +64,74 @@ const config = {
   ],
   // the Orama plugin leaks memory if watch is enabled, let's just enable it in production
   plugins: [
-    process.env.NODE_ENV !== 'development' ? '@orama/plugin-docusaurus-v3' : null
+    process.env.NODE_ENV !== 'development' ? '@orama/plugin-docusaurus-v3' : null,
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            from: '/docs/next/reference/cli/',
+            to: '/docs/next/cli'
+          },
+          {
+            from: '/docs/reference/cli',
+            to: '/docs/cli'
+          },
+          {
+            from: '/docs/category/packages/',
+            to: '/docs/packages/sql-openapi/overview'
+          },
+          {
+            from: '/docs/reference/sql-mapper/introduction/',
+            to: '/docs/packages/sql-mapper/overview'
+          },
+          {
+            from: '/docs/1.38.0/client/programmatic/',
+            to: '/docs/client/programmatic'
+          },
+          {
+            from: '/docs/reference/service/programmatic/',
+            to: '/docs/service/overview'
+          },
+          {
+            from: '/docs/reference/composer/introduction/',
+            to: '/docs/composer/overview'
+          },
+          {
+            from: '/docs/reference/runtime/introduction/',
+            to: '/docs/runtime/overview'
+          },
+          {
+            from: '/docs/reference/db/introduction/',
+            to: '/docs/db/overview'
+          },
+          {
+            from: '/docs/reference/client',
+            to: '/docs/client/overview'
+          },
+          {
+            from: '/docs/reference/db/authorization/introduction',
+            to: '/docs/db/authorization/overview'
+          },
+          {
+            from: '/docs/reference/db/configuration',
+            to: '/docs/db/configuration'
+          },
+          {
+            from: '/docs/reference/sql-openapi/introduction',
+            to: '/docs/packages/sql-openapi/overview'
+          },
+          {
+            from: '/docs/reference/sql-graphql/queries',
+            to: '/docs/packages/sql-graphql/queries'
+          },
+          {
+            from: '/docs/reference/sql-openapi/introduction',
+            to: '/docs/packages/sql-openapi/overview'
+          },
+        ],
+      },
+    ]
   ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
