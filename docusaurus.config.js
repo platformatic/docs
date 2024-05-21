@@ -125,10 +125,6 @@ const config = {
             from: '/docs/reference/sql-graphql/queries',
             to: '/docs/packages/sql-graphql/queries'
           },
-          {
-            from: '/docs/reference/sql-openapi/introduction',
-            to: '/docs/packages/sql-openapi/overview'
-          },
         ],
       },
     ]
