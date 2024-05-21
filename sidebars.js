@@ -193,7 +193,7 @@ const sidebars = {
       ],
     },
     'FAQs'
-  ],
+  ]
 };
 
 module.exports = sidebars;
