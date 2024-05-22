@@ -193,6 +193,17 @@ const sidebars = {
       ],
     },
     'FAQs'
+  ],
+  Learn: [
+    'learn/basic-concepts',
+    {
+      type: 'category',
+      label: 'Beginner Tutorials',
+      collapsed: true,
+      items: [
+        'learn/beginner/crud-application',
+      ],
+    },
   ]
 };
 
