@@ -117,6 +117,10 @@ const config = {
             from: '/docs/reference/sql-graphql/queries',
             to: '/docs/packages/sql-graphql/queries'
           },
+          {
+            from: 'https://docs.platformatic.dev/docs/reference/db/migrations',
+            to: 'https://docs.platformatic.dev/docs/db/migrations'
+          }
         ],
       },
     ]

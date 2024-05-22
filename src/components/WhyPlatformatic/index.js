@@ -63,12 +63,14 @@ export default function WhyPlatformatic() {
             </ul>
           </div>
           <div className="col col--7">
-            <img src="/img/images/Platformatic_Service_Diagram_(Light_Mode).png" alt="Platformatic Service Architecture" />
+            <img src="/img/images/Platformatic_Service_Diagram_(Light_Mode).png" alt="Platformatic Service Architecture" className={styles.light} />
+            <img src="/img/images/img-dark/Platformatic_Service_Diagram_(Dark_Mode).png" alt="Platformatic Service Architecture" className={styles.dark} />
           </div>
         </div>
         <div className="row margin-top--lg">
           <div className="col col--7">
-            <img src="/img/images/Platformatic_DB_Diagram_(Light_Mode).png" alt="Platformatic DB Architecture" />
+            <img src="/img/images/Platformatic_DB_Diagram_(Light_Mode).png" alt="Platformatic DB Architecture" className={styles.light} />
+            <img src="/img/images/img-dark/Platformatic_DB_Diagram_(Dark_Mode).png" alt="Platformatic DB Architecture" className={styles.dark} />
           </div>
           <div className="col col--4">  
             <h1>Platformatic DB</h1>
@@ -113,12 +115,14 @@ export default function WhyPlatformatic() {
             </ul>
           </div>
           <div className="col col--7">
-            <img src="/img/images/Platformatic_Composer_Diagram_(Light_Mode).png" alt="Platformatic Composer Architecture" />
+            <img src="/img/images/Platformatic_Composer_Diagram_(Light_Mode).png" alt="Platformatic Composer Architecture" className={styles.light} />
+            <img src="/img/images/img-dark/Platformatic_Composer_Diagram_(Dark_Mode).png" alt="Platformatic Composer Architecture" className={styles.dark} />
           </div>
         </div>
         <div className="row margin-top--lg">
           <div className="col col--7">
-            <img src="/img/images/Platformatic_Runtime_Diagram_(Light_Mode).png" alt="Platformatic Runtime Architecture" />
+            <img src="/img/images/Platformatic_Runtime_Diagram_(Light_Mode).png" alt="Platformatic Runtime Architecture" className={styles.light} />
+            <img src="/img/images/img-dark/Platformatic_Runtime_Diagram_(Dark_Mode).png" alt="Platformatic Runtime Architecture" className={styles.dark} />
           </div>
           <div className="col col--4 col--offset-1">  
             <h1>Platformatic Runtime</h1>
