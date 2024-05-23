@@ -74,6 +74,10 @@ const config = {
             to: '/docs/cli'
           },
           {
+            from:'/docs/next/reference/cli/',
+            to: '/docs/cli'
+          },
+          {
             from: '/docs/category/packages/',
             to: '/docs/packages/sql-openapi/overview'
           },
