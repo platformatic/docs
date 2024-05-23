@@ -72,12 +72,16 @@ const config = {
       {
         redirects: [
           {
-            from: "/docs/reference/cli",
-            to: "/docs/cli",
+            from: '/docs/reference/cli',
+            to: '/docs/cli'
           },
           {
-            from: "/docs/category/packages/",
-            to: "/docs/packages/sql-openapi/overview",
+            from:'/docs/next/reference/cli/',
+            to: '/docs/cli'
+          },
+          {
+            from: '/docs/category/packages/',
+            to: '/docs/packages/sql-openapi/overview'
           },
           {
             from: "/docs/reference/sql-mapper/introduction/",
