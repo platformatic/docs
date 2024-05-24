@@ -124,9 +124,17 @@ const config = {
             to: "/docs/packages/sql-graphql/queries",
           },
           {
-            from: "/docs/reference/db/migrations",
-            to: "/docs/db/migrations",
+            from: '/docs/reference/db/migrations',
+            to: '/docs/db/migrations'
           },
+          {
+            from: '/docs/reference/composer/configuration',
+            to: '/docs/composer/configuration'
+          },
+          {
+            from: '/docs/reference/service/introduction',
+            to: '/docs/service/overview'
+          }
         ],
       },
     ],
