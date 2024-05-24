@@ -124,6 +124,26 @@ const config = {
           {
             from: '/docs/reference/db/migrations',
             to: '/docs/db/migrations'
+          },
+          {
+            from: '/docs/reference/composer/introduction',
+            to: '/docs/composer/overview'
+          },
+          {
+            from: '/docs/reference/composer/configuration',
+            to: '/docs/composer/configuration'
+          },
+          {
+            from: '/docs/reference/db/introduction',
+            to: '/docs/db/overview'
+          },
+          {
+            from: '/docs/reference/runtime/introduction',
+            to: '/docs/runtime/overview'
+          },
+          {
+            from: '/docs/reference/service/introduction',
+            to: '/docs/service/overview'
           }
         ],
       },
