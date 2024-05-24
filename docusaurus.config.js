@@ -134,10 +134,6 @@ const config = {
             to: '/docs/composer/configuration'
           },
           {
-            from: '/docs/reference/db/introduction',
-            to: '/docs/db/overview'
-          },
-          {
             from: '/docs/reference/runtime/introduction',
             to: '/docs/runtime/overview'
           },
