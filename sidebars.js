@@ -195,7 +195,7 @@ const sidebars = {
     'FAQs'
   ],
   Learn: [
-    'learn/basic-concepts',
+    'learn/overview',
     {
       type: 'category',
       label: 'Beginner Tutorials',
@@ -204,6 +204,8 @@ const sidebars = {
         'learn/beginner/crud-application',
       ],
     },
+    'learn/glossary',
+    'FAQs'
   ]
 };
 
