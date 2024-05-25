@@ -158,11 +158,6 @@ const config = {
             label: "Get Started",
           },
           {
-            to: "docs/guides/movie-quotes-app-tutorial",
-            position: "left",
-            label: "Guides",
-          },
-          {
             type: "docSidebar",
             position: "left",
             sidebarId: "Learn",

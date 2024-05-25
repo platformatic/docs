@@ -147,9 +147,22 @@ const sidebars = {
         },
       ],
     },
+    
+    'FAQs'
+  ],
+  Learn: [
+    'learn/overview',
     {
       type: 'category',
-      label: 'Guides',
+      label: 'Beginner Tutorials',
+      collapsed: true,
+      items: [
+        'learn/beginner/crud-application',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Advanced Guides',
       collapsed: true,
       items: [
         'guides/movie-quotes-app-tutorial',
@@ -190,18 +203,6 @@ const sidebars = {
         'guides/logging-to-elasticsearch',
         "guides/jwt-keycloak",
         "guides/use-env-with-platformatic"
-      ],
-    },
-    'FAQs'
-  ],
-  Learn: [
-    'learn/overview',
-    {
-      type: 'category',
-      label: 'Beginner Tutorials',
-      collapsed: true,
-      items: [
-        'learn/beginner/crud-application',
       ],
     },
     'learn/glossary',
