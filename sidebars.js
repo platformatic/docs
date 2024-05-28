@@ -15,7 +15,6 @@
 const sidebars = {
   docs: [
     'Overview',
-    'getting-started/quick-start-guide',
     'cli',
     {
       type: 'category',
@@ -152,6 +151,7 @@ const sidebars = {
   ],
   Learn: [
     'learn/overview',
+    'getting-started/quick-start-guide',
     {
       type: 'category',
       label: 'Beginner Tutorials',

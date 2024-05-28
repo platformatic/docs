@@ -152,16 +152,16 @@ const config = {
         },
         items: [
           {
-            type: "doc",
-            docId: "Overview",
-            position: "left",
-            label: "Get Started",
-          },
-          {
             type: "docSidebar",
             position: "left",
             sidebarId: "Learn",
             label: "Learn",
+          },
+          {
+            type: "doc",
+            docId: "Overview",
+            position: "left",
+            label: "Reference",
           },
           {
             href: "https://blog.platformatic.dev",
