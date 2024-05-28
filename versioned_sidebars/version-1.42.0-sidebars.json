@@ -133,9 +133,21 @@
         }
       ]
     },
+    "FAQs"
+  ],
+  "Learn": [
+    "learn/overview",
     {
       "type": "category",
-      "label": "Guides",
+      "label": "Beginner Tutorials",
+      "collapsed": true,
+      "items": [
+        "learn/beginner/crud-application"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Advanced Guides",
       "collapsed": true,
       "items": [
         "guides/movie-quotes-app-tutorial",
@@ -178,6 +190,7 @@
         "guides/use-env-with-platformatic"
       ]
     },
+    "learn/glossary",
     "FAQs"
   ]
 }
