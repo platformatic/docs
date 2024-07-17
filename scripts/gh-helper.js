@@ -18,10 +18,13 @@ async function getAllReleases () {
 
 async function getLatestRelease() {
   const releases = await getAllReleases()
-  if (releases[0].length === 0) {
+  const latest = releases[0].find((r) => !r.prerelease)
+
+  if (!latest) {
     throw new NoReleasesFoundError()
   }
-  return releases[0][0]
+
+  return latest
 }
 
 module.exports = {

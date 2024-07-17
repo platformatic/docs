@@ -64,7 +64,7 @@ jobs:
           repository: ${{ secrets.TARGET_REPO }}
           token: ${{ secrets.GH_API_TOKEN }}
           path: main-repo
-          ref: ${{ inputs.git_ref || 'main' }}
+          ref: ${{ inputs.git_ref || format('v{0}', env.REMOTE_VERSION) }}
       - name: Copy docs directory
         if: inputs.original_event == 'push_on_main' || inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
         run: |
