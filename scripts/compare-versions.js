@@ -2,7 +2,7 @@
 const { exit } = require('./utils')
 const semverGt = require('semver/functions/gt')
 
-const argv = require('minimist')(process.argv.slice(2));
+const argv = require('minimist')(process.argv.slice(2))
 
 if (!argv.from) {
   exit('Please provide "from" argument.')

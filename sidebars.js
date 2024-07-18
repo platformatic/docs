@@ -25,8 +25,8 @@ const sidebars = {
         'composer/configuration',
         'composer/programmatic',
         'composer/api-modification',
-        'composer/plugin', 
-      ],
+        'composer/plugin'
+      ]
     },
     {
       type: 'category',
@@ -44,14 +44,14 @@ const sidebars = {
             'db/authorization/overview',
             'db/authorization/strategies',
             'db/authorization/user-roles-metadata',
-            'db/authorization/rules',
-          ],
+            'db/authorization/rules'
+          ]
         },
         'db/plugin',
         'db/logging',
         'db/programmatic',
-        'db/schema-support',
-      ],
+        'db/schema-support'
+      ]
     },
     {
       type: 'category',
@@ -60,8 +60,8 @@ const sidebars = {
       items: [
         'runtime/overview',
         'runtime/configuration',
-        'runtime/programmatic',
-      ],
+        'runtime/programmatic'
+      ]
     },
     {
       type: 'category',
@@ -71,8 +71,8 @@ const sidebars = {
         'service/overview',
         'service/configuration',
         'service/plugin',
-        'service/programmatic',
-      ],
+        'service/programmatic'
+      ]
     },
     {
       type: 'category',
@@ -81,8 +81,8 @@ const sidebars = {
       items: [
         'client/overview',
         'client/programmatic',
-        'client/frontend',
-      ],
+        'client/frontend'
+      ]
     },
     {
       type: 'category',
@@ -97,8 +97,8 @@ const sidebars = {
             'packages/sql-openapi/overview',
             'packages/sql-openapi/api',
             'packages/sql-openapi/ignore',
-            'packages/sql-openapi/explicit-include',
-          ],
+            'packages/sql-openapi/explicit-include'
+          ]
         },
         {
           type: 'category',
@@ -109,8 +109,8 @@ const sidebars = {
             'packages/sql-graphql/queries',
             'packages/sql-graphql/mutations',
             'packages/sql-graphql/many-to-many',
-            'packages/sql-graphql/ignore',
-          ],
+            'packages/sql-graphql/ignore'
+          ]
         },
         {
           type: 'category',
@@ -130,10 +130,10 @@ const sidebars = {
                 'packages/sql-mapper/entities/example',
                 'packages/sql-mapper/entities/hooks',
                 'packages/sql-mapper/entities/relations',
-                'packages/sql-mapper/entities/transactions',
-              ],
-            },
-          ],
+                'packages/sql-mapper/entities/transactions'
+              ]
+            }
+          ]
         },
         {
           type: 'category',
@@ -141,12 +141,12 @@ const sidebars = {
           collapsed: true,
           items: [
             'packages/sql-events/overview',
-            'packages/sql-events/fastify-plugin',
-          ],
-        },
-      ],
+            'packages/sql-events/fastify-plugin'
+          ]
+        }
+      ]
     },
-    
+
     'FAQs'
   ],
   Learn: [
@@ -157,8 +157,8 @@ const sidebars = {
       label: 'Beginner Tutorials',
       collapsed: true,
       items: [
-        'learn/beginner/crud-application',
-      ],
+        'learn/beginner/crud-application'
+      ]
     },
     {
       type: 'category',
@@ -173,8 +173,8 @@ const sidebars = {
           items: [
             'guides/deployment/overview',
             'guides/deployment/deploy-to-fly-io-with-sqlite',
-            'guides/deployment/advanced-fly-io-deployment',
-          ],
+            'guides/deployment/advanced-fly-io-deployment'
+          ]
         },
         'guides/seed-a-database',
         {
@@ -185,8 +185,8 @@ const sidebars = {
             'guides/add-custom-functionality/overview',
             'guides/add-custom-functionality/prerequisites',
             'guides/add-custom-functionality/extend-graphql',
-            'guides/add-custom-functionality/extend-rest',
-          ],
+            'guides/add-custom-functionality/extend-rest'
+          ]
         },
         'guides/securing-platformatic-db',
         'guides/jwt-auth0',
@@ -196,19 +196,19 @@ const sidebars = {
         'guides/prisma',
         'guides/generate-frontend-code-to-consume-platformatic-rest-api',
         'guides/migrating-fastify-app-to-platformatic-service',
-        "guides/migrating-express-app-to-platformatic-service",
+        'guides/migrating-express-app-to-platformatic-service',
         'guides/applications-with-stackables',
         'guides/telemetry',
         'guides/dockerize-platformatic-app',
         'guides/build-modular-monolith',
         'guides/logging-to-elasticsearch',
-        "guides/jwt-keycloak",
-        "guides/use-env-with-platformatic"
-      ],
+        'guides/jwt-keycloak',
+        'guides/use-env-with-platformatic'
+      ]
     },
     'learn/glossary',
     'FAQs'
   ]
-};
+}
 
-module.exports = sidebars;
+module.exports = sidebars

@@ -1,6 +1,6 @@
 'use strict'
 const { join } = require('node:path')
-const { readFile, writeFile, readdir, unlink, rmdir, rm } = require('node:fs/promises') 
+const { readFile, writeFile, readdir, unlink, rmdir, rm } = require('node:fs/promises')
 const { parseArgs } = require('node:util')
 
 const parseArgsOptions = {
@@ -8,13 +8,13 @@ const parseArgsOptions = {
     type: 'boolean',
     default: false
   },
-  'keep': {
+  keep: {
     type: 'string',
     default: '5'
   }
 }
 
-async function main() {
+async function main () {
   const {
     values
   } = parseArgs({ options: parseArgsOptions })
@@ -22,7 +22,7 @@ async function main() {
   await purgeDirectories(versionsToKeep, values['dry-run'])
 }
 
-async function purgeVersionsJsonFile(numberOfOldVersionToKeep, dryRun) {
+async function purgeVersionsJsonFile (numberOfOldVersionToKeep, dryRun) {
   const versionsFile = join(__dirname, '..', 'versions.json')
   const versionsArray = JSON.parse(await readFile(versionsFile, 'utf8'))
   const newVersions = versionsArray.slice(0, numberOfOldVersionToKeep)
@@ -34,7 +34,7 @@ async function purgeVersionsJsonFile(numberOfOldVersionToKeep, dryRun) {
   return newVersions
 }
 
-async function purgeDirectories(versionsToKeep = [], dryRun) {
+async function purgeDirectories (versionsToKeep = [], dryRun) {
   const versionsFolder = join(__dirname, '..', 'versioned_docs')
   const sidebarsFolder = join(__dirname, '..', 'versioned_sidebars')
   const entries = await readdir(versionsFolder)

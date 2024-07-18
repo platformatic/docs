@@ -1,6 +1,6 @@
 'use strict'
 
-function exit(message) {
+function exit (message) {
   console.error(message)
   process.exit(1)
 }
