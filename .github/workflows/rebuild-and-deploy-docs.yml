@@ -55,7 +55,7 @@ jobs:
           GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
       - name: Print current versions
         run: |
-          echo "Remote versions: ${{ steps.check.outputs.remote-versions }}
+          echo "Remote versions: ${{ steps.check.outputs.remote-versions }}"
           echo "Docs version: ${{ steps.check.outputs.local-versions }}"
           echo "Update needed: ${{ steps.check.outputs.needs-update }}"
       - name: Build documentation
