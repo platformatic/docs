@@ -1,9 +1,29 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+const { resolve } = require('node:path')
 const { themes } = require('prism-react-renderer')
 const lightCodeTheme = themes.github
 const darkCodeTheme = themes.dracula
+
+let docsPath = 'docs'
+let sidebarPath = require.resolve('./sidebars.json')
+
+if (process.env.NODE_ENV === 'development') {
+  let docsRelativePath = '../platformatic/docs'
+
+  if (process.env.DOCS) {
+    docsRelativePath = process.env.DOCS
+  } else {
+    console.warn('The DOCS environment variables has not been set. Falling back to "../platformatic/docs".')
+  }
+
+  docsPath = resolve(process.cwd(), docsRelativePath)
+  sidebarPath = resolve(docsPath, 'sidebars.js')
+}
+
+console.info(`Using docs folder ${docsPath}`)
+console.info(`Using sidebars file ${sidebarPath}`)
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -41,7 +61,8 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.json'),
+          path: docsPath,
+          sidebarPath,
           editUrl: ({ docPath, version, versionDocsDirPath }) => {
             if (version === 'current') {
               return `https://github.com/platformatic/platformatic/edit/main/docs/${docPath}`

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "concurrently \"node ./scripts/doc-watcher.js --source $DOCS\" 'docusaurus start'",
+    "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
@@ -22,7 +22,6 @@
     "@mdx-js/react": "^3.0.0",
     "@orama/plugin-docusaurus-v3": "^2.0.0-beta.7",
     "clsx": "^1.2.1",
-    "concurrently": "^7.3.0",
     "dotenv": "^16.0.1",
     "execa": "^9.3.0",
     "param-case": "^4.0.0",
@@ -30,7 +29,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "semver": "^7.3.7",
-    "sync-directory": "^5.1.7",
     "undici": "^6.19.2"
   },
   "devDependencies": {
