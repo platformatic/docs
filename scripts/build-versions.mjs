@@ -103,6 +103,7 @@ async function main () {
   await writeFile(resolve(rootDir, 'versions.json'), JSON.stringify(versions.filter(v => v !== 'main'), null, 2), 'utf-8')
 
   // Build using docusaurus
+  console.log('Building ...')
   await execute('Cannot build documentation', 'docusaurus', 'build')
 }
 
