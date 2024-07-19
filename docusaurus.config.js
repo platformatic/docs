@@ -41,7 +41,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve('./sidebars.json'),
           editUrl: ({ docPath, version, versionDocsDirPath }) => {
             if (version === 'current') {
               return `https://github.com/platformatic/platformatic/edit/main/docs/${docPath}`

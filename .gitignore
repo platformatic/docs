@@ -23,5 +23,8 @@ yarn-error.log*
 .vscode
 
 # Ignore docusaurus local files
-# docs directory should not be versioned, it is imported from main repo on build time
-docs/*
+# docs directory and sidebars.js should not be versioned, it is imported from main repo on build time
+docs
+versioned_docs
+versioned_sidebars
+sidebars.json
