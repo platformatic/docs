@@ -12,7 +12,7 @@ async function ensureEmptyDirectory (directory) {
 }
 
 async function execute (errorPrefix, cmd, ...args) {
-  const { exitCode, all } = await execa(cmd, args, { all: true })
+  const { exitCode, all } = await execa(cmd, args, { all: true, reject: false })
 
   if (exitCode !== 0) {
     throw new Error(
@@ -103,7 +103,7 @@ async function main () {
 
   // Build using docusaurus
   console.log('Building ...')
-  await execute('Cannot build documentation', 'docusaurus', 'build')
+  await execute('Cannot build documentation', './node_modules/.bin/docusaurus', 'build')
 }
 
 try {
