@@ -103,7 +103,7 @@ async function main () {
 
   // Build using docusaurus
   console.log('Building ...')
-  await execute('Cannot build documentation', 'docusaurus', 'build')
+  await execute('Cannot build documentation', './node_modules/.bin/docusaurus', 'build')
 }
 
 try {
