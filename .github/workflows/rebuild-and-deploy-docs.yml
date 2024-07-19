@@ -1,6 +1,20 @@
 name: "Deploy Documentation"
 
 on:
+  workflow_dispatch:
+    inputs:
+      force:
+        type: boolean
+        description: If to force the execution
+        default: false
+      git_ref:
+        type: string
+        description: The git ref
+        default: main
+      original_event:
+        description: The git event to simulate
+        type: string
+        default: push_on_main
   workflow_call:
     inputs:
       force:
