@@ -87,7 +87,6 @@ Welcome to Platformatic. Available commands are:
 * `gh` - create a new gh action for Platformatic deployments.
 * `runtime` - start Platformatic Runtime; type `platformatic runtime help` to know more.
 * `start` - start a Platformatic application.
-* `login` - generate a Platformatic login api key.
 * `client` - generate a Platformatic client.
 * `ps` - list all Platformatic runtime applications.
 * `logs` - stream logs for a Platformatic runtime application.
@@ -104,36 +103,6 @@ Compile all typescript plugins.
 ```
 
 This command will compile the TypeScript plugins for each platformatic application.
-
-
-#### gh
-
-Creates a gh action to deploy platformatic services on workspaces.
-
-``` bash
- $ platformatic gh -t dynamic
-```
-
-Options:
-
-* `-w  --workspace ID` - The workspace ID where the service will be deployed.
-* `-t, --type static/dynamic` - The type of the workspace. Defaults to static.
-* `-c, --config FILE` - Specify a configuration file to use.
-* `-b, --build` - Build the service before deploying (`npm run build`).
-
-If not specified, the configuration will be loaded from any of the following, in the current directory.
-
-* `platformatic.json`, or
-* `platformatic.yml`, or 
-* `platformatic.tml`, or 
-* `platformatic.json`, or
-* `platformatic.yml`, or 
-* `platformatic.tml`
-
-You can find more details about the configuration format here:
-* [Platformatic DB Configuration](https://docs.platformatic.dev/docs/db/configuration)
-* [Platformatic Service Configuration](https://docs.platformatic.dev/docs/service/configuration)
-
 
 
 #### inject
@@ -168,21 +137,6 @@ set the `managementApi` option to `true` in the runtime configuration file.
 
 To get the list of runtimes with enabled management API use the
 `platformatic ctl ps` command.
-
-
-#### login
-
-Generate a Platformatic login api key.
-
-``` bash
- $ platformatic deploy
-```
-
-Options:
-
-* `-c, --config FILE` - Specify a path to a global Platformatic config file. Defaults to `~/.platformatic/config.json`.
-* `--browser` - Automatically open default browser. If process stdout is a TTY, the default is `true`. Otherwise, the default is `false`.
-
 
 #### logs
 
@@ -961,8 +915,8 @@ In case of problems, please check that:
 
 * The Platformatic app URL is valid.
 * The Platformatic app whose URL belongs must be up and running.
-* OpenAPI must be enabled (`db.openapi` in your `platformatic.json` is not set to `false`). You can find more details about the db configuration format [here](https://docs.platformatic.dev/docs/reference/db/configuration/#db).
-* CORS must be managed in your Platformatic app (`server.cors.origin.regexp` in your `platformatic.json` is set to `/*/`, for instance). You can find more details about the cors configuration [here](https://docs.platformatic.dev/docs/reference/service/configuration/#server).
+* OpenAPI must be enabled (`db.openapi` in your `platformatic.json` is not set to `false`). You can find more details about the db configuration format [here](https://docs.platformatic.dev/docs/db/configuration).
+* CORS must be managed in your Platformatic app (`server.cors.origin.regexp` in your `platformatic.json` is set to `/*/`, for instance). You can find more details about the cors configuration [here](https://docs.platformatic.dev/docs/service/configuration).
 
 
 ### runtime
