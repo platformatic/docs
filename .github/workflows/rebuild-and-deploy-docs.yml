@@ -62,6 +62,9 @@ jobs:
         if: inputs.original_event == 'push_on_main' || inputs.force || steps.check.outputs.needs-update == 'true'
         run: |
           node scripts/build.mjs 'main ${{ steps.check.outputs.build-arg }}'
+        env:
+          TARGET_REPO: ${{ secrets.TARGET_REPO }}
+          GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
       - name: Push commit
         if: inputs.original_event == 'push_on_main' || inputs.force || steps.check.outputs.needs-update == 'true'
         uses: stefanzweifel/git-auto-commit-action@v4
