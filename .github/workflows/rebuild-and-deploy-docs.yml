@@ -49,7 +49,7 @@ jobs:
       - name: Check local and remote versions
         id: check
         run: |
-          node scripts/check-versions.mjs >> $GITHUB_OUTPUT
+          node scripts/check.mjs >> $GITHUB_OUTPUT
         env:
           TARGET_REPO: ${{ secrets.TARGET_REPO }}
           GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
@@ -61,7 +61,7 @@ jobs:
       - name: Build documentation
         if: inputs.original_event == 'push_on_main' || inputs.force || steps.check.outputs.needs-update == 'true'
         run: |
-          node scripts/build-documentation.mjs 'main ${{ steps.check.outputs.build-arg }}'
+          node scripts/build.mjs 'main ${{ steps.check.outputs.build-arg }}'
       - name: Push commit
         if: inputs.original_event == 'push_on_main' || inputs.force || steps.check.outputs.needs-update == 'true'
         uses: stefanzweifel/git-auto-commit-action@v4
