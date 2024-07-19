@@ -1,4 +1,4 @@
-# Platformatic Documentation 
+# Platformatic Documentation
 
 This website is built using [Docusaurus 3](https://docusaurus.io/), a modern static website generator.
 
@@ -54,7 +54,7 @@ cd oss
 
 ## Running the Development Server
 
-Step 1: Setup the docs environment variable 
+Step 1: Setup the docs environment variable
 
 ```bash
 # This sets the DOCS variable to the docs directory within the cloned Platformatic repository
@@ -73,7 +73,7 @@ Deployment is managed automatically through GitHub Actions. Check the workflow c
 
 ## Generate docs for an old Platformatic version
 
-We keep online only the last 5 versions of Platformatic backwards, plus one version per each older major versions (excluding version `0.x`).
+We keep online only the last version of each Platformatic major version (excluding version `0.x`).
 Every time a new version is realeased, this repository is tagged with `vX.Y.Z`.
 
 To generate the documentation for a specific version, checkout the related tag and run the development server.
