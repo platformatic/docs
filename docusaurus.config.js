@@ -62,11 +62,11 @@ const config = {
       })
     ]
   ],
-  // the Orama plugin leaks memory if watch is enabled, let's just enable it in production
+  
   plugins: [
-    process.env.NODE_ENV !== 'development'
-      ? '@orama/plugin-docusaurus-v3'
-      : null,
+    // The Orama plugin is temporarily disabled due to: https://github.com/askorama/orama/issues/728
+    // The Orama plugin leaks memory if watch is enabled, let's just enable it in production
+    // process.env.NODE_ENV !== 'development' ? '@orama/plugin-docusaurus-v3' : null,
     [
       '@docusaurus/plugin-client-redirects',
       {
