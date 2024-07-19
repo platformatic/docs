@@ -1,6 +1,20 @@
-name: "Deploy Documentation"
+name: "Rebuild and deploy documentation"
 
 on:
+  workflow_dispatch:
+    inputs:
+      force:
+        type: boolean
+        description: If to force the execution
+        default: false
+      git_ref:
+        type: string
+        description: The git ref
+        default: main
+      original_event:
+        description: The git event to simulate
+        type: string
+        default: push_on_main
   workflow_call:
     inputs:
       force:
@@ -13,14 +27,16 @@ on:
         type: string
     secrets:
       GH_API_TOKEN:
-        description: 'GitHub API Token'
+        description: "GitHub API Token"
+        required: true
       TARGET_REPO:
-        description: 'The repo wheere Docusaurus is'
+        description: "The repo wheere Docusaurus is"
+        required: true
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repo
+      - name: Checkout repository
         uses: actions/checkout@v3
         with:
           token: ${{ secrets.GH_API_TOKEN }}
@@ -29,85 +45,36 @@ jobs:
         with:
           node-version: "18"
       - name: Install dependencies
-        run: npm install  
-      - name: Check main repo version
-        id: check_main_repo_version
+        run: npm install
+      - name: Check local and remote versions
+        id: check
         run: |
-          echo "remote-version=$(node ./scripts/check-version.js --type remote)" >> $GITHUB_OUTPUT
+          node scripts/check-versions.mjs >> $GITHUB_OUTPUT
         env:
           TARGET_REPO: ${{ secrets.TARGET_REPO }}
           GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
-      - name: Check current docs version
-        id: check_current_docs_version
+      - name: Print current versions
         run: |
-          echo "docs-version=$(node ./scripts/check-version.js --type docs)" >> $GITHUB_OUTPUT
-      - name: Print versions
+          echo "Remote versions: ${{ steps.check.outputs.remote-versions }}
+          echo "Docs version: ${{ steps.check.outputs.local-versions }}"
+          echo "Update needed: ${{ steps.check.outputs.needs-update }}"
+      - name: Build documentation
+        if: inputs.original_event == 'push_on_main' || inputs.force || steps.check.outputs.needs-update == 'true'
         run: |
-          echo "Remote version: ${{ env.REMOTE_VERSION }} - Docs version: ${{ env.DOCS_VERSION }}"
-        env:
-          REMOTE_VERSION: ${{ steps.check_main_repo_version.outputs.remote-version }}
-          DOCS_VERSION: ${{ steps.check_current_docs_version.outputs.docs-version }}
-      - name: Evaluate versions
-        id: evaluate_versions
-        run: |
-          echo "versions-compare=$(node ./scripts/compare-versions.js --from ${{ env.DOCS_VERSION }} --to ${{ env.REMOTE_VERSION }})" >> $GITHUB_OUTPUT
-        env:
-          REMOTE_VERSION: ${{ steps.check_main_repo_version.outputs.remote-version }}
-          DOCS_VERSION: ${{ steps.check_current_docs_version.outputs.docs-version }}
-      - name: Nothing to do
-        if: steps.evaluate_versions.outputs.versions-compare == 'false'
-        run: echo "No need to update."
-      - name: Checkout main repo
-        if: inputs.original_event == 'push_on_main' || inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
-        uses: actions/checkout@v3
-        with:
-          repository: ${{ secrets.TARGET_REPO }}
-          token: ${{ secrets.GH_API_TOKEN }}
-          path: main-repo
-          ref: ${{ inputs.git_ref || format('v{0}', env.REMOTE_VERSION) }}
-      - name: Copy docs directory
-        if: inputs.original_event == 'push_on_main' || inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
-        run: |
-          rm -rf ./docs
-          cp -r main-repo/docs .
-          cp -r main-repo/docs/sidebars.js .
-          rm -rf main-repo
-      - name: Install deps
-        if: inputs.original_event == 'push_on_main' || inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
-        run: |
-          npm install 
-      - name: Create docusaurus version
-        if: (!inputs.force && steps.evaluate_versions.outputs.versions-compare == 'true')
-        run: |
-          npx docusaurus docs:version ${{ env.REMOTE_VERSION }}
-        env:
-          REMOTE_VERSION: ${{ steps.check_main_repo_version.outputs.remote-version }}
-      - name: Purge old versions
-        if: (!inputs.force && steps.evaluate_versions.outputs.versions-compare == 'true')
-        run: |
-          node ./scripts/purge-old-versions.js
-      - name: Build Docusaurus website  
-        if: inputs.original_event == 'push_on_main' || inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
-        run: |
-          npm run build
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          node scripts/build-documentation.mjs 'main ${{ steps.check.outputs.build-arg }}'
       - name: Push commit
-        if: inputs.original_event == 'push_on_main' || inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
+        if: inputs.original_event == 'push_on_main' || inputs.force || steps.check.outputs.needs-update == 'true'
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: '[automated commit] Bump docs to version ${{ env.REMOTE_VERSION }}'
-          tagging_message: 'v${{ env.REMOTE_VERSION }}'
-
-        env: 
-          REMOTE_VERSION: ${{ steps.check_main_repo_version.outputs.remote-version }}
+          commit_message: "[automated commit] Bump docs to versions ${{ steps.check.outputs.remote-versions }}"
+          tagging_message: "${{ steps.check.outputs.tag }}"
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy to GitHub Pages
-        if: inputs.original_event == 'push_on_main' || inputs.force || steps.evaluate_versions.outputs.versions-compare == 'true'
+        if: inputs.original_event == 'push_on_main' || inputs.force || steps.check.outputs.needs-update == 'true'
         uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: gh-pages
           build_dir: build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
