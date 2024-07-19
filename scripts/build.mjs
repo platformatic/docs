@@ -12,7 +12,7 @@ async function ensureEmptyDirectory (directory) {
 }
 
 async function execute (errorPrefix, cmd, ...args) {
-  const { exitCode, all } = await execa(cmd, args, { all: true, reject: false })
+  const { exitCode, all } = await execa(cmd, args, { all: true })
 
   if (exitCode !== 0) {
     throw new Error(
