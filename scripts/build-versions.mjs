@@ -6,12 +6,12 @@ import { Agent, interceptors, request } from 'undici'
 const rootDir = process.cwd()
 const tmpDir = resolve(rootDir, 'tmp')
 
-async function ensureEmptyDirectory(directory) {
+async function ensureEmptyDirectory (directory) {
   await rm(directory, { force: true, recursive: true })
   await mkdir(directory, { force: true, recursive: true })
 }
 
-async function execute(errorPrefix, cmd, ...args) {
+async function execute (errorPrefix, cmd, ...args) {
   const { exitCode, all } = await execa(cmd, args, { all: true, reject: false })
 
   if (exitCode !== 0) {
@@ -21,7 +21,6 @@ async function execute(errorPrefix, cmd, ...args) {
   }
 }
 
-// TODO@PI: Support for main
 async function downloadVersion (version) {
   console.log('  Downloading ...')
 
@@ -62,7 +61,7 @@ async function extractAndPrepareVersion (repo, destination, sidebarsDestination,
   await execute('Cannot extract archive', 'unzip', '-d', tmpDir, archiveFile)
 
   // Move to versioned_docs
-  await rm(destination, {force: true, recursive: true})
+  await rm(destination, { force: true, recursive: true })
   await rename(resolve(tmpDir, baseFolder, 'docs'), destination)
 
   // Move the sidebars.js file to a JSON file
@@ -81,22 +80,22 @@ async function main () {
   if (process.argv.length === 2) {
     throw new Error('Please specify the version to build in the command line.')
   }
-  
+
   await ensureEmptyDirectory(tmpDir)
   await ensureEmptyDirectory(resolve(rootDir, 'versioned_docs'))
   await ensureEmptyDirectory(resolve(rootDir, 'versioned_sidebars'))
-  
+
   const versions = process.argv.slice(2)
   for (const version of versions) {
     console.log(`Creating version ${version} ...`)
-    
+
     // Download the source
     const contents = await downloadVersion(version)
     const destination = resolve(rootDir, version === 'main' ? 'docs' : `versioned_docs/version-${version}`)
     const sidebarsDestination = resolve(rootDir, version === 'main' ? 'sidebars.json' : `versioned_sidebars/version-${version}-sidebars.json`)
 
     // Extract the contents
-    await extractAndPrepareVersion(process.env.TARGET_REPO, destination, sidebarsDestination, version, contents)    
+    await extractAndPrepareVersion(process.env.TARGET_REPO, destination, sidebarsDestination, version, contents)
   }
 
   // Create the versions file
@@ -110,5 +109,5 @@ async function main () {
 try {
   await main()
 } finally {
-  await rm(tmpDir, {force: true, recursive: true})
+  await rm(tmpDir, { force: true, recursive: true })
 }

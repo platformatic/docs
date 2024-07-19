@@ -62,7 +62,7 @@ const config = {
       })
     ]
   ],
-  
+
   plugins: [
     // The Orama plugin is temporarily disabled due to: https://github.com/askorama/orama/issues/728
     // The Orama plugin leaks memory if watch is enabled, let's just enable it in production

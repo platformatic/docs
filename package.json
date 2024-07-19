@@ -54,6 +54,7 @@
   },
   "standard": {
     "ignore": [
+      "docs",
       "static",
       "versioned_docs",
       "versioned_sidebars"

@@ -74,7 +74,7 @@ async function getRemoteReleases (toKeep = 5) {
   const previousReleases = []
   for (const release of validReleases) {
     // Ignore 0.x branch
-    if(release.major === 0) {
+    if (release.major === 0) {
       break
     }
 
