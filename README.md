@@ -21,14 +21,14 @@ cd /workdir
 # Clone the main Platformatic repository
 git clone https://github.com/platformatic/platformatic.git
 
-# Clone the OSS repository
-git clone https://github.com/platformatic/oss.git
+# Clone the Docs repository
+git clone https://github.com/platformatic/docs.git
 ```
 
 After cloning, your working directory (`/workdir`) should contain:
 
 - `/platformatic`
-- `/oss`
+- `/docs`
 
 3. #### Install dependencies in both repositories
 
@@ -41,7 +41,7 @@ npm install
 cd ..
 
 # Install dependencies in the oss repository
-cd oss
+cd docs
 npm install
 cd ..
 ```
@@ -49,7 +49,7 @@ cd ..
 4. #### Navigate to the OSS directory
 
 ```bash
-cd oss
+cd docs
 ```
 
 ## Running the Development Server
