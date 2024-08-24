@@ -179,11 +179,7 @@ Example:
 
 ### `watch`
 
-Enables watching for file changes if set to `true` or `"true"`. When changes are detected, then the service will be restarted after loading changed files.
-
-This is only available when executing within a Platformatic Runtime and if the runtime `watch` configuration is enabled.
-
-It can also be customized with the following options:
+Enables watching for file changes if set to `true` or `"true"`. It can also be customized with the following options:
 
 - **`enabled`** (`boolean` or `string`): enables watching.
 
@@ -200,6 +196,8 @@ It can also be customized with the following options:
     }
   }
   ```
+
+If the runtime `hotReload` value is enabled, then the service will be restarted after loading changed files, otherwise the service will be restarted executing the existing code.
 
 ### `service`
 
