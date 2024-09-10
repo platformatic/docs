@@ -4,7 +4,59 @@
  * work well for content-centric websites.
  */
 
- @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --rgba-secondary-color: 255, 255, 255;
+    --secondary-color: #ffffff;
+
+    --text-color-light: black;
+  }
+
+  /* Dark mode styles */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text-color-light: white;
+    }
+  }
+}
 
 :root {
   --ifm-color-primary: #00283d;
@@ -16,13 +68,23 @@
   --ifm-color-primary-lightest: #00344f;
   --ifm-code-font-size: 95%;
   --ifm-background-color: transparent;
-  --ifm-link-color: #9BC1FD;
+  --ifm-link-color: #9bc1fd;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  font-family: 'Inter';
+  font-family: "Inter";
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: 'Inter';
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Inter";
+}
+
+html, body {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 16px;
+  font-style: normal;
 }
 
 main a {
@@ -66,8 +128,21 @@ main a {
   max-height: 120px;
 }
 
+.roboto-mono {
+  font-family: "Roboto Mono", monospace;
+}
 
-
+@media screen and (max-width: 768px) {
+  .navbar__item {
+    display: none !important;
+  }
+  .navbar__inner .navbar__items {
+    justify-content: space-between;
+  }
+  .navbar__inner .navbar__items .navbar__toggle.clean-btn {
+    order: 2;
+  }
+}
 
 @media screen and (max-width: 996px) {
   .container__quotes .card {
@@ -88,7 +163,7 @@ main a {
     display: block;
     -webkit-box-orient: unset;
   }
-  
+
   .container__quotes .card__body {
     max-height: unset;
   }
@@ -98,4 +173,145 @@ main a {
   width: 100%;
   height: auto;
   aspect-ratio: 16/9;
+}
+
+/* navbar styles */
+.navbar__item {
+  @apply flex items-center gap-2;
+}
+
+/* anchor */
+.remove-hvr {
+  @apply dark:hover:!text-white hover:!text-[#00050b];
+}
+
+.remove-hvr-alt {
+  @apply dark:hover:!text-[#00050b] hover:!text-white;
+}
+
+/* Time to change pseudo */
+.change__pseudo::after {
+  content: "";
+  @apply w-full hidden md:inline-block absolute left-0 top-[35%] border-t border-solid border-white/20;
+}
+
+/* section headers tag */
+.section-header__num-cont {
+  @apply flex flex-col mb-1 mt-[2px] items-center justify-center;
+}
+
+/* .section-header__num-cont .line {
+  @apply bg-gradient-to-b h-[70px] xl:h-[168px] w-px bg-slate-200;
+} */
+
+.section-header__num-cont .circle {
+  @apply w-[85.35px] h-[33.05px] text-black text-sm px-4 py-2 rounded-3xl flex justify-center items-center;
+}
+
+.section-header__num-cont .line {
+  @apply bg-gradient-to-b h-[70px] xl:h-[168px] w-px;
+  position: relative;
+}
+
+/* build api features section */
+.feature__richtext li {
+  @apply list-disc pl-2 md:pl-0;
+}
+.feature__richtext ul {
+  @apply pl-4 md:pl-0;
+}
+
+.feature__richtext li::marker {
+  margin-left: -15px; /* Adjust this to push in the bullets */
+}
+
+/* tool tip */
+.tooltip {
+  @apply absolute bottom-[100%] left-[50%] -translate-x-1/2 bg-[#2588e4] text-white !opacity-100 px-2 py-3 rounded-[4px] text-xs z-[5];
+  white-space: nowrap;
+}
+
+.tooltip-arrow {
+  @apply absolute -bottom-[5px] left-[50%] -translate-x-1/2 w-0 h-0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #333;
+}
+
+/* build api background triangle */
+.plt-background-triangles::before,
+.plt-vertical-background-triangle {
+  content: "";
+  background: url(/src/images/background_polygons_triangle.svg) repeat;
+}
+
+.triangle_bg {
+  background: url(/src/images/background_polygons_triangle.svg) repeat;
+  height: 100%;
+  width: 100%;
+  opacity: 0.4;
+}
+
+
+
+
+.plt-vertical-background-opacity {
+  content: "";
+  background: linear-gradient(
+    to top,
+    rgba(var(--rgba-primary-color), 1),
+    rgba(var(--rgba-primary-color), 0.2) 43%
+  );
+}
+
+/* typewriter */
+.blinking-cursor {
+  @apply dark:bg-white w-[10px] bg-[#00050b] h-6;
+  display: inline-block;
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* animation fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.fade-in-image-before {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.fade-in-code {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 1s; /* Delay to start after image fades in */
+}
+
+.fade-in-image-after {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 6s; /* Delay to start after code typing effect */
+}
+
+.fade-in-result {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 8s; /* Delay to start after image after code block fades in */
 }

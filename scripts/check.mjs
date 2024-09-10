@@ -72,7 +72,7 @@ async function getRemoteReleases (toKeep = 5) {
   const latestMajor = validReleases[0].major
 
   const releases = []
-  for(let currentMajor = validReleases[0].major; currentMajor > 0; currentMajor--) {
+  for (let currentMajor = validReleases[0].major; currentMajor > 0; currentMajor--) {
     const release = validReleases.find(r => r.major === currentMajor)
     releases.push(release.version)
   }
