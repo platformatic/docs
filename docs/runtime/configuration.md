@@ -43,7 +43,7 @@ well-known Platformatic configuration file. `mappings` can be used to override
 these default values.
   - **`id`** (**required**, `string`) - The overridden ID. This becomes the new
   microservice ID.
-  - **`config` (**required**, `string`) - The overridden configuration file
+  - **`config` (`string`) - The overridden configuration file
   name. This is the file that will be used when starting the microservice.
   - **`useHttp`** (`boolean`) - The service will be started on a random HTTP port
   on `127.0.0.1`, and exposed to the other services via that port and on default, it is set to `false`. Set it to `true` if you are using [@fastify/express](https://github.com/fastify/fastify-express).
@@ -71,7 +71,7 @@ property or the `name` field in the client's `package.json` file if a
 `serviceId` is not explicitly provided.
 - **`path`** (**required**, `string`) - The path to the directory containing
 the microservice.
-- **`config`** (**required**, `string`) - The configuration file used to start
+- **`config`** (`string`) - The configuration file used to start
 the microservice.
 - **`useHttp`** (`boolean`) - The service will be started on a random HTTP port
 on `127.0.0.1`, and exposed to the other services via that port, on default it is set to `false`. Set it to `true` if you are using [@fastify/express](https://github.com/fastify/fastify-express).
@@ -86,12 +86,12 @@ The Platformatic Runtime's entrypoint is a microservice that is exposed
 publicly. This value must be the `ID` of a service defined via the `autoload` or
 `services` configuration.
 
-### `hotReload`
+### `watch`
 
 An optional boolean, set to default `false`, indicating if hot reloading should
 be enabled for the runtime. If this value is set to `false`, it will disable
 hot reloading for any microservices managed by the runtime. If this value is
-`true`. Hot reloading for individual microservices is managed by the
+`true`, then hot reloading for individual microservices is managed by the
 configuration of that microservice.
 
 Note that `watch` should be enabled for each individual service in the runtime.
@@ -99,6 +99,12 @@ Note that `watch` should be enabled for each individual service in the runtime.
 :::warning
 While hot reloading is useful for development, it is not recommended for use in production.
 :::
+
+### `restartOnError`
+
+The number of milliseconds to wait before attempting to restart a service that unexpectedly exit. 
+
+If not specified or set to `true`, the default value is `5000`, set to `0` or `false` to disable.
 
 ### `telemetry`
 [Open Telemetry](https://opentelemetry.io/) is optionally supported with these settings:
