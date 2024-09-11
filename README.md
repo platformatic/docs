@@ -40,13 +40,13 @@ cd platformatic
 npm install
 cd ..
 
-# Install dependencies in the oss repository
+# Install dependencies in the docs repository
 cd docs
 npm install
 cd ..
 ```
 
-4. #### Navigate to the OSS directory
+4. #### Navigate to the docs directory
 
 ```bash
 cd docs
@@ -74,7 +74,7 @@ Deployment is managed automatically through GitHub Actions. Check the workflow c
 ## Generate docs for an old Platformatic version
 
 We keep online only the last version of each Platformatic major version (excluding version `0.x`).
-Every time a new version is realeased, this repository is tagged with `vX.Y.Z`.
+Every time a new version is released, this repository is tagged with `vX.Y.Z`.
 
 To generate the documentation for a specific version, checkout the related tag and run the development server.
 

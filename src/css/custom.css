@@ -320,3 +320,8 @@ main a {
 .footer svg {
   display: inline-block;
 }
+
+article ul {
+  list-style-type: disc;
+  padding-left: var(--ifm-list-left-padding) !important;
+}
