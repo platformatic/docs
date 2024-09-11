@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/schemas/v:version/:service",
-      "destination": "https://schemas.platformatic.dev/@platformatic/:service/:version"
+      "destination": "https://raw.githubusercontent.com/platformatic/schemas/main/v:version/:service"
     }
   ]
 }
