@@ -315,3 +315,8 @@ main a {
   animation: fadeIn 1s forwards;
   animation-delay: 8s; /* Delay to start after image after code block fades in */
 }
+
+.dropdown svg,
+.footer svg {
+  display: inline-block;
+}
