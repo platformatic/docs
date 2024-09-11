@@ -316,6 +316,11 @@ main a {
   animation-delay: 8s; /* Delay to start after image after code block fades in */
 }
 
+.dropdown svg,
+.footer svg {
+  display: inline-block;
+}
+
 article ul {
   list-style-type: disc;
   padding-left: var(--ifm-list-left-padding) !important;
