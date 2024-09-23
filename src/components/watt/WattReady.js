@@ -10,7 +10,7 @@ function WattReady({ blok }) {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-20">
           {/* Title and subtitle */}
           <div className="mb-6 md:mb-0 max-w-xl">
-            <h2 className="text-[28px] sm:text-3xl md:text-4xl xl:text-5xl/none max-w-3xl bg-clip-text text-transparent font-bold bg-gradient-to-t from-white to-gray-500 text-left mb-4">
+            <h2 className="text-[28px] sm:text-3xl md:text-4xl leading-[1.4] max-w-3xl bg-clip-text text-transparent font-bold bg-gradient-to-t from-white to-gray-500 text-left mb-4">
               {render(blok.Hero_section[4].heading)}
             </h2>
             <p className="text-white/70 text-base md:text-l text-left m-0 pb-0">
@@ -19,7 +19,10 @@ function WattReady({ blok }) {
           </div>
           {/* CTA buttons */}
           <div className="flex flex-row sm:flex-row gap-4">
-            <a href="https://www.platformatichq.com/contact">
+            <a
+              href="https://www.platformatichq.com/contact"
+              className="text-white"
+            >
               <button className="bg-transparent hover:bg-white/10 outline outline-white/80 outline-[1px] text-white py-2 px-4 border-none rounded border border-white w-full sm:w-auto">
                 {render(blok.Hero_section[4].button_text)}
               </button>
@@ -53,7 +56,12 @@ function WattReady({ blok }) {
               {render(blok.Hero_section[4].box_para)}
             </p>
             <p className="text-left text-white/70 border-top pt-4 font-semibold">
-              {render(blok.Hero_section[4].box_button_text)}
+              <a
+                href="https://www.platformatichq.com/node-principles"
+                className="text-white"
+              >
+                {render(blok.Hero_section[4].box_button_text)}
+              </a>
             </p>
           </div>
         </div>

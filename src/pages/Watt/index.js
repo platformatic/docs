@@ -55,16 +55,17 @@ function PageHeader({ blok }) {
             <p className="mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
               {render(blok.Hero_section[0].Hero_subtitle)}
             </p>
-            {/* GET STARTED AND GET IN TOUCH BUTTONS FOR WATT PAGE */}
             <div className="flex flex-row justify-center items-center gap-4">
               <a href="https://www.platformatichq.com/contact">
                 <button className="bg-white hover:bg-white/80 hover:translate-y-1 outline outline-white/80 outline-[1px] text-[#00050B] py-2 px-4 border-none rounded border border-white w-[10em] cursor-pointer">
                   {render(blok.Hero_section[0].get_started)}
                 </button>
               </a>
-              {/* <button className="bg-transparent hover:bg-white/10 outline outline-white/80 outline-[1px] text-white py-2 px-4 border-none rounded border border-white w-[10em] cursor-pointer">
-                {render(blok.Hero_section[0].hero_button)}
-              </button> */}
+              <a href="https://docs.platformatic.dev">
+                <button className="bg-transparent hover:bg-white/10 outline outline-white/80 outline-[1px] text-white py-2 px-4 border-none rounded border border-white w-[10em] cursor-pointer">
+                  {render(blok.Hero_section[0].hero_button)}
+                </button>
+              </a>
             </div>
           </div>
         </div>

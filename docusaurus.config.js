@@ -157,7 +157,7 @@ const config = {
       id: "announcement",
       content: `
         Announcing our new feature: the Node.js application server is here! 
-      <b> <a href="/docs/new-feature" style="color: #fff; text-decoration: underline;">  Read our founder’s announcement ->  </a></b>
+      <b> <a href="/docs/new-feature" style="color: black; text-decoration: underline;">  Read our founder’s announcement ->  </a></b>
        
       `,
       backgroundColor: "#fff",
@@ -215,11 +215,11 @@ const config = {
             },
             {
               to: "/meraki",
-              label: "Meraki",
+              label: "Shipyard",
             },
             {
               to: "/watt",
-              label: "Watt"
+              label: "Watt",
             }
           ],
         },
@@ -240,11 +240,6 @@ const config = {
             },
           ],
         },
-        // {
-        //   to: "/watt", 
-        //   label: "Watt",
-        //   position: "left",
-        // },
         // {
         //   href: "https://www.platformatic.dev",
         //   label: "About",

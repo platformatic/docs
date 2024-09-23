@@ -69,20 +69,26 @@ function HomepageHeader({ blok }) {
         />
         <div className="max-w-screen-xl mx-auto w-full text-center relative z-10">
           <div className="max-w-4xl mx-auto flex flex-col justify-center items-center px-2 md:px-0">
-            <h1 className="mb-4 text-3xl font-bold md:text-4xl dark:text-white">
+            <h1 className="mb-4 text-[1.6rem] leading-[1.5] md:leading-[54px] font-bold md:text-4xl dark:text-white">
               {render(blok.hero_section[0].hero_title)}
             </h1>
             <p className="mb-6 text-white/70 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
               {render(blok.hero_section[0].hero_subtitle)}
             </p>
-            <div className="flex flex-row justify-center items-center gap-4">
-              <a href={blok.hero_section[0].cta_buttons[0].cta_url.url}>
-                <button className="bg-white hover:bg-white/80 hover:translate-y-1 outline outline-white/80 outline-[1px] text-[#00050B] py-2 px-4 border-none rounded border border-white w-[10em] cursor-pointer">
+            <div className="flex flex-row justify-center items-center gap-4 w-full md:max-w-80 mx-auto">
+              <a
+                href={blok.hero_section[0].cta_buttons[0].cta_url.url}
+                className="flex-1"
+              >
+                <button className="bg-white hover:bg-white/80 hover:translate-y-1 outline outline-white/80 outline-[1px] text-[#00050B] py-2 px-4 border-none rounded border border-white w-full cursor-pointer">
                   {render(blok.hero_section[0].cta_buttons[0].btn_caption)}
                 </button>
               </a>
-              <a href={blok.hero_section[0].cta_buttons[1].cta_url.url}>
-                <button className="bg-transparent hover:bg-white/10 outline outline-white/80 outline-[1px] text-white py-2 px-4 border-none rounded border border-white w-[10em] cursor-pointer">
+              <a
+                href={blok.hero_section[0].cta_buttons[1].cta_url.url}
+                className="flex-1"
+              >
+                <button className="bg-transparent hover:bg-white/10 outline outline-white/80 outline-[1px] text-white py-2 px-4 border-none rounded border border-white w-full cursor-pointer">
                   {render(blok.hero_section[0].cta_buttons[1].btn_caption)}
                 </button>
               </a>

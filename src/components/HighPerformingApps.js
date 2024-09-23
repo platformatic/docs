@@ -8,7 +8,7 @@ const HighPerformingApps = ({ blok }) => {
       {/* Main container */}
       <div className="w-full">
         {/* Header section */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-20">
+        <div className="flex flex-col md:flex-row leading-[1.4] justify-between items-start md:items-end mb-10 md:mb-20">
           {/* Title and subtitle */}
           <div className="mb-6 md:mb-0 max-w-2xl">
             <h2 className="text-[28px] sm:text-3xl md:text-4xl xl:text-5xl/none max-w-3xl bg-clip-text text-transparent font-bold bg-gradient-to-t from-white to-gray-500 text-left mb-4">
@@ -19,7 +19,7 @@ const HighPerformingApps = ({ blok }) => {
             </p>
           </div>
           {/* CTA buttons */}
-          <div className="flex flex-row sm:flex-row gap-4">
+          <div className="flex flex-row sm:flex-row gap-4 w-[75%] md:w-80">
             <button className="bg-white hover:bg-white/80 text-black py-2 px-4 rounded border-none w-full sm:w-auto">
               {render(blok.Seamless_block[0].ready_sales_btn)}
             </button>
@@ -59,7 +59,7 @@ const HighPerformingApps = ({ blok }) => {
           </div>
         </div>
         {/* Footer text */}
-        <p className="text-white text-[14px] md:text-[18px] font-semibold text-center md:text-center mt-4">
+        <p className="text-white md:text-[18px] font-semibold text-center md:text-center mt-4 mb-20 md:mb-10">
           {render(blok.Seamless_block[0].last_paragraph)}
         </p>
       </div>

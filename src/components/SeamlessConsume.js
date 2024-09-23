@@ -61,15 +61,15 @@ const SeamlessConsume = ({ blok }) => {
       </div>
       <div className="w-full">
         {/* Header section */}
-        <div className="text-center flex flex-col items-center">
-          <h2 className="text-[28px] sm:text-3xl md:text-4xl xl:text-5xl/none max-w-3xl mx-auto bg-clip-text text-transparent font-bold bg-gradient-to-t from-white to-gray-500">
+        <div className="text-center flex flex-col items-center mb-10 mt-16">
+          <h2 className="text-[28px] sm:text-3xl md:text-4xl leading-[1.4] max-w-3xl mx-auto bg-clip-text text-transparent font-bold bg-gradient-to-t from-white to-gray-500">
             {render(blok.Seamless_block[0].seamless_title)}
           </h2>
           <p className="text-white/70 text-base md:text-l mx-auto md:pb-10">
             {render(blok.Seamless_block[0].seamless_paragraph)}
           </p>
         </div>
-        <div className="text-center flex flex-col items-center">
+        <div className="text-center flex flex-col items-center  mx-4 mb-20 max-w-[900px] md:mx-auto">
           <img src={blok.Seamless_block[0].semlesss_show_bg.filename} alt="" />
         </div>
       </div>

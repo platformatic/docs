@@ -197,7 +197,6 @@ p {
   width: 25px;
   height: 25px;
 }
-
 .build_bg2 {
   background-image: url("/src/images/build2.svg");
   background-size: contain;
@@ -206,7 +205,6 @@ p {
   width: 25px;
   height: 25px;
 }
-
 .build_bg3 {
   background-image: url("/src/images/build3.svg");
   background-size: contain;
@@ -215,7 +213,6 @@ p {
   width: 25px;
   height: 25px;
 }
-
 .build_bg4 {
   background-image: url("/src/images/build4.svg");
   background-size: contain;
@@ -223,6 +220,20 @@ p {
   background-repeat: no-repeat;
   width: 25px;
   height: 25px;
+}
+
+.explore_side_bg {
+  background-image: url("/src/images/yellowblob.svg");
+  background-size: contain;
+  background-position: bottom left;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 600px) {
+  .timeline1_block {
+    bottom: -200px;
+    left: -200px;
+  }
 }
 
 .infra-bg {
@@ -250,7 +261,17 @@ p {
   width: 100%;
   height: 100%;
 }
-
+@media (max-width: 767px) {
+  .card_bg {
+    background-image: url("/src/images/greenblob.svg"),
+      url("/src/images/Ellipsered.svg");
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    width: 100%;
+    height: 100%;
+  }
+}
 .timeline {
   border-left: 1px solid;
 }

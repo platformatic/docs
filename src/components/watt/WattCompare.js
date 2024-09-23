@@ -84,9 +84,9 @@ function WattCompare({ blok }) {
                         Kubernetes-ready to run Node.js apps
                       </p>
                     </div>
-                    {/* <p className="ml-10 font-medium italic">
+                    <p className="ml-10 font-medium italic">
                       Get full visibility into your apps performance
-                    </p> */}
+                    </p>
                   </div>
                 </div>
 
@@ -167,9 +167,9 @@ function WattCompare({ blok }) {
                     </div>
 
                     <p className="mb-4 text-base font-normal text-white/70 dark:text-gray-400 ml-10 mt-4">
-                      Leverage Pino for fast, efficient, and structured
-                      logging across your Node.js applications, ensuring that
-                      you can monitor performance without complexity.
+                      Leverage Pino for fast, efficient, and structured logging
+                      across your Node.js applications, ensuring that you can
+                      monitor performance without complexity.
                     </p>
                   </div>
                 </div>
