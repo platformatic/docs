@@ -167,7 +167,7 @@ function WattCompare({ blok }) {
                     </div>
 
                     <p className="mb-4 text-base font-normal text-white/70 dark:text-gray-400 ml-10 mt-4">
-                      Leverage the Pino for fast, efficient, and structured
+                      Leverage Pino for fast, efficient, and structured
                       logging across your Node.js applications, ensuring that
                       you can monitor performance without complexity.
                     </p>
