@@ -76,12 +76,16 @@ function HomepageHeader({ blok }) {
               {render(blok.hero_section[0].hero_subtitle)}
             </p>
             <div className="flex flex-row justify-center items-center gap-4">
-              <button className="bg-white hover:bg-white/80 hover:translate-y-1 outline outline-white/80 outline-[1px] text-[#00050B] py-2 px-4 border-none rounded border border-white w-[10em] cursor-pointer">
-                {render(blok.hero_section[0].cta_buttons[0].btn_caption)}
-              </button>
-              <button className="bg-transparent hover:bg-white/10 outline outline-white/80 outline-[1px] text-white py-2 px-4 border-none rounded border border-white w-[10em] cursor-pointer">
-                {render(blok.hero_section[0].cta_buttons[1].btn_caption)}
-              </button>
+              <a href={blok.hero_section[0].cta_buttons[0].cta_url.url}>
+                <button className="bg-white hover:bg-white/80 hover:translate-y-1 outline outline-white/80 outline-[1px] text-[#00050B] py-2 px-4 border-none rounded border border-white w-[10em] cursor-pointer">
+                  {render(blok.hero_section[0].cta_buttons[0].btn_caption)}
+                </button>
+              </a>
+              <a href={blok.hero_section[0].cta_buttons[1].cta_url.url}>
+                <button className="bg-transparent hover:bg-white/10 outline outline-white/80 outline-[1px] text-white py-2 px-4 border-none rounded border border-white w-[10em] cursor-pointer">
+                  {render(blok.hero_section[0].cta_buttons[1].btn_caption)}
+                </button>
+              </a>
             </div>
             <div className="flex justify-center items-center w-full ">
               <button className="bg-transparent flex gap-2 items-center hover:bg-white/10 outline outline-white/80 outline-[1px] text-white py-2 px-4 border-none rounded border border-white cursor-pointer mt-20 md:px-12 flex justify-center items-center w-full sm:w-auto">

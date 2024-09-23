@@ -197,6 +197,34 @@ p {
   width: 25px;
   height: 25px;
 }
+
+.build_bg2 {
+  background-image: url("/src/images/build2.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+}
+
+.build_bg3 {
+  background-image: url("/src/images/build3.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+}
+
+.build_bg4 {
+  background-image: url("/src/images/build4.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+}
+
 .infra-bg {
   background-image: url("/src/images/infrastructure.svg");
   background-size: contain;

@@ -19,7 +19,7 @@ const Timeline = ({ blok }) => {
                 className="absolute z-20 w-6 h-6 bg-pyellow/20 text-pyellow rounded-md -start-1.5 border border-white dark:border-pyellow dark:bg-pyellow/20 flex justify-center"
                 style={{ zIndex: 10 }}
               >
-                <div className="w-10 h-10">
+                <div className="w-25 h-25">
                   <img
                     src={item.icon.filename}
                     className="w-full h-full object-contain"
@@ -100,26 +100,21 @@ const Timeline2 = ({ blok }) => {
     <section className="flex flex-col md:flex-row justify-between gap-8">
       <div className="flex-1">
         {tablist.slice(0, 2).map((item, index) => (
-          <div key={index} className="flex items-center gap-2">
-            <div className={`mb-10 ms-4`}>
-              <div className="flex gap-2">
-                <div className="w-10 h-10">
-                  <img
-                    src={item.icon.filename}
-                    className="w-full h-full object-contain"
-                    alt=""
-                  />
-                </div>
-                <div>
-                  <div className="text-[14px] md:text-[18px] font-semibold text-pblue dark:text-pblue">
-                    <p className="m-0">{render(item.title)}</p>
-                  </div>
-                  <p className="text-[14px] md:text-[18px] mb-4 italic font-normal text-white dark:text-white">
-                    {render(item.subtitle)}
-                  </p>
-                </div>
+          <div key={index} className="relative mb-10 ms-4">
+            <div className="absolute top-0 left-0 w-10 h-10">
+              <img
+                src={item.icon.filename}
+                className="w-full h-full object-contain"
+                alt=""
+              />
+            </div>
+            <div className="pl-12">
+              <div className="text-[14px] md:text-[18px] font-semibold text-pblue dark:text-pblue">
+                <p className="m-0">{render(item.title)}</p>
               </div>
-
+              <p className="text-[14px] md:text-[18px] mb-4 italic font-normal text-white dark:text-white">
+                {render(item.subtitle)}
+              </p>
               <p className="mb-4 text-base font-normal text-white/70 dark:text-gray-400">
                 {render(item.paragraph)}
               </p>
@@ -130,26 +125,21 @@ const Timeline2 = ({ blok }) => {
       <div className="flex-1">
         <div className="flex flex-col gap-4">
           <div>
-            <div className="flex items-center gap-2">
-              <div className={`mb-10 ms-4`}>
-                <div className="flex gap-2">
-                  <div className="w-10 h-10">
-                    <img
-                      src={tablist[2].icon.filename}
-                      className="w-full h-full object-contain"
-                      alt=""
-                    />
-                  </div>
-                  <div>
-                    <div className="text-[14px] md:text-[18px] font-semibold text-pblue dark:text-pblue">
-                      <p className="m-0">{render(tablist[2].title)}</p>
-                    </div>
-                    <p className="text-[14px] md:text-[18px] mb-4 italic font-normal text-white dark:text-white">
-                      {render(tablist[2].subtitle)}
-                    </p>
-                  </div>
+            <div className="relative mb-10 ms-4">
+              <div className="absolute top-0 left-0 w-10 h-10">
+                <img
+                  src={tablist[2].icon.filename}
+                  className="w-full h-full object-contain"
+                  alt=""
+                />
+              </div>
+              <div className="pl-12">
+                <div className="text-[14px] md:text-[18px] font-semibold text-pblue dark:text-pblue">
+                  <p className="m-0">{render(tablist[2].title)}</p>
                 </div>
-
+                <p className="text-[14px] md:text-[18px] mb-4 italic font-normal text-white dark:text-white">
+                  {render(tablist[2].subtitle)}
+                </p>
                 <p className="mb-4 text-base font-normal text-white/70 dark:text-gray-400">
                   {render(tablist[2].paragraph)}
                 </p>

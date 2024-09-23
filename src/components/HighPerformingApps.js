@@ -53,7 +53,7 @@ const HighPerformingApps = ({ blok }) => {
             <p className="text-left text-white/70 mb-2">
               {render(blok.Seamless_block[0].ready_box_para)}
             </p>
-            <p className="text-left text-white/70 border-top pt-6">
+            <p className="text-left text-white/70 border-top pt-6 font-light cursor-pointer">
               {render(blok.Seamless_block[0].ready_box_link)}
             </p>
           </div>

@@ -76,16 +76,21 @@ function WattCompare({ blok }) {
                 <div className="">
                   <div>
                     <div className="text-[14px] md:text-[18px] font-semibold text-white dark:text-white flex gap-2">
-                      <span className="bg-white/10 rounded text-white px-2 py-2 build_bg"></span>
-                      <p className="m-0">Multithreading done right</p>
+                      <span className="bg-white/10 rounded text-white px-2 py-1 px-2">
+                        <span className="build_bg p-2"></span>
+                      </span>
+                      <p className="m-0">
+                        {" "}
+                        Kubernetes-ready to run Node.js apps
+                      </p>
                     </div>
-                    <p className="ml-8 font-medium italic">
+                    {/* <p className="ml-10 font-medium italic">
                       Get full visibility into your apps performance
-                    </p>
+                    </p> */}
                   </div>
                 </div>
 
-                <p className="mb-4 text-base font-normal text-white/70 dark:text-gray-400 ml-8 mt-4">
+                <p className="mb-4 text-base font-normal text-white/70 dark:text-gray-400 ml-10 mt-4">
                   Seamlessly leverage the power of multithreading within your
                   Kubernetes deployment.
                 </p>
@@ -96,18 +101,21 @@ function WattCompare({ blok }) {
                 <div className="">
                   <div>
                     <div className="text-[14px] md:text-[18px] font-semibold text-white dark:text-white flex gap-2">
-                      <span className="bg-white/10 rounded text-white px-2 py-2 build_bg"></span>
-                      <p className="m-0">Multithreading done right</p>
+                      <span className="bg-white/10 rounded text-white px-2 py-1 px-2">
+                        <span className="build_bg3 p-2"></span>
+                      </span>
+                      <p className="m-0">Comprehensive NFR management</p>
                     </div>
-                    <p className="ml-8 font-medium italic">
-                      Get full visibility into your apps performance
+                    <p className="ml-10 font-medium italic">
+                      Simplify critical app functions without the hassle.
                     </p>
                   </div>
                 </div>
 
-                <p className="mb-4 text-base font-normal text-white/70 dark:text-gray-400 ml-8 mt-4">
-                  Seamlessly leverage the power of multithreading within your
-                  Kubernetes deployment.
+                <p className="mb-4 text-base font-normal text-white/70 dark:text-gray-400 ml-10 mt-4">
+                  Abstract away time-consuming tasks like logging, tracing,
+                  observability, and resource allocation—allowing you to focus
+                  on building, not managing infrastructure.
                 </p>
               </div>
             </div>
@@ -121,18 +129,24 @@ function WattCompare({ blok }) {
                     <div className="">
                       <div>
                         <div className="text-[14px] md:text-[18px] font-semibold text-white dark:text-white flex gap-2">
-                          <span className="bg-white/10 rounded text-white px-2 py-2 build_bg"></span>
-                          <p className="m-0">Multithreading done right</p>
+                          <span className="bg-white/10 rounded text-white px-2 py-1 px-2">
+                            <span className="build_bg2 p-2"></span>
+                          </span>
+                          <p className="m-0">
+                            Integrated OpenTelemetry tracing
+                          </p>
                         </div>
-                        <p className="ml-8 font-medium italic">
+                        <p className="ml-10 font-medium italic">
                           Get full visibility into your apps performance
                         </p>
                       </div>
                     </div>
 
-                    <p className="mb-4 text-base font-normal text-white/70 dark:text-gray-400 ml-8 mt-4">
-                      Seamlessly leverage the power of multithreading within
-                      your Kubernetes deployment.
+                    <p className="mb-4 text-base font-normal text-white/70 dark:text-gray-400 ml-10 mt-4">
+                      Track application behavior in real-time with built-in
+                      OpenTelemetry tracing. Automatically monitor distributed
+                      services and gain insights into dependencies and
+                      performance.
                     </p>
                   </div>
                 </div>
@@ -141,18 +155,21 @@ function WattCompare({ blok }) {
                     <div className="">
                       <div>
                         <div className="text-[14px] md:text-[18px] font-semibold text-white dark:text-white flex gap-2">
-                          <span className="bg-white/10 rounded text-white px-2 py-2 build_bg"></span>
-                          <p className="m-0">Multithreading done right</p>
+                          <span className="bg-white/10 rounded text-white px-2 py-1 px-2">
+                            <span className="build_bg4 p-2"></span>
+                          </span>
+                          <p className="m-0">Unified logging with Pino</p>
                         </div>
-                        <p className="ml-8 font-medium italic">
-                          Get full visibility into your apps performance
+                        <p className="ml-10 font-medium italic">
+                          Streamline your logging strategy effortlessly.
                         </p>
                       </div>
                     </div>
 
-                    <p className="mb-4 text-base font-normal text-white/70 dark:text-gray-400 ml-8 mt-4">
-                      Seamlessly leverage the power of multithreading within
-                      your Kubernetes deployment.
+                    <p className="mb-4 text-base font-normal text-white/70 dark:text-gray-400 ml-10 mt-4">
+                      Leverage the Pino for fast, efficient, and structured
+                      logging across your Node.js applications, ensuring that
+                      you can monitor performance without complexity.
                     </p>
                   </div>
                 </div>

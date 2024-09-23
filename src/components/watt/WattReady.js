@@ -19,9 +19,11 @@ function WattReady({ blok }) {
           </div>
           {/* CTA buttons */}
           <div className="flex flex-row sm:flex-row gap-4">
-            <button className="bg-transparent hover:bg-white/10 outline outline-white/80 outline-[1px] text-white py-2 px-4 border-none rounded border border-white w-full sm:w-auto">
-              {render(blok.Hero_section[4].button_text)}
-            </button>
+            <a href="https://www.platformatichq.com/contact">
+              <button className="bg-transparent hover:bg-white/10 outline outline-white/80 outline-[1px] text-white py-2 px-4 border-none rounded border border-white w-full sm:w-auto">
+                {render(blok.Hero_section[4].button_text)}
+              </button>
+            </a>
           </div>
         </div>
         {/* Infrastructure section */}
