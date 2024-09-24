@@ -35,15 +35,12 @@ importers:
       buffer:
         specifier: ^6.0.3
         version: 6.0.3
-<<<<<<< HEAD
-=======
       clsx:
         specifier: ^1.2.1
         version: 1.2.1
       concurrently:
         specifier: ^9.0.1
         version: 9.0.1
->>>>>>> main
       dotenv:
         specifier: ^16.4.5
         version: 16.4.5
@@ -2078,6 +2075,10 @@ packages:
 
   clone-deep@4.0.1:
     resolution: {integrity: sha512-neHB9xuzh/wk0dIHweyAXv2aPGZIVk3pLMe+/RNzINf17fe0OG96QroktYAUm7SM1PBnzTabaLboqqxDyMU+SQ==}
+    engines: {node: '>=6'}
+
+  clsx@1.2.1:
+    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
     engines: {node: '>=6'}
 
   clsx@2.1.1:
@@ -9595,6 +9596,8 @@ snapshots:
       is-plain-object: 2.0.4
       kind-of: 6.0.3
       shallow-clone: 3.0.1
+
+  clsx@1.2.1: {}
 
   clsx@2.1.1: {}
 

@@ -158,7 +158,7 @@ function WattCompare({ blok }) {
                           <span className="bg-white/10 rounded text-white px-2 py-1 px-2">
                             <span className="build_bg4 p-2"></span>
                           </span>
-                          <p className="m-0">Unified logging with Pino</p>
+                          <p className="m-0"> Unified logging with Pino </p>
                         </div>
                         <p className="ml-10 font-medium italic">
                           Streamline your logging strategy effortlessly.
