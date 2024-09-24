@@ -3,14 +3,14 @@
  * bundles Infima by default. Infima is a CSS framework designed to
  * work well for content-centric websites.
  */
-
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 
 @layer base {
   :root {
@@ -72,6 +72,7 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   font-family: "Inter";
 }
+/* add css reset */
 
 h1,
 h2,
@@ -79,9 +80,11 @@ h3,
 h4,
 h5 {
   font-family: "Inter";
+  line-height: 1.7;
 }
 
-html, body {
+html,
+body {
   font-family: "Montserrat", sans-serif !important;
   font-size: 16px;
   font-style: normal;
@@ -89,6 +92,302 @@ html, body {
 
 main a {
   font-weight: bold;
+}
+p {
+  margin: 0 0 0 0;
+}
+
+.hero-section {
+  background-image: url("/src/images/Layer2.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 100vh; /* Adjust as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.managing-node_section {
+  /* Adjust as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .managing-node_section {
+    background-image: url("/src/images/Layer3.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .green-bg {
+    background-image: url("/src/images/greenblob.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .compare-container-bg {
+    background-image: url("/src/images/putnode2.svg");
+    background-size: cover; /* Set the actual width and height of the image */
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 40rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .seamless-container-bg {
+    background-image: url("/src/images/seamless.svg");
+    background-size: cover; /* Set the actual width and height of the image */
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .comp_bg {
+    background-image: url("/src/images/Ellipsered.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    top: 25%;
+    left: 0;
+    z-index: -1;
+  }
+  .comp_bg2 {
+    background-image: url("/src/images/Ellipsegreen.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    top: 25%;
+    right: 0;
+    z-index: -1;
+  }
+  /* .putnode-bg {
+    width: 100%;
+    height: 788px;
+  } */
+}
+.comp_bg {
+}
+
+.comp_bg2 {
+}
+.build_bg {
+  background-image: url("/src/images/build1.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+}
+.build_bg2 {
+  background-image: url("/src/images/build2.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+}
+.build_bg3 {
+  background-image: url("/src/images/build3.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+}
+.build_bg4 {
+  background-image: url("/src/images/build4.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+}
+
+.explore_side_bg {
+  background-image: url("/src/images/yellowblob.svg");
+  background-size: contain;
+  background-position: bottom left;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 600px) {
+  .timeline1_block {
+    bottom: -200px;
+    left: -200px;
+  }
+}
+
+.infra-bg {
+  background-image: url("/src/images/infrastructure.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 250px;
+}
+
+.platformatic-logo {
+  background-image: url("/src/images/Platformatic\ Logo.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+}
+.footer-bg {
+  background-image: url("/src/images/Ellipse\ 163.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 767px) {
+  .card_bg {
+    background-image: url("/src/images/greenblob.svg"),
+      url("/src/images/Ellipsered.svg");
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    width: 100%;
+    height: 100%;
+  }
+}
+.timeline {
+  border-left: 1px solid;
+}
+.explore-con_bg {
+  background-image: url("/src/images/explorecon.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 80%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.border-bottom {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.border-top {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 768px) {
+  .comp_bg {
+    width: 300px;
+    height: 100%;
+    top: 25%;
+    left: 0;
+  }
+
+  .comp_bg2 {
+    width: 300px;
+    height: 100%;
+    top: 25%;
+    right: 0;
+    left: auto;
+  }
+}
+
+.putnode-bg {
+  background-image: url("/src/images/putnode.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-bg {
+  background-image: url("/src/images/Ellipse159.svg");
+  background-size: 1300px 900px; /* Set the actual width and height of the image */
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Adjust as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.white_bg {
+  background-image: url("/src/images/white_bg.svg");
+  background-size: 1200px 1000px; /* Set the actual width and height of the image */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+  .white_bg {
+    background-size: 800px 600px; /* Smaller size for small screens */
+  }
+}
+
+.watt-container-bg {
+  background-image: url("/src/images/greenblob.svg");
+  background-size: 1500px 1000px; /* Set the actual width and height of the image */
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Adjust as needed */
+}
+
+.watt-con-bg {
+  background-image: url("/src/images/watt/yellowblod.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+.side-focus-bg {
+  background-image: url("/src/images/focus-side.svg");
+  background-size: contain;
+  background-position: bottom left;
+  background-repeat: no-repeat;
+}
+.right-focus-bg {
+  background-image: url("/src/images/focusright.svg");
+  background-size: contain;
+  background-position: bottom left;
+  background-repeat: no-repeat;
+}
+
+/* watt page styles */
+@media (max-width: 1000px) {
+  .watt-hero_bg {
+    background-image: url("/src/images/watt/yellowblod.svg"),
+      url("/src/images/watt/wattherobg.svg"),
+      linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    background-size: 100% auto, cover, cover; /* Adjust the first value as needed */
+    background-position: top, right, center;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-blend-mode: normal, overlay, overlay;
+  }
 }
 
 .youtube-container {
@@ -239,30 +538,22 @@ main a {
 }
 
 /* build api background triangle */
-.plt-background-triangles::before,
-.plt-vertical-background-triangle {
-  content: "";
-  background: url(/src/images/background_polygons_triangle.svg) repeat;
-}
 
 .triangle_bg {
-  background: url(/src/images/background_polygons_triangle.svg) repeat;
+  /* background: url(/src/images/background_polygons_triangle.svg) repeat;
   height: 100%;
   width: 100%;
-  opacity: 0.4;
+  opacity: 0.4; */
 }
 
-
-
-
-.plt-vertical-background-opacity {
+/* .plt-vertical-background-opacity {
   content: "";
   background: linear-gradient(
     to top,
     rgba(var(--rgba-primary-color), 1),
     rgba(var(--rgba-primary-color), 0.2) 43%
   );
-}
+} */
 
 /* typewriter */
 .blinking-cursor {

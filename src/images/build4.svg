@@ -1,0 +1,10 @@
+<svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.25 17.5H2C1.44772 17.5 1 17.0523 1 16.5V5.5M17.5 10V5.5M1 5.5V2C1 1.44772 1.44772 1 2 1H16.5C17.0523 1 17.5 1.44772 17.5 2V5.5M1 5.5H10M17.5 5.5H15.25M4 11.5H7.75M4 14.5H6.25M4 8.5H9.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="3.25" cy="3.25" r="0.75" fill="white"/>
+<circle cx="5.5" cy="3.25" r="0.75" fill="white"/>
+<circle cx="7.75" cy="3.25" r="0.75" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.1212 7.92639L7 16.5859H15.2684L11.1212 7.92639Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M13.0022 4L11.3413 7.45748L12.9993 10.8592L14.666 7.45899L13.0022 4Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19 16.5588L14.8803 7.96106L13.2454 11.4125L15.6984 16.5738L19 16.5573V16.5588Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.42693 17.0368L8.49149 19L17.3956 18.9894L16.4717 17.0096L9.42693 17.0368Z" fill="white"/>
+</svg>
