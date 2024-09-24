@@ -173,8 +173,8 @@ const config = {
       title: "Platformatic",
       logo: {
         alt: "Platformatic Logo",
-        src: "img/plt-logo.svg",
-        srcDark: "img/plt-logo-inverted.svg",
+        src: "img/platformatic-logo.svg",
+        srcDark: "img/platformatic-logo.svg",
       },
       items: [
         {
