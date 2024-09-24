@@ -64,7 +64,7 @@ export DOCS=$PWD/../platformatic/docs
 Step 2: Start the development server
 
 ```bash
-npm run start
+npm run sync-and-start
 ```
 
 ## Deploy
