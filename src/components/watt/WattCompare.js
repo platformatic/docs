@@ -104,7 +104,7 @@ function WattCompare({ blok }) {
                       <span className="bg-white/10 rounded text-white px-2 py-1 px-2">
                         <span className="build_bg3 p-2"></span>
                       </span>
-                      <p className="m-0">Comprehensive NFR management</p>
+                      <p className="m-0">Comprehensive non-functional requirement management</p>
                     </div>
                     <p className="ml-10 font-medium italic">
                       Simplify critical app functions without the hassle.
@@ -114,7 +114,7 @@ function WattCompare({ blok }) {
 
                 <p className="mb-4 text-base font-normal text-white/70 dark:text-gray-400 ml-10 mt-4">
                   Abstract away time-consuming tasks like logging, tracing,
-                  observability, and resource allocation—allowing you to focus
+                  observability, and resource allocation—allowing your team to focus
                   on building, not managing infrastructure.
                 </p>
               </div>
@@ -137,7 +137,7 @@ function WattCompare({ blok }) {
                           </p>
                         </div>
                         <p className="ml-10 font-medium italic">
-                          Get full visibility into your apps performance
+                          Get full visibility into your app's performance
                         </p>
                       </div>
                     </div>
