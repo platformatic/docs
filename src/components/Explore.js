@@ -48,20 +48,20 @@ const Timeline = ({ blok }) => {
                 {" "}
                 {/* Added background color, spacing, and slightly rounded corners */}
                 <img
-                  src={tablist[2].icon.filename}
+                  src={last_list[0].icon.filename}
                   className="w-full h-full object-contain"
                   alt=""
                 />
               </div>
               <div className="pl-12">
                 <div className="text-[14px] md:text-[18px] font-semibold text-pyellow dark:text-pyellow">
-                  <p className="m-0">{render(tablist[2].title)}</p>
+                  <p className="m-0">{render(last_list[0].title)}</p>
                 </div>
                 <p className="text-[14px] md:text-[18px] mb-4 italic font-normal text-white dark:text-white">
-                  {render(tablist[2].subtitle)}
+                  {render(last_list[0].subtitle)}
                 </p>
                 <p className="mb-4 text-base font-normal text-white/70 dark:text-gray-400">
-                  {render(tablist[2].paragraph)}
+                  {render(last_list[0].paragraph)}
                 </p>
               </div>
             </div>
@@ -220,58 +220,6 @@ const Explore = ({ blok }) => {
           </div>
         </div>
       </div>
-
-      {/* Commented out section */}
-      {/* xxxx
-      <div className="flex px-4 md:px-0 flex-row justify-between w-full max-w-[434px] lg:max-w-[634px] mx-auto relative change__pseudo">
-        {blok?.time_to_change.map((change, index) => {
-          const [isHovered, setIsHovered] = useState(false);
-
-          return (
-            <div
-              key={index}
-              className="flex flex-col gap-1 items-center bg-white cursor-pointer dark:bg-[#040607] px-3 z-[5] group"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
-              <div className="relative hidden lg:inline-block">
-                <img
-                  src={change.change_image}
-                  alt={change.change_text}
-                  className={`h-10 w-10 ${isHovered ? "hidden" : "block"}`}
-                />
-                {isHovered && (
-                  <Lottie
-                    loop={false}
-                    animationData={JSON.parse(change.change_lottie)}
-                    play
-                    style={{ width: 40, height: 40 }}
-                  />
-                )}
-              </div>
-              <div className="relative inline-block lg:hidden">
-                <img
-                  src={change.change_image}
-                  alt={change.change_text}
-                  className="h-5 w-5 md:w-7 md:h-7"
-                />
-              </div>
-              <p
-                className={`${
-                  index === 0
-                    ? "group-hover:text-[#FFAB5E]"
-                    : index === 1
-                    ? "group-hover:text-[#2192FA]"
-                    : "group-hover:text-[#C61BE2]"
-                }`}
-              >
-                {change.change_text}
-              </p>
-            </div>
-          );
-        })}
-      </div>
-      xxxx */}
     </section>
   );
 };
