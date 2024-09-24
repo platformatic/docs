@@ -30,7 +30,7 @@ on:
         description: "GitHub API Token"
         required: true
       TARGET_REPO:
-        description: "The repo wheere Docusaurus is"
+        description: "The repo where Docusaurus is"
         required: true
 jobs:
   build-and-publish:
@@ -71,13 +71,5 @@ jobs:
         with:
           commit_message: "[automated commit] Bump docs to versions ${{ steps.check.outputs.remote-versions }}"
           tagging_message: "${{ steps.check.outputs.tag }}"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Deploy to GitHub Pages
-        if: inputs.original_event == 'push_on_main' || inputs.force || steps.check.outputs.needs-update == 'true'
-        uses: crazy-max/ghaction-github-pages@v3
-        with:
-          target_branch: gh-pages
-          build_dir: build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
