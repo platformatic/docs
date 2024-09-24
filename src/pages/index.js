@@ -93,8 +93,8 @@ function HomepageHeader({ blok }) {
                 </button>
               </a>
             </div>
-            <div className="flex justify-center items-center w-full ">
-              <button className="bg-transparent flex gap-2 items-center hover:bg-white/10 outline outline-white/80 outline-[1px] text-white py-2 px-4 border-none rounded border border-white cursor-pointer mt-20 md:px-12 flex justify-center items-center w-full sm:w-auto">
+            {/* <div className="flex justify-center items-center w-full "> */}
+              {/* <button className="bg-transparent flex gap-2 items-center hover:bg-white/10 outline outline-white/80 outline-[1px] text-white py-2 px-4 border-none rounded border border-white cursor-pointer mt-20 md:px-12 flex justify-center items-center w-full sm:w-auto">
                 WATT Import
                 <span className="inline-block ml-2">
                   <div className="w-5 h-5">
@@ -105,8 +105,8 @@ function HomepageHeader({ blok }) {
                     />
                   </div>
                 </span>
-              </button>
-            </div>
+              </button> */}
+            {/* </div> */}
           </div>
         </div>
       </section>
