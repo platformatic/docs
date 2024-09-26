@@ -41,13 +41,6 @@ const config = {
     locales: ["en"],
   },
 
-  scripts: [
-    "https://app.posthog.com/static/array.js",
-    {
-      src: "/scripts/posthog.js",
-      async: true,
-    },
-  ],
 
   presets: [
     [
@@ -78,6 +71,14 @@ const config = {
   ],
 
   plugins: [
+    [
+      "posthog-docusaurus",
+      {
+        apiKey: "phc_erld9bkOOEawzcjlc0GovYRGCopzSibVHG4WKE4G5QX",
+        appUrl: "https://us.i.posthog.com", // optional, defaults to "https://us.i.posthog.com"
+        enableInDevelopment: false, // optional
+      },
+    ],
     [
       "@docusaurus/plugin-client-redirects",
       {
@@ -201,10 +202,7 @@ const config = {
               to: "/composer",
               label: "Composer",
             },
-            // {
-            //   to: "/runtime",
-            //   label: "Runtime",
-            // },
+          
             {
               to: "/aiwarp",
               label: "AI-Warp",
