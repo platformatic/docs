@@ -41,13 +41,6 @@ const config = {
     locales: ["en"],
   },
 
-  // scripts: [
-  //   "https://app.posthog.com/static/array.js",
-  //   {
-  //     src: "/scripts/posthog.js",
-  //     async: true,
-  //   },
-  // ],
 
   presets: [
     [
@@ -209,10 +202,7 @@ const config = {
               to: "/composer",
               label: "Composer",
             },
-            // {
-            //   to: "/runtime",
-            //   label: "Runtime",
-            // },
+          
             {
               to: "/aiwarp",
               label: "AI-Warp",
