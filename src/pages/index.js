@@ -60,27 +60,27 @@ function HomepageHeader({ blok }) {
   return (
     <header className="dark border-top">
       <section
-        className={`bg-transparent flex items-center justify-center min-h-screen lg:min-h-[100vh] bg-cover bg-center bg-no-repeat relative mt-20 md:mt-0`}
+        className={`bg-transparent flex items-center justify-center sm:min-h-[100vh] bg-cover bg-center bg-no-repeat relative mt-20 md:mt-0`}
       >
         <img
           src={blok.hero_section[0].hero_image.filename}
           alt="Background"
           className="absolute inset-0 w-full h-full object-cover z-0 "
         />
-        <div className="max-w-screen-xl mx-auto w-full text-center relative z-10">
+        <div className="max-w-screen-xl mx-auto w-full text-center relative z-10 mt-10 md:mt-0">
           <div className="max-w-4xl mx-auto flex flex-col justify-center items-center px-2 md:px-0">
-            <h1 className="mb-4 text-[1.6rem] leading-[1.5] md:leading-[54px] font-bold md:text-4xl dark:text-white">
+            <h1 className="mb-4 text-[1.6rem] leading-[1.5] md:leading-[54px] font-[700] md:font-[600] md:text-[40px] dark:text-white md:max-w-[603px]">
               {render(blok.hero_section[0].hero_title)}
             </h1>
-            <p className="mb-6 text-white/70 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+            <p className="mb-6 text-white/80 lg:mb-8 md:text-lg text-base lg:text-xl font-normal dark:text-white/80">
               {render(blok.hero_section[0].hero_subtitle)}
             </p>
-            <div className="flex flex-row justify-center items-center gap-4 w-full md:max-w-80 mx-auto">
+            <div className="flex flex-row justify-center items-center gap-4 w-full md:max-w-80 max-w-80 mx-auto">
               <a
                 href={blok.hero_section[0].cta_buttons[0].cta_url.url}
                 className="flex-1"
               >
-                <button className="bg-white hover:bg-white/80 hover:translate-y-1 outline outline-white/80 outline-[1px] text-[#00050B] py-2 px-4 border-none rounded border border-white w-full cursor-pointer">
+                <button className="bg-white hover:bg-white/80 hover:translate-y-1 outline outline-white/80 outline-[1px] text-black/80 py-2 px-4 border-none rounded border border-white w-full cursor-pointer text-[14px]">
                   {render(blok.hero_section[0].cta_buttons[0].btn_caption)}
                 </button>
               </a>
@@ -88,25 +88,12 @@ function HomepageHeader({ blok }) {
                 href={blok.hero_section[0].cta_buttons[1].cta_url.url}
                 className="flex-1"
               >
-                <button className="bg-transparent hover:bg-white/10 outline outline-white/80 outline-[1px] text-white py-2 px-4 border-none rounded border border-white w-full cursor-pointer">
+                <button className="bg-transparent hover:bg-white/30 outline outline-white/80 outline-[1px] text-white py-2 px-4 border-none rounded border border-white w-full cursor-pointer text-[14px]">
                   {render(blok.hero_section[0].cta_buttons[1].btn_caption)}
                 </button>
               </a>
             </div>
-            {/* <div className="flex justify-center items-center w-full "> */}
-              {/* <button className="bg-transparent flex gap-2 items-center hover:bg-white/10 outline outline-white/80 outline-[1px] text-white py-2 px-4 border-none rounded border border-white cursor-pointer mt-20 md:px-12 flex justify-center items-center w-full sm:w-auto">
-                WATT Import
-                <span className="inline-block ml-2">
-                  <div className="w-5 h-5">
-                    <img
-                      src={blok.hero_section[0].cta_buttons[1].icon.filename}
-                      className="w-full h-full object-contain"
-                      alt=""
-                    />
-                  </div>
-                </span>
-              </button> */}
-            {/* </div> */}
+            <div className="flex justify-center items-center w-full max-w-80"></div>
           </div>
         </div>
       </section>
@@ -124,7 +111,7 @@ export default function Home() {
   if (!story || !story.content) {
     return <div>Loading...</div>;
   }
-  console.log(story.content);
+ 
 
   return (
     <Layout
@@ -133,32 +120,20 @@ export default function Home() {
     >
       <HomepageHeader blok={story.content} />
       <main className="dark">
-        {/* <StoryblokComponent blok={story.content} /> */}
         <ManagingNode blok={story.content} />
         <PutNode blok={story.content} />
         <Explore blok={story.content} />
-        {/* <TimeToChange blok={story.content} /> */}
-        {/* <section className="overflow-hidden">
-          <div class="hidden md:block absolute md:w-1/2 top-[135%] left-0 h-[2300px] plt-vertical-background-triangle opacity-10">
-            <div class="h-full absolute top-0 left-0 w-full" />
-          </div>
-          <BuildApi blok={story.content} />
-          <WorksForYou blok={story.content} />
-        </section> */}
+        
         <SeamlessConsume blok={story.content} />
         <HighPerformingApps blok={story.content} />
         <FaqSection
           title={story.content.home_faq[0].faq_title}
           faq={story.content.home_faq[0].faq}
         />
-        <section className="footer-bg overflow-hidden relative h-32 border-bottom">
-          <div className="h-32"></div>
+        <section className="footer-bg overflow-hidden relative border-bottom">
+          <div className="md:h-32 h-20"></div>
         </section>
-        {/* <section className="overflow-hidden relative">
-          <FacingNodeChallenge blok={story.content.services[4]} />
-          <DeployInSeconds blok={story.content.services[5]} />
-          <WhyPlatformatic blok={story.content.services[6]} />
-        </section> */}
+        
       </main>
     </Layout>
   );

@@ -32,7 +32,7 @@ const config = {
   baseUrl: process.env.BASE_URL || "/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "img/platformatic-logo.svg",
   organizationName: "platformatic",
   projectName: "oss",
 
@@ -157,7 +157,7 @@ const config = {
       id: "announcement",
       content: `
         Announcing our new feature: the Node.js application server is here! 
-      <b> <a href="/docs/new-feature" style="color: black; text-decoration: underline;">  Read our founder’s announcement ->  </a></b>
+      <b> <a href="https://blog.platformatic.dev/introducing-the-node-application-platform" style="color: black; text-decoration: underline;">  Read our founder’s announcement ->  </a></b>
        
       `,
       backgroundColor: "#fff",
@@ -168,7 +168,7 @@ const config = {
       defaultMode: "dark",
       disableSwitch: true,
     },
-    image: "img/plt-logo-docs.png",
+    image: "img/platformatic-logo.svg",
     navbar: {
       title: "Platformatic",
       logo: {
@@ -201,10 +201,10 @@ const config = {
               to: "/composer",
               label: "Composer",
             },
-            {
-              to: "/runtime",
-              label: "Runtime",
-            },
+            // {
+            //   to: "/runtime",
+            //   label: "Runtime",
+            // },
             {
               to: "/aiwarp",
               label: "AI-Warp",
@@ -220,7 +220,7 @@ const config = {
             {
               to: "/watt",
               label: "Watt",
-            }
+            },
           ],
         },
         {

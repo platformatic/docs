@@ -23,8 +23,8 @@ function FaqSection({ faq, title }) {
                 }`}
                 onClick={() => toggleFaq(index)}
               >
-                <div className="flex items-center text-lg md:text-xl font-semibold text-white p-6 hover:bg-white/5 transition-colors">
-                  <span className="text-2xl mr-4">
+                <div className="flex items-center text-base md:text-[18px] text-white p-6 hover:bg-white/5 transition-colors">
+                  <span className="text-base md:text-[18px] mr-4">
                     {openIndex === index ? "−" : "+"}
                   </span>
                   {render(faq.question)}

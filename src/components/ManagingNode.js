@@ -3,15 +3,15 @@ import { render } from "storyblok-rich-text-react-renderer";
 
 const ManagingNode = ({ blok }) => {
   const features = blok.build_node[0].node_box;
-  console.log(blok.build_node[0].node_title, "title");
+
   return (
     <section className="managing-node_section">
-      <section className="container-bg z-2 w-full mx-auto py-12 md:py-24 lg:py-32 xl:py-48">
+      <section className="container-bg z-2 w-full mx-auto py-12 md:py-24 lg:py-32 xl:py-48 mt-32 md:mt-0">
         <div className="container w-[100%] h-[100%] px-4 md:px-6 max-w-[1440px] mx-auto z-3">
           <div className="grid gap-6 items-center">
             <div className="flex flex-col justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className=" font-bold text-[1.1rem] leading-[1.3] sm:text-3xl md:text-4xl bg-clip-text text-transparent bg-gradient-to-t from-white to-gray-500 max-w-3xl mx-auto md:leading-[45px]">
+                <h2 className=" font-[600] text-[22px] leading-[26.4px] sm:text-3xl md:text-[32px] bg-clip-text text-transparent bg-gradient-to-t from-white to-gray-500 max-w-3xl mx-auto md:leading-[45px] md:max-w-[700px]">
                   {render(blok.build_node[0].node_title)}
                 </h2>
                 <p className="text-white/70 text-base md:text-l mx-auto">
@@ -55,13 +55,3 @@ const ManagingNode = ({ blok }) => {
 };
 
 export default ManagingNode;
-//       {render(blok.building_node[0].node_title)}
-//     </div>
-//     <h4 className='text-base md:text-lg font-light text-[#00050B]/70 dark:text-white/70 max-w-[46.5rem] text-center'>
-//       {blok.nodes_subtitle}
-//     </h4>
-//   </div>
-
-//   <p className='text-[#00050B]/70 dark:text-white/70 text-lg text-center font-extralight'>
-//     {render(blok.building_node[0].node_subtitle)}
-//   </p>
