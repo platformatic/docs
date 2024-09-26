@@ -4,14 +4,13 @@ import { ComparisonCard } from "./watt/WattCompare";
 
 const Header = ({ blok }) => (
   <div className="space-y-2">
-    {console.log(blok.title_header, "title_header")}
-    <h2 className="text-[28px] font-bold tracking-tighter sm:text-3xl md:text-4xl  mx-auto">
-      <span className="text-[28px] sm:text-3xl md:text-4xl max-w-3xl mx-auto bg-clip-text text-transparent font-bold bg-gradient-to-t from-white to-gray-500 mr-2">
+    <h2 className="text-[28px] font-bold sm:text-3xl md:text-4xl  mx-auto">
+      <span className="text-[28px] sm:text-3xl md:text-[40px] max-w-3xl mx-auto bg-clip-text text-transparent font-bold bg-gradient-to-t from-white to-gray-500 mr-2">
         {blok.title_header.split(" ")[0]}
       </span>
       <span className="text-green">{blok.title_header.split(" ")[1]}</span>
     </h2>
-    <p className="text-white/70 text-base md:text-l mx-auto md:pb-10">
+    <p className="text-white/70 text-base md:text-l md:pb-10 mx-2 md:mx-0 md:max-w-[550px] px-2 md:px-0">
       {render(blok.title_paragraph)}
     </p>
   </div>
@@ -29,7 +28,7 @@ const BackgroundImage = ({ blok }) => (
 
 const SupportedTechnologies = ({ blok }) => (
   <div className="w-full">
-    <p className="text-white text-[18px] md:text-[24px] font-semibold mx-auto md:pt-20 mb-8">
+    <p className="text-white text-[18px] md:text-[24px] font-semibold mx-auto md:pt-20 mb-8 px-2 md:px-0 md:mx-0">
       {render(blok.paragraph)}
     </p>
     <div className="flex flex-wrap justify-center md:justify-between items-center md:p-4">

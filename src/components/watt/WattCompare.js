@@ -17,15 +17,15 @@ export const ComparisonCard = ({ title, items, isAfter }) => (
     <div
       className={`text-${
         isAfter ? "green" : "pred"
-      } text-[14px] text-center pb-4`}
+      } text-[12px] text-center pb-4`}
     >
       {render(title)}
     </div>
     <ul className="space-y-6 list-none m-0 p-0">
       {items.map((item, index) => (
-        <li key={index} className="flex items-start">
+        <li key={index} className="flex items-start text-left">
           <svg
-            className="w-6 h-6 mr-2 flex-shrink-0 mt-1"
+            className="w-4 h-4 mr-2 flex-shrink-0 mt-1"
             fill="none"
             stroke={isAfter ? "#21fa90" : "#fa2121"}
             viewBox="0 0 24 24"
@@ -38,7 +38,9 @@ export const ComparisonCard = ({ title, items, isAfter }) => (
               d={isAfter ? "M5 13l4 4L19 7" : "M6 18L18 6M6 6l12 12"}
             ></path>
           </svg>
-          <span className="text-white/70 text-[14px]">{render(item.item)}</span>
+          <span className="text-white/70 text-left text-[16px]">
+            {render(item.item)}
+          </span>
         </li>
       ))}
     </ul>
@@ -104,7 +106,7 @@ function WattCompare({ blok }) {
                       <span className="bg-white/10 rounded text-white px-2 py-1 px-2">
                         <span className="build_bg3 p-2"></span>
                       </span>
-                      <p className="m-0">Comprehensive non-functional requirement management</p>
+                      <p className="m-0">Comprehensive NFR management</p>
                     </div>
                     <p className="ml-10 font-medium italic">
                       Simplify critical app functions without the hassle.
@@ -114,7 +116,7 @@ function WattCompare({ blok }) {
 
                 <p className="mb-4 text-base font-normal text-white/70 dark:text-gray-400 ml-10 mt-4">
                   Abstract away time-consuming tasks like logging, tracing,
-                  observability, and resource allocation—allowing your team to focus
+                  observability, and resource allocation—allowing you to focus
                   on building, not managing infrastructure.
                 </p>
               </div>
@@ -137,7 +139,7 @@ function WattCompare({ blok }) {
                           </p>
                         </div>
                         <p className="ml-10 font-medium italic">
-                          Get full visibility into your app's performance
+                          Get full visibility into your apps performance
                         </p>
                       </div>
                     </div>
@@ -158,7 +160,7 @@ function WattCompare({ blok }) {
                           <span className="bg-white/10 rounded text-white px-2 py-1 px-2">
                             <span className="build_bg4 p-2"></span>
                           </span>
-                          <p className="m-0"> Unified logging with Pino </p>
+                          <p className="m-0">Unified logging with Pino</p>
                         </div>
                         <p className="ml-10 font-medium italic">
                           Streamline your logging strategy effortlessly.

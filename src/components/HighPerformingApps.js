@@ -11,7 +11,7 @@ const HighPerformingApps = ({ blok }) => {
         <div className="flex flex-col md:flex-row leading-[1.4] justify-between items-start md:items-end mb-10 md:mb-20">
           {/* Title and subtitle */}
           <div className="mb-6 md:mb-0 max-w-2xl">
-            <h2 className="text-[28px] sm:text-3xl md:text-4xl xl:text-5xl/none max-w-3xl bg-clip-text text-transparent font-bold bg-gradient-to-t from-white to-gray-500 text-left mb-4">
+            <h2 className="text-[28px] sm:text-3xl md:text-[40px] md:leading-[54px] leading-[35px] max-w-3xl bg-clip-text text-transparent font-bold bg-gradient-to-t from-white to-gray-500 text-left mb-4">
               {render(blok.Seamless_block[0].ready_title)}
             </h2>
             <p className="text-white/70 text-base md:text-l text-left m-0 pb-0">
@@ -19,13 +19,23 @@ const HighPerformingApps = ({ blok }) => {
             </p>
           </div>
           {/* CTA buttons */}
-          <div className="flex flex-row sm:flex-row gap-4 w-[75%] md:w-80">
-            <button className="bg-white hover:bg-white/80 text-black py-2 px-4 rounded border-none w-full sm:w-auto">
-              {render(blok.Seamless_block[0].ready_sales_btn)}
-            </button>
-            <button className="bg-transparent hover:bg-white/10 outline outline-white/80 outline-[1px] text-white py-2 px-4 border-none rounded border border-white w-full sm:w-auto">
-              {render(blok.Seamless_block[0].ready_guide_btn)}
-            </button>
+          <div className="flex flex-row sm:flex-row gap-4 w-[90%] md:w-80 mb-10 md:mb-0">
+            <a
+              href={blok.hero_section[0].cta_buttons[0].cta_url.url}
+              className="flex-1"
+            >
+              <button className="bg-white hover:bg-white/80 hover:translate-y-1 outline outline-white/80 outline-[1px] text-black/80 py-2 px-4 border-none rounded border border-white w-full cursor-pointer text-[14px]">
+                {render(blok.Seamless_block[0].ready_sales_btn)}
+              </button>
+            </a>
+            <a
+              href={blok.hero_section[0].cta_buttons[1].cta_url.url}
+              className="flex-1"
+            >
+              <button className="bg-transparent hover:bg-white/30 outline outline-white/80 outline-[1px] text-white py-2 px-4 border-none rounded border border-white w-full cursor-pointer text-[14px]">
+                {render(blok.Seamless_block[0].ready_guide_btn)}
+              </button>
+            </a>
           </div>
         </div>
         {/* Infrastructure section */}
@@ -47,13 +57,13 @@ const HighPerformingApps = ({ blok }) => {
                 alt=""
               />
             </div>
-            <h3 className="text-left text-xl md:text-2xl font-semibold mb-2 pt-2">
+            <h3 className="text-left text-[22px] md:text-[32px] font-[600] mb-2 pt-2">
               {render(blok.Seamless_block[0].teady_box_title)}
             </h3>
             <p className="text-left text-white/70 mb-2">
               {render(blok.Seamless_block[0].ready_box_para)}
             </p>
-            <p className="text-left text-white/70 border-top pt-6 font-light cursor-pointer">
+            <p className="text-left text-[14px] text-white/70 border-top pt-6 font-light cursor-pointer">
               {render(blok.Seamless_block[0].ready_box_link)}
             </p>
           </div>
