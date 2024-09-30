@@ -32,7 +32,7 @@ const config = {
   baseUrl: process.env.BASE_URL || "/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/platformatic-logo.svg",
+  favicon: "img/favicon.ico",
   organizationName: "platformatic",
   projectName: "oss",
 
