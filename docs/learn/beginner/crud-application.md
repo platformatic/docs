@@ -49,7 +49,7 @@ For the Todo API, we need two tables, Users and Todos, let's edit the migrations
 To create the users table, navigate to the `db/migrations` directory and edit `001.do.sql` file, and add the schema below:
 
 ```sql
-CREATE TABLE IF NOT EXISTS User (
+CREATE TABLE IF NOT EXISTS Users (
     id INTEGER PRIMARY KEY,
     username TEXT NOT NULL UNIQUE,
     password TEXT NOT NULL,
@@ -60,13 +60,16 @@ CREATE TABLE IF NOT EXISTS User (
 And let's edit the `migrations/001.undo.sql` file to look like this:
 
 ```sql
-DROP TABLE User;
+DROP TABLE Users;
 ```
+:::note
+To ensure the OpenAPI specification accurately reflects your API endpoints, it's essential to use plural table names.
+:::
 
 Before we apply the migrations, let's create a new table for our Todos, to do that create another file `002.do.sql` and inside it, add the schema for your Todos table.
 
 ```sql
-CREATE TABLE IF NOT EXISTS Todo (
+CREATE TABLE IF NOT EXISTS Todos (
     id INTEGER PRIMARY KEY,
     user_id INTEGER,
     title TEXT NOT NULL,
@@ -79,7 +82,7 @@ CREATE TABLE IF NOT EXISTS Todo (
 And again, add a new file `002.undo.sql` to drop the table.
 
 ```sql
-DROP TABLE Todo;
+DROP TABLE Todos;
 ```
 
 :::note
