@@ -178,7 +178,7 @@ Then, edit `web/composer/platformatic.json` to add the `node` app:
     "services": [{
       "id": "node",
       "proxy": {
-        "path": "/node"
+        "prefix": "/node"
       }
     }],
     "refreshTimeout": 1000
@@ -265,7 +265,7 @@ Finally, let's add `Next` to our composer:
     "services": [{
       "id": "node",
       "proxy": {
-        "path": "/node"
+        "prefix": "/node"
       }
     }, {
       "id": "next"
@@ -292,7 +292,7 @@ and the `path` in `web/composer/platformatic.json` accordingly.
 
 ## `fetch` the data from the Node.js app in the Next.js app
 
-Replace `web/next/src/app/page.js`, with the following code:
+Replace `web/next/app/page.js`, with the following code:
 
 ```js
 import styles from "./page.module.css";
