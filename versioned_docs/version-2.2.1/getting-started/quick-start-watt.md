@@ -265,7 +265,7 @@ Finally, let's add `Next` to our composer:
     "services": [{
       "id": "node",
       "proxy": {
-        "path": "/node"
+        "prefix": "/node"
       }
     }, {
       "id": "next"
