@@ -137,7 +137,7 @@ curl http://localhost:3042
 Inside `my-app`, let's create a new Platformatic Composer
 
 ```bash
-npx create-platformatic@2.0.0-alpha.23
+npx create-platformatic
 ```
 
 This will output:
@@ -178,7 +178,7 @@ Then, edit `web/composer/platformatic.json` to add the `node` app:
     "services": [{
       "id": "node",
       "proxy": {
-        "path": "/node"
+        "prefix": "/node"
       }
     }],
     "refreshTimeout": 1000
@@ -265,7 +265,7 @@ Finally, let's add `Next` to our composer:
     "services": [{
       "id": "node",
       "proxy": {
-        "path": "/node"
+        "prefix": "/node"
       }
     }, {
       "id": "next"
@@ -285,7 +285,7 @@ Then, you can test it by opening your browser at [`http://localhost:3042/next`](
 
 In this example, we are exposing the Next.js app at `/next` and the Node.js app at `/node`.
 You can change the paths to suit your needs. Make sure to alter the `basePath` in `web/next/watt.json`
-and the `path` in `web/composer/platformatic.json` accordingly.
+and the `prefix` in `web/composer/platformatic.json` accordingly.
 
 :::
 
