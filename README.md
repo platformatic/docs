@@ -58,7 +58,7 @@ Step 1: Setup the docs environment variable
 
 ```bash
 # This sets the DOCS variable to the docs directory within the cloned Platformatic repository
-export DOCS=$PWD/../platformatic/docs
+export DOCS=`realpath $PWD/../platformatic/docs`
 ```
 
 Step 2: Start the development server

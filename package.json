@@ -11,8 +11,8 @@
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
-    "sync": "echo $DOCS; node -e \"console.log(JSON.stringify(require('$DOCS/sidebars.js'), null, 2))\" > sidebars.json && syncdir $DOCS docs",
-    "sync-and-start": "npm run sync && concurrently \"npm run sync -- -w\" \"npm run start\"",
+    "sync": "echo $DOCS; node -e \"console.log(JSON.stringify(require('$DOCS/sidebars.js'), null, 2))\" > sidebars.json && cpx $DOCS'/**/*' docs",
+    "sync-and-start": "npm run sync && concurrently \"cpx $DOCS'/**/*' docs -w --no-initial \" \"npm run start\"",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids"
   },
@@ -27,6 +27,7 @@
     "buffer": "^6.0.3",
     "clsx": "^1.2.1",
     "concurrently": "^9.0.1",
+    "cpx2": "^5.0.0",
     "dotenv": "^16.4.5",
     "execa": "^9.3.0",
     "html-react-parser": "^5.1.12",
@@ -44,7 +45,6 @@
     "react-lottie-player": "^2.1.0",
     "semver": "^7.6.3",
     "storyblok-rich-text-react-renderer": "^2.9.2",
-    "sync-directory": "^6.0.5",
     "tailwindcss": "^3.4.10",
     "undici": "^6.19.7"
   },
