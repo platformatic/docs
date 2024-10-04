@@ -8,6 +8,8 @@ async function getLocalReleases () {
   return JSON.parse(await readFile(resolve(import.meta.dirname, '..', 'versions.json'), 'utf-8'))
 }
 
+const releasesToSkip = ['v2.3.1', 'v2.3.0']
+
 // See: https://docs.github.com/en/rest/using-the-rest-api/using-pagination-in-the-rest-api?apiVersion=2022-11-28
 function parseLinks (header) {
   if (!header) {
@@ -66,6 +68,7 @@ async function getRemoteReleases (toKeep = 5) {
   const allRelease = await listAllReleases()
   const validReleases = allRelease
     .filter((r) => !r.draft && !r.prerelease)
+    .filter((r) => !releasesToSkip.includes(r.tag_name))
     .map((r) => parse(r.tag_name.replace(/^v/, '')))
 
   // Keep one version per major, excluding v0.x
