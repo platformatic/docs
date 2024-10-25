@@ -259,6 +259,11 @@ const config = {
           ],
         },
         {
+          href: "https://platformatichq.com",
+          label: "For Teams",
+          position: "left",
+        },
+        {
           href: "https://blog.platformatic.dev",
           label: "Blog",
           position: "left",
