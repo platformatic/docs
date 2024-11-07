@@ -70,6 +70,6 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "[automated commit] Bump docs to versions ${{ steps.check.outputs.remote-versions }}"
-          tagging_message: "${{ steps.check.outputs.tag }}"
+          tagging_message: "${{ steps.check.outputs.tag }}-${{ env.GITHUB_RUN_ID }}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
