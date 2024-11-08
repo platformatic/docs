@@ -55,6 +55,7 @@
       "collapsed": true,
       "items": [
         "watt/overview",
+        "watt/configuration",
         "watt/reference"
       ]
     },
@@ -84,6 +85,15 @@
       "label": "Packages",
       "collapsed": true,
       "items": [
+        {
+          "type": "category",
+          "label": "Node",
+          "collapsed": true,
+          "items": [
+            "packages/node/overview",
+            "packages/node/configuration"
+          ]
+        },
         {
           "type": "category",
           "label": "Astro",
