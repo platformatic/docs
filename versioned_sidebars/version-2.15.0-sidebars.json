@@ -191,8 +191,8 @@
   ],
   "Learn": [
     "learn/overview",
-    "getting-started/quick-start-guide",
     "getting-started/quick-start-watt",
+    "getting-started/quick-start-guide",
     {
       "type": "category",
       "label": "Beginner Tutorials",
@@ -206,7 +206,6 @@
       "label": "Advanced Guides",
       "collapsed": true,
       "items": [
-        "guides/movie-quotes-app-tutorial",
         {
           "type": "category",
           "label": "Deployment",
