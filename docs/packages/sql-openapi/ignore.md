@@ -37,12 +37,12 @@ You can also ignore specific auto-generated routes for an entity.
 
 ```js
 app.register(require('@platformatic/sql-openapi'), {
-  ignoreRoutes: {
+  ignoreRoutes: [
     { method: 'GET', path: '/categories' },
     { method: 'GET', path: '/categories/{id}' },
     { method: 'DELETE', path: '/categories/{id}' },
     { method: 'DELETE', path: '/posts/{id}' }
-  }
+  ]
 })
 ```
 
