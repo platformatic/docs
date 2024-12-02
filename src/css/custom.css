@@ -69,8 +69,8 @@
   --ifm-background-color: transparent;
   --ifm-link-color: #9bc1fd;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-    font-family: "Inter", ui-sans-serif, system-ui, sans-serif,
-        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 /* add css reset */
 
@@ -258,6 +258,14 @@ p {
   background-image: url("/src/images/Ellipse\ 163.svg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+.cache-footer-bg {
+  background-image: url("/src/images/cachebtmgradient.svg");
+  background-size: cover;
+  background-position: center 200px;
   background-repeat: no-repeat;
   width: 100%;
   height: 100%;

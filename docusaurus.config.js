@@ -41,7 +41,6 @@ const config = {
     locales: ["en"],
   },
 
-
   presets: [
     [
       "classic",
@@ -202,7 +201,7 @@ const config = {
               to: "/composer",
               label: "Composer",
             },
-          
+
             {
               to: "/aiwarp",
               label: "AI-Warp",
@@ -218,6 +217,10 @@ const config = {
             {
               to: "/watt",
               label: "Watt",
+            },
+            {
+              to: "/caching",
+              label: "Caching",
             },
           ],
         },
