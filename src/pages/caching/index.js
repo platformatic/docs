@@ -92,10 +92,15 @@ function PageHeader({ blok }) {
               </div>
 
               <div className="flex items-center justify-center">
-                <img
-                  src={blok.cache_hero[0].hero_image.filename}
-                  alt="hero_image"
-                />
+                <iframe
+                  width="560"
+                  height="315"
+                  src={blok.cache_hero[0].hero_embed.url}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
 
