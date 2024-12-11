@@ -60,7 +60,8 @@ runtime. Each service object supports the following settings:
   `serviceId` is not explicitly provided.
 - **`path`** (**required**, `string`) - The path to the directory containing
   the microservice. It can be omitted if `url` is provided.
-- **`url`** (**required**, `string`) - The URL of the service, if it is a remote service. It can be omitted if `path` is provided.
+- **`url`** (**required**, `string`) - The URL of the service remote GIT repository, if it is a remote service. It can be omitted if `path` is provided.
+- **`gitBranch`** (string) - The branch of the service to resolve.
 - **`config`** (`string`) - The configuration file used to start
   the microservice.
 - **`useHttp`** (`boolean`) - The service will be started on a random HTTP port
@@ -69,10 +70,15 @@ runtime. Each service object supports the following settings:
 - **`health`** (object): Configures the health check for each worker of the service. It supports all the properties also supported in the runtime [health](#health) property. The values specified here overrides the values specified in the runtime.
 - **`envfile`** (`string`) - The path to an `.env` file to load for the service.
 - **`env`** (`object`) - An object containing environment variables to set for the service. Values set here takes precedence over values set in the `envfile`.
+- **`sourceMaps`** (`boolean`) - If `true`, source maps are enabled for the service. Default: `false`.
 
 If this property is present, then the services will not be reordered according to the
 `getBootstrapDependencies` function and they will be started in the order they are defined in
 the configuration file.
+
+### `web`
+
+An alias for `services`. If both are present, their content will be merged.
 
 ### `env`
 
@@ -80,6 +86,10 @@ An object containing environment variables to set for all services in the
 runtime. Any environment variables set in the `env` object will be merged with
 the environment variables set in the `envfile` and `env` properties of each
 service, with service-level environment variables taking precedence.
+
+### `sourceMaps`
+
+If `true`, source maps are enabled for all services. Default: `false`. This setting can be overridden at the service level.
 
 ### `resolvedServicesBasePath`
 
@@ -184,7 +194,7 @@ OTLP traces can be consumed by different solutions, like [Jaeger](https://www.ja
 }
 ```
 
-## httpCache
+### httpCache
 
 The `httpCache` configuration is used to enable the HTTP cache for the Platformatic Runtime.
 It can be a boolean or an object with the following settings:
