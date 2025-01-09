@@ -100,7 +100,8 @@
           "collapsed": true,
           "items": [
             "packages/astro/overview",
-            "packages/astro/configuration"
+            "packages/astro/configuration",
+            "packages/astro/caching"
           ]
         },
         {
