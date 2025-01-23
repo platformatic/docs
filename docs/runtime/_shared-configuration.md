@@ -40,6 +40,7 @@ The `autoload` configuration is intended to be used with monorepo applications.
   - **`workers`** (`number`) - The number of workers to start for this service. If the service is the entrypoint or if the runtime is running in development mode this value is ignored and hardcoded to `1`.
   - **`health`** (object): Configures the health check for each worker of the service. It supports all the properties also supported in the runtime [health](#health) property. The values specified here overrides the values specified in the runtime.
   - **`preload`** (`string` or `array` of `string`s): A file or a list of files to load before the service code.
+  - **`arguments`** (`array` of `string`s) - The arguments to pass to the service. They will be available in `process.argv`.
   - **`nodeOptions`** (`string`): The `NODE_OPTIONS` to apply to the service. These options are appended to any existing option.
 
 ### `preload`
@@ -70,6 +71,7 @@ runtime. Each service object supports the following settings:
   on `127.0.0.1`, and exposed to the other services via that port, on default it is set to `false`. Set it to `true` if you are using [@fastify/express](https://github.com/fastify/fastify-express).
 - **`workers`** (`number`) - The number of workers to start for this service. If the service is the entrypoint or if the runtime is running in development mode this value is ignored and hardcoded to `1`.
 - **`health`** (object): Configures the health check for each worker of the service. It supports all the properties also supported in the runtime [health](#health) property. The values specified here overrides the values specified in the runtime.
+- **`arguments`** (`array` of `string`s) - The arguments to pass to the service. They will be available in `process.argv`.
 - **`envfile`** (`string`) - The path to an `.env` file to load for the service.
 - **`env`** (`object`) - An object containing environment variables to set for the service. Values set here takes precedence over values set in the `envfile`.
 - **`sourceMaps`** (`boolean`) - If `true`, source maps are enabled for the service. Default: `false`.
@@ -80,6 +82,39 @@ runtime. Each service object supports the following settings:
 If this property is present, then the services will not be reordered according to the
 `getBootstrapDependencies` function and they will be started in the order they are defined in
 the configuration file.
+
+- **`telemetry`** (`object`): containing an `instrumentations` array to optionally configure additional open telemetry
+  intrumentations per service, e.g.:
+
+```json
+"services": [
+    {
+      "id": "api",
+      "path": "./services/api",
+      "telemetry": {
+        "instrumentations": ["@opentelemetry/instrumentation-express"]
+      }
+    }
+  ]
+```
+
+It's possible to specify the name of the export of the instrumentation and/or the options:
+
+```json
+"services": [
+    {
+      "id": "api",
+      "path": "./services/api",
+      "telemetry": {
+        "instrumentations": [{
+          "package": "@opentelemetry/instrumentation-express",
+          "exportName": "ExpressInstrumentation",
+          "options": {}
+        }]
+      }
+    }
+  ]
+```
 
 ### `web`
 
@@ -207,6 +242,9 @@ It can be a boolean or an object with the following settings:
 - **`store`** (`string`) - The store to use for the cache. Set an npm package name to use a custom store or path to a file to use a custom store from a file. By default, the `memory` store is used.
 - **`methods`** (`array`) - The HTTP methods to cache. By default, GET and HEAD methods are cached.
 - **`cacheTagsHeader`** (`string`) - The header to use for cache tags.
+- **`maxCount`** (`integer`) - The maximum number of entries in the cache.
+- **`maxSize`** (`integer`) - The maximum size of the cache in bytes.
+- **`maxEntrySize`** (`integer`) - The maximum size of a single entry in the cache in bytes.
 
 ### `server`
 

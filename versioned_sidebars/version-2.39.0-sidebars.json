@@ -246,7 +246,9 @@
         "guides/build-modular-monolith",
         "guides/logging-to-elasticsearch",
         "guides/jwt-keycloak",
-        "guides/use-env-with-platformatic"
+        "guides/use-env-with-platformatic",
+        "guides/using-watt-with-node-config",
+        "guides/use-watt-multiple-repository"
       ]
     },
     "learn/glossary",
