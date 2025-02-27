@@ -1,11 +1,11 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const { themes } = require("prism-react-renderer");
-const darkCodeTheme = themes.dracula;
+const { themes } = require('prism-react-renderer')
+const darkCodeTheme = themes.dracula
 
-const docsPath = "docs";
-const sidebarPath = "./sidebars.json";
+const docsPath = 'docs';
+const sidebarPath = './sidebars.json';
 
 // if (process.env.NODE_ENV === "development") {
 //   let docsRelativePath = "../platformatic/docs";
@@ -22,223 +22,219 @@ const sidebarPath = "./sidebars.json";
 //   sidebarPath = resolve(docsPath, "sidebars.js");
 // }
 
-console.info(`Using docs folder ${docsPath}`);
-console.info(`Using sidebars file ${sidebarPath}`);
+console.info(`Using docs folder ${docsPath}`)
+console.info(`Using sidebars file ${sidebarPath}`)
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Platformatic Open Source Software",
-  url: "https://docs.platformatic.dev",
-  baseUrl: process.env.BASE_URL || "/",
-  onBrokenLinks: "warn",
-  onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
-  organizationName: "platformatic",
-  projectName: "oss",
+  title: 'Platformatic Open Source Software',
+  url: 'https://docs.platformatic.dev',
+  baseUrl: process.env.BASE_URL || '/',
+  onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'warn',
+  favicon: 'img/favicon.ico',
+  organizationName: 'platformatic',
+  projectName: 'oss',
 
   i18n: {
-    defaultLocale: "en",
-    locales: ["en"],
+    defaultLocale: 'en',
+    locales: ['en']
   },
 
   presets: [
     [
-      "classic",
+      'classic',
       {
         docs: {
           path: docsPath,
           sidebarPath: require.resolve(sidebarPath), // Updated to load JSON file
           editUrl: ({ docPath, version, versionDocsDirPath }) => {
-            if (version === "current") {
-              return `https://github.com/platformatic/platformatic/edit/main/docs/${docPath}`;
+            if (version === 'current') {
+              return `https://github.com/platformatic/platformatic/edit/main/docs/${docPath}`
             }
-            return `https://github.com/platformatic/oss/edit/main/${versionDocsDirPath}/${docPath}`;
+            return `https://github.com/platformatic/oss/edit/main/${versionDocsDirPath}/${docPath}`
           },
         },
         blog: {
-          showReadingTime: true,
+          showReadingTime: true
         },
         theme: {
           customCss: [
-            require.resolve("./src/css/custom.css"),
-            require.resolve("./src/css/custom-dark.css"),
-            require.resolve("./src/css/custom-light.css"),
+            require.resolve('./src/css/custom.css'),
+            require.resolve('./src/css/custom-dark.css'),
+            require.resolve('./src/css/custom-light.css')
           ],
-        },
+        }
       },
-    ],
+    ]
   ],
 
   plugins: [
     [
-      "posthog-docusaurus",
+      'posthog-docusaurus',
       {
-        apiKey: "phc_erld9bkOOEawzcjlc0GovYRGCopzSibVHG4WKE4G5QX",
-        appUrl: "https://us.i.posthog.com", // optional, defaults to "https://us.i.posthog.com"
-        enableInDevelopment: false, // optional
+        apiKey: 'phc_erld9bkOOEawzcjlc0GovYRGCopzSibVHG4WKE4G5QX',
+        appUrl: 'https://us.i.posthog.com', // optional, defaults to "https://us.i.posthog.com"
+        enableInDevelopment: false // optional
       },
     ],
     [
-      "@docusaurus/plugin-client-redirects",
+      '@docusaurus/plugin-client-redirects',
       {
         redirects: [
           {
-            from: "/docs/reference/cli",
-            to: "/docs/cli",
+            from: '/docs/reference/cli',
+            to: '/docs/cli',
           },
           {
-            from: "/docs/next/reference/cli/",
-            to: "/docs/cli",
+            from: '/docs/next/reference/cli/',
+            to: '/docs/cli',
           },
           {
-            from: "/docs/category/packages/",
-            to: "/docs/packages/sql-openapi/overview",
+            from: '/docs/category/packages/',
+            to: '/docs/packages/sql-openapi/overview',
           },
           {
-            from: "/docs/reference/sql-mapper/introduction/",
-            to: "/docs/packages/sql-mapper/overview",
+            from: '/docs/reference/sql-mapper/introduction/',
+            to: '/docs/packages/sql-mapper/overview',
           },
           {
-            from: "/docs/reference/service/programmatic/",
-            to: "/docs/service/overview",
+            from: '/docs/reference/service/programmatic/',
+            to: '/docs/service/overview',
           },
           {
-            from: "/docs/reference/composer/introduction/",
-            to: "/docs/composer/overview",
+            from: '/docs/reference/composer/introduction/',
+            to: '/docs/composer/overview',
           },
           {
-            from: "/docs/reference/runtime/introduction/",
-            to: "/docs/runtime/overview",
+            from: '/docs/reference/runtime/introduction/',
+            to: '/docs/runtime/overview',
           },
           {
-            from: "/docs/reference/db/introduction/",
-            to: "/docs/db/overview",
+            from: '/docs/reference/db/introduction/',
+            to: '/docs/db/overview',
           },
           {
-            from: "/docs/reference/client",
-            to: "/docs/client/overview",
+            from: '/docs/reference/client',
+            to: '/docs/client/overview',
           },
           {
-            from: "/docs/reference/db/authorization/introduction",
-            to: "/docs/db/authorization/overview",
+            from: '/docs/reference/db/authorization/introduction',
+            to: '/docs/db/authorization/overview',
           },
           {
-            from: "/docs/reference/db/configuration",
-            to: "/docs/db/configuration",
+            from: '/docs/reference/db/configuration',
+            to: '/docs/db/configuration',
           },
           {
-            from: "/docs/reference/sql-openapi/introduction",
-            to: "/docs/packages/sql-openapi/overview",
+            from: '/docs/reference/sql-openapi/introduction',
+            to: '/docs/packages/sql-openapi/overview',
           },
           {
-            from: "/docs/reference/sql-graphql/queries",
-            to: "/docs/packages/sql-graphql/queries",
+            from: '/docs/reference/sql-graphql/queries',
+            to: '/docs/packages/sql-graphql/queries',
           },
           {
-            from: "/docs/reference/db/migrations",
-            to: "/docs/db/migrations",
+            from: '/docs/reference/db/migrations',
+            to: '/docs/db/migrations',
           },
           {
-            from: "/docs/reference/composer/configuration",
-            to: "/docs/composer/configuration",
+            from: '/docs/reference/composer/configuration',
+            to: '/docs/composer/configuration',
           },
           {
-            from: "/docs/reference/service/introduction",
-            to: "/docs/service/overview",
-          },
+            from: '/docs/reference/service/introduction',
+            to: '/docs/service/overview',
+          }
         ],
-      },
+      }
     ],
-    require.resolve("./plugins/custom-webpack"),
+    require.resolve('./plugins/custom-webpack')
   ],
 
   themeConfig: {
     announcementBar: {
-      id: "announcement",
+      id: 'announcement',
       content: `
         Announcing our new feature: the Node.js application server is here! 
       <b> <a href="https://blog.platformatic.dev/introducing-the-node-application-platform" style="color: black; text-decoration: underline;">  Read our founder’s announcement ->  </a></b>
        
       `,
-      backgroundColor: "#fff",
-      textColor: "#000",
-      isCloseable: true,
+      backgroundColor: '#fff',
+      textColor: '#000',
+      isCloseable: true
     },
     colorMode: {
-      defaultMode: "dark",
-      disableSwitch: true,
+      defaultMode: 'dark',
+      disableSwitch: true
     },
-    image: "img/platformatic-logo.svg",
+    image: 'img/platformatic-logo.svg',
     navbar: {
-      title: "Platformatic",
+      title: 'Platformatic',
       logo: {
-        alt: "Platformatic Logo",
-        src: "img/platformatic-logo.svg",
-        srcDark: "img/platformatic-logo.svg",
+        alt: 'Platformatic Logo',
+        src: 'img/platformatic-logo.svg',
+        srcDark: 'img/platformatic-logo.svg',
       },
       items: [
         {
-          type: "docSidebar",
-          position: "left",
-          sidebarId: "Learn",
-          label: "Learn",
+          type: 'docSidebar',
+          position: 'left',
+          sidebarId: 'Learn',
+          label: 'Learn',
         },
 
         {
-          type: "dropdown",
-          position: "left",
-          label: "Features",
+          type: 'dropdown',
+          position: 'left',
+          label: 'Features',
           items: [
             {
-              to: "/service",
-              label: "Service",
+              to: '/service',
+              label: 'Service',
             },
             {
-              to: "/database",
-              label: "DB",
+              to: '/database',
+              label: 'DB',
             },
             {
-              to: "/composer",
-              label: "Composer",
+              to: '/composer',
+              label: 'Composer',
             },
 
             {
-              to: "/aiwarp",
-              label: "AI-Warp",
+              to: '/aiwarp',
+              label: 'AI-Warp',
             },
             {
-              to: "/stackables",
-              label: "Stackables",
+              to: '/stackables',
+              label: 'Stackables',
             },
             {
-              to: "/meraki",
-              label: "Shipyard",
+              to: '/watt',
+              label: 'Watt',
             },
             {
-              to: "/watt",
-              label: "Watt",
-            },
-            {
-              to: "/caching",
-              label: "Caching",
-            },
+              to: '/caching',
+              label: 'Caching',
+            }
           ],
         },
         {
-          type: "doc",
-          docId: "Overview",
-          position: "left",
-          label: "Reference",
+          type: 'doc',
+          docId: 'Overview',
+          position: 'left',
+          label: 'Reference',
         },
         {
-          type: "dropdown",
-          position: "left",
-          label: "Community",
+          type: 'dropdown',
+          position: 'left',
+          label: 'Community',
           items: [
             {
-              href: "https://platformatichq.com/events",
-              label: "Events",
-            },
+              href: 'https://platformatichq.com/events',
+              label: 'Events',
+            }
           ],
         },
         // {
@@ -247,95 +243,95 @@ const config = {
         //   position: "left",
         // },
         {
-          type: "dropdown",
-          position: "left",
-          label: "Powered by",
+          type: 'dropdown',
+          position: 'left',
+          label: 'Powered by',
           items: [
             {
-              to: "/fastify",
-              label: "Fastify",
+              to: '/fastify',
+              label: 'Fastify',
             },
             {
-              to: "/nodejs",
-              label: "Node.js",
-            },
+              to: '/nodejs',
+              label: 'Node.js',
+            }
           ],
         },
         {
-          href: "https://platformatichq.com",
-          label: "For Teams",
-          position: "left",
+          href: 'https://platformatichq.com',
+          label: 'For Teams',
+          position: 'left',
         },
         {
-          href: "https://blog.platformatic.dev",
-          label: "Blog",
-          position: "left",
+          href: 'https://blog.platformatic.dev',
+          label: 'Blog',
+          position: 'left',
         },
         {
-          type: "docsVersionDropdown",
-          position: "right",
+          type: 'docsVersionDropdown',
+          position: 'right',
         },
         {
-          href: "https://github.com/platformatic",
-          label: "GitHub",
-          position: "right",
-        },
+          href: 'https://github.com/platformatic',
+          label: 'GitHub',
+          position: 'right',
+        }
       ],
     },
     footer: {
-      style: "dark",
+      style: 'dark',
       links: [
         {
-          title: "Documentation",
+          title: 'Documentation',
           items: [
             {
-              label: "Get Started",
-              to: "docs/getting-started/quick-start-guide",
+              label: 'Get Started',
+              to: 'docs/getting-started/quick-start-guide',
             },
             {
-              label: "Guides",
-              to: "docs/guides/movie-quotes-app-tutorial",
-            },
+              label: 'Guides',
+              to: 'docs/guides/movie-quotes-app-tutorial',
+            }
           ],
         },
         {
-          title: "Community",
+          title: 'Community',
           items: [
             {
-              label: "Discord",
-              href: "https://discord.gg/platformatic",
+              label: 'Discord',
+              href: 'https://discord.gg/platformatic',
             },
             {
-              label: "Twitter",
-              href: "https://twitter.com/platformatic",
-            },
+              label: 'Twitter',
+              href: 'https://twitter.com/platformatic',
+            }
           ],
         },
         {
-          title: "More",
+          title: 'More',
           items: [
             {
-              label: "Blog",
-              href: "https://blog.platformatic.dev",
+              label: 'Blog',
+              href: 'https://blog.platformatic.dev',
             },
             {
-              label: "Main website",
-              href: "https://www.platformatic.dev",
+              label: 'Main website',
+              href: 'https://www.platformatic.dev',
             },
             {
-              label: "GitHub",
-              href: "https://github.com/platformatic",
-            },
+              label: 'GitHub',
+              href: 'https://github.com/platformatic',
+            }
           ],
-        },
+        }
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Platformatic, Inc.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Platformatic, Inc.`
     },
     prism: {
       darkTheme: darkCodeTheme,
-      additionalLanguages: ["groovy", "bash", "diff", "json"],
+      additionalLanguages: ['groovy', 'bash', 'diff', 'json']
     },
-  },
+  }
 };
 
-module.exports = config;
+module.exports = config
