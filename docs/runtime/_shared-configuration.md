@@ -214,6 +214,8 @@ The object supports the following settings:
 - `maxELU`: The maximum allowed Event Loop Utilization. The value must be a percentage between `0` and `1`. Default: `0.99`.
 - `maxHeapUsed`: The maximum allowed memory utilization. The value must be a percentage between `0` and `1`. Default: `0.99`.
 - `maxHeapTotal`: The maximum allowed memory allocatable by the process. The value must be an amount in bytes. Default: `4G`.
+- `maxYoungGeneration`: The maximum amount of memory that can be used by the young generation.
+  The value must be an amount in bytes. The default is calculated from the `maxHeapTotal`.
 
 ### `telemetry`
 
@@ -253,7 +255,7 @@ OTLP traces can be consumed by different solutions, like [Jaeger](https://www.ja
 }
 ```
 
-### httpCache
+### `httpCache`
 
 The `httpCache` configuration is used to enable the HTTP cache for the Platformatic Runtime.
 It can be a boolean or an object with the following settings:
@@ -330,6 +332,22 @@ This configures the Platformatic Runtime Prometheus server. The Prometheus serve
 - **`auth`** (`object`). Optional configuration for the Prometheus server authentication.
   - **`username`** (`string`). The username for the Prometheus server authentication.
   - **`password`** (`string`). The password for the Prometheus server authentication.
+- **`readiness`** (`object` or `boolean`, default: `true`). Optional configuration for the Prometheus server readiness checks. If set to `true`, default readiness checks are enabled. If an object is provided, it can include:
+  - **`endpoint`** (`string`). The endpoint for the Prometheus server readiness checks. Default: `/ready`.
+  - **`success`** (`object`). The success criteria for the Prometheus server readiness checks.
+    - **`statusCode`** (`number`). The HTTP status code indicating success. Default: `200`.
+    - **`body`** (`string`). The response body indicating success. Default: `OK`.
+  - **`fail`** (`object`). The failure criteria for the Prometheus server readiness checks.
+    - **`statusCode`** (`number`). The HTTP status code indicating failure. Default: `500`.
+    - **`body`** (`string`). The response body indicating failure. Default: `ERR`.
+- **`liveness`** (`object` or `boolean`, default: `true`). Optional configuration for the Prometheus server liveness checks. If set to `true`, default liveness checks are enabled. If an object is provided, it can include:
+  - **`endpoint`** (`string`). The endpoint for the Prometheus server liveness checks. Default: `/status`.
+  - **`success`** (`object`). The success criteria for the Prometheus server liveness checks.
+    - **`statusCode`** (`number`). The HTTP status code indicating success. Default: `200`.
+    - **`body`** (`string`). The response body indicating success. Default: `OK`.
+  - **`fail`** (`object`). The failure criteria for the Prometheus server liveness checks.
+    - **`statusCode`** (`number`). The HTTP status code indicating failure. Default: `500`.
+    - **`body`** (`string`). The response body indicating failure. Default: `ERR`.
 
 If the `metrics` object is not provided, the Prometheus server will not be started.
 
@@ -344,6 +362,33 @@ inside the OS temporary folder.
 
 - **`logs`** (`object`). Optional configuration for the runtime logs.
   - **`maxSize`** (`number`). Maximum size of the logs that will be stored in the file system in MB. Default: `200`. Minimum: `5`.
+
+### `scheduler`
+
+An optional array of objects to configure HTTP call triggered by cron jobs.
+_Every object_ has:
+
+- **`enabled`** (`boolean` or `string`). Optional. If `false` the scheduler is disabled. Default: `true`.
+- **`name`** (`string`): The job name
+- **`cron`** (`string`): the crontab schedule expession. See https://crontab.guru/examples.html for some examples.
+- **`callbackUrl`** (`string`): the HTTP URL to be called
+- **`method`** (`string`): Optional, can be `GET`, `POST`, `PUT`, `PATCH`, `DELETE`. Default: `GET`.
+- **`body`** (`string` or `object`). Optional.
+- **`headers`** (`object`). Optional. Headers added to the HTTP call.
+- **`maxRetry`** (`number`). Number of attempts for the HTTP call. Default: 3
+
+```json title="Example Scheduler"
+{
+  "scheduler": [
+    {
+      "name": "test",
+      "callbackUrl": "http://mytarget",
+      "cron": "0 * * * *",
+      "mehod": "GET"
+    }
+  ]
+}
+```
 
 ## Setting and Using ENV placeholders
 

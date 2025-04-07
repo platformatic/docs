@@ -46,6 +46,10 @@ Arguments:
 
 - `root`: The directory containing the application (the default is the current directory)
 
+Options:
+
+- `-f --force`: Force dependencies update even if it violates the package.json version range
+
 ## `dev`
 
 Starts an application in development mode.
@@ -65,6 +69,7 @@ Arguments:
 Options:
 
 - `-i, --inspect`: Start the inspector
+- `-c, --config`: Pass a custom path to the `watt` config (that can be outside from the project)
 
 ## `stop`
 
@@ -220,6 +225,15 @@ Show help about Watt or one of its commands.
 Arguments:
 
 - `command`: The command which show the help of (if omitted, it will list all Watt commands)
+
+## `admin`
+
+Start [watt-admin](https://github.com/platformatic/watt-admin), the Watt administration interface.
+This is started via [`npx`](https://docs.npmjs.com/cli/v11/commands/npx).
+
+Arguments:
+
+- `latest`: use the latest released version of watt-admin.
 
 ## `version`
 
