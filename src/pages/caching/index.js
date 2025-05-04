@@ -66,7 +66,7 @@ function PageHeader({ blok }) {
                   {blok.cache_hero[0].hero_subtitle}
                 </p>
 
-                <div className="mt-8 flex gap-4">
+                <div className="flex lg:justify-start justify-center lg:items-center gap-3 lg:gap-4 mt-[2rem] lg:mt-[3.5rem] mb-[2rem] lg:mb-[0rem]">
                   {blok.cache_hero[0].cta_buttons.map((cta) => (
                     <a
                       key={cta._uid}
@@ -91,10 +91,9 @@ function PageHeader({ blok }) {
                 </div>
               </div>
 
-              <div className="flex items-center justify-center">
+              <div className="w-[90%] max-w-[560px] aspect-video mx-auto">
                 <iframe
-                  width="560"
-                  height="315"
+                  className="w-full h-full max-h-[315px]"
                   src={blok.cache_hero[0].hero_embed.url}
                   title="YouTube video player"
                   frameBorder="0"
