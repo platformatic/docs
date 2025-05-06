@@ -60,7 +60,7 @@ function PageHeader ({ blok }) {
             <span className='text-[#FFFFFFB2] w-[100%] lg:w-auto text-[1rem] lg:text-[1.2rem] font-[400]'>
               {render(blok.hero[0].hero_subtitle2)}
             </span>
-            <div className='flex lg:items-center gap-3 lg:gap-4 mt-[2rem] lg:mt-[3.5rem]'>
+            <div className='flex lg:justify-start justify-center lg:items-center gap-3 lg:gap-4 mt-[2rem] lg:mt-[3.5rem] mb-[2rem] lg:mb-[0rem]'>
               {blok.hero[0].cta_buttons.map((cta) => (
                 <a
                   key={cta._uid}
@@ -85,8 +85,8 @@ function PageHeader ({ blok }) {
             </div>
           </div>
         </div>
-        <div className=''>
-          <img src={blok.hero[0].hero_image} alt='hero_image' />
+        <div className='w-[95%] max-w-[560px] aspect-video mx-auto'>
+          <img className='w-full h-full max-h-[315px]' src={blok.hero[0].hero_image} alt='hero_image' />
         </div>
       </div>
     </header>

@@ -33,7 +33,7 @@ const Hero = ({ blok }) => {
             <span className="text-[#FFFFFFB2] w-[100%] lg:w-auto text-[1rem] lg:text-[1.2rem] font-[400]">
               {render(blok.Hero[0].hero_subtitle)}
             </span>
-            <div className="flex lg:items-center gap-3 lg:gap-4 mt-[2rem] lg:mt-[3.5rem]">
+            <div className="flex lg:justify-start justify-center lg:items-center gap-3 lg:gap-4 mt-[2rem] lg:mt-[3.5rem] mb-[2rem] lg:mb-[0rem]">
               {blok.Hero[0].cta_buttons.map((cta) => (
                 <a
                   key={cta._uid}
@@ -58,10 +58,9 @@ const Hero = ({ blok }) => {
             </div>
           </div>
         </div>
-        <div>
+        <div className="w-[90%] max-w-[560px] aspect-video mx-auto">
           <iframe
-            width="560"
-            height="315"
+            className="w-full h-full max-h-[315px]"
             src={blok.Hero[0].hero_embed.url}
             title="YouTube video player"
             frameBorder="0"
