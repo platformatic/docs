@@ -81,6 +81,6 @@ This is useful to publish the application on the public npm registry (or a priva
 
 - Check out our [Blog](https://blog.platformatic.dev/) and watch tutorials on [YouTube](https://www.youtube.com/channel/UCLuqTMhiF1BHGPTLYO4M3Gw).
 - Join our Community on [Discord](https://discord.gg/platformatic) for updates and share your thoughts.
-- Follow us on [Twitter](https://twitter.com/platformatic).
+- Follow us on [X](https://x.com/platformatic).
 
 
