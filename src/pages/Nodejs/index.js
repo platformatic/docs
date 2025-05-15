@@ -57,29 +57,6 @@ function PageHeader ({ blok }) {
             <span className='text-[#FFFFFFB2] w-[80%] lg:w-auto text-[1rem] lg:text-[1.2rem] font-[400]'>
               {render(blok.hero[0].hero_subtitle)}
             </span>
-            <div className='flex lg:items-center gap-3 lg:gap-4 mt-[2rem] lg:mt-[3.5rem]'>
-              {blok.hero[0].cta_buttons.map((cta) => (
-                <a
-                  key={cta._uid}
-                  href={cta.cta_url.url}
-                  className={`${
-                    cta.btn_variant == 'filled'
-                      ? 'text-[#00283D]'
-                      : 'hover:text-white'
-                  }`}
-                >
-                  <button
-                    className={`${
-                      cta.btn_variant == 'filled'
-                        ? 'bg-[#FFFFFF] text-[#00283D]'
-                        : 'border border-[#FFFFFF]'
-                    } rounded-[4px] h-[2.5rem] w-[8rem] lg:w-[9.28rem] text-[1rem] font-[600]`}
-                  >
-                    {cta.btn_caption}
-                  </button>
-                </a>
-              ))}
-            </div>
           </div>
         </div>
         <div className='w-[100%]'>
