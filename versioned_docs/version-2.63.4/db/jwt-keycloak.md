@@ -118,7 +118,7 @@ Note also that the access token is valid for 5 minutes (keycloak default)
 
 ## Platformatic Setup and Test
 
-Create a platformatic application using `npx create-platformatic@latest`.
+Create a Platformatic application using `npx create-platformatic@latest`.
 Call it `keycloak-test` with a `db-service`. 
 Specify to use sqlite and the default migrations:
 
