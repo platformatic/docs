@@ -3,8 +3,8 @@ import React from 'react'
 const LearnPlatformatic = ({ blok }) => {
   return (
     <div className='relative py-[1rem] px-[2%] md:px-0 flex flex-col items-center border-y border-[#FFFFFF26]'>
-      <div class='hidden md:block absolute md:w-[400px] -bottom-4 right-0 h-[280px] plt-vertical-background-triangle opacity-10'>
-        <div class='plt-vertical-background-opacity h-full absolute top-0 left-0 w-full' />
+      <div className='hidden md:block absolute md:w-[400px] -bottom-4 right-0 h-[280px] plt-vertical-background-triangle opacity-10'>
+        <div className='plt-vertical-background-opacity h-full absolute top-0 left-0 w-full' />
       </div>
       <span className='text-[1.8rem] text-center md:text-[2.5rem] font-[600] mb-[2.5rem]'>
         {blok.learnplatformatic[0].title}

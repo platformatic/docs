@@ -1,3 +1,5 @@
+/* global MutationObserver */
+
 import React, { useEffect } from 'react'
 import {
   useStoryblok,
@@ -26,8 +28,8 @@ function PageHeader ({ blok }) {
   return (
     <header className='dark'>
       <div className='w-full relative flex flex-col lg:flex-row items-center'>
-        <div class='hidden md:block absolute md:w-[320px] -bottom-[48rem] left-0 h-[824px] plt-vertical-background-triangle opacity-10'>
-          <div class='plt-vertical-background-opacity h-full absolute top-0 left-0 w-full' />
+        <div className='hidden md:block absolute md:w-[320px] -bottom-[48rem] left-0 h-[824px] plt-vertical-background-triangle opacity-10'>
+          <div className='plt-vertical-background-opacity h-full absolute top-0 left-0 w-full' />
         </div>
         <div className='relative px-[2%] lg:px-0 lg:pl-[6rem] pt-[4rem]'>
           <img

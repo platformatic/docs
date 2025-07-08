@@ -4,8 +4,8 @@ import { render } from 'storyblok-rich-text-react-renderer'
 const UsingPlatformatic = ({ blok }) => {
   return (
     <div className='relative py-5 mb-4'>
-      <div class='hidden md:block absolute z-10 md:w-[280px] top-0 left-0 h-[250px] plt-vertical-background-triangle opacity-10'>
-        <div class='plt-vertical-background-opacity z-10 h-full top-0 left-0 w-full' />
+      <div className='hidden md:block absolute z-10 md:w-[280px] top-0 left-0 h-[250px] plt-vertical-background-triangle opacity-10'>
+        <div className='plt-vertical-background-opacity z-10 h-full top-0 left-0 w-full' />
       </div>
       <div className='flex flex-col items-center z-20 relative mt-12'>
         <span className='text-white w-[90%] lg:w-[55%] text-[1.8rem] md:text-[2.5rem] mb-[2.8rem] font-bold'>

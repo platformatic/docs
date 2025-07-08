@@ -4,9 +4,6 @@ import { render } from 'storyblok-rich-text-react-renderer'
 const WhyPlatformatic = ({ blok }) => {
   return (
     <div className='relative border-t border-[#FFFFFF26] pt-[7rem]'>
-      {/* <div class='hidden md:block absolute z-10 md:w-1/2 bottom-[-80px] right-0 h-[250px] plt-vertical-background-triangle opacity-10'>
-        <div class='plt-vertical-background-opacity z-10 h-full top-0 left-0 w-full'></div>
-      </div> */}
       <div className='flex flex-col items-center z-20 mb-[4rem] relative'>
         <span className='text-white w-[90%] lg:w-[45%] text-[1.8rem] text-center lg:text-[2.8rem] mb-[2.8rem] font-bold'>
           {blok.feature_title}

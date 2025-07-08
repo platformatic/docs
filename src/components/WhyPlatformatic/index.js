@@ -3,8 +3,8 @@ import styles from './index.module.css'
 
 export default function WhyPlatformatic () {
   return (
-    <section class='margin-top--lg'>
-      <div class='container'>
+    <section className='margin-top--lg'>
+      <div className='container'>
         <div className='row'>
           <div className='col col--8 {styles.why}'>
             <h1>Why Platformatic?</h1>

@@ -2,17 +2,13 @@ import React from 'react'
 import {
   useStoryblok,
   storyblokInit,
-  apiPlugin,
-  StoryblokComponent
+  apiPlugin
 } from '@storyblok/react'
 import Layout from '@theme/Layout'
 import Page from '../../components/sbComponents/Page'
 import { render } from 'storyblok-rich-text-react-renderer'
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import WattExplore from '../../components/watt/WattExplore'
-import WattBenefits from '../../components/watt/WattCompare'
 import FaqSection from '../../components/FaqSection'
-import WattDiscover from '../../components/watt/WattDiscover'
 import WattCompare from '../../components/watt/WattCompare'
 import WattSupported from '../../components/watt/WattSupported'
 import WattReady from '../../components/watt/WattReady'

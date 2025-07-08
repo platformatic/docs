@@ -17,8 +17,8 @@ const DeployInSeconds = ({ blok }) => {
           </div>
         </div>
       </div>
-      <div class='hidden md:block absolute md:w-1/3 xl:w-1/4 top-[-80%] right-0 h-[1200px] plt-vertical-background-triangle opacity-25'>
-        <div class='plt-vertical-background-opacity h-full absolute top-0 right-0 w-full' />
+      <div className='hidden md:block absolute md:w-1/3 xl:w-1/4 top-[-80%] right-0 h-[1200px] plt-vertical-background-triangle opacity-25'>
+        <div className='plt-vertical-background-opacity h-full absolute top-0 right-0 w-full' />
       </div>
     </section>
   )

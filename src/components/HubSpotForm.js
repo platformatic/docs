@@ -1,5 +1,5 @@
+/* global MutationObserver */
 import React, { useEffect, useState } from 'react'
-import BrowserOnly from '@docusaurus/BrowserOnly'
 
 const HubSpotForm = ({
   portalId,
@@ -11,65 +11,65 @@ const HubSpotForm = ({
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // const script = document.createElement('script')
-    // script.src = 'https://js.hsforms.net/forms/v2.js'
-    // document.body.appendChild(script)
+    const script = document.createElement('script')
+    script.src = 'https://js.hsforms.net/forms/v2.js'
+    document.body.appendChild(script)
 
-    // script.addEventListener('load', () => {
-    //   setLoading(false)
-    //   if (window.hbspt) {
-    //     window.hbspt.forms.create({
-    //       portalId,
-    //       formId,
-    //       target: `#${targetId}`,
-    //       region,
-    //       cssClass,
-    //       onFormReady: function ($form) {
-    //         const iframe = document.querySelector('iframe')
-    //         if (iframe) {
-    //           const observer = new MutationObserver(
-    //             (mutationsList, observer) => {
-    //               for (const mutation of mutationsList) {
-    //                 if (
-    //                   mutation.type === 'childList' &&
-    //                   iframe.contentDocument
-    //                 ) {
-    //                   const doc =
-    //                     iframe.contentDocument ||
-    //                     iframe.contentWindow?.document
-    //                   if (doc) {
-    //                     // Set the background color of the iframe's body
-    //                     doc.body.style.backgroundColor = '#040607'
+    script.addEventListener('load', () => {
+      setLoading(false)
+      if (window.hbspt) {
+        window.hbspt.forms.create({
+          portalId,
+          formId,
+          target: `#${targetId}`,
+          region,
+          cssClass,
+          onFormReady: function ($form) {
+            const iframe = document.querySelector('iframe')
+            if (iframe) {
+              const observer = new MutationObserver(
+                (mutationsList, observer) => {
+                  for (const mutation of mutationsList) {
+                    if (
+                      mutation.type === 'childList' &&
+                      iframe.contentDocument
+                    ) {
+                      const doc =
+                        iframe.contentDocument ||
+                        iframe.contentWindow?.document
+                      if (doc) {
+                        // Set the background color of the iframe's body
+                        doc.body.style.backgroundColor = '#040607'
 
-    //                     const labels = doc.querySelectorAll('label')
-    //                     labels.forEach((label) => {
-    //                       label.style.color = '#ffffff'
-    //                     })
-    //                     observer.disconnect() // Stop observing after labels and background are adjusted
-    //                   }
-    //                 }
-    //               }
-    //             }
-    //           )
+                        const labels = doc.querySelectorAll('label')
+                        labels.forEach((label) => {
+                          label.style.color = '#ffffff'
+                        })
+                        observer.disconnect() // Stop observing after labels and background are adjusted
+                      }
+                    }
+                  }
+                }
+              )
 
-    //           observer.observe(iframe.contentDocument, {
-    //             childList: true,
-    //             subtree: true
-    //           })
-    //         } else {
-    //           console.error('Iframe not found.')
-    //         }
-    //       }
-    //     })
-    //   } else {
-    //     console.error('hbspt not available.')
-    //   }
-    // })
+              observer.observe(iframe.contentDocument, {
+                childList: true,
+                subtree: true
+              })
+            } else {
+              console.error('Iframe not found.')
+            }
+          }
+        })
+      } else {
+        console.error('hbspt not available.')
+      }
+    })
 
-    // script.addEventListener('error', () => {
-    //   setLoading(false)
-    //   console.error('Failed to load the script.')
-    // })
+    script.addEventListener('error', () => {
+      setLoading(false)
+      console.error('Failed to load the script.')
+    })
   }, [portalId, formId, targetId, region, cssClass])
 
   if (loading) {

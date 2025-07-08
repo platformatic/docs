@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React from 'react'
 import { render } from 'storyblok-rich-text-react-renderer'
-import TypeWriteCodeBlock from './TypeWriteCodeBlock'
 
 const SeamlessConsume = ({ blok }) => {
   return (

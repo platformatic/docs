@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
-import Lottie from 'react-lottie-player'
 import { render } from 'storyblok-rich-text-react-renderer'
 
 const Timeline = ({ blok }) => {
   const tablist = blok.watt_tab_list.slice(0, 3)
-  const last_list = blok.watt_tab_list.slice(-1)
+  const lastList = blok.watt_tab_list.slice(-1)
 
   return (
     <section className='w-full'>
@@ -47,20 +46,20 @@ const Timeline = ({ blok }) => {
                 {' '}
                 {/* Added background color, spacing, and slightly rounded corners */}
                 <img
-                  src={last_list[0].icon.filename}
+                  src={lastList[0].icon.filename}
                   className='w-full h-full object-contain'
                   alt=''
                 />
               </div>
               <div className='pl-8 md:pl-12'>
                 <div className='text-[16px] md:text-[18px] font-semibold text-pyellow dark:text-pyellow'>
-                  <p className='m-0'>{render(last_list[0].title)}</p>
+                  <p className='m-0'>{render(lastList[0].title)}</p>
                 </div>
                 <p className='text-[16px] md:text-[18px] mb-4 italic font-normal text-white dark:text-white'>
-                  {render(last_list[0].subtitle)}
+                  {render(lastList[0].subtitle)}
                 </p>
                 <p className='mb-4 text-base font-normal text-white/70 dark:text-gray-400'>
-                  {render(last_list[0].paragraph)}
+                  {render(lastList[0].paragraph)}
                 </p>
               </div>
             </div>

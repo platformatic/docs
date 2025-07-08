@@ -1,5 +1,4 @@
 import React from 'react'
-import SectionTags from './SectionTags'
 import { render } from 'storyblok-rich-text-react-renderer'
 
 const HighPerformingApps = ({ blok }) => {

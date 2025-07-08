@@ -72,7 +72,7 @@ async function getRemoteReleases (toKeep = 5) {
     .map((r) => parse(r.tag_name.replace(/^v/, '')))
 
   // Keep one version per major, excluding v0.x
-  const latestMajor = validReleases[0].major
+  // const latestMajor = validReleases[0].major
 
   const releases = []
   for (let currentMajor = validReleases[0].major; currentMajor > 0; currentMajor--) {

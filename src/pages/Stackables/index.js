@@ -1,3 +1,5 @@
+/* global MutationObserver */
+
 import React, { useEffect } from 'react'
 import {
   useStoryblok,

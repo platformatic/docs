@@ -1,15 +1,14 @@
+/* global MutationObserver */
+
 import React, { useEffect } from 'react'
 import {
   useStoryblok,
   storyblokInit,
-  apiPlugin,
-  StoryblokComponent
+  apiPlugin
 } from '@storyblok/react'
 import Layout from '@theme/Layout'
 
 import Page from '../../components/sbComponents/Page'
-import { render } from 'storyblok-rich-text-react-renderer'
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import Architecture from '../../components/servicepage/Architecture'
 import Hero from '../../components/servicepage/Hero'
 import Feature from '../../components/servicepage/Feature'

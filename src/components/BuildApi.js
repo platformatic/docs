@@ -6,11 +6,11 @@ import CodeBlockWithCopy from './CodeBlockWithCopy'
 const renderContent = (node) => {
   if (Array.isArray(node.content)) {
     return node.content.map((childNode, index) => {
+      const codeContent = childNode.content
+        .map((textNode) => textNode.text)
+        .join('')
       switch (childNode.type) {
         case 'code_block':
-          const codeContent = childNode.content
-            .map((textNode) => textNode.text)
-            .join('')
           return <CodeBlockWithCopy key={index} code={codeContent} />
         default:
           return render(node)
