@@ -1,6 +1,6 @@
-import React from 'react';
-import fixImageUrl from '../../../util/FixImageUrls';
-import { render } from 'storyblok-rich-text-react-renderer';
+import React from 'react'
+import fixImageUrl from '../../../util/FixImageUrls'
+import { render } from 'storyblok-rich-text-react-renderer'
 
 export default function LearnMore ({ blok }) {
   return (

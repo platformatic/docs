@@ -72,7 +72,6 @@ function PageHeader ({ blok }) {
 }
 
 export default function Nodejs () {
-  const { siteConfig } = useDocusaurusContext()
   let slug = 'nodejs'
   if (globalThis.window && globalThis.window.location.pathname !== '/') {
     slug = globalThis.window.location.pathname.replace('/', '')

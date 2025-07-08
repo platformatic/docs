@@ -28,7 +28,6 @@ storyblokInit({
 })
 
 export default function Service () {
-  const { siteConfig } = useDocusaurusContext()
   let slug = 'service'
   const story = useStoryblok(slug, { version: 'draft' })
 
