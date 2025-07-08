@@ -57,7 +57,7 @@ const WhyPlatformatic = ({ blok }) => {
           />
           {/* form */}
           <form
-            class='border dark:border-white/20 border-[#00050b]/30 dark:bg-[#00050b] bg-white h-15 w-full md:w-auto grow pl-2 flex justify-between rounded-[4px]'
+            className='border dark:border-white/20 border-[#00050b]/30 dark:bg-[#00050b] bg-white h-15 w-full md:w-auto grow pl-2 flex justify-between rounded-[4px]'
             method='post'
             onsubmit="return sendForm('send-form-email')"
             data-hs-cf-bound='true'
@@ -67,10 +67,10 @@ const WhyPlatformatic = ({ blok }) => {
               type='email'
               name='email'
               placeholder='example@email.com'
-              class='border-0 bg-transparent outline-none w-full'
+              className='border-0 bg-transparent outline-none w-full'
               wfd-id='id1'
             />
-            <button alt='send email for information' type='submit' class='p-3'>
+            <button alt='send email for information' type='submit' className='p-3'>
               <svg
                 width='14'
                 height='12'

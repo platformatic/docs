@@ -3,8 +3,8 @@ import React from 'react'
 const Feature = ({ blok }) => {
   return (
     <div className='relative px-[2%] md:px-0'>
-      <div class='hidden md:block absolute z-10 md:w-1/2 bottom-[-80px] right-0 h-[250px] plt-vertical-background-triangle opacity-10'>
-        <div class='plt-vertical-background-opacity z-10 h-full top-0 left-0 w-full' />
+      <div className='hidden md:block absolute z-10 md:w-1/2 bottom-[-80px] right-0 h-[250px] plt-vertical-background-triangle opacity-10'>
+        <div className='plt-vertical-background-opacity z-10 h-full top-0 left-0 w-full' />
       </div>
       <div className='flex flex-col items-center z-20 relative'>
         <span className='text-white text-[2.8rem] mb-[2.8rem] font-bold'>

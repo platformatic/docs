@@ -1,15 +1,15 @@
+/* global MutationObserver */
+
 import React, { useEffect } from 'react'
 import {
   useStoryblok,
   storyblokInit,
-  apiPlugin,
-  StoryblokComponent
+  apiPlugin
 } from '@storyblok/react'
 import Layout from '@theme/Layout'
 
 import Page from '../../components/sbComponents/Page'
 import { render } from 'storyblok-rich-text-react-renderer'
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import Architecture from '../../components/composer/Architecture'
 import Feature from '../../components/runtime/Feature'
 import GetStarted from '../../components/servicepage/GetStarted'
@@ -61,14 +61,14 @@ function PageHeader ({ blok }) {
                   key={cta._uid}
                   href={cta.cta_url.url}
                   className={`${
-                    cta.btn_variant == 'filled'
+                    cta.btn_variant === 'filled'
                       ? 'text-[#00283D]'
                       : 'hover:text-white'
                   }`}
                 >
                   <button
                     className={`${
-                      cta.btn_variant == 'filled'
+                      cta.btn_variant === 'filled'
                         ? 'bg-[#FFFFFF] text-[#00283D]'
                         : 'border border-[#FFFFFF]'
                     } rounded-[4px] h-[2.5rem] w-[8rem] lg:w-[9.28rem] text-[1rem] font-[600]`}
@@ -89,7 +89,6 @@ function PageHeader ({ blok }) {
 }
 
 export default function Runtime () {
-  const { siteConfig } = useDocusaurusContext()
   let slug = 'runtime'
   const story = useStoryblok(slug, { version: 'draft' })
 

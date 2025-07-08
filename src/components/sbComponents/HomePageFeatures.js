@@ -4,7 +4,7 @@ import { storyblokEditable } from '@storyblok/react'
 import Feature from './Feature'
 
 const HomepageFeatures = ({ blok }) => (
-  <section className={styles.features} {...storyblokEditable(blok)}>
+  <section {...storyblokEditable(blok)}>
     <div className='container'>
       <div className='row'>
         {blok.features.map((nestedBlok) => (

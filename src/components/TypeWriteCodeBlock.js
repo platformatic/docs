@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Tooltip, { Tooltip2 } from './ToolTip'
+import { Tooltip2 } from './ToolTip'
 
 const TypeWriteCodeBlock = ({ code = '' }) => {
   const [tooltipVisible, setTooltipVisible] = useState(false)

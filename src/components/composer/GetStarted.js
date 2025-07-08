@@ -1,5 +1,4 @@
 import React from 'react'
-import { render } from 'storyblok-rich-text-react-renderer'
 
 const GetStarted = ({ blok }) => {
   return (

@@ -2,14 +2,12 @@ import React from 'react'
 import {
   useStoryblok,
   storyblokInit,
-  apiPlugin,
-  StoryblokComponent
+  apiPlugin
 } from '@storyblok/react'
 import Layout from '@theme/Layout'
 
 import Page from '../../components/sbComponents/Page'
 import { render } from 'storyblok-rich-text-react-renderer'
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import Feature from '../../components/meraki/Feature'
 import LearnPlatformatic from '../../components/aiwarp/Learnplatformatic'
 import HubSpotForm from '../../components/HubSpotForm'
@@ -29,8 +27,8 @@ function PageHeader ({ blok }) {
   return (
     <header className='dark'>
       <div className='w-full relative flex flex-col lg:flex-row items-center'>
-        <div class='hidden md:block absolute md:w-[320px] -bottom-[48rem] left-0 h-[824px] plt-vertical-background-triangle opacity-10'>
-          <div class='plt-vertical-background-opacity h-full absolute top-0 left-0 w-full' />
+        <div className='hidden md:block absolute md:w-[320px] -bottom-[48rem] left-0 h-[824px] plt-vertical-background-triangle opacity-10'>
+          <div className='plt-vertical-background-opacity h-full absolute top-0 left-0 w-full' />
         </div>
         <div className='relative px-[2%] lg:px-0 lg:pl-[6rem] pt-[4rem]'>
           <img
@@ -66,14 +64,14 @@ function PageHeader ({ blok }) {
                   key={cta._uid}
                   href={cta.cta_url.url}
                   className={`${
-                    cta.btn_variant == 'filled'
+                    cta.btn_variant === 'filled'
                       ? 'text-[#00283D]'
                       : 'hover:text-white'
                   }`}
                 >
                   <button
                     className={`${
-                      cta.btn_variant == 'filled'
+                      cta.btn_variant === 'filled'
                         ? 'bg-[#FFFFFF] text-[#00283D]'
                         : 'border border-[#FFFFFF]'
                     } rounded-[4px] h-[2.5rem] w-[8rem] lg:w-[9.28rem] text-[1rem] font-[600]`}
@@ -94,7 +92,6 @@ function PageHeader ({ blok }) {
 }
 
 export default function AIwarp () {
-  const { siteConfig } = useDocusaurusContext()
   let slug = 'meraki'
   if (globalThis.window && globalThis.window.location.pathname !== '/') {
     slug = globalThis.window.location.pathname.replace('/', '')

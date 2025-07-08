@@ -16,7 +16,7 @@ const TemplateMarketplace = ({ blok }) => {
             <div
               key={index}
               className={`w-[90%] ${
-                index == blok.feature.length - 1
+                index === blok.feature.length - 1
                   ? 'md:w-[100%] col-span-3'
                   : 'md:w-[25rem]'
               } mx-auto flex flex-col items-center gap-y-2 md:gap-y-4 p-2 md:p-4 border dark:border-white/20 border-[#00050b]/30 dark:bg-[#00050b] bg-white rounded-md`}
