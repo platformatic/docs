@@ -28,6 +28,7 @@ jobs:
     secrets:
       GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
       TARGET_REPO: ${{ secrets.TARGET_REPO }}
+      STORYBLOK_ACCESS_TOKEN: ${{ secrets.STORYBLOK_ACCESS_TOKEN }}
   repository-dispatch:
     if: (github.event_name == 'repository_dispatch' && github.event.action == 'update_docs')
     uses: platformatic/docs/.github/workflows/rebuild-and-deploy-docs.yml@main
@@ -38,6 +39,7 @@ jobs:
     secrets:
       GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
       TARGET_REPO: ${{ secrets.TARGET_REPO }}
+      STORYBLOK_ACCESS_TOKEN: ${{ secrets.STORYBLOK_ACCESS_TOKEN }}
   workflow-dispatch:
     if: (github.event_name == 'workflow_dispatch')
     uses: platformatic/docs/.github/workflows/rebuild-and-deploy-docs.yml@main
