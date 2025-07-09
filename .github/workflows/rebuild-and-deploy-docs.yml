@@ -32,6 +32,8 @@ on:
       TARGET_REPO:
         description: "The repo where Docusaurus is"
         required: true
+      STORYBLOK_ACCESS_TOKEN:
+        description: "Storyblok access token"
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
@@ -53,6 +55,7 @@ jobs:
         env:
           TARGET_REPO: ${{ secrets.TARGET_REPO }}
           GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
+          STORYBLOK_ACCESS_TOKEN: ${{ secrets.STORYBLOK_ACCESS_TOKEN }}
       - name: Print current versions
         run: |
           echo "Remote versions: ${{ steps.check.outputs.remote-versions }}"
