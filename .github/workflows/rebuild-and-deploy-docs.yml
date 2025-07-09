@@ -34,6 +34,7 @@ on:
         required: true
       STORYBLOK_ACCESS_TOKEN:
         description: "Storyblok access token"
+        required: true
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
