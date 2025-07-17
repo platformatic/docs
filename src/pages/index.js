@@ -1,5 +1,11 @@
 import React from 'react'
 import Layout from '@theme/Layout'
+import Faq from './Faq'
+import Seamless from './Seamless'
+import HighPerformingApps from './HighPerformingApps'
+import Explore from './Explore'
+import PutNode from './PutNode'
+import ManagingNode from './ManagingNode'
 
 export default function Home () {
   return (
@@ -29,10 +35,15 @@ export default function Home () {
             </div>
           </div>
         </section>
+        <ManagingNode />
+        <PutNode />
+        <Explore />
+        <Seamless />
+        <HighPerformingApps />
+        <Faq />
         <section className='footer-bg overflow-hidden relative border-bottom'>
           <div className='md:h-32 h-20' />
         </section>
-
       </main>
     </Layout>
   )
