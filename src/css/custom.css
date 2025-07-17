@@ -625,3 +625,7 @@ article ul {
   list-style-type: disc;
   padding-left: var(--ifm-list-left-padding) !important;
 }
+
+.navbar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
