@@ -1,5 +1,5 @@
 import React from 'react'
-import { ComparisonCard } from './ComparisonCard'
+import ComparisonCard from './ComparisonCard'
 
 const Header = () => (
   <div className='space-y-2'>

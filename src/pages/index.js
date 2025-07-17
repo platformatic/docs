@@ -1,11 +1,11 @@
 import React from 'react'
 import Layout from '@theme/Layout'
-import Faq from './Faq'
-import Seamless from './Seamless'
-import HighPerformingApps from './HighPerformingApps'
-import Explore from './Explore'
-import PutNode from './PutNode'
-import ManagingNode from './ManagingNode'
+import Faq from '../components/Faq'
+import Seamless from '../components/Seamless'
+import HighPerformingApps from '../components/HighPerformingApps'
+import Explore from '../components/Explore'
+import PutNode from '../components/PutNode'
+import ManagingNode from '../components/ManagingNode'
 
 export default function Home () {
   return (
