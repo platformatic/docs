@@ -183,43 +183,6 @@ const config = {
           sidebarId: 'Learn',
           label: 'Learn'
         },
-
-        {
-          type: 'dropdown',
-          position: 'left',
-          label: 'Features',
-          items: [
-            {
-              to: '/service',
-              label: 'Service'
-            },
-            {
-              to: '/database',
-              label: 'DB'
-            },
-            {
-              to: '/composer',
-              label: 'Composer'
-            },
-
-            {
-              to: '/aiwarp',
-              label: 'AI-Warp'
-            },
-            {
-              to: '/stackables',
-              label: 'Stackables'
-            },
-            {
-              to: '/watt',
-              label: 'Watt'
-            },
-            {
-              to: '/caching',
-              label: 'Caching'
-            }
-          ]
-        },
         {
           type: 'doc',
           docId: 'Overview',
@@ -234,26 +197,6 @@ const config = {
             {
               href: 'https://platformatichq.com/events',
               label: 'Events'
-            }
-          ]
-        },
-        // {
-        //   href: "https://www.platformatic.dev",
-        //   label: "About",
-        //   position: "left",
-        // },
-        {
-          type: 'dropdown',
-          position: 'left',
-          label: 'Powered by',
-          items: [
-            {
-              to: '/fastify',
-              label: 'Fastify'
-            },
-            {
-              to: '/nodejs',
-              label: 'Node.js'
             }
           ]
         },

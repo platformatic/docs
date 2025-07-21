@@ -19,12 +19,6 @@ module.exports = function customWebpackPlugin () {
           new webpack.ProvidePlugin({
             process: 'process/browser',
             Buffer: ['buffer', 'Buffer']
-          }),
-          new webpack.DefinePlugin({
-            'process.env.STORYBLOK_ACCESS_TOKEN': JSON.stringify(
-              process.env.STORYBLOK_ACCESS_TOKEN
-            ),
-            'process.env.BASE_URL': JSON.stringify(process.env.BASE_URL)
           })
         ]
       }
