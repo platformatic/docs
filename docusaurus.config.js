@@ -84,11 +84,11 @@ const config = {
         redirects: [
           {
             from: '/docs/reference/cli',
-            to: '/docs/packages/platformatic/cli'
+            to: '/docs/next/packages/platformatic/cli'
           },
           {
             from: '/docs/next/reference/cli/',
-            to: '/docs/packages/platformatic/cli'
+            to: '/docs/next/packages/platformatic/cli'
           },
           {
             from: '/docs/category/packages/',
@@ -100,31 +100,31 @@ const config = {
           },
           {
             from: '/docs/reference/service/programmatic/',
-            to: '/docs/packages/service/overview'
+            to: '/docs/next/packages/service/overview'
           },
           {
             from: '/docs/reference/composer/introduction/',
-            to: '/docs/packages/composer/overview'
+            to: '/docs/next/packages/composer/overview'
           },
           {
             from: '/docs/reference/runtime/introduction/',
-            to: '/docs/packages/runtime/overview'
+            to: '/docs/next/packages/runtime/overview'
           },
           {
             from: '/docs/reference/db/introduction/',
-            to: '/docs/packages/db/overview'
+            to: '/docs/next/packages/db/overview'
           },
           {
             from: '/docs/reference/client',
-            to: '/docs/packages/client/overview'
+            to: '/docs/next/packages/client/overview'
           },
           {
             from: '/docs/reference/db/authorization/introduction',
-            to: '/docs/packages/db/authorization/overview'
+            to: '/docs/next/packages/db/authorization/overview'
           },
           {
             from: '/docs/reference/db/configuration',
-            to: '/docs/packages/db/configuration'
+            to: '/docs/next/packages/db/configuration'
           },
           {
             from: '/docs/reference/sql-openapi/introduction',
@@ -136,15 +136,15 @@ const config = {
           },
           {
             from: '/docs/reference/db/§tions',
-            to: '/docs/packages/db/migrations'
+            to: '/docs/next/packages/db/migrations'
           },
           {
             from: '/docs/reference/composer/configuration',
-            to: '/docs/packages/composer/configuration'
+            to: '/docs/next/packages/composer/configuration'
           },
           {
             from: '/docs/reference/service/introduction',
-            to: '/docs/packages/service/overview'
+            to: '/docs/next/packages/service/overview'
           }
         ]
       }
