@@ -67,6 +67,16 @@ Step 2: Start the development server
 npm run sync-and-start
 ```
 
+## Build
+
+If you want to manually build, and debug the CI build process this is the command you should run
+
+```bash
+TARGET_REPO=platformatic/platformatic node scripts/build.mjs 2.72.0
+```
+
+This will download the `v2.72.0` tag zip file of the `platformatic/platformatic` repo, unpack it and run the build process against the `docs` directory of the repo.
+
 ## Deploy
 
 Deployment is managed automatically through GitHub Actions. Check the workflow configurations in the `.github` folder within the OSS directory for details.

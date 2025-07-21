@@ -25,7 +25,6 @@ async function downloadVersion (version) {
   console.log('  Downloading ...')
 
   const ref = version === 'main' ? 'heads/main' : `tags/v${version}`
-
   // Download the source
   const { statusCode, body } = await request(
     `https://github.com/${process.env.TARGET_REPO}/archive/refs/${ref}.zip`,
@@ -71,10 +70,14 @@ async function extractAndPrepareVersion (repo, destination, sidebarsDestination,
 }
 
 async function main () {
-  if (!process.env.TARGET_REPO || !process.env.GH_API_TOKEN) {
+  if (!process.env.TARGET_REPO) {
     throw new Error(
-      'Please set the TARGET_REPO and GH_API_TOKEN environment variables'
+      'Please set the TARGET_REPO environment variable'
     )
+  }
+  // throw error if TARGET_REPO env var does not match {org}/{repo} pattern
+  if (!process.env.TARGET_REPO.match(/^[a-zA-Z0-9_-]+\/[a-zA-Z0-9_-]+$/)) {
+    throw new Error('TARGET_REPO must be in the format {org}/{repo}')
   }
 
   if (process.argv.length === 2) {
