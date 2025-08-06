@@ -191,7 +191,7 @@ const config = {
         },
         {
           type: 'doc',
-          docId: 'reference-overview',
+          docId: 'Overview',
           position: 'left',
           label: 'Reference'
         },
