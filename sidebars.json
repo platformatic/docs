@@ -88,7 +88,8 @@
           "label": "CLI Tools",
           "collapsed": true,
           "items": [
-            "reference/platformatic/cli"
+            "reference/platformatic/cli",
+            "file-formats"
           ]
         },
         {
@@ -192,6 +193,15 @@
             },
             {
               "type": "category",
+              "label": "Nest.js",
+              "collapsed": true,
+              "items": [
+                "reference/nest/overview",
+                "reference/nest/configuration"
+              ]
+            },
+            {
+              "type": "category",
               "label": "Astro",
               "collapsed": true,
               "items": [
@@ -206,7 +216,8 @@
               "collapsed": true,
               "items": [
                 "reference/remix/overview",
-                "reference/remix/configuration"
+                "reference/remix/configuration",
+                "reference/remix/caching"
               ]
             },
             {
@@ -249,7 +260,8 @@
                 "reference/sql-mapper/entities/example",
                 "reference/sql-mapper/entities/hooks",
                 "reference/sql-mapper/entities/relations",
-                "reference/sql-mapper/entities/transactions"
+                "reference/sql-mapper/entities/transactions",
+                "reference/sql-mapper/entities/timestamps"
               ]
             },
             {
@@ -261,6 +273,7 @@
                 "reference/sql-graphql/queries",
                 "reference/sql-graphql/mutations",
                 "reference/sql-graphql/many-to-many",
+                "reference/sql-graphql/subscriptions",
                 "reference/sql-graphql/ignore"
               ]
             },
@@ -285,17 +298,17 @@
               ]
             }
           ]
-        }
+        },
+        "reference/errors"
       ]
     },
     {
       "type": "category",
-      "label": "Understanding Platformatic",
+      "label": "Contributing",
       "collapsed": true,
       "items": [
-        "learn/overview",
-        "learn/glossary",
-        "FAQs"
+        "contributing/contributing",
+        "contributing/documentation-style-guide"
       ]
     }
   ]

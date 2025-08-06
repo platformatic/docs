@@ -41,7 +41,7 @@ const sidebars = {
             'learn/beginner/crud-application',
             'learn/beginner/environment-variables'
           ]
-        }
+        },
       ]
     },
 
@@ -109,7 +109,8 @@ const sidebars = {
           label: 'CLI Tools',
           collapsed: true,
           items: [
-            'reference/platformatic/cli'
+            'reference/platformatic/cli',
+            'file-formats'
           ]
         },
         {
@@ -213,6 +214,15 @@ const sidebars = {
             },
             {
               type: 'category',
+              label: 'Nest.js',
+              collapsed: true,
+              items: [
+                'reference/nest/overview',
+                'reference/nest/configuration'
+              ]
+            },
+            {
+              type: 'category',
               label: 'Astro',
               collapsed: true,
               items: [
@@ -227,7 +237,8 @@ const sidebars = {
               collapsed: true,
               items: [
                 'reference/remix/overview', 
-                'reference/remix/configuration'
+                'reference/remix/configuration',
+                'reference/remix/caching'
               ]
             },
             {
@@ -270,7 +281,8 @@ const sidebars = {
                 'reference/sql-mapper/entities/example',
                 'reference/sql-mapper/entities/hooks',
                 'reference/sql-mapper/entities/relations',
-                'reference/sql-mapper/entities/transactions'
+                'reference/sql-mapper/entities/transactions',
+                'reference/sql-mapper/entities/timestamps'
               ]
             },
             {
@@ -282,6 +294,7 @@ const sidebars = {
                 'reference/sql-graphql/queries',
                 'reference/sql-graphql/mutations',
                 'reference/sql-graphql/many-to-many',
+                'reference/sql-graphql/subscriptions',
                 'reference/sql-graphql/ignore'
               ]
             },
@@ -306,19 +319,19 @@ const sidebars = {
               ]
             }
           ]
-        }
+        },
+        'reference/errors'
       ]
     },
 
-    // Concepts - Understanding-oriented documentation (Diátaxis: Understanding-oriented)
+    // Contributing - Community and development resources
     {
       type: 'category',
-      label: 'Understanding Platformatic',
+      label: 'Contributing',
       collapsed: true,
       items: [
-        'learn/overview',
-        'learn/glossary',
-        'FAQs'
+        'contributing/contributing',
+        'contributing/documentation-style-guide'
       ]
     }
   ]
