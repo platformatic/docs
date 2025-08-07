@@ -178,10 +178,16 @@ const config = {
       },
       items: [
         {
-          type: 'docSidebar',
+          type: 'doc',
+          docId: 'getting-started/quick-start-watt',
           position: 'left',
-          sidebarId: 'Learn',
-          label: 'Learn'
+          label: 'Getting Started'
+        },
+        {
+          type: 'doc',
+          docId: 'guides/build-modular-monolith',
+          position: 'left',
+          label: 'How-to Guides'
         },
         {
           type: 'doc',
