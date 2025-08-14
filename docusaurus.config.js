@@ -92,15 +92,11 @@ const config = {
           },
           {
             from: '/docs/category/packages/',
-            to: '/docs/packages/sql-openapi/overview'
+            to: '/docs/reference/sql-openapi/overview'
           },
           {
             from: '/docs/reference/sql-mapper/introduction/',
-            to: '/docs/packages/sql-mapper/overview'
-          },
-          {
-            from: '/docs/reference/service/programmatic/',
-            to: '/docs/next/reference/service/overview'
+            to: '/docs/reference/sql-mapper/overview'
           },
           {
             from: '/docs/reference/composer/introduction/',
@@ -123,24 +119,12 @@ const config = {
             to: '/docs/next/reference/db/authorization/overview'
           },
           {
-            from: '/docs/reference/db/configuration',
-            to: '/docs/next/reference/db/configuration'
-          },
-          {
             from: '/docs/reference/sql-openapi/introduction',
-            to: '/docs/packages/sql-openapi/overview'
-          },
-          {
-            from: '/docs/reference/sql-graphql/queries',
-            to: '/docs/packages/sql-graphql/queries'
+            to: '/docs/reference/sql-openapi/overview'
           },
           {
             from: '/docs/reference/db/§tions',
             to: '/docs/next/reference/db/migrations'
-          },
-          {
-            from: '/docs/reference/composer/configuration',
-            to: '/docs/next/reference/composer/configuration'
           },
           {
             from: '/docs/reference/service/introduction',
