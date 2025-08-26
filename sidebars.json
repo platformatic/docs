@@ -4,9 +4,7 @@
       "type": "category",
       "label": "Overview",
       "collapsed": false,
-      "items": [
-        "Overview"
-      ]
+      "items": ["Overview"]
     },
     {
       "type": "category",
@@ -89,10 +87,7 @@
           "type": "category",
           "label": "Legacy CLI Tools",
           "collapsed": true,
-          "items": [
-            "reference/platformatic/cli",
-            "file-formats"
-          ]
+          "items": ["reference/platformatic/cli", "file-formats"]
         },
         {
           "type": "category",
@@ -120,16 +115,6 @@
                 "reference/composer/api-modification",
                 "reference/composer/plugin",
                 "reference/composer/programmatic"
-              ]
-            },
-            {
-              "type": "category",
-              "label": "Client SDK",
-              "collapsed": true,
-              "items": [
-                "reference/client/overview",
-                "reference/client/programmatic",
-                "reference/client/frontend"
               ]
             },
             {
