@@ -24,7 +24,8 @@ async function execute (errorPrefix, cmd, ...args) {
 async function downloadVersion (version) {
   console.log('  Downloading ...')
 
-  const ref = version === 'main' ? 'heads/main' : `tags/v${version}`
+  const ref = version.match(/^\d/) ? `tags/v${version}` : `heads/${version}`
+
   // Download the source
   const { statusCode, body } = await request(
     `https://github.com/${process.env.TARGET_REPO}/archive/refs/${ref}.zip`,

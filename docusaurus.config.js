@@ -84,11 +84,11 @@ const config = {
         redirects: [
           {
             from: '/docs/reference/cli',
-            to: '/docs/next/reference/platformatic/cli'
+            to: '/docs/next/reference/wattpm/cli-commands'
           },
           {
             from: '/docs/next/reference/cli/',
-            to: '/docs/next/reference/platformatic/cli'
+            to: '/docs/next/reference/wattpm/cli-commands'
           },
           {
             from: '/docs/category/packages/',
@@ -100,7 +100,11 @@ const config = {
           },
           {
             from: '/docs/reference/composer/introduction/',
-            to: '/docs/next/reference/composer/overview'
+            to: '/docs/next/reference/gateway/overview'
+          },
+          {
+            from: '/docs/reference/gateway/introduction/',
+            to: '/docs/next/reference/gateway/overview'
           },
           {
             from: '/docs/reference/runtime/introduction/',
@@ -109,11 +113,7 @@ const config = {
           {
             from: '/docs/reference/db/introduction/',
             to: '/docs/next/reference/db/overview'
-          },
-          {
-            from: '/docs/reference/client',
-            to: '/docs/next/reference/client/overview'
-          },
+          },          
           {
             from: '/docs/reference/db/authorization/introduction',
             to: '/docs/next/reference/db/authorization/overview'
