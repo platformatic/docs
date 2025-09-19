@@ -163,7 +163,7 @@ const config = {
       items: [
         {
           type: 'doc',
-          docId: 'getting-started/quick-start-watt',
+          docId: 'getting-started/quick-start',
           position: 'left',
           label: 'Getting Started'
         },
