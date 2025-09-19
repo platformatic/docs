@@ -169,13 +169,13 @@ const config = {
         },
         {
           type: 'doc',
-          docId: 'guides/build-modular-monolith',
+          docId: 'guides',
           position: 'left',
           label: 'How-to Guides'
         },
         {
           type: 'doc',
-          docId: 'Overview',
+          docId: 'reference',
           position: 'left',
           label: 'Reference'
         },
