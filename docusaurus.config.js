@@ -70,6 +70,7 @@ const config = {
   ],
 
   plugins: [
+    '@orama/plugin-docusaurus-v3',
     [
       'posthog-docusaurus',
       {
@@ -132,8 +133,8 @@ const config = {
           }
         ]
       }
-    ],
-    require.resolve('./plugins/custom-webpack')
+    ]
+    // require.resolve('./plugins/custom-webpack')
   ],
 
   themeConfig: {
