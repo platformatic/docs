@@ -30,19 +30,7 @@ The `autoload` configuration is intended to be used with monorepo applications.
   microservice's directory name, and the configuration file is expected to be a
   well-known Platformatic configuration file. `mappings` can be used to override
   these default values.
-  - **`id`** (**required**, `string`) - The overridden ID. This becomes the new
-    microservice ID.
-  - \*\*`config` (`string`) - The overridden configuration file.
-    name. This is the file that will be used when starting the microservice.
-  - **`useHttp`** (`boolean`) - The application will be started on a random HTTP port
-    on `127.0.0.1`, and exposed to the other applications via that port and on default,
-    it is set to `false`.
-  - **`workers`** (`number`) - The number of workers to start for this application. If the application is the entrypoint or if the runtime is running in development mode this value is ignored and hardcoded to `1`.
-  - **`health`** (object): Configures the health check for each worker of the application. It supports all the properties also supported in the runtime [health](#health) property. The values specified here overrides the values specified in the runtime.
-  - **`preload`** (`string` or `array` of `string`s): A file or a list of files to load before the application code.
-  - **`arguments`** (`array` of `string`s) - The arguments to pass to the application. They will be available in `process.argv`.
-  - **`nodeOptions`** (`string`): The `NODE_OPTIONS` to apply to the application. These options are appended to any existing option.
-  - **`dependencies`** (`array` of `string`s): A list of applications that must be started before attempting to start the current application. Note that the runtime will not perform any attempt to detect or solve dependencies cycles.
+  Supported properties are the same of entries in `application`, except `path`, `url`, and `gitBranch`.
 
 ### `preload`
 
@@ -79,6 +67,19 @@ runtime. Each application object supports the following settings:
 - **`packageManager`** (`string`) - The package manager to use when using the `install-dependencies` or the `resolve` commands of `wattpm-utils`. Default is to autodetect it, unless it is specified via command line.
 - **`preload`** (`string` or `array` of `string`s): A file or a list of files to load before the application code.
 - **`nodeOptions`** (`string`): The `NODE_OPTIONS` to apply to the application. These options are appended to any existing option.
+- **`permissions`** (`object`): Configure application-level security permissions to restrict file system access. Supported properties are:
+  - **`fs`**:
+    - **`read`** (`array` of `string`s): Array of file system paths the application is permitted to read from. Uses the same syntax as Node.js [--allow-fs-read](https://nodejs.org/dist/latest/docs/api/cli.html#--allow-fs-read).
+    - **`write`** (`array` of `string`s): Array of file system paths the application is permitted to write to. Uses the same syntax as Node.js [--allow-fs-write](https://nodejs.org/dist/latest/docs/api/cli.html#--allow-fs-write).
+
+  When filesystem permissions are enabled, certain paths are automatically added to maintain application functionality:
+  - The current Watt project's `node_modules` directory
+  - The application's own `node_modules` directory
+  - Any `node_modules` directories found in parent directories of the runtime path
+
+  The security permissions are based on Node.js permission model and therefore the application will have restricted access to native modules, child processes, worker threads, the inspector protocol, and WASI.
+  See the [Node.js Permission Model Constraints](https://nodejs.org/dist/latest/docs/api/permissions.html#permission-model-constraints) for complete details.
+
 - **`dependencies`** (`array` of `string`s): A list of applications that must be started before attempting to start the current application. Note that the runtime will not perform any attempt to detect or solve dependencies cycles.
 - **`telemetry`** (`object`): containing an `instrumentations` array to optionally configure additional open telemetry
   intrumentations per application, e.g.:
@@ -382,6 +383,7 @@ This configures the Platformatic Runtime Prometheus server. The Prometheus serve
     - **`body`** (`string`). The response body indicating failure. Default: `ERR`.
 - **`plugins`** (array of `string`): A list of Fastify plugin to add to the Prometheus server.
 - **`applicationLabel`** (`string`, default: `'applicationId'`): The label name to use for the application identifier in metrics (e.g., `'applicationId'`, `'serviceId'`, or any custom label name).
+- **`timeout`** (`number`, default: `10000`): The timeout to wait for each worker metrics before skipping it.
 
 If the `metrics` object is not provided, the Prometheus server will not be started.
 
@@ -434,11 +436,12 @@ The `verticalScaler` configuration is used to enable the vertical scaling for th
 - **`maxWorkers`** (`number`). The maximum number of workers that can be used for _each_ application. It can be overridden at application level. Default: global `maxTotalWorkers` value.
 - **`cooldownSec`** (`number`). The amount of seconds the scaling algorithm will wait after making a change before scaling up or down again. Default: `60`.
 - **`scaleUpELU`** (`number`). The ELU (Event Loop Utilization) threshold that an application must reach before scaling up.
-Scaler compares an average ELU an application collects over a `timeWindowSec` period. Default: `0.8`.
+  Scaler compares an average ELU an application collects over a `timeWindowSec` period. Default: `0.8`.
 - **`scaleDownELU`** (`number`). The ELU (Event Loop Utilization) threshold that an application must reach before scaling down.
-Scaler compares an average ELU an application collects over a `timeWindowSec` period. Default: `0.2`.
+  Scaler compares an average ELU an application collects over a `timeWindowSec` period. Default: `0.2`.
 - **`minELUDiff`** (`number`). The minimum ELU difference required between applications for worker reallocation when at maximum worker limit. Default: `0.2`.
 - **`timeWindowSec`** (`number`). The time window in seconds over which the ELU is averaged. Default: `60`.
+- **`gracePeriod`** (`number`). The amount of milliseconds after a worker is started before the scaling algorithm will start collecting metrics for it. Default: `30000`.
 - **`scaleIntervalSec`** (`number`). The interval in seconds for periodic scaling checks. Default: `60`.
 - **`applications`** (`object`). An object with application-specific scaling configuration. Each key is an application ID, with an object value containing:
   - **`minWorkers`** (`number`). The minimum number of workers that can be used for this application. Default: `1`.
