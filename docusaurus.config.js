@@ -114,7 +114,7 @@ const config = {
           {
             from: '/docs/reference/db/introduction/',
             to: '/docs/next/reference/db/overview'
-          },          
+          },
           {
             from: '/docs/reference/db/authorization/introduction',
             to: '/docs/next/reference/db/authorization/overview'
@@ -130,6 +130,10 @@ const config = {
           {
             from: '/docs/reference/service/introduction',
             to: '/docs/next/reference/service/overview'
+          },
+          {
+            from: '/docs/getting-started/quick-start-watt',
+            to: '/docs/getting-started/quick-start'
           }
         ]
       }
