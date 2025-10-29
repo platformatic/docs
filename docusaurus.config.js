@@ -134,6 +134,10 @@ const config = {
           {
             from: '/docs/getting-started/quick-start-watt',
             to: '/docs/getting-started/quick-start'
+          },
+          {
+            from: '/watt',
+            to: '/docs/reference/wattpm/overview'
           }
         ]
       }
