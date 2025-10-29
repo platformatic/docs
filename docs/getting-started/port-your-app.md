@@ -4,7 +4,7 @@ title: Running Your Project in Watt
 
 # Running Your Project in Watt
 
-This guide explains how to set up any Node.js project to run in [Watt](https://platformatic.dev/watt), the Node.js Application Server.
+This guide explains how to set up any Node.js project to run in [Watt](https://platformatic.dev/docs/reference/wattpm/overview), the Node.js Application Server.
 
 ## Why Use Watt?
 
