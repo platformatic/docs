@@ -440,15 +440,9 @@ p {
   font-family: "Roboto Mono", monospace;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 996px) {
   .navbar__item {
     display: none !important;
-  }
-  .navbar__inner .navbar__items {
-    justify-content: space-between;
-  }
-  .navbar__inner .navbar__items .navbar__toggle.clean-btn {
-    order: 2;
   }
 }
 
