@@ -21,13 +21,13 @@ The `autoload` configuration is intended to be used with monorepo applications.
 `autoload` is an object with the following settings:
 
 - **`path`** (**required**, `string`) - The path to a directory containing the
-  microservices to load. In a traditional monorepo application, this directory is
+  applications to load. In a traditional monorepo application, this directory is
   typically named `packages`.
 - **`exclude`** (`array` of `string`s) - Child directories inside `path` that
   should not be processed.
-- **`mappings`** (`object`) - Each microservice is given an ID and is expected
+- **`mappings`** (`object`) - Each applicaiton is given an ID and is expected
   to have a Platformatic configuration file. By default, the ID is the
-  microservice's directory name, and the configuration file is expected to be a
+  application's directory name, and the configuration file is expected to be a
   well-known Platformatic configuration file. `mappings` can be used to override
   these default values.
   Supported properties are the same of entries in `application`, except `path`, `url`, and `gitBranch`.
@@ -41,23 +41,19 @@ the app worker thread.
 
 ### `applications`
 
-`applications` is an array of objects that defines the microservices managed by the
+`applications` is an array of objects that defines the applications managed by the
 runtime. Each application object supports the following settings:
 
-- **`id`** (**required**, `string`) - A unique identifier for the microservice.
-  When working with the Platformatic Gateway, this value corresponds to the `id`
-  property of each object in the `applications` section of the config file. When
-  working with client objects, this corresponds to the optional `applicationId`
-  property or the `name` field in the client's `package.json` file if a
-  `applicationId` is not explicitly provided.
+- **`id`** (**required**, `string`) - A unique identifier for the application.
 - **`path`** (**required**, `string`) - The path to the directory containing
-  the microservice. It can be omitted if `url` is provided.
-- **`url`** (**required**, `string`) - The URL of the application remote GIT repository, if it is a remote application. It can be omitted if `path` is provided.
-- **`gitBranch`** (string) - The branch of the application to resolve.
+  the application. It can be omitted if `url` is provided.
+- **`url`** (**required**, `string`) - The URL of the application remote GIT repository, if it is a remote application. It can be omitted if `path` is provided. You can specify a branch using the URL fragment syntax: `https://github.com/user/repo.git#branch-name`.
+- **`gitBranch`** (`string`) - The branch of the application to resolve. Takes precedence over the branch specified in the URL fragment.
 - **`config`** (`string`) - The configuration file used to start
-  the microservice.
+  the application.
 - **`useHttp`** (`boolean`) - The application will be started on a random HTTP port
   on `127.0.0.1`, and exposed to the other applications via that port, on default it is set to `false`. Set it to `true` if you are using [@fastify/express](https://github.com/fastify/fastify-express).
+- **`reuseTcpPorts`**: Enable the use of the [`reusePort`](https://nodejs.org/dist/latest/docs/api/net.html#serverlistenoptions-callback) option whenever any TCP server starts listening on a port. The default is `true`. The values specified here overrides the values specified in the runtime.
 - **`workers`** - The number of workers to start for this application. If the application is the entrypoint or if the runtime is running in development mode this value is ignored and hardcoded to `1`. This can be specified as:
   - **`number`** - A fixed number of workers
   - **`object`** - Advanced worker configuration with the following properties:
@@ -156,7 +152,7 @@ The base path, relative to the configuration file to store resolved applications
 
 ### `entrypoint`
 
-The Platformatic Runtime's entrypoint is a microservice that is exposed
+The Platformatic Runtime's entrypoint is an applicaiton that is exposed
 publicly. This value must be the `ID` of an application defined via the `autoload` or
 `applications` configuration.
 
@@ -198,9 +194,9 @@ For both the settings the default is `10000` (ten seconds).
 
 An optional boolean, set to default `false`, indicating if hot reloading should
 be enabled for the runtime. If this value is set to `false`, it will disable
-hot reloading for any microservices managed by the runtime. If this value is
-`true`, then hot reloading for individual microservices is managed by the
-configuration of that microservice.
+hot reloading for any applications managed by the runtime. If this value is
+`true`, then hot reloading for individual applications is managed by the
+configuration of that application.
 
 Note that `watch` should be enabled for each individual application in the runtime.
 
@@ -308,6 +304,10 @@ An object with the following settings:
   - `allowHTTP1` (`boolean`) - If `true`, the server will also accept HTTP/1.1 connections when `http2` is enabled. Default: `false`.
   - `key` (**required**, `string`, `object`, or `array`) - If `key` is a string, it specifies the private key to be used. If `key` is an object, it must have a `path` property specifying the private key file. Multiple keys are supported by passing an array of keys.
   - `cert` (**required**, `string`, `object`, or `array`) - If `cert` is a string, it specifies the certificate to be used. If `cert` is an object, it must have a `path` property specifying the certificate file. Multiple certificates are supported by passing an array of keys.
+
+### `reuseTcpPorts`
+
+Enable the use of the [`reusePort`](https://nodejs.org/dist/latest/docs/api/net.html#serverlistenoptions-callback) option whenever any TCP server starts listening on a port. The default is `true`. This setting can be overridden at the application level.
 
 ### `logger`
 
