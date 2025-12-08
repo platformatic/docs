@@ -6,6 +6,9 @@ import HighPerformingApps from '../components/HighPerformingApps'
 import Explore from '../components/Explore'
 import PutNode from '../components/PutNode'
 import ManagingNode from '../components/ManagingNode'
+import MediasetLogo from '../components/partners/Mediaset'
+import EuronextLogo from '../components/partners/Euronext'
+import SpendeskLogo from '../components/partners/Spendesk'
 
 export default function Home () {
   return (
@@ -16,7 +19,7 @@ export default function Home () {
       <main className='dark'>
         <section className='bg-transparent flex items-center justify-center sm:min-h-[100vh] bg-cover bg-center bg-no-repeat relative mt-20 md:mt-0'>
           <img src='/img/homepage-bg.svg' alt='Background' className='absolute inset-0 w-full h-full object-cover z-0 ' />
-          <div className='max-w-screen-xl mx-auto w-full text-center relative z-10 mt-10 md:mt-0'>
+          <div className='max-w-screen-xl mx-auto w-full text-center relative z-10 mt-10 md:mt-0 flex flex-col items-center justify-center'>
             <div className='max-w-4xl mx-auto flex flex-col justify-center items-center px-2 md:px-0'>
               <h1 className='mb-4 text-[1.6rem] leading-[1.5] md:leading-[54px] font-[700] md:font-[600] md:text-[40px] dark:text-white md:max-w-[603px]'>
                 <p>The out-of-the-box,</p>
@@ -31,6 +34,16 @@ export default function Home () {
                 <a href='https://www.platformatichq.com/contact' className='flex-1'>
                   <button className='bg-transparent hover:bg-white/30 outline outline-white/80 outline-[1px] text-white py-2 px-4 border-none rounded border border-white w-full cursor-pointer text-[14px]'>Get in touch</button>
                 </a>
+              </div>
+            </div>
+            <div className='mt-[250px]'>
+              <div className='flex lg:flex-row flex-col gap-8 items-center w-full mt-8 lg:mt-0'>
+                <div className='lg:text-xl opacity-70'>Trusted by:</div>
+                <div className='flex gap-4 items-center'>
+                  <MediasetLogo />
+                  <EuronextLogo />
+                  <SpendeskLogo />
+                </div>
               </div>
             </div>
           </div>
