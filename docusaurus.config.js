@@ -228,7 +228,7 @@ const config = {
           items: [
             {
               label: 'Get Started',
-              to: 'docs/getting-started/quick-start-guide'
+              to: 'docs/getting-started/quick-start'
             },
             {
               label: 'Guides',
