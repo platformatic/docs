@@ -65,6 +65,7 @@
           "items": [
             "guides/metrics",
             "guides/distributed-tracing",
+            "guides/opentelemetry-sdk-setup",
             "guides/logging-to-elasticsearch",
             "guides/profiling-with-watt",
             "guides/debugging-with-repl"
