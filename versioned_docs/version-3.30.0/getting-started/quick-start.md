@@ -35,12 +35,13 @@ Hello YOURNAME, welcome to Watt 3.0.0!
 ? Which kind of application do you want to create? @platformatic/node
 ✔ Installing @platformatic/node@^3.0.0 using npm ...
 ? What is the name of the application? node
+? Do you want to use TypeScript? no
 ? Do you want to create another application? no
 ? What port do you want to use? 3042
 ```
 
 Dependencies are going to be installed. Your application is located in `web/node`.
-The `watt.json` file is automatically created in the `node` folder, and the `package.json` file includes a `start` script and `@platformatic/node` as a dependency.
+The `watt.json` file is automatically created in the `node` folder, and the `package.json` file includes `@platformatic/node` as a dependency.
 
 ## Add your first Node.js application to Watt
 
@@ -52,7 +53,8 @@ This file is created as your nodejs app:
 import { createServer } from 'node:http'
 
 export function create () {
-  return createServer((req, res) => {
+  return createServer((_, res) => {
+    globalThis.platformatic.logger.debug('Serving request.')
     res.writeHead(200, { 'content-type': 'application/json', connection: 'close' })
     res.end(JSON.stringify({ hello: 'world' }))
   })
@@ -145,7 +147,7 @@ curl http://localhost:3042/node
 
 :::note
 
-You can customize how the various applications are exposed by changing `web/gateway/platformatic.json`.
+You can customize how the various applications are exposed by changing `web/gateway/watt.json`.
 Here is the equivalent of the default configuration when exposing a Node.js application:
 
 ```json
@@ -179,13 +181,13 @@ npx create-next-app web/next
 Which will output:
 
 ```
-✔ Would you like to use TypeScript? … No / Yes
+✔ Would you like to use TypeScript? … No
 ✔ Which linter would you like to use? › ESLint
-✔ Would you like to use Tailwind CSS? … No / Yes
-✔ Would you like your code inside a `src/` directory? … No / Yes
-✔ Would you like to use App Router? (recommended) … No / Yes
-✔ Would you like to use Turbopack? (recommended) … No / Yes
-✔ Would you like to customize the import alias (`@/*` by default)? … No / Yes
+✔ Would you like to use React Compiler? No
+✔ Would you like to use Tailwind CSS? … No
+✔ Would you like your code inside a `src/` directory? … Yes
+✔ Would you like to use App Router? (recommended) … Yes
+✔ Would you like to customize the import alias (`@/*` by default)? … No
 ```
 
 Then, let's import it to our Watt server:
@@ -224,7 +226,7 @@ Then, you can test it by opening your browser at [`http://localhost:3042/next`](
 
 In this example, we are exposing the Next.js app at `/next` and the Node.js app at `/node`.
 You can change the paths to suit your needs. Make sure to alter the `basePath` in `web/next/watt.json`
-and the `prefix` in `web/gateway/platformatic.json` accordingly if you customize it.
+and the `prefix` in `web/gateway/watt.json` accordingly if you customize it.
 
 :::
 
