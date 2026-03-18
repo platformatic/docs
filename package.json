@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.9.1",
-    "@docusaurus/types": "3.4.0",
+    "@docusaurus/types": "^3.9.1",
     "cpx": "^1.5.0",
     "crypto-browserify": "^3.12.1",
     "dotenv": "^16.6.1",
