@@ -141,8 +141,8 @@ const config = {
           }
         ]
       }
-    ]
-    // require.resolve('./plugins/custom-webpack')
+    ],
+    require.resolve('./plugins/custom-webpack')
   ],
 
   themeConfig: {
