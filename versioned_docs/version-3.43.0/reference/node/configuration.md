@@ -1,5 +1,5 @@
 import Issues from '../../getting-started/issues.md';
-import RuntimeInCapabilities from '../_runtime-in-capabilities.md';
+import RuntimeInCapabilities from '../\_runtime-in-capabilities.md';
 
 # Configuration
 
@@ -18,6 +18,9 @@ Supported object properties:
   - **`build`**: The command to execute to build the application.
   - **`development`**: The command to execute to start the application in development mode.
   - **`production`**: The command to execute to start the application in production mode.
+- **`changeDirectoryBeforeExecution`**: If set to `true`, change the current working directory to the application root before running any of the commands above. The default is `false`.
+- **`preferLocalCommands`**: If set to `true`, resolve non-absolute commands from the application's `node_modules/.bin` before checking the current working directory. The default is `true`.
+- **`entrypointPort`**: The main port the application will listen on. If not provided, it will use the port of the first TCP server that the application starts. This setting should be provided only if the application starts multiple TCP servers and the main one is not the first that actually listens on a port.
 
 ## `node`
 
