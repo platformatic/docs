@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://platformatic.dev/docs/Overview",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     {
       "source": "/schemas/v:version/:service",
