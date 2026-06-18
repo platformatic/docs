@@ -12,7 +12,6 @@ module.exports = function customWebpackPlugin () {
         resolve: {
           fullySpecified: false,
           alias: {
-            '@orama/react-components': path.resolve(process.cwd(), 'node_modules', '@orama', 'react-components', 'dist', 'index.mjs'),
             'process/browser': path.resolve(process.cwd(), 'node_modules', 'process', 'browser.js')
           },
           fallback: {

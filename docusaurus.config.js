@@ -69,8 +69,22 @@ const config = {
     ]
   ],
 
+  themes: [
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        hashed: true,
+        indexDocs: true,
+        indexBlog: true,
+        indexPages: false,
+        docsRouteBasePath: '/docs',
+        docsDir: ['docs', 'versioned_docs'],
+        removeDefaultStopWordFilter: ['en']
+      }
+    ]
+  ],
+
   plugins: [
-    '@orama/plugin-docusaurus-v3',
     [
       'posthog-docusaurus',
       {
