@@ -181,7 +181,8 @@ const config = {
       logo: {
         alt: 'Platformatic Logo',
         src: 'img/platformatic-logo.svg',
-        srcDark: 'img/platformatic-logo.svg'
+        srcDark: 'img/platformatic-logo.svg',
+        href: 'https://docs.platformatic.dev/'
       },
       items: [
         {
