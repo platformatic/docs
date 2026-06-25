@@ -71,11 +71,12 @@ async function getRemoteReleases (toKeep = 5) {
     .filter((r) => !releasesToSkip.includes(r.tag_name))
     .map((r) => parse(r.tag_name.replace(/^v/, '')))
 
-  // Keep one version per major, excluding v0.x
-  // const latestMajor = validReleases[0].major
+  // Keep one version per major, down to v2.
+  // v0.x and v1.x are no longer published online.
+  const minMajorToKeep = 2
 
   const releases = []
-  for (let currentMajor = validReleases[0].major; currentMajor > 0; currentMajor--) {
+  for (let currentMajor = validReleases[0].major; currentMajor >= minMajorToKeep; currentMajor--) {
     const release = validReleases.find(r => r.major === currentMajor)
     releases.push(release.version)
   }
