@@ -2,13 +2,7 @@
   "redirects": [
     {
       "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "docs\\.platformatic\\.dev"
-        }
-      ],
-      "destination": "https://platformatic.dev/docs/Overview",
+      "destination": "/docs/Overview",
       "permanent": false
     }
   ],
