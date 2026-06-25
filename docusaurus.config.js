@@ -181,7 +181,9 @@ const config = {
       logo: {
         alt: 'Platformatic Logo',
         src: 'img/platformatic-logo.svg',
-        srcDark: 'img/platformatic-logo.svg'
+        srcDark: 'img/platformatic-logo.svg',
+        href: 'https://platformatic.dev',
+        target: '_self'
       },
       items: [
         {
@@ -201,22 +203,6 @@ const config = {
           docId: 'reference',
           position: 'left',
           label: 'Reference'
-        },
-        {
-          type: 'dropdown',
-          position: 'left',
-          label: 'Community',
-          items: [
-            {
-              href: 'https://platformatichq.com/events',
-              label: 'Events'
-            }
-          ]
-        },
-        {
-          href: 'https://platformatichq.com',
-          label: 'For Teams',
-          position: 'left'
         },
         {
           href: 'https://blog.platformatic.dev',
