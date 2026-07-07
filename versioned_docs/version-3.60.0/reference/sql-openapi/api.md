@@ -51,6 +51,9 @@ You can define many `WHERE` clauses in REST API, each clause includes a **field*
 | gte | `'>='` |
 | lt | `'<'` |
 | lte | `'<='` |
+| like | `'LIKE'` |
+| ilike | `'ILIKE'` |
+| isNull | `'IS NULL'` (use `false` for `IS NOT NULL`) |
 
 - **Value**: The value you want to compare the field to.
 
@@ -89,6 +92,8 @@ You can define the ordering of the returned rows within your REST API calls with
 
 - **Field**: One of the fields found in the schema.
 - **Value**: can be `asc` or `desc`.
+
+Multiple `orderby.[field]` parameters can be combined, and the rows are sorted by each of them in the order they appear in the query string, e.g. `?orderby.year=desc&orderby.title=asc`.
 
 **Example**
 
@@ -328,7 +333,18 @@ This returns the entity in the "join table", e.g. `GET /editors/page/1/user/1`.
 
 ### `POST [P_ENTITY]/[S_REL_1]/[KEY_REL_1]/[S_REL_2]/[KEY_REL_2]`
 
-Creates a new entity in the "join table", e.g. `POST /editors/page/1/user/1`.
+Creates a new entity in the "join table", e.g. `POST /editors/page/1/user/1`. The body contains the remaining fields of the join table (the two keys come from the URL):
+
+```bash
+$ curl -X 'POST' \
+  'http://localhost:3042/editors/page/1/user/1' \
+  -H 'Content-Type: application/json' \
+  -d '{ "role": "admin" }'
+
+{ "pageId": 1, "userId": 1, "role": "admin" }
+```
+
+`PUT` accepts the same body.
 
 ### `PUT [P_ENTITY]/[S_REL_1]/[KEY_REL_1]/[S_REL_2]/[KEY_REL_2]`
 
@@ -532,3 +548,22 @@ $ curl -X 'POST' \
   "body": "Welcome to Platformatic"
 }
 ```
+
+
+## Standalone Usage
+
+`@platformatic/sql-openapi` can also be used directly in any Fastify application, together with `@platformatic/sql-mapper`:
+
+```js
+import fastify from 'fastify'
+import sqlMapper from '@platformatic/sql-mapper'
+import sqlOpenAPI from '@platformatic/sql-openapi'
+
+const app = fastify()
+await app.register(sqlMapper, { connectionString: 'postgres://...' })
+await app.register(sqlOpenAPI)
+
+await app.listen({ port: 3042 })
+```
+
+All the options described on this page (`prefix`, `ignore`, `ignoreRoutes`, `allowPrimaryKeysInInput`, ...) can be passed to the plugin registration.
