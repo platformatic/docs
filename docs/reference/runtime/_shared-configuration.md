@@ -67,7 +67,7 @@ runtime. Each application object supports the following settings:
     - **`dynamic`** (`boolean`) - Enable dynamic worker scaling. This is only meaningful when set to `false` to disable dynamic scaling for this application.
     - **`minimum`** (`number`) - Minimum number of workers when using dynamic scaling
     - **`maximum`** (`number`) - Maximum number of workers when using dynamic scaling
-- **`health`** (object): Configures the health check for each worker of the application. It supports all the properties also supported in the runtime [health](#health) property. The values specified here overrides the values specified in the runtime.
+- **`health`** (object): Configures the health check and low-level resource defaults for each worker of the application. It supports all the properties also supported in the runtime [health](#health) property. The values specified here override the values specified in the runtime.
 - **`arguments`** (`array` of `string`s) - The arguments to pass to the application. They will be available in `process.argv`.
 - **`envfile`** (`string`) - The path to an `.env` file to load for the application. By default, the `.env` file is loaded from the application directory.
 - **`env`** (`object`) - An object containing environment variables to set for the application. Values set here takes precedence over values set in the `envfile`.
@@ -247,7 +247,7 @@ Setting this to `false`, `0`, or a negative number disables the automatic error 
 
 ### `health`
 
-Configures the health check for each worker. This is enabled only if `restartOnError` is greater than zero.
+Configures per-worker health checks and low-level worker resource defaults. Health checks are enabled only if `restartOnError` is greater than zero; `bufferPoolSize` and `defaultHighWaterMark` are applied during worker startup regardless.
 
 The object supports the following settings:
 
@@ -260,6 +260,10 @@ The object supports the following settings:
 - `maxHeapTotal` (`number` or `string`): The maximum allowed memory allocatable by the process. The value must be an amount in bytes, in bytes or in memory units. Default: `4GB`.
 - `maxYoungGeneration`(`number` or `string`): The maximum amount of memory that can be used by the young generation. The value must be an amount in bytes, in bytes or in memory units. Default: `128MB`
 - `codeRangeSize` (`number` or `string`): The maximum amount of memory that can be used for code range (compiled code). The value must be an amount in bytes or in memory units. Default: `268435456` (256MB).
+- `bufferPoolSize` (`number` or `string`): Sets Node.js [`Buffer.poolSize`](https://nodejs.org/api/buffer.html#static-property-bufferpoolsize) for each application worker. The value must be an amount in bytes or in memory units. Default: `262144` (256KB).
+- `defaultHighWaterMark` (`number` or `string`): Sets the default high water mark for byte streams via Node.js [`stream.setDefaultHighWaterMark(false, value)`](https://nodejs.org/api/stream.html#streamsetdefaulthighwatermarkobjectmode-value). The value must be an amount in bytes or in memory units. Default: `262144` (256KB).
+
+`bufferPoolSize` is intentionally larger than the Node.js default and should be treated as an aggressive server-oriented default. Node.js pools [`Buffer.allocUnsafe()`](https://nodejs.org/api/buffer.html#static-method-bufferallocunsafesize) allocations only when `size < (Buffer.poolSize >>> 1)`, so the 256KB default serves allocations smaller than 128KB from the pool. This covers common server allocation sizes such as HTTP parser buffers, stream chunks, and small file reads in the 4KB-64KB range, reducing allocator work and Worker-thread contention. The trade-off is one larger pool per worker/realm, and RSS can stay higher while pooled slices are retained; lower this value for memory-constrained deployments.
 
 ### `healthProbes`
 
@@ -367,7 +371,8 @@ If the entrypoint has also a `server` configured, then the runtime settings over
 An object with the following settings:
 
 - **`hostname`** — Hostname where Platformatic Service server will listen for connections.
-- **`port`** — Port where Platformatic Service server will listen for connections.
+- **`port`** — Port where Platformatic Service server will listen for connections. Provide a number or a string. When `portAssignment` is set to `perWorkerIncrement`, this is the first port assigned to worker 0.
+- **`portAssignment`** (`string`) — Sets how entrypoint server worker ports are assigned. Default: `shared`. Set it to `shared` or leave it unset to make all workers listen on the same `port`. Set it to `perWorkerIncrement` to give each worker its own incremental port, starting from `port`. Use `perWorkerIncrement` only with external load balancing, never on its own.
 - **`http2`** (`boolean`) — Enables HTTP/2 support. Default: `false`.
 - **`https`** (`object`) - Configuration for HTTPS supporting the following options. Requires `https`.
   - `allowHTTP1` (`boolean`) - If `true`, the server will also accept HTTP/1.1 connections when `http2` is enabled. Default: `false`.
