@@ -39,6 +39,81 @@ Application Performance Monitoring (APM) agents. `preload` should contain
 a path or a list of paths pointing to a CommonJS or ES module that is loaded at the start of
 the app worker thread.
 
+### `extensions`
+
+While `preload` injects code in each application worker thread, `extensions` loads custom code
+in the **runtime main thread**. Extensions can observe and control the whole runtime: they receive
+the `Runtime` object and an ITC (Inter-Thread Communication) facade which allows them to register
+custom commands that applications can invoke from their worker threads.
+
+`extensions` can be a path, an object with `path` and `options` properties, or an array of either:
+
+```json
+{
+  "extensions": [
+    {
+      "path": "./runtime-extension.js",
+      "options": {
+        "bucket": "{S3_BUCKET}"
+      }
+    }
+  ]
+}
+```
+
+Each file must default-export a setup function, which is invoked during the runtime initialization,
+before any application is started. TypeScript files are supported out of the box via
+[Node.js type stripping](https://nodejs.org/api/typescript.html#type-stripping).
+
+```js
+export default async function setup ({ runtime, itc, logger, options, root }) {
+  // React to runtime events
+  runtime.on('application:worker:started', payload => {
+    logger.info({ payload }, 'worker started')
+  })
+
+  // Register a custom command that applications can invoke via
+  // getITC().send('acme:hello', payload)
+  itc.handle('acme:hello', async payload => {
+    return { hello: payload.name }
+  })
+
+  return {
+    async close () {
+      // Invoked when the runtime is closed
+    }
+  }
+}
+```
+
+The setup function receives a context object with the following properties:
+
+- **`runtime`** - The [Runtime](./programmatic.md) instance. It is an `EventEmitter`, so extensions can
+  subscribe to all [runtime events](./programmatic.md#events) and invoke any public method.
+- **`itc`** - A facade over the runtime ITC:
+  - **`handle(name, handler)`** - Registers a custom command invocable from any application via
+    the [ITC API](./globals.md#communicating-with-runtime-extensions) returned by `getITC()` from
+    `@platformatic/globals`. The name must not clash with the commands reserved by the runtime or
+    with a command registered by another extension.
+  - **`send(target, name, payload)`** - Sends a request to a worker and awaits its response. `target` is
+    an application ID (a worker is chosen in round-robin) or `application:worker-index` for a specific worker.
+  - **`notify(target, name, payload)`** - Sends a fire-and-forget notification. When `target` is an
+    application ID, all its running workers are notified; use `application:worker-index` to target a
+    specific worker. Workers receive notifications via `getITC().on(name, handler)`.
+- **`logger`** - A child of the runtime logger.
+- **`options`** - The `options` object specified in the configuration, if any.
+- **`root`** - The runtime project root directory.
+
+The setup function can optionally return an object with a `close` method, which is invoked when the
+runtime is being closed. When multiple extensions are configured, they are loaded in order and closed
+in reverse order.
+
+Extensions are not loaded when building the applications (for example via `wattpm build`).
+
+For a complete worked example — enabling continuous profiling on every worker when it starts (or is
+restarted) and shipping the captured profiles — see the
+[Capture Flamegraphs on Health Events](../../guides/capture-flamegraphs-on-health-events.md) guide.
+
 ### `applications`
 
 `applications` is an array of objects that defines the applications managed by the
@@ -256,6 +331,8 @@ The object supports the following settings:
 - `gracePeriod` (`number`): How long after the application started before starting to perform health checks. Default: `30000`.
 - `maxUnhealthyChecks` (`number`): The number of consecutive failed checks before killing the worker. Default: `10`.
 - `maxELU` (`number`): The maximum allowed Event Loop Utilization. The value must be a percentage between `0` and `1`. Default: `0.99`.
+- `maxEventLoopDelay` (`number`): The maximum allowed event loop delay in milliseconds. When set, each worker samples its own event loop delay (via `perf_hooks.monitorEventLoopDelay`) and reports it once per second as an `eventLoopDelay` health signal; a worker whose maximum delay over a check window exceeds this value counts as unhealthy. This catches long individual stalls at low average utilization (a 150ms synchronous stall each second is an ELU of just 0.15), which are invisible to `maxELU`. Disabled by default.
+- `maxEventLoopDelayP99` (`number`): The maximum allowed p99 event loop delay in milliseconds. Same mechanism as `maxEventLoopDelay`, but evaluated against the worst per-second p99 reported over the check window instead of the absolute maximum, so single outlier stalls are smoothed out. Either option activates the sampler; they can be combined. Disabled by default.
 - `maxHeapUsed` (`number`): The maximum allowed memory utilization. The value must be a percentage between `0` and `1`. Default: `0.99`.
 - `maxHeapTotal` (`number` or `string`): The maximum allowed memory allocatable by the process. The value must be an amount in bytes, in bytes or in memory units. Default: `4GB`.
 - `maxYoungGeneration`(`number` or `string`): The maximum amount of memory that can be used by the young generation. The value must be an amount in bytes, in bytes or in memory units. Default: `128MB`
