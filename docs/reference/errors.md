@@ -24,6 +24,10 @@
 
 **Message:** Fastify instance is already listening. Cannot call "addGatewayOnRouteHook"!
 
+### PLT_GATEWAY_INVALID_OPENAPI_SCHEMA
+
+**Message:** Failed to compose OpenAPI schemas: %s
+
 ### PLT_GATEWAY_PATH_ALREADY_EXISTS
 
 **Message:** Path "%s" already exists
@@ -425,6 +429,10 @@
 ### PLT_INVALID_CONFIG_FILE_EXTENSION
 
 **Message:** Invalid config file extension. Only yml, yaml, json, json5, toml, tml are supported.
+
+### PLT_MISSING_ENV_VARIABLES
+
+**Message:** The configuration references the following environment variables which are not set: %s
 
 ### PLT_NO_CONFIG_FILE_FOUND
 

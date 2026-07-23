@@ -47,6 +47,7 @@
             "guides/use-watt-with-ai-agents",
             "guides/scheduler",
             "guides/dynamic-workers",
+            "guides/nextjs-multi-zones",
             "guides/next-image-optimizer"
           ]
         },
@@ -212,6 +213,15 @@
                 "reference/next/configuration",
                 "reference/next/image-optimizer",
                 "reference/next/experimental-adapter-path"
+              ]
+            },
+            {
+              "type": "category",
+              "label": "Nitro",
+              "collapsed": true,
+              "items": [
+                "reference/nitro/overview",
+                "reference/nitro/configuration"
               ]
             },
             {
