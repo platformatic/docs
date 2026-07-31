@@ -232,7 +232,7 @@ const config = {
             },
             {
               label: 'Guides',
-              to: 'docs/guides/movie-quotes-app-tutorial'
+              to: 'docs/guides'
             }
           ]
         },
