@@ -28,6 +28,15 @@
             "learn/beginner/crud-application",
             "learn/beginner/environment-variables"
           ]
+        },
+        {
+          "type": "category",
+          "label": "Migrations",
+          "collapsed": true,
+          "items": [
+            "learn/migrations/from-express",
+            "learn/migrations/from-fastify"
+          ]
         }
       ]
     },
@@ -88,6 +97,17 @@
             "guides/debugging-with-repl"
           ]
         }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Concepts",
+      "collapsed": true,
+      "items": [
+        "concepts/watt-architecture",
+        "concepts/multithread-model",
+        "concepts/application-lifecycle",
+        "concepts/modular-monolith"
       ]
     },
     {
