@@ -89,4 +89,3 @@ All framework integrations provide:
 - **Framework-specific issues?** Check the individual framework reference pages above
 - **Technical details?** Browse the complete [Reference Documentation](../reference/) 
 - **Step-by-step tutorials?** Visit our [Learning Tutorials](../learn/)
-- **Community support?** Join our [Discord Community](https://discord.gg/platformatic)

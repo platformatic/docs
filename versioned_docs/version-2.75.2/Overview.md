@@ -92,9 +92,6 @@ Watt is perfect for:
 
 ## Community & Support
 
-- **Discord** - Join our [community](https://discord.gg/platformatic) for real-time help
 - **GitHub** - Report issues and contribute at [platformatic/platformatic](https://github.com/platformatic/platformatic)
 - **Blog** - Read tutorials and updates at [blog.platformatic.dev](https://blog.platformatic.dev/)
 - **YouTube** - Watch video tutorials on our [channel](https://www.youtube.com/channel/UCLuqTMhiF1BHGPTLYO4M3Gw)
-
-
