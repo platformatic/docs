@@ -240,10 +240,6 @@ const config = {
           title: 'Community',
           items: [
             {
-              label: 'Discord',
-              href: 'https://discord.gg/platformatic'
-            },
-            {
               label: 'X',
               href: 'https://x.com/platformatic'
             }
